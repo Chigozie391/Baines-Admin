@@ -1,0 +1,250 @@
+<app-headers title="Lenders" crumbs="Afenifere Olabode"></app-headers>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body bg-dark text-white rounded">
+        <div class="row align-items-center my-3">
+          <div class="col-auto">
+            <div class="pic big round">
+              <img src="../../../../assets/img/placeholder-user.png" class="round img-fluid" alt="">
+            </div>
+          </div>
+          <div class="col">
+            <h5>Henry Okonkwo</h5>
+            <div>LSQ66062923</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row align-items-center mt-md-5 mt-0">
+  <div class="col-12">
+    <mat-tab-group>
+      <!-- <mat-tab label="General">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="row  p-md-5 p-3">
+                  <div class="col-12 text-dark">
+                    <div class="row">
+                      <div class="col-md-8 col-12 mb-4">
+                        <h6>
+                          This section contains important details about the lender, in the
+                          form of
+                          list items. The same details they filled when they joined the
+                          platform as
+                          well as other important data need for admin users
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3 col-6 mb-4" *ngFor="let item of [1,2,3,4,5,6,7,8]">
+                    <h6>Item {{item}}</h6>
+                    <h3 class="text-dark font-weight-bold">One Info</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-tab> -->
+      <mat-tab label="Loan Product">
+        <div class="row my-5">
+
+
+          <div class="col-md-4 mb-4" *ngFor="let item  of [1,2,3,4,5,6,7]">
+            <div class="card card-top-green">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col text-muted opacity-60">
+                    <h6 class="font-weight-bold m-0 p-0">
+                      Loan Product 00{{item}}
+                    </h6>
+                    <small>LSLS22008478</small>
+                  </div>
+
+                  <div class="col-auto">
+                    <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="More actions">
+                      <mat-icon>more_horiz</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item>
+                        <mat-icon>dialpad</mat-icon>
+                        <span>Redial</span>
+                      </button>
+                      <button mat-menu-item disabled>
+                        <mat-icon>voicemail</mat-icon>
+                        <span>Check voicemail</span>
+                      </button>
+                      <button mat-menu-item>
+                        <mat-icon>notifications_off</mat-icon>
+                        <span>Disable alerts</span>
+                      </button>
+                    </mat-menu>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col my-5">
+                    <h5 class="text-dark-blue font-weight-bold">
+                      ₦50,000,000 - ₦58,000,000
+                    </h5>
+                  </div>
+                  <div class="col-12">
+                    <hr />
+                  </div>
+                  <div class="row w-100 align-items-end justify-content-between">
+                    <div class="col">
+                      <h5 class="text-muted opacity-100">
+                        11%
+                      </h5>
+                      <small class="text-muted opacity-60">Interest</small>
+                    </div>
+                    <div class="col-auto text-muted opacity-60 text-right">
+
+                      <div class=" avatar-group">
+                        <a class="avatar avatar-sm rounded-circle">
+                          <img alt="Image placeholder" src="../../../../assets/img/placeholder-user.png" width="25">
+                        </a>
+                        <a class="avatar avatar-sm rounded-circle">
+                          <img alt="Image placeholder" src="../../../../assets/img/placeholder-user.png" width="25">
+                        </a>
+                        <a class="avatar avatar-sm rounded-circle">
+                          <img alt="Image placeholder" src="../../../../assets/img/placeholder-user.png" width="25">
+                        </a>
+                        <a class="avatar avatar-sm rounded-circle">
+                          <img alt="Image placeholder" src="../../../../assets/img/placeholder-user.png" width="25">
+                        </a>
+                        <a class="avatar avatar-sm rounded-circle">
+                          <img alt="Image placeholder" src="../../../../assets/img/placeholder-user.png" width="25">
+                        </a>
+                      </div>
+                      28 Borrowers
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </mat-tab>
+      <mat-tab label="Invited Borrowers">
+        <div class="row my-5">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="row justify-content-between align-items-center">
+                  <div class="col">
+                    <h5 class="m-0 p-0 text-dark-blue">Invited Borrowers</h5>
+                  </div>
+
+                  <div class="col-3">
+                    <div class="form-group mb-0">
+                      <input type="text" class="form-control" placeholder="search">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <mat-divider></mat-divider>
+              <div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Borrowers</th>
+                      <th>Date Invited</th>
+                      <th>Date Joined</th>
+                      <th>Invitation Status</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-muted">
+                    <tr *ngFor="let country of [1,2,3,4,5,6,6,7,8,9,10]">
+                      <th scope="row">Okonkwo Henry</th>
+                      <td>2 Oct 2019</td>
+                      <td>2 Oct 2019</td>
+                      <td> <span class="badge badge-verified">Redeemed</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Wallet">
+        <div class="row my-5">
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body py-5">
+                <h4 class="font-weight-bold text-dark-blue">₦50,000,000</h4>
+                <small class="text-dark-blue opacity-60">Total transactions</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body py-5">
+                <h4 class="font-weight-bold text-dark-blue">₦50,000,000</h4>
+                <small class="text-dark-blue opacity-60">Total transactions</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body py-5">
+                <h4 class="font-weight-bold text-dark-blue">₦50,000,000</h4>
+                <small class="text-dark-blue opacity-60">Total transactions</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <h4 class="text-dark-blue m-0">Wallet Transactions</h4>
+                  </div>
+                </div>
+              </div>
+              <mat-divider></mat-divider>
+              <div>
+                <div class="row">
+                  <div class="col-12">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">Customer</th>
+                          <th scope="col">Loan Name</th>
+                          <th scope="col">Date</th>
+                          <th scope="col">Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-muted">
+                        <tr *ngFor="let country of [1,2,3,4]">
+                          <th scope="row">LSQ0300049909</th>
+                          <td>Jane Cole</td>
+                          <td>Loan offer</td>
+                          <td>2 Oct 2019</td>
+                          <td class="font-weight-bold">1,020,000.00</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

@@ -1,0 +1,444 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+//@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@import "~@angular/material/theming";
+@import url('https://fonts.googleapis.com/css?family=PT+Mono&display=swap');
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/font/Avenir-master/AvenirSemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: fallback;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/font/Avenir-master/AvenirMedium.woff2") format("woff2");
+  font-weight: normal;
+  font-display: fallback;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/font/Avenir-master/AvenirLight.woff2") format("woff2");
+  font-weight: 300;
+  font-display: fallback;
+  font-style: normal;
+}
+
+$custom-typography: mat-typography-config(
+  $font-family: "Avenir, sans-serif"
+);
+
+@include mat-core($custom-typography);
+
+$colors: (
+  white: #ffffff,
+  dark: #545F7D,
+  dark-blue: #213f7d,
+  off-white: #f4f5f7,
+  blue: #2059b1,
+  green: #39cdcc,
+  success: #1bb133,
+  orange: #d45021,
+  gray: #e8eaef,
+  red: #ea3869,
+  dark-light: #d1d6dc
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+.vh-100 {
+  min-height: 100vh;
+}
+
+@each $color in $colors {
+  .bg-#{nth($color,1)} {
+    background-color: nth($color, 2) !important;
+  }
+}
+
+@each $color in $colors {
+  .text-#{nth($color,1)} {
+    color: nth($color, 2);
+  }
+}
+
+.mono {
+  font-family: 'PT Mono', monospace;
+}
+
+.card-gradient{
+  background: linear-gradient(360deg, #0575E6 -44.29%, #021B79 136.25%);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15); 
+}
+
+.nav-group {
+  background-color: rgba(color(dark-blue), 0.1);
+}
+
+.btn-link {
+  text-decoration: none !important;
+}
+
+.bg-gradient {
+  background: linear-gradient(20.63deg, #213f7d -30.58%, #39cdcc 116.98%);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Avenir", sans-serif !important;
+  background-color: color(off-white);
+}
+
+button:focus,
+button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.notify.mat-menu-panel {
+  min-width: 320px !important;
+  max-width: 360px !important;
+}
+
+.sidenav {
+  background-color: color(white);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+  ul {
+    color: color(dark-blue);
+  }
+}
+
+.card {
+  border: 0;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card:focus {
+  outline: none;
+}
+
+.green-square {
+  background: color(green);
+  width: 20px;
+  height: 10px;
+  display: inline-block;
+}
+
+.dark-blue-square {
+  background: color(dark-blue);
+  width: 20px;
+  height: 10px;
+  display: inline-block;
+}
+
+.red-square {
+  background: color(red);
+  width: 20px;
+  height: 10px;
+  display: inline-block;
+}
+
+.rules,
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+tr:first-child {
+  & > td {
+    border: none !important;
+  }
+}
+
+.pagination {
+  li {
+    a {
+      margin-right: 8px !important;
+    }
+  }
+}
+
+.pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  float: left;
+
+  &.small {
+    height: 36px;
+    width: 36px;
+  }
+
+  &.big {
+    height: 80px;
+    width: 80px;
+  }
+
+  &.round {
+    border-radius: 50%;
+  }
+
+  img {
+    flex: none;
+  }
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.4;
+}
+
+/**======= Ripple List =========**/
+.ripple-list .mat-list-item,
+.ripple-list .mat-list-option {
+  height: 70px !important;
+}
+/**======= Ripple List =========**/
+
+/**======= Loading ========**/
+.loading {
+  -webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+/**======= Loading End ========**/
+
+/**========= Form ===========**/
+.form-group {
+  label {
+    margin-bottom: 0.2rem;
+    font-size: 0.875rem;
+    color: color(dark-blue);
+  }
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  border: 1px solid color(off-white);
+
+  & + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  & + label:before {
+    content: "";
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 1rem;
+    height: 1rem;
+    background: color(white);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  &:hover + label:before {
+    background: color(dark-blue);
+  }
+
+  &:focus + label:before {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+  }
+
+  &:checked + label:before {
+    background: color(dark-blue);
+  }
+
+  &:disabled + label {
+    color: #b8b8b8;
+    cursor: auto;
+  }
+
+  &:disabled + label:before {
+    box-shadow: none;
+    background: #ddd;
+  }
+
+  &:checked + label:after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 9px;
+    background: color(white);
+    width: 2px;
+    height: 2px;
+    box-shadow: 2px 0 0 color(white), 4px 0 0 color(white), 4px -2px 0 color(white), 4px -4px 0 color(white),
+      4px -6px 0 color(white), 4px -8px 0 color(white);
+    transform: rotate(45deg);
+  }
+}
+
+/**========= Form End ===========**/
+
+.table {
+  thead th {
+    vertical-align: bottom;
+    border-top: 0;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  tbody{
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 1rem;
+  }
+}
+
+.badge {
+  border-radius: 30px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+
+  &.badge-pending {
+    background: rgba(color(red), 0.2);
+    color: rgba(color(red), 1);
+  }
+
+  &.badge-verified {
+    background: rgba(color(success), 0.2);
+    color: rgba(color(success), 1);
+  }
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-10 {
+  opacity: 0.1;
+}
+
+.opacity-20 {
+  opacity: 0.2;
+}
+
+.opacity-30 {
+  opacity: 0.3;
+}
+
+.opacity-40 {
+  opacity: 0.4;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}
+
+.opacity-70 {
+  opacity: 0.7;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.opacity-90 {
+  opacity: 0.9;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+
+.avatar
+{
+    font-size: 1rem;
+
+    display: inline-flex;
+
+    width: 48px; 
+    height: 48px;
+
+    color: #fff;
+    border-radius: 50%;
+    background-color: #adb5bd;
+
+    align-items: center;
+    justify-content: center;
+}
+.avatar img
+{
+    width: 100%;
+
+    border-radius: 50%;
+}
+.avatar + .avatar-content
+{
+    display: inline-block;
+
+    margin-left: .75rem;
+}
+
+.avatar-lg
+{
+    font-size: .875rem; 
+
+    width: 58px;
+    height: 58px;
+}
+
+.avatar-sm
+{
+    font-size: .875rem; 
+
+    width: 36px;
+    height: 36px;
+}
+
+.avatar-group .avatar
+{
+    position: relative;
+    z-index: 2;
+
+    border: 2px solid #fff;
+}
+.avatar-group .avatar:hover
+{
+    z-index: 3;
+}
+
+.avatar-group .avatar + .avatar
+{
+    margin-left: -1rem;
+}
+
