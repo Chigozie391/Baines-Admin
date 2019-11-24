@@ -81,19 +81,13 @@ export class NavigationComponent {
 
     userMenu = [
       {
-        icon: 'audit',
+        icon: 'settings',
         route: 'Settings',
         url: 'Path.SETTINGS',
         sub: []
       },
       {
-        icon: 'audit',
-        route: 'Notifications',
-        url: 'Path.DASHBOARD',
-        sub: []
-      },
-      {
-        icon: 'audit',
+        icon: 'logout',
         route: 'Logout',
         url: 'Path.LOGOUT',
         sub: []
@@ -112,6 +106,8 @@ export class NavigationComponent {
       this.matIconRegistry.addSvgIcon('loan', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/assets.svg'));
       this.matIconRegistry.addSvgIcon('lenders', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/notes.svg'));
       this.matIconRegistry.addSvgIcon('wallet', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/wallet.svg'));
+      this.matIconRegistry.addSvgIcon('settings', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/settings.svg'));
+      this.matIconRegistry.addSvgIcon('logout', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/logout.svg'));
   }
 
 }
