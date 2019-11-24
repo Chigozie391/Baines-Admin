@@ -62,19 +62,19 @@ export class NavigationComponent {
       {
         icon: 'group',
         route: 'Users',
-        url: '/app/dashboard',
+        url: '/app/users',
         sub: []
       },
       {
         icon: 'api',
         route: 'API Services',
-        url: '/app/bank',
+        url: '/app/apis',
         sub: []
       },
       {
         icon: 'audit',
         route: 'Audit Logs',
-        url: '/app/bank',
+        url: '/app/audits',
         sub: []
       }
     ]; 

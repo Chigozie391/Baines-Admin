@@ -1,0 +1,28 @@
+<app-headers title="Audit Logs"></app-headers>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>User</th>
+              <th>Role</th>
+              <th>Activity</th>
+            </tr>
+          </thead>
+          <tbody class="text-muted">
+            <tr *ngFor="let country of [1,2,3,4,5,6,6,7,8,9,10]">
+              <th scope="row">12, Oct 2019 12:00pm</th>
+              <td>Jane Cole</td>
+              <td>Lender</td>
+              <td>John added a borrower</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
