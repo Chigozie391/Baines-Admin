@@ -1,0 +1,62 @@
+<app-headers title="Users"></app-headers>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="row justify-content-between align-items-center">
+          <div class="col">
+            <h5 class="m-0 p-0 text-dark-blue">All Users</h5>
+          </div>
+
+          <div class="col-3">
+            <span class="has-search">
+              <input type="text" name="search" class="search form-control" placeholder="Search" />
+            </span>
+          </div>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Lenders</th>
+              <th>ID</th>
+              <th>Email</th>
+              <th>Type</th>
+              <th>Date Joined</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody class="text-muted">
+            <tr *ngFor="let country of [1,2,3,4,5,6,6,7,8,9,10]">
+              <th scope="row">Okonkwo Henry</th>
+              <td>LSQ12346</td>
+              <td>johndoe@cole.com</td>
+              <td>Lender</td>
+              <td>2 Oct 2019</td>
+              <td> <span class="badge badge-verified">Active</span></td>
+              <td class="p-2 m-0">
+                <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="More actions">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item routerLink="/app/customers/lenders/view">
+                    <mat-icon>remove_red_eye</mat-icon>
+                    <span>View Details</span>
+                  </button>
+                  <button mat-menu-item>
+                    <mat-icon>close</mat-icon>
+                    <span>Remove</span>
+                  </button>
+                </mat-menu>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

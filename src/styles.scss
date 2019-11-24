@@ -442,3 +442,14 @@ input[type="checkbox"] {
     margin-left: -1rem;
 }
 
+.has-search {
+  .search {
+    font-size: 14px;
+    background: #dee2e6;
+    border-radius: 100px;
+    border: 0;
+    &::placeholder {
+      font-size: 14px;
+    }
+  }
+}
