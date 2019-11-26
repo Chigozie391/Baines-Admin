@@ -12,7 +12,7 @@ export class AuthService {
     
   }
 
-  login(credential: LoginModel) {
-    return this.http.post(Endpoint.LOGIN, credential);
-  }
+  // login(credential: LoginModel) {
+  //   return this.http.post(Endpoint.LOGIN, credential);
+  // }
 }
