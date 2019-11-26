@@ -2,7 +2,7 @@
   <div class="col-12">
     <h4 *ngIf="!crumbs">{{title}}</h4>
     <span *ngIf="crumbs">
-      <small>{{title}}</small> / <span class="h4">{{crumbs}}</span>
+      <small class="cursor" (click)="goback()">{{title}}</small> / <span class="h4">{{crumbs}}</span>
   </span>
   </div>
 </div>

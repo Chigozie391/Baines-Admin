@@ -21,13 +21,16 @@ export class NavigationComponent {
       shareReplay()
     );
 
-    customers = [
+    general = [
       {
         icon: 'dashboard',
         route: 'Dashboard',
         url: '/app/dashboard',
         sub: []
-      },
+      }
+    ]; 
+
+    customers = [
       {
         icon: 'group',
         route: 'Lenders',
@@ -39,7 +42,11 @@ export class NavigationComponent {
         route: 'Borrowers',
         url: '/app/customers/borrowers',
         sub: []
-      },
+      }
+    ]; 
+
+
+    business = [
       {
         icon: 'loan',
         route: 'Loan product',
