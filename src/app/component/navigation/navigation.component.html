@@ -9,6 +9,30 @@
     <mat-nav-list>
 
       <ul class="app-nav" id="navigate">
+        <ng-container *ngFor="let view of general; let i = index">
+          <li routerLinkActive="active">
+            <a routerLink="{{view.url}}"  mat-list-item>
+              <mat-icon mat-list-icon svgIcon="{{view.icon}}"></mat-icon>
+              <span mat-line class="w-100 d-flex justify-content-between align-items-center ">
+                {{view.route}}
+                <mat-icon mat-list-icon *ngIf="view.sub && view.sub.length > 0">
+                  {{!showSub[i] && view.sub && view.sub.length > 0 ? 'arrow_drop_down' : 'arrow_drop_up'}}
+                </mat-icon>
+              </span>
+
+            </a>
+          </li>
+          <ul *ngIf="view.sub && view.sub.length > 0" [hidden]="!showSub[i]">
+            <li *ngFor="let sub of view.sub">
+              <a routerLink="{{sub.url}}" class="pl-5" mat-list-item>
+                <span mat-line>{{sub.route}}</span>
+              </a>
+            </li>
+          </ul>
+        </ng-container>
+        <div class="px-3 py-2 bg-gray text-muted">
+          Customers
+        </div>
         <ng-container *ngFor="let view of customers; let i = index">
           <li routerLinkActive="active">
             <a routerLink="{{view.url}}"  mat-list-item>
@@ -30,9 +54,33 @@
             </li>
           </ul>
         </ng-container>
-      </ul>
-      <mat-divider></mat-divider>
-      <ul class="app-nav" id="navigate">
+        <div class="px-3 py-2 bg-gray text-muted">
+          Business
+        </div>
+        <ng-container *ngFor="let view of business; let i = index">
+          <li routerLinkActive="active">
+            <a routerLink="{{view.url}}"  mat-list-item>
+              <mat-icon mat-list-icon svgIcon="{{view.icon}}"></mat-icon>
+              <span mat-line class="w-100 d-flex justify-content-between align-items-center ">
+                {{view.route}}
+                <mat-icon mat-list-icon *ngIf="view.sub && view.sub.length > 0">
+                  {{!showSub[i] && view.sub && view.sub.length > 0 ? 'arrow_drop_down' : 'arrow_drop_up'}}
+                </mat-icon>
+              </span>
+
+            </a>
+          </li>
+          <ul *ngIf="view.sub && view.sub.length > 0" [hidden]="!showSub[i]">
+            <li *ngFor="let sub of view.sub">
+              <a routerLink="{{sub.url}}" class="pl-5" mat-list-item>
+                <span mat-line>{{sub.route}}</span>
+              </a>
+            </li>
+          </ul>
+        </ng-container>
+        <div class="px-3 py-2 bg-gray text-muted">
+          Settings
+        </div>
         <ng-container *ngFor="let view of settings; let i = index">
           <li routerLinkActive="active" (click)="showSub[i] = !showSub[i]">
             <a routerLink="{{view.url}}" mat-list-item>
