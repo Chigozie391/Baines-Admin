@@ -7,6 +7,7 @@ options:
 image: node:latest
 build_and_test: &build_and_test
   - step:
+     size: 2x
      name: Run unit tests
      caches:
        - node
