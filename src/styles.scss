@@ -445,11 +445,21 @@ input[type="checkbox"] {
 .has-search {
   .search {
     font-size: 14px;
-    background: #dee2e6;
-    border-radius: 100px;
-    border: 0;
+    padding-left: 2.5rem;
     &::placeholder {
       font-size: 14px;
     }
+  }
+
+  .icon {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.25rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
   }
 }
