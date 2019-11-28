@@ -29,13 +29,14 @@ export class LoginComponent implements OnInit {
     this.msg = '';
     this.loading = true;
     this.authService.login(this.login).subscribe((res: any) => {
-      this.loading = false;
+      
       if (res.status === Constant.SUCCESS) {
         this.authService.token = res.data.token;
         this.authService.user = res.data.user;
         this.router.navigate([Path.DASHBOARD]);
       }
       else {
+        this.loading = false;
         this.showAlert = Constant.SHOW_ERROR;
         this.msg = res.message;
       }
