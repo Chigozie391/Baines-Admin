@@ -4,9 +4,11 @@ import { NavigationComponent } from '../../component/navigation/navigation.compo
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatTabsModule, MatMenuModule} from '@angular/material';
 import { RouterModule } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HeadersComponent } from '../../component/headers/headers.component';
-
+import { AlertModule } from 'ngx-bootstrap';
+import { TokenInterceptorService } from 'src/app/service/token-interceptor/token-interceptor.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [NavigationComponent, HeadersComponent],
@@ -22,6 +24,8 @@ import { HeadersComponent } from '../../component/headers/headers.component';
     RouterModule,
     HttpClientModule,
     MatTabsModule,
+    AlertModule.forRoot(),
+    FormsModule
   ],
   exports: [
     MatToolbarModule,
@@ -34,7 +38,16 @@ import { HeadersComponent } from '../../component/headers/headers.component';
     NavigationComponent,
     HttpClientModule,
     HeadersComponent,
-    MatTabsModule
+    MatTabsModule,
+    AlertModule,
+    FormsModule
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    },
   ]
 })
 export class SharedModule { }
