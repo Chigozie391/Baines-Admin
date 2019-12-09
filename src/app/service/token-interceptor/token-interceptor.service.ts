@@ -25,7 +25,8 @@ export class TokenInterceptorService implements HttpInterceptor {
   addToken(request: HttpRequest<any>, token) {
     return request.clone({
       setHeaders: {
-        lendi_auth_token: token
+        Authorization: `Bearer ${token}`,
+        'profile_token': this.authService.profile_token
       }
     });
   }

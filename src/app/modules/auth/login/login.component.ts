@@ -31,8 +31,9 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.login).subscribe((res: any) => {
       
       if (res.status === Constant.SUCCESS) {
-        this.authService.token = res.data.token;
-        this.authService.user = res.data.user;
+        this.authService.token = res.data.access_token;
+        this.authService.user = JSON.stringify(res.data.user);
+        this.authService.profile_token = res.data.profile_token;
         this.router.navigate([Path.DASHBOARD]);
       }
       else {

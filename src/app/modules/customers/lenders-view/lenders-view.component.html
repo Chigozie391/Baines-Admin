@@ -1,4 +1,4 @@
-<app-headers title="Lenders" crumbs="Afenifere Olabode"></app-headers>
+<app-headers title="Lenders" [crumbs]="lenderName"></app-headers>
 
 <div class="row">
   <div class="col-12">
@@ -11,8 +11,10 @@
             </div>
           </div>
           <div class="col">
-            <h5>Henry Okonkwo</h5>
-            <div>LSQ66062923</div>
+            <h5>
+              {{lenderName}}
+            </h5>
+            <div class="text-uppercase">{{lender.user.uuid}}</div>
           </div>
         </div>
       </div>
@@ -23,48 +25,18 @@
 <div class="row align-items-center mt-md-5 mt-0">
   <div class="col-12">
     <mat-tab-group>
-      <!-- <mat-tab label="General">
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-body">
-                <div class="row  p-md-5 p-3">
-                  <div class="col-12 text-dark">
-                    <div class="row">
-                      <div class="col-md-8 col-12 mb-4">
-                        <h6>
-                          This section contains important details about the lender, in the
-                          form of
-                          list items. The same details they filled when they joined the
-                          platform as
-                          well as other important data need for admin users
-                        </h6>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3 col-6 mb-4" *ngFor="let item of [1,2,3,4,5,6,7,8]">
-                    <h6>Item {{item}}</h6>
-                    <h3 class="text-dark font-weight-bold">One Info</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </mat-tab> -->
       <mat-tab label="Loan Product">
         <div class="container-fluid">
           <div class="row my-5">
-            <div class="col-md-4 mb-4" *ngFor="let item  of [1,2,3,4,5,6,7]">
+            <div class="col-md-4 mb-4" *ngFor="let item  of loanProduct">
               <div class="card card-top-green">
                 <div class="card-body">
                   <div class="row">
                     <div class="col text-muted opacity-60">
                       <h6 class="font-weight-bold m-0 p-0">
-                        Loan Product 00{{item}}
+                        {{item.product_name}}
                       </h6>
-                      <small>LSLS22008478</small>
+                      <small class="text-uppercase">{{item.uuid}}</small>
                     </div>
 
                     <div class="col-auto">
@@ -91,7 +63,7 @@
                   <div class="row">
                     <div class="col my-5">
                       <h5 class="text-dark-blue font-weight-bold">
-                        ₦50,000,000 - ₦58,000,000
+                        ₦{{item.min_loan_amount | number: '0.2'}} - ₦{{item.max_loan_amount | number: '0.2'}}
                       </h5>
                     </div>
                     <div class="col-12">
@@ -100,7 +72,7 @@
                     <div class="row w-100 align-items-end justify-content-between">
                       <div class="col">
                         <h5 class="text-muted opacity-100">
-                          11%
+                          {{item.interest}}%
                         </h5>
                         <small class="text-muted opacity-60">Interest</small>
                       </div>
@@ -123,7 +95,7 @@
                             <img alt="Image placeholder" src="../../../../assets/img/placeholder-user.png" width="25">
                           </a>
                         </div>
-                        28 Borrowers
+                        {{item.num_of_borrowers}} Borrowers
                       </div>
                     </div>
                   </div>
@@ -165,7 +137,7 @@
                       </tr>
                     </thead>
                     <tbody class="text-muted">
-                      <tr *ngFor="let country of [1,2,3,4,5,6,6,7,8,9,10]">
+                      <tr *ngFor="let items of invited">
                         <th scope="row">Okonkwo Henry</th>
                         <td>2 Oct 2019</td>
                         <td>2 Oct 2019</td>

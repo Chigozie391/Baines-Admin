@@ -12,7 +12,6 @@ import { Path } from 'src/app/utils/path';
   providedIn: 'root'
 })
 export class AuthService {
-
   constructor(private http: HttpClient, private router: Router) { 
     
   }
@@ -21,12 +20,20 @@ export class AuthService {
     return localStorage.getItem(Constant.ACCESS_TOKEN);
   }
 
+  get profile_token() {
+    return localStorage.getItem(Constant.PROFILE_TOKEN);
+  }
+
   get user() {
-    return localStorage.getItem(Constant.CURRENT_USERS);
+    return JSON.parse(localStorage.getItem(Constant.CURRENT_USERS));
   }
 
   set token(item) {
     localStorage.setItem(Constant.ACCESS_TOKEN, item);
+  }
+
+  set profile_token(item) {
+    localStorage.setItem(Constant.PROFILE_TOKEN, item);
   }
 
   set user(item) {
@@ -34,7 +41,7 @@ export class AuthService {
   }
 
   login(credential: LoginModel) {
-    return this.http.post(Endpoint.LOGIN, credential);
+    return this.http.post(Endpoint.ADMIN_LOGIN, credential);
   }
 
   forgotPasword(credential: ForgotPasswordModel) {

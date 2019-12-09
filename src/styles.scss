@@ -242,6 +242,10 @@ tr:first-child {
   }
 }
 
+input {
+  height: 40px !important;
+}
+
 input[type="checkbox"] {
   position: absolute;
   opacity: 0;

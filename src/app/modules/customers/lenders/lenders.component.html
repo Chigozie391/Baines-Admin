@@ -52,16 +52,18 @@
             </tr>
           </thead>
           <tbody class="text-muted">
-            <tr *ngFor="let country of [1,2,3,4,5,6,6,7,8,9,10]" >
-              <td class="cursor" (click)="viewDetails()">Okonkwo Henry</td>
-              <td class="cursor" (click)="viewDetails()">
-                LSQ66062923
+            <tr *ngFor="let obj of list" >
+              <td class="cursor" (click)="viewDetails(obj)">{{obj.user.last_name | titlecase}} {{obj.user.first_name | titlecase}} {{!obj.user.first_name && !obj.user.last_name ? obj.user.business_name: ''}}</td>
+              <td class="cursor" (click)="viewDetails(obj)">
+                <span class="text-uppercase">{{obj.user.uuid}}</span>
               </td>
-              <td class="cursor" (click)="viewDetails()">Individual</td>
-              <td class="cursor" (click)="viewDetails()">2 Oct 2019</td>
-              <td class="cursor" (click)="viewDetails()">
-                <span class="badge badge-pending">Active</span> 
+              <td class="cursor" (click)="viewDetails(obj)">{{!obj.user.business_name ? 'Individual': 'Business'}}</td>
+              <td class="cursor" (click)="viewDetails(obj)">{{obj.user.created_on | date:'mediumDate'}}</td>
+              <td class="cursor" (click)="viewDetails(obj)">
+                <span class="badge badge-verified" *ngIf="obj.user.active">Active</span>
+                <span class="badge badge-pending" *ngIf="!obj.user.active">Inactive</span>
               </td>
+              
               <td class="p-2 m-0">
                 <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="More actions">
                   <mat-icon>more_vert</mat-icon>
