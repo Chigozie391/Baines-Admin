@@ -8,9 +8,10 @@ import { SharedModule } from '../shared/shared.module';
 import { LendersViewComponent } from './lenders-view/lenders-view.component';
 import { BorrowersComponent } from './borrowers/borrowers.component';
 import { BorrowersViewComponent } from './borrowers-view/borrowers-view.component';
+import { SaversComponent } from './savers/savers.component';
 
 @NgModule({
-  declarations: [CustomersComponent, LendersComponent, LendersViewComponent, BorrowersComponent, BorrowersViewComponent],
+  declarations: [CustomersComponent, LendersComponent, LendersViewComponent, BorrowersComponent, BorrowersViewComponent, SaversComponent],
   imports: [
     CommonModule,
     CustomersRoutingModule,

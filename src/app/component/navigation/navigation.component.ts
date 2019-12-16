@@ -24,7 +24,7 @@ export class NavigationComponent {
     general = [
       {
         icon: 'dashboard',
-        route: 'Dashboard',
+        route: 'Home',
         url: '/app/dashboard',
         sub: []
       }
@@ -33,7 +33,7 @@ export class NavigationComponent {
     customers = [
       {
         icon: 'group',
-        route: 'Lenders',
+        route: 'Users',
         url: '/app/customers/lenders',
         sub: []
       },
@@ -42,6 +42,12 @@ export class NavigationComponent {
         route: 'Borrowers',
         url: '/app/customers/borrowers',
         sub: []
+      },
+      {
+        icon: 'group',
+        route: 'Savers',
+        url: '/app/customers/savers',
+        sub: []
       }
     ]; 
 
@@ -49,14 +55,26 @@ export class NavigationComponent {
     business = [
       {
         icon: 'loan',
-        route: 'Loan product',
+        route: 'Loan products',
         url: '/app/business/loan-product',
         sub: []
       },
       {
-        icon: 'audit',
-        route: 'Collections',
-        url: '/app/business/collections',
+        icon: 'loan',
+        route: 'Savings products',
+        url: '/app/business/loan-product',
+        sub: []
+      },
+      {
+        icon: 'loan',
+        route: 'Loans',
+        url: '/app/business/loan-product',
+        sub: []
+      },
+      {
+        icon: 'loan',
+        route: 'Savings',
+        url: '/app/business/loan-product',
         sub: []
       },
       {
@@ -71,14 +89,26 @@ export class NavigationComponent {
     settings = [
       {
         icon: 'group',
-        route: 'Users',
+        route: 'Account',
         url: '/app/users',
         sub: []
       },
       {
         icon: 'api',
-        route: 'API Services',
+        route: 'Bank Information',
         url: '/app/apis',
+        sub: []
+      },
+      {
+        icon: 'audit',
+        route: 'Team',
+        url: '/app/audits',
+        sub: []
+      },
+      {
+        icon: 'audit',
+        route: 'Preferences',
+        url: '/app/audits',
         sub: []
       },
       {

@@ -1,0 +1,46 @@
+<app-headers title="Savers"></app-headers>
+
+<div class="row">
+    <div class="col-12">
+      <div class="card">
+        <!-- <div class="card-body">
+          <div class="row justify-content-between align-items-center">
+            <div class="col">
+              <h5 class="m-0 p-0 text-dark-blue">Loan Products</h5>
+            </div>
+  
+            <div class="col-3">
+              <span class="has-search">
+                  <mat-icon class="icon ml-2">search</mat-icon>
+                <input type="text" name="search" class="search form-control" />
+              </span>
+            </div>
+          </div>
+        </div> -->
+        <mat-divider></mat-divider>
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="table-head">
+              <tr>
+                <th scope="col">Saver</th>
+                <th scope="col">ID</th>
+                <th scope="col">Date Joined</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="text-muted">
+                <tr *ngFor="let country of [1,2,3,4,5,6,6,7,8,9,10]">
+                    <!-- <td> <span class="badge badge-verified">Successful</span></td> -->
+                    <td>Okonkwo Henry</td>
+                    <td>LSQ1234876</td>
+                    <td>14, Sept 2019</td>
+                    <td><ul class="status"><li class="active">active</li></ul></td>
+                    <td><a href="#">&#8226;&#8226;&#8226;</a></td>
+                  </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -5,6 +5,7 @@ import { CustomersComponent } from './customers.component';
 import { LendersViewComponent } from './lenders-view/lenders-view.component';
 import { BorrowersComponent } from './borrowers/borrowers.component';
 import { BorrowersViewComponent } from './borrowers-view/borrowers-view.component';
+import { SaversComponent } from './savers/savers.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
       {path: 'lenders', component: LendersComponent},
       {path: 'lenders/view', component: LendersViewComponent},
       {path: 'borrowers', component: BorrowersComponent},
-      {path: 'borrowers/view', component: BorrowersViewComponent}
+      {path: 'borrowers/view', component: BorrowersViewComponent},
+      {path: 'savers', component: SaversComponent}
     ]
   }
 ];

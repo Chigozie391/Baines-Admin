@@ -1,0 +1,30 @@
+.status {
+    list-style: none;
+
+    & > .active::before {
+        content: "\2022";
+        color: #1bb133;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
+
+    & > .inactive::before {
+        content: "\2022";
+        color: #ea3869;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.table-head {
+    background-color: transparent;
+    text-transform: uppercase;
+}
