@@ -24,7 +24,7 @@ export class NavigationComponent {
     general = [
       {
         icon: 'dashboard',
-        route: 'Home',
+        route: 'Dashboard',
         url: '/app/dashboard',
         sub: []
       }

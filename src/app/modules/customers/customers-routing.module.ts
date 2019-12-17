@@ -7,6 +7,9 @@ import { BorrowersComponent } from './borrowers/borrowers.component';
 import { BorrowersViewComponent } from './borrowers-view/borrowers-view.component';
 import { SaversComponent } from './savers/savers.component';
 import { SaversViewComponent } from './savers-view/savers-view.component';
+import { SavingsComponent } from './savers-details/savings/savings.component';
+import { BankDetailsComponent } from './savers-details/bank-details/bank-details.component';
+import { SavingsDetailsComponent } from './savers-details/savings-details/savings-details.component';
 
 const routes: Routes = [
   {
@@ -16,7 +19,12 @@ const routes: Routes = [
       {path: 'borrowers', component: BorrowersComponent},
       {path: 'borrowers/view', component: BorrowersViewComponent},
       {path: 'savers', component: SaversComponent},
-      {path: 'savers/view', component: SaversViewComponent}
+      {path: 'savers/:id', component: SaversViewComponent},
+      {path: 'savers/:id/general', component: SaversViewComponent},
+      {path: 'savers/:id/savings', component: SavingsComponent},
+      {path: 'savers/:id/bank-details', component: BankDetailsComponent},
+      {path: 'savers/:id/savings/:id', component: SavingsDetailsComponent},
+
     ]
   }
 ];

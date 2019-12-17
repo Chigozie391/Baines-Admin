@@ -3,16 +3,16 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <!-- <mat-toolbar>
+    <mat-toolbar>
         <img src=".../../../../../assets/img/logo.svg" class="img-fluid pr-5 logo" alt="Lendsqr">
-    </mat-toolbar> -->
+    </mat-toolbar>
     <mat-nav-list>
 
       <ul class="app-nav" id="navigate">
         <ng-container *ngFor="let view of general; let i = index">
           <li routerLinkActive="active">
             <a routerLink="{{view.url}}"  mat-list-item>
-              <!-- <mat-icon mat-list-icon svgIcon="{{view.icon}}"></mat-icon> -->
+              <mat-icon mat-list-icon svgIcon="{{view.icon}}"></mat-icon>
               <span mat-line class="w-100 d-flex justify-content-between align-items-center ">
                 {{view.route}}
                 <mat-icon mat-list-icon *ngIf="view.sub && view.sub.length > 0">
@@ -36,7 +36,7 @@
         <ng-container *ngFor="let view of customers; let i = index">
           <li routerLinkActive="active">
             <a routerLink="{{view.url}}"  mat-list-item>
-              <!-- <mat-icon mat-list-icon svgIcon="{{view.icon}}"></mat-icon> -->
+              <mat-icon mat-list-icon svgIcon="{{view.icon}}"></mat-icon>
               <span mat-line class="w-100 d-flex justify-content-between align-items-center ">
                 {{view.route}}
                 <mat-icon mat-list-icon *ngIf="view.sub && view.sub.length > 0">
@@ -60,7 +60,7 @@
         <ng-container *ngFor="let view of business; let i = index">
           <li routerLinkActive="active">
             <a routerLink="{{view.url}}"  mat-list-item>
-              <!-- <mat-icon mat-list-icon svgIcon="{{view.icon}}"></mat-icon> -->
+              <mat-icon mat-list-icon svgIcon="{{view.icon}}"></mat-icon>
               <span mat-line class="w-100 d-flex justify-content-between align-items-center ">
                 {{view.route}}
                 <mat-icon mat-list-icon *ngIf="view.sub && view.sub.length > 0">
@@ -84,7 +84,7 @@
         <ng-container *ngFor="let view of settings; let i = index">
           <li routerLinkActive="active" (click)="showSub[i] = !showSub[i]">
             <a routerLink="{{view.url}}" mat-list-item>
-              <!-- <mat-icon mat-list-icon svgIcon="{{view.icon}}"></mat-icon> -->
+              <mat-icon mat-list-icon svgIcon="{{view.icon}}"></mat-icon>
               <span mat-line class="w-100 d-flex justify-content-between align-items-center ">
                 {{view.route}}
                 <mat-icon mat-list-icon *ngIf="view.sub && view.sub.length > 0">
