@@ -24,7 +24,7 @@
             <div class="card-body-menu">
               <ul class="menu-list">
                   <li><a routerLink="/app/customers/savers/LSQ1234876/general/" routerLinkActive="active-link">General</a></li>
-                  <li><a routerLink="/app/customers/savers/LSQ1234876/savings" routerLinkActive="active-link">Savings</a></li>
+                  <li><a routerLink="/app/customers/savers/LSQ1234876/savings" routerLinkActive="active-link">Savings Plans</a></li>
                   <!-- <li><a routerLink="general">Wallet</a></li> -->
                   <li><a routerLink="/app/customers/savers/LSQ1234876/bank-details" routerLinkActive="active-link">Bank Details</a></li>
               </ul>  
@@ -52,7 +52,7 @@
   
             <div class="col-md-5 col-12 mb-12">
               <span class="has-search">
-                  <mat-icon class="icon ml-2">search</mat-icon>
+                  <mat-icon class="icon ml-1 search-icon">search</mat-icon>
                 <input type="text" name="search" placeholder="Search by ID, date, type, e.t.c" class="search form-control" />
               </span>
               <!-- <button class="btn btn-primary">filter</button> -->
@@ -76,8 +76,8 @@
               <tr *ngFor="let country of [1,2,3,4,5,6,6,7,8,9,10]">
                 <td> <span class="badge badge-verified">Active</span></td>
                 <td><a routerLink="LSQ1234876">LSQ1234876</a></td>
-                <td>Student Savings</td>
-                <td><a routerLink="LSQ1234876">Fixed Deposit</a></td>
+                <td><a routerLink="LSQ1234876">Student Savings</a></td>
+                <td>Fixed Deposit</td>
                 <td>14 Jan 2019, 07:45:21</td>
                 <td>₦20,500</td>
               </tr>

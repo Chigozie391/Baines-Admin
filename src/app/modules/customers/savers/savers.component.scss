@@ -1,5 +1,6 @@
 .status {
     list-style: none;
+    position: relative;
 
     & > .active::before {
         content: "\2022";
@@ -8,6 +9,9 @@
         display: inline-block;
         width: 1em;
         margin-left: -1em;
+        position: absolute;
+        top: 0;
+        left: 8%;
     }
 
     & > .inactive::before {

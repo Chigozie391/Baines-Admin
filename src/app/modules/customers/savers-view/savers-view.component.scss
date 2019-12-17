@@ -3,10 +3,22 @@
 }
 
 .h6 {
-    font-weight: bold;
+    font-weight: bolder !important;
+    font-size: larger !important;
 }
 
-.profile-img {
+.profile {
     width: 100%;
-    height: auto;
+    height: 10rem;
+    background-size: cover;
+    background-blend-mode: screen;
+    float: right;
+
+    & > img {
+        display: none;
+    }
+
+    // &-img {
+    //     background-image: linear-gradient(to right bottom, #d17399, #a12255), url("../../../../assets/img/img-placeholder.png");
+    // }
 }
