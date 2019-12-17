@@ -1,0 +1,30 @@
+.return {
+    color: blue;
+    text-decoration: underline;
+}
+
+.user-data {
+    display: inline-block;
+    margin-bottom: 0;
+    padding-left: 1rem;
+    line-height: 2px;
+}
+
+.menu-list li{
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+
+    &:hover{
+        background-color: black;
+        color: #f4f5f7;
+    }
+    & > a {
+        text-decoration: none;
+
+        &:hover {
+            background-color: black;
+            color: #f4f5f7;
+        }
+    }
+}

@@ -9,9 +9,10 @@ import { LendersViewComponent } from './lenders-view/lenders-view.component';
 import { BorrowersComponent } from './borrowers/borrowers.component';
 import { BorrowersViewComponent } from './borrowers-view/borrowers-view.component';
 import { SaversComponent } from './savers/savers.component';
+import { SaversViewComponent } from './savers-view/savers-view.component';
 
 @NgModule({
-  declarations: [CustomersComponent, LendersComponent, LendersViewComponent, BorrowersComponent, BorrowersViewComponent, SaversComponent],
+  declarations: [CustomersComponent, LendersComponent, LendersViewComponent, BorrowersComponent, BorrowersViewComponent, SaversComponent, SaversViewComponent],
   imports: [
     CommonModule,
     CustomersRoutingModule,
