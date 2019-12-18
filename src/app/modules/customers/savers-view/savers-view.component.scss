@@ -7,18 +7,7 @@
     font-size: larger !important;
 }
 
-.profile {
+.profile-img {
     width: 100%;
-    height: 10rem;
-    background-size: cover;
-    background-blend-mode: screen;
-    float: right;
-
-    & > img {
-        display: none;
-    }
-
-    // &-img {
-    //     background-image: linear-gradient(to right bottom, #d17399, #a12255), url("../../../../assets/img/img-placeholder.png");
-    // }
+    height: 18.5rem;
 }

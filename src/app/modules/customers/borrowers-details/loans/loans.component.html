@@ -1,31 +1,40 @@
 <a routerLink="/app/customers/borrowers/" class="return">&larr; Back to Borrowers</a>
 
 <div class="row">
-    <div class="col-md-12 col-12 col-mb-12">
-        <div class="card">
-            <div class="card-body">
-                    <div class="col-md-12 col-12 col-mb-12">
-                        <span class="pic small round ml-12">
-                            <img src="../../../../assets/img/placeholder-user.png" alt="" class="img-fluid">
-                        </span>
-                        <div class="user-data">
-                            <h3>Chihurumanya Okwechime</h3>
-                            <small>LSQ38389290</small>
-                        </div>
-                    </div>
+  <div class="col-md-12 col-12 col-mb-12">
+      <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-8 col-12 col-mb-12">
+                <span class="pic small round ml-12">
+                    <img src="../../../../assets/img/placeholder-user.png" alt="" class="img-fluid">
+                </span>
+                <div class="user-data">
+                    <h3>Chihurumanya Okwechime</h3>
+                    <p>LSQ38389290</p>
+                </div>
             </div>
-        </div>
-    </div>
+
+            <div class="col-md-4 col-12 col-mb-12">
+              <div class="user-data">
+                <p>Total Loans Received</p>
+                  <h3>1,205,675.00</h3>
+              </div>
+          </div>
+            </div>
+          </div>
+      </div>
+  </div>
 </div>
 
 <div class="row">
     <div class="col-md-12 col-12 col-mb-12">
         <div class="card">
             <div class="card-body-menu">
-              <ul class="menu-list-2">
+              <ul class="menu-list">
                   <li><a routerLink="/app/customers/borrowers/LSQ1234876/general/" routerLinkActive="active-link">General</a></li>
                   <li><a routerLink="/app/customers/borrowers/LSQ1234876/loans" routerLinkActive="active-link">Loans</a></li>
-                  <li><a routerLink="/app/customers/borrowers/LSQ1234876/wallet" routerLinkActive="active-link">Wallet</a></li>
+                  <!-- <li><a routerLink="/app/customers/borrowers/LSQ1234876/wallet" routerLinkActive="active-link">Wallet</a></li> -->
                   <li><a routerLink="/app/customers/borrowers/LSQ1234876/bank-details" routerLinkActive="active-link">Bank Details</a></li>
               </ul>  
   
@@ -66,18 +75,20 @@
               <tr>
                 <th scope="col">Status</th>
                 <th scope="col">ID</th>
+                <th scope="col">Loan Purpose</th>
                 <th scope="col">Loan Product</th>
-                <th scope="col">last payment date</th>
+                <th scope="col">Repayment date</th>
                 <th scope="col">Amount</th>
               </tr>
             </thead>
             <tbody class="text-muted">
               <tr *ngFor="let country of [1,2,3,4,5,6,6,7,8,9,10]">
-                <td> <span class="badge badge-warning">Pending</span></td>
+                <td> <span class="badge badge-danger">running</span></td>
                 <td><a routerLink="LSQ1234876">LSQ1234876</a></td>
-                <td><a routerLink="LSQ1234876">Student Loan</a></td>
+                <td><a routerLink="LSQ1234876">Household Expenses</a></td>
+                <td>30 Days</td>
                 <td>14 Jan 2019, 07:45:21</td>
-                <td>₦200,500</td>
+                <td>₦200,500.00</td>
               </tr>
             </tbody>
           </table>

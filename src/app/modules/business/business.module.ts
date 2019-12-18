@@ -7,9 +7,10 @@ import { CollectionComponent } from './collection/collection.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { LoanProductComponent } from './loan-product/loan-product.component';
 import { SharedModule } from '../shared/shared.module';
+import { TransactionDetailsComponent } from './transaction-details/transaction-details.component';
 
 @NgModule({
-  declarations: [BusinessComponent,TransactionComponent, CollectionComponent, LoanProductComponent],
+  declarations: [BusinessComponent,TransactionComponent, CollectionComponent, LoanProductComponent, TransactionDetailsComponent],
   imports: [
     CommonModule,
     BusinessRoutingModule,

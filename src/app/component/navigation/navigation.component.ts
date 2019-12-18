@@ -44,7 +44,7 @@ export class NavigationComponent {
         sub: []
       },
       {
-        icon: 'saver',
+        icon: 'borrow',
         route: 'Savers',
         url: '/app/customers/savers',
         sub: []
@@ -141,18 +141,18 @@ export class NavigationComponent {
     private router: Router) {
       this.matIconRegistry.addSvgIcon('dashboard', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/dashboard.svg'));
       this.matIconRegistry.addSvgIcon('group', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/group.svg'));
-      this.matIconRegistry.addSvgIcon('borrow', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/borrow.svg'));
-      this.matIconRegistry.addSvgIcon('saver', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/saving.svg'));
-      this.matIconRegistry.addSvgIcon('loan-products', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/loan.svg'));
+      this.matIconRegistry.addSvgIcon('borrow', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/users.svg'));
+      this.matIconRegistry.addSvgIcon('saver', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/savings-product.svg'));
+      this.matIconRegistry.addSvgIcon('loan-products', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/loan-products.svg'));
       this.matIconRegistry.addSvgIcon('bank', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/bank.svg'));
       this.matIconRegistry.addSvgIcon('preference', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/preference.svg'));
       this.matIconRegistry.addSvgIcon('team', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/team.svg'));
-      this.matIconRegistry.addSvgIcon('transactions', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/transaction.svg'));
+      this.matIconRegistry.addSvgIcon('transactions', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/transactions.svg'));
       this.matIconRegistry.addSvgIcon('audit', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/audit.svg'));
       this.matIconRegistry.addSvgIcon('api', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/api.svg'));
-      this.matIconRegistry.addSvgIcon('transaction', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/account.svg'));
-      this.matIconRegistry.addSvgIcon('loan', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/assets.svg'));
-      this.matIconRegistry.addSvgIcon('lenders', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/notes.svg'));
+      this.matIconRegistry.addSvgIcon('transaction', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/profile.svg'));
+      this.matIconRegistry.addSvgIcon('loan', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/loan-products.svg'));
+      this.matIconRegistry.addSvgIcon('lenders', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/group.svg'));
       this.matIconRegistry.addSvgIcon('wallet', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/wallet.svg'));
       this.matIconRegistry.addSvgIcon('settings', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/settings.svg'));
       this.matIconRegistry.addSvgIcon('logout', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/logout.svg'));

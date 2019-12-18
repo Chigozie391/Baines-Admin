@@ -1,4 +1,97 @@
-<app-headers title="Transaction is under active development"></app-headers>
+<app-headers title="Transactions"></app-headers>
+
+
+<div class="row">
+    <div class="col-md-12 col-12 col-mb-12">
+        <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-2 col-12 col-mb-12">
+                  <div class="user-data">
+                      <h3>8,432</h3>
+                      <p class="text-muted">Total</p>
+                  </div>
+              </div>
+
+              <div class="col-md-2 col-12 col-mb-12 green">
+                <div class="user-data">
+                    <h3>4,008</h3>
+                    <p class="text-muted">Successful</p>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-12 col-mb-12 red">
+              <div class="user-data">
+                  <h3>317</h3>
+                  <p class="text-muted">Failed</p>
+              </div>
+          </div>
+
+          <div class="col-md-2 col-12 col-mb-12">
+            <div class="user-data">
+                <h3>4,157</h3>
+                <p class="text-muted">Reversed</p>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-12 col-mb-12">
+          <div class="user-data">
+              <h3>0</h3>
+              <p class="text-muted">Some Stat</p>
+          </div>
+      </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-12">
+        <div class="row justify-content-between align-items-center">
+          <div class="col">
+            <h5 class="m-0 p-0 text-dark-blue">All Transactions</h5>
+          </div>
+
+          <div class="col-md-5 col-12 mb-12">
+            <span class="has-search">
+                <mat-icon class="icon ml-1 search-icon">search</mat-icon>
+              <input type="text" name="search" placeholder="Search by ID, date, type, e.t.c" class="search form-control" />
+            </span>
+            <!-- <button class="btn btn-primary">filter</button> -->
+          </div>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Status</th>
+              <th scope="col">ID</th>
+              <th scope="col">Customer</th>
+              <th scope="col">Type</th>
+              <th scope="col">Date</th>
+              <th scope="col">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="text-muted">
+            <tr *ngFor="let country of [1,2,3]">
+              <td> <span class="badge badge-warning">Pending</span></td>
+              <td><a routerLink="LSQ1234876">LSQ1234876</a></td>
+              <td><a routerLink="LSQ1234876">Samuel Olabode</a></td>
+              <td>Loan Repayment</td>
+              <td>14 Jan 2019, 07:45:21</td>
+              <td>₦2,300,500.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
 
 <!-- <div class="row">
   <div class="col-md-3 mb-4 text-center" *ngFor="let item of [1,2,3,4]">
@@ -61,4 +154,5 @@
       </div>
     </div>
   </div>
-</div> -->
+</div> 
+-->

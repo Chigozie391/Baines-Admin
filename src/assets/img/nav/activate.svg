@@ -1,1 +1,23 @@
-<svg xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve"><switch><foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1" height="1"/><g i:extraneous="self"><g><path d="M38.4,41.2c-0.8,0.1-1.5,0.4-2,1l-7.5,8.9l-3.4-4c-1-1.2-2.9-1.4-4.2-0.4C20.1,47.9,20,49.8,21,51l5.6,6.7     c0.6,0.7,1.4,1.1,2.3,1.1c0.9,0,1.7-0.4,2.3-1.1l9.8-11.6c0.5-0.6,0.8-1.4,0.7-2.2c-0.1-0.8-0.4-1.5-1-2     C40,41.4,39.2,41.2,38.4,41.2z"/><path d="M74.2,26.7l-48.4,0C13,26.7,2.5,37.1,2.5,50c0,12.9,10.5,23.3,23.3,23.3l48.4,0C87,73.3,97.5,62.9,97.5,50     C97.5,37.1,87,26.7,74.2,26.7z M25.8,67.1c-9.4,0-17.1-7.7-17.1-17.1c0-9.4,7.7-17.1,17.1-17.1h32.5c-4.6,4.3-7.5,10.3-7.5,17.1     c0,6.7,2.9,12.8,7.5,17.1H25.8z M74.2,67.1c-9.4,0-17.1-7.7-17.1-17.1c0-9.4,7.7-17.1,17.1-17.1S91.2,40.6,91.2,50     C91.2,59.4,83.6,67.1,74.2,67.1z"/></g></g></switch><text x="0" y="115" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Adrien Coquet</text><text x="0" y="120" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="7.85433in" height="3.85276in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 7854 3853"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:#545F7D}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1795922385200" i:extraneous="self">
+   <g>
+    <path class="fil0" d="M2968 1199c-66,8 -124,33 -165,82l-620 736 -281 -330c-83,-100 -240,-116 -348,-33 -99,99 -107,256 -24,355l463 554c49,58 115,91 190,91 74,0 140,-33 190,-91l810 -959c41,-50 66,-116 58,-182 -8,-66 -33,-124 -83,-165 -58,-42 -124,-58 -190,-58z"/>
+    <path class="fil0" d="M5928 0l-4002 0c-1058,0 -1926,860 -1926,1926 0,1067 868,1927 1926,1927l4002 0c1058,0 1926,-860 1926,-1927 0,-1066 -868,-1926 -1926,-1926zm-4002 3340c-777,0 -1413,-636 -1413,-1414 0,-777 636,-1413 1413,-1413l2687 0c-380,355 -620,851 -620,1413 0,554 240,1059 620,1414l-2687 0zm4002 0c-777,0 -1414,-636 -1414,-1414 0,-777 637,-1413 1414,-1413 777,0 1405,636 1405,1413 0,778 -628,1414 -1405,1414z"/>
+   </g>
+  </g>
+ </g>
+</svg>
