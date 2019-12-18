@@ -1,36 +1,9 @@
-.status {
-    list-style: none;
-    position: relative;
 
-    & > .active::before {
-        content: "\2022";
-        color: #1bb133;
-        font-weight: bold;
-        display: inline-block;
-        width: 1em;
-        margin-left: -1em;
-        position: absolute;
-        top: 0;
-        left: 8%;
-    }
-
-    & > .inactive::before {
-        content: "\2022";
-        color: #ea3869;
-        font-weight: bold;
-        display: inline-block;
-        width: 1em;
-        margin-left: -1em;
-    }
-}
 
 .action {
     cursor: pointer;
 }
 
-a {
-    text-decoration: none;
-}
 
 .table-head {
     background-color: transparent;

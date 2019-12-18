@@ -38,13 +38,13 @@ export class NavigationComponent {
         sub: []
       },
       {
-        icon: 'group',
+        icon: 'borrow',
         route: 'Borrowers',
         url: '/app/customers/borrowers',
         sub: []
       },
       {
-        icon: 'group',
+        icon: 'saver',
         route: 'Savers',
         url: '/app/customers/savers',
         sub: []
@@ -54,13 +54,13 @@ export class NavigationComponent {
 
     business = [
       {
-        icon: 'loan',
+        icon: 'loan-products',
         route: 'Loan products',
         url: '/app/business/loan-product',
         sub: []
       },
       {
-        icon: 'loan',
+        icon: 'saver',
         route: 'Savings products',
         url: '/app/business/loan-product',
         sub: []
@@ -72,13 +72,13 @@ export class NavigationComponent {
         sub: []
       },
       {
-        icon: 'loan',
+        icon: 'saver',
         route: 'Savings',
         url: '/app/business/loan-product',
         sub: []
       },
       {
-        icon: 'transaction',
+        icon: 'transactions',
         route: 'Transactions',
         url: '/app/business/transactions',
         sub: []
@@ -88,25 +88,25 @@ export class NavigationComponent {
 
     settings = [
       {
-        icon: 'group',
+        icon: 'transaction',
         route: 'Account',
         url: '/app/users',
         sub: []
       },
       {
-        icon: 'api',
+        icon: 'bank',
         route: 'Bank Information',
         url: '/app/apis',
         sub: []
       },
       {
-        icon: 'audit',
+        icon: 'team',
         route: 'Team',
         url: '/app/audits',
         sub: []
       },
       {
-        icon: 'audit',
+        icon: 'preference',
         route: 'Preferences',
         url: '/app/audits',
         sub: []
@@ -141,7 +141,14 @@ export class NavigationComponent {
     private router: Router) {
       this.matIconRegistry.addSvgIcon('dashboard', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/dashboard.svg'));
       this.matIconRegistry.addSvgIcon('group', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/group.svg'));
-      this.matIconRegistry.addSvgIcon('audit', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/file.svg'));
+      this.matIconRegistry.addSvgIcon('borrow', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/borrow.svg'));
+      this.matIconRegistry.addSvgIcon('saver', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/saving.svg'));
+      this.matIconRegistry.addSvgIcon('loan-products', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/loan.svg'));
+      this.matIconRegistry.addSvgIcon('bank', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/bank.svg'));
+      this.matIconRegistry.addSvgIcon('preference', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/preference.svg'));
+      this.matIconRegistry.addSvgIcon('team', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/team.svg'));
+      this.matIconRegistry.addSvgIcon('transactions', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/transaction.svg'));
+      this.matIconRegistry.addSvgIcon('audit', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/audit.svg'));
       this.matIconRegistry.addSvgIcon('api', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/api.svg'));
       this.matIconRegistry.addSvgIcon('transaction', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/account.svg'));
       this.matIconRegistry.addSvgIcon('loan', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/assets.svg'));
@@ -149,6 +156,9 @@ export class NavigationComponent {
       this.matIconRegistry.addSvgIcon('wallet', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/wallet.svg'));
       this.matIconRegistry.addSvgIcon('settings', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/settings.svg'));
       this.matIconRegistry.addSvgIcon('logout', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/logout.svg'));
+      this.matIconRegistry.addSvgIcon('activate', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/activate.svg'));
+      this.matIconRegistry.addSvgIcon('deactivate', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/deactivate.svg'));
+      this.matIconRegistry.addSvgIcon('blacklist', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/blacklist.svg'));
 
       router.events.pipe(
         withLatestFrom(this.isHandset$),

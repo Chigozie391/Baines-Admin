@@ -13,9 +13,14 @@ import { SaversViewComponent } from './savers-view/savers-view.component';
 import { SavingsComponent } from './savers-details/savings/savings.component';
 import { BankDetailsComponent } from './savers-details/bank-details/bank-details.component';
 import { SavingsDetailsComponent } from './savers-details/savings-details/savings-details.component';
+import { LoansComponent } from './borrowers-details/loans/loans.component';
+import { WalletComponent } from './borrowers-details/wallet/wallet.component';
+import { BorrowersBankDetailsComponent } from './borrowers-details/bank-details/bank-details.component';
+import { LoanDetailsComponent } from './borrowers-details/loan-details/loan-details.component';
+
 
 @NgModule({
-  declarations: [CustomersComponent, LendersComponent, LendersViewComponent, BorrowersComponent, BorrowersViewComponent, SaversComponent, SaversViewComponent, SavingsComponent, BankDetailsComponent, SavingsDetailsComponent],
+  declarations: [CustomersComponent, LendersComponent, LendersViewComponent, BorrowersComponent, BorrowersViewComponent, SaversComponent, SaversViewComponent, SavingsComponent, BankDetailsComponent, SavingsDetailsComponent, BorrowersBankDetailsComponent, LoansComponent, WalletComponent, LoanDetailsComponent],
   imports: [
     CommonModule,
     CustomersRoutingModule,

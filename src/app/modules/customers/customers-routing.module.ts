@@ -10,6 +10,10 @@ import { SaversViewComponent } from './savers-view/savers-view.component';
 import { SavingsComponent } from './savers-details/savings/savings.component';
 import { BankDetailsComponent } from './savers-details/bank-details/bank-details.component';
 import { SavingsDetailsComponent } from './savers-details/savings-details/savings-details.component';
+import { LoansComponent } from './borrowers-details/loans/loans.component';
+import { WalletComponent } from './borrowers-details/wallet/wallet.component';
+import { BorrowersBankDetailsComponent } from './borrowers-details/bank-details/bank-details.component';
+import { LoanDetailsComponent } from './borrowers-details/loan-details/loan-details.component';
 
 const routes: Routes = [
   {
@@ -17,7 +21,11 @@ const routes: Routes = [
       {path: 'lenders', component: LendersComponent},
       {path: 'lenders/view', component: LendersViewComponent},
       {path: 'borrowers', component: BorrowersComponent},
-      {path: 'borrowers/view', component: BorrowersViewComponent},
+      {path: 'borrowers/:id/general', component: BorrowersViewComponent},
+      {path: 'borrowers/:id/loans', component: LoansComponent},
+      {path: 'borrowers/:id/wallet', component: WalletComponent},
+      {path: 'borrowers/:id/bank-details', component: BorrowersBankDetailsComponent},
+      {path: 'borrowers/:id/loans/:id', component: LoanDetailsComponent},
       {path: 'savers', component: SaversComponent},
       {path: 'savers/:id', component: SaversViewComponent},
       {path: 'savers/:id/general', component: SaversViewComponent},

@@ -137,6 +137,32 @@ button:active {
   }
 }
 
+.status {
+  list-style: none;
+  position: relative;
+
+  & > .active::before {
+      content: "\2022";
+      color: #1bb133;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      position: absolute;
+      top: 1%;
+      left: 5%;
+  }
+
+  & > .inactive::before {
+      content: "\2022";
+      color: #ea3869;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+  }
+}
+
 .active-link {
   background-color: #333333;
   color: #ffffff;
@@ -169,6 +195,34 @@ button:active {
           }
       }
   }    
+}
+
+.menu-list-2{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  & > li{
+      width: 25%;
+      float: left;
+
+      & > a {
+          display: block;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+
+          &:hover, &:active{
+              background-color: black;
+              color: #f4f5f7;
+          }
+      }
+  }    
+}
+
+hr {
+  border: 1px solid #ccc;
 }
 
 .return {

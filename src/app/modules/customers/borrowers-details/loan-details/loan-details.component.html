@@ -1,0 +1,72 @@
+
+<a routerLink="/app/customers/borrowers/LSQ1234876/loans" class="return">&larr; Back</a>
+
+<div class="row">
+
+    <div class="col-md-12 col-12 mb-12">
+        <div class="card">
+          <div class="card-body">
+              <div class="row">
+                  <div class="col-md-12 col-12 col-mb-12">
+                      <div class="user-data">
+                          <h3>Student Loan</h3>
+                          <small>LSQ38389290</small>
+                      </div>
+                  </div>
+              </div>
+            <div class="row">
+              <div class="col-md-3">
+                  <div class="col-md-12 text-left">
+                    <small class="text-muted">
+                        Borrower's Details
+                    </small>
+                    <h6>Chihurumanya Okwechime</h6>
+                    <h6>Chihurumanya@company.com</h6>
+                    <h6>+233 3850 07281</h6>
+                  </div>
+              </div>
+              <div class="col-md-3">
+                <div class="col-md-12 text-left">
+                  <small class="text-muted">
+                      Loan Details
+                  </small>
+                  <h6>Amount: NGN100,510.00</h6>
+                  <h6>Interest Rate: 5%</h6>
+                  <h6>Repayment Starts: 14 Sep 2019</h6>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3 col-3 mb-3">
+        <h6>Chihurumanya's Repayment History</h6>
+    </div>
+    <div class="col-md-9 col-9 mb-9">
+        <hr>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Status</th>
+          <th scope="col">Transaction ID</th>
+          <th scope="col">Date Paid</th>
+          <th scope="col">Amount (NGN)</th>
+        </tr>
+      </thead>
+      <tbody class="text-muted">
+        <tr *ngFor="let country of [1,2,3,4,5]">
+          <td> <span class="badge badge-verified">Successful</span></td>
+          <td>LSQ1234876</td>
+          <td>14 Sep 2019, 07:45:21</td>
+          <td>₦20,000.00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
