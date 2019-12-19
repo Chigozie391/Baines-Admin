@@ -1,6 +1,6 @@
-<a routerLink="/app/business/loan-product" class="return">&larr; Back</a>
+<a routerLink="/app/business/savings-product" class="return">&larr; Back</a>
 
-<app-headers title="Add New Loan Products"></app-headers>
+<app-headers title="Add New Savings Products"></app-headers>
 
 
 <div class="row">
@@ -12,14 +12,18 @@
                         <div class="row" style="padding: 2rem 2rem;">
                             <div class="col-md-3 col-12 col-mb-12">
                                 <div class="user-data centered">
-                                    <h4>Loan Details</h4>
-                                    <small class="text-muted">Enter loan details here</small>
+                                    <h4>Savings Details</h4>
+                                    <small class="text-muted">Enter savings details here</small>
                                 </div>
                             </div>
                             <div class="col-md-9 col-12 mb-12">
                                 <form action="">
                                         <div class="form-group">
-                                            <label for="productName">Loan Product Name</label>
+                                            <label for="productName">Loan Savings Name</label>
+                                            <input type="text" id="productName" class="form-control ">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="productName">Loan Savings Description</label>
                                             <input type="text" id="productName" class="form-control ">
                                         </div>
                                         <div class="row">
@@ -37,13 +41,30 @@
                                                 <label for="productName">Interest Rate</label>
                                                 <input type="text" id="productName" placeholder="Interest %" class="form-control ">
                                             </div>
+                                            
                                             <div class="form-group col-md-6">
-                                                <label for="productName">Tenor</label>
+                                                <label for="productName">Penal Charge</label>
+                                                <input type="text" id="productName" placeholder="Rate %" class="form-control ">
+                                            </div>                                            
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-6">
+                                                <label for="productName">Witholding Tax</label>
+                                                <input type="text" id="productName" placeholder="Rate %" class="form-control ">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="productName">Tenor Range</label>
                                                 <select id="productName" class="form-control ">
                                                     <option value="15 days">15 Days</option>
                                                     <option value="30 days">30 Days</option>
                                                 </select>
                                             </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-check col-md-6">
+                                                <input type="checkbox" id="productName" placeholder="Rate %" class="form-check-input ">
+                                                <label class="form-check-label" for="productName">Fixed Deposit?</label>
+                                            </div>  
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-md-6"></div>
@@ -59,32 +80,25 @@
                             </div>
                         </div>
                     </mat-tab>
-                    <mat-tab label="Repayment Details">
+                    <mat-tab label="Payment Details">
                         <div class="row" style="padding: 2rem 2rem;">
                             <div class="col-md-3 col-12 col-mb-12">
                                 <div class="user-data centered">
-                                    <h4>Repayment Details</h4>
-                                    <small class="text-muted">Enter loan repayment details here</small>
+                                    <h4>Payment Details</h4>
+                                    <small class="text-muted">Enter savings payment details here</small>
                                 </div>
                             </div>
                             <div class="col-md-9 col-12 mb-12">
                                 <form action="">
                                         <div class="form-group">
-                                            <label for="productName">Repayment Method</label>
+                                            <label for="productName">Payment Method</label>
                                             <select id="productName" class="form-control ">
                                                 <option value="15 days">Card</option>
-                                                <option value="30 days">Bank Direct Debit</option>
                                                 <option value="30 days">Wallet</option>
+                                                <option value="30 days">Transfer</option>
                                             </select>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="productName">Repayment Model</label>
-                                            <select id="productName" class="form-control ">
-                                                <option value="15 days">Reducing Balance</option>
-                                                <option value="30 days">Straight Line</option>
-                                            </select>
-                                        </div>
-
+  
                                         <div class="row">
                                             <div class="form-group col-md-6"></div>
                                             <div class="form-group col-md-3">

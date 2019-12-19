@@ -10,6 +10,8 @@ import { LoansComponent } from './loans/loans.component';
 import { SavingsComponent } from './savings/savings.component';
 import { LoanProductDetailsComponent } from './loan-product/loan-product-details/loan-product-details.component';
 import { NewLoanProductComponent } from './loan-product/new-loan-product/new-loan-product.component';
+import { SavingsProductDetailsComponent } from './savings-product/savings-product-details/savings-product-details.component';
+import { NewSavingsProductComponent } from './savings-product/new-savings-product/new-savings-product.component';
 
 const routes: Routes = [
   {
@@ -22,9 +24,11 @@ const routes: Routes = [
       { path: 'general', component: LoanProductDetailsComponent},
       { path: 'save', component: LoanProductDetailsComponent},
       { path: 'savings-product', component: SavingsProductComponent },
+      { path: 'savings-product/:id', component: SavingsProductDetailsComponent},
       { path: 'loans', component: LoansComponent },
       { path: 'savings', component: SavingsComponent },
-      { path: 'new-loan-product', component: NewLoanProductComponent}
+      { path: 'new-loan-product', component: NewLoanProductComponent},
+      { path: 'new-savings-product', component: NewSavingsProductComponent}
     ]
   }
 ];

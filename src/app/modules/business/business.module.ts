@@ -13,9 +13,11 @@ import { SavingsComponent } from './savings/savings.component';
 import { SavingsProductComponent } from './savings-product/savings-product.component';
 import { LoanProductDetailsComponent } from './loan-product/loan-product-details/loan-product-details.component';
 import { NewLoanProductComponent } from './loan-product/new-loan-product/new-loan-product.component';
+import { SavingsProductDetailsComponent } from './savings-product/savings-product-details/savings-product-details.component';
+import { NewSavingsProductComponent } from './savings-product/new-savings-product/new-savings-product.component';
 
 @NgModule({
-  declarations: [BusinessComponent,TransactionComponent, CollectionComponent, LoanProductComponent, TransactionDetailsComponent, LoansComponent, SavingsComponent, SavingsProductComponent, LoanProductDetailsComponent, NewLoanProductComponent],
+  declarations: [BusinessComponent,TransactionComponent, CollectionComponent, LoanProductComponent, TransactionDetailsComponent, LoansComponent, SavingsComponent, SavingsProductComponent, LoanProductDetailsComponent, NewLoanProductComponent, SavingsProductDetailsComponent, NewSavingsProductComponent],
   imports: [
     CommonModule,
     BusinessRoutingModule,
