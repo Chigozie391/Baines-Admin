@@ -137,8 +137,29 @@ button:active {
   }
 }
 
+.card-white {
+  border: 0;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
 .action {
   cursor: pointer;
+}
+
+.loan-action{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ccc;
+  padding: 5px 5px;
+  border-radius: 50%;
+  transition: all .3s;
+
+  &:hover {
+    background-color: #e8e8e9;
+  }
 }
 
 
@@ -226,6 +247,36 @@ button:active {
   }    
 }
 
+.menu-list-3{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  & > li{
+      width: 50%;
+      float: left;
+
+      & > a {
+          display: block;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+
+          &:hover, &:active{
+              background-color: black;
+              color: #f4f5f7;
+          }
+      }
+  }    
+}
+
+.centered {
+  position: relative;
+  top: 30%;
+  left: 0;
+}
+
 hr {
   border: 1px solid #ccc;
 }
@@ -240,6 +291,71 @@ hr {
   margin-bottom: 0;
   padding-left: 1rem;
   line-height: 2px;
+}
+
+.user-data-space{
+  display: inline-block;
+  margin-bottom: 2rem;
+  line-height: 2px;
+}
+
+.cosmos {
+  position: relative;
+  &-1 {
+    position: absolute;
+    background-color: rgb(221, 219, 219);
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    width: 15px;
+    height: 15px;
+    top: .2rem;
+    left: 0;
+  }
+
+  &-2 {
+    position: absolute;
+    background-color:rgb(219, 218, 218);
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    width: 15px;
+    height: 15px;
+    top: .2rem;
+    left: .4rem;
+  }
+
+  &-3 {
+    position: absolute;
+    background-color:rgb(214, 212, 212);
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    width: 15px;
+    height: 15px;
+    top: .2rem;
+    left: .8rem;
+  }
+
+  &-4 {
+    position: absolute;
+    background-color:rgb(207, 204, 204);
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    width: 15px;
+    height: 15px;
+    top: .2rem;
+    left: 1.2rem;
+  }
+
+  &-5 {
+    position: absolute;
+    background-color:rgb(199, 196, 196);
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    width: 15px;
+    height: 15px;
+    top: .2rem;
+    left: 1.6rem;
+  }
+
 }
 
 .red {

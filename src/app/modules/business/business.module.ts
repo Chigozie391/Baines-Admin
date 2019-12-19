@@ -8,9 +8,14 @@ import { TransactionComponent } from './transaction/transaction.component';
 import { LoanProductComponent } from './loan-product/loan-product.component';
 import { SharedModule } from '../shared/shared.module';
 import { TransactionDetailsComponent } from './transaction-details/transaction-details.component';
+import { LoansComponent } from './loans/loans.component';
+import { SavingsComponent } from './savings/savings.component';
+import { SavingsProductComponent } from './savings-product/savings-product.component';
+import { LoanProductDetailsComponent } from './loan-product/loan-product-details/loan-product-details.component';
+import { NewLoanProductComponent } from './loan-product/new-loan-product/new-loan-product.component';
 
 @NgModule({
-  declarations: [BusinessComponent,TransactionComponent, CollectionComponent, LoanProductComponent, TransactionDetailsComponent],
+  declarations: [BusinessComponent,TransactionComponent, CollectionComponent, LoanProductComponent, TransactionDetailsComponent, LoansComponent, SavingsComponent, SavingsProductComponent, LoanProductDetailsComponent, NewLoanProductComponent],
   imports: [
     CommonModule,
     BusinessRoutingModule,
