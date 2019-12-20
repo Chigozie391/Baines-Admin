@@ -15,9 +15,14 @@ import { LoanProductDetailsComponent } from './loan-product/loan-product-details
 import { NewLoanProductComponent } from './loan-product/new-loan-product/new-loan-product.component';
 import { SavingsProductDetailsComponent } from './savings-product/savings-product-details/savings-product-details.component';
 import { NewSavingsProductComponent } from './savings-product/new-savings-product/new-savings-product.component';
+import { LoanDetailsComponent } from './loans/loan-details/loan-details.component';
+import { BorrowerDetailsComponent } from './loans/borrower-details/borrower-details.component';
+import { LoanScheduleComponent } from './loans/loan-schedule/loan-schedule.component';
+import { SaverDetailsComponent } from './savings/saver-details/saver-details.component';
+import { SavingsDetailsComponent } from './savings/savings-details/savings-details.component';
 
 @NgModule({
-  declarations: [BusinessComponent,TransactionComponent, CollectionComponent, LoanProductComponent, TransactionDetailsComponent, LoansComponent, SavingsComponent, SavingsProductComponent, LoanProductDetailsComponent, NewLoanProductComponent, SavingsProductDetailsComponent, NewSavingsProductComponent],
+  declarations: [BusinessComponent,TransactionComponent, CollectionComponent, LoanProductComponent, TransactionDetailsComponent, LoansComponent, SavingsComponent, SavingsProductComponent, LoanProductDetailsComponent, NewLoanProductComponent, SavingsProductDetailsComponent, NewSavingsProductComponent, LoanDetailsComponent, BorrowerDetailsComponent, LoanScheduleComponent, SaverDetailsComponent, SavingsDetailsComponent],
   imports: [
     CommonModule,
     BusinessRoutingModule,

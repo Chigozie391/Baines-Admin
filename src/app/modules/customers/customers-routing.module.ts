@@ -14,10 +14,14 @@ import { LoansComponent } from './borrowers-details/loans/loans.component';
 import { WalletComponent } from './borrowers-details/wallet/wallet.component';
 import { BorrowersBankDetailsComponent } from './borrowers-details/bank-details/bank-details.component';
 import { LoanDetailsComponent } from './borrowers-details/loan-details/loan-details.component';
+import { UsersComponent } from './users/users.component';
+import { UserDetailsComponent } from './users/user-details/user-details.component';
 
 const routes: Routes = [
   {
     path: '', component: CustomersComponent, children: [
+      {path: 'users', component: UsersComponent},
+      {path: 'users/:id', component: UserDetailsComponent},
       {path: 'lenders', component: LendersComponent},
       {path: 'lenders/view', component: LendersViewComponent},
       {path: 'borrowers', component: BorrowersComponent},

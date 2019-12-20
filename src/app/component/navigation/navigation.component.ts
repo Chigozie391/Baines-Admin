@@ -34,7 +34,7 @@ export class NavigationComponent {
       {
         icon: 'group',
         route: 'Users',
-        url: '/app/customers/lenders',
+        url: '/app/customers/users',
         sub: []
       },
       {
@@ -96,7 +96,7 @@ export class NavigationComponent {
       {
         icon: 'bank',
         route: 'Bank Information',
-        url: '/app/apis',
+        url: '/app/settings/bank-information',
         sub: []
       },
       {
@@ -108,7 +108,7 @@ export class NavigationComponent {
       {
         icon: 'preference',
         route: 'Preferences',
-        url: '/app/audits',
+        url: '/app/settings/preferences',
         sub: []
       },
       {

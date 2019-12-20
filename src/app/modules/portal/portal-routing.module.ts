@@ -19,6 +19,9 @@ const routes: Routes = [
       },
       {
         path: 'business', loadChildren: () => import('../business/business.module').then(mod => mod.BusinessModule)
+      },
+      {
+        path: 'settings', loadChildren: () => import('../settings/settings.module').then(mod => mod.SettingsModule)
       }
     ]
   }
