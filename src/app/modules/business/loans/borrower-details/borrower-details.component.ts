@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./borrower-details.component.scss']
 })
 export class BorrowerDetailsComponent implements OnInit {
+  borrowersName = 'Borower Name';
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
