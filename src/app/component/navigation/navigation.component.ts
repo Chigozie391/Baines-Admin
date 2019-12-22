@@ -90,7 +90,7 @@ export class NavigationComponent {
       {
         icon: 'transaction',
         route: 'Account',
-        url: '/app/users',
+        url: '/app/settings/account',
         sub: []
       },
       {
@@ -102,7 +102,7 @@ export class NavigationComponent {
       {
         icon: 'team',
         route: 'Team',
-        url: '/app/audits',
+        url: '/app/settings/team',
         sub: []
       },
       {
@@ -161,6 +161,8 @@ export class NavigationComponent {
       this.matIconRegistry.addSvgIcon('blacklist', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/blacklist.svg'));
       this.matIconRegistry.addSvgIcon('edit', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/edit.svg'));
       this.matIconRegistry.addSvgIcon('delete', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/Delete.svg'));
+      this.matIconRegistry.addSvgIcon('list', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/List.svg'));
+      this.matIconRegistry.addSvgIcon('grid', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/Grid.svg'));
 
       router.events.pipe(
         withLatestFrom(this.isHandset$),

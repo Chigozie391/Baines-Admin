@@ -77,8 +77,23 @@ $colors: (
   font-family: 'PT Mono', monospace;
 }
 
+.grid-type{
+  float: right;
+  width: 17px; 
+  height: 17px;
+  margin-left: 5px;
+  top: 0;
+  // bottom: -3px;
+}
+
 .row{
   margin-top: 2rem;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.row-no-margin{
+  margin-top: 1rem;
   margin-right: 0;
   margin-left: 0;
 }
@@ -192,7 +207,7 @@ button:active {
 }
 
 .active-link {
-  background-color: #333333;
+  background-color: #193152;
   color: #ffffff;
 }
 
@@ -218,7 +233,7 @@ button:active {
           text-decoration: none;
 
           &:hover, &:active{
-              background-color: black;
+              background-color: #193152;
               color: #f4f5f7;
           }
       }
@@ -242,7 +257,7 @@ button:active {
           text-decoration: none;
 
           &:hover, &:active{
-              background-color: black;
+              background-color: #193152;
               color: #f4f5f7;
           }
       }
@@ -266,7 +281,7 @@ button:active {
           text-decoration: none;
 
           &:hover, &:active{
-              background-color: black;
+              background-color: #193152;
               color: #f4f5f7;
           }
       }

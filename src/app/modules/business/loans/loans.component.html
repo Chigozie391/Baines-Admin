@@ -63,15 +63,16 @@
     <div class="col-md-12 col-12 col-mb-12">
         <div class="card">
           <div class="card-body">
-            <span class="pic small square ml-3" style="float: right; width: 20px; height: 20px;">
-              <img src="../../../../assets/img/nav/List.svg" alt="" class="img-fluid">
-          </span>
-          &nbsp;
-            <span class="pic small square ml-3" style="float: right; width: 20px; height: 20px;">
-              <img src="../../../../assets/img/nav/Grid.svg" alt="" class="img-fluid">
-          </span>
+
+
+            <ngb-tabset type="pills" justify="end">
+              <ngb-tab>
+                <ng-template ngbTabTitle>
+                  <mat-icon svgIcon="grid"></mat-icon>
+                </ng-template>
+                <ng-template ngbTabContent>
             <hr>
-  
+
             <div class="row">
               <div class="col-md-4 col-12 col-mb-6">
                 <div class="card-white">
@@ -296,6 +297,53 @@
   </div>
   
         </div>
+
+            </ng-template>
+            </ngb-tab>
+
+            <ngb-tab>
+              <ng-template ngbTabTitle>
+                <mat-icon svgIcon="list"></mat-icon>
+              </ng-template>
+              <ng-template ngbTabContent>
+          <hr>
+
+          <div class="row">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Loans</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Interest</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Borrowers</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="text-muted">
+                  <tr *ngFor="let country of [1,2,3,4,5]">
+                    <td><a routerLink="LSQ1234876">Student Loans 001</a></td>
+                    <td><a routerLink="LSQ1234876">LSQ1234876</a></td>
+                    <td><a routerLink="LSQ1234876">23%</a></td>
+                    <td>500 - 500,000</td>
+                    <td>23</td>
+                    <span [matMenuTriggerFor]="action" class="action">
+                      <td>&#8226;&#8226;&#8226;</td>
+                      </span>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          </ng-template>
+          </ngb-tab>
+
+
+            </ngb-tabset>
+
+
         </div>
       </div>
     </div>

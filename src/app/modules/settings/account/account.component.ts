@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-bank-information',
-  templateUrl: './bank-information.component.html',
-  styleUrls: ['./bank-information.component.scss'],
+  selector: 'app-account',
+  templateUrl: './account.component.html',
+  styleUrls: ['./account.component.scss'],
   providers: [NgbModalConfig, NgbModal]
+
 })
-export class BankInformationComponent implements OnInit {
+export class AccountComponent implements OnInit {
 
   constructor(config: NgbModalConfig, private modalService: NgbModal) {
     config.backdrop = 'static';
@@ -17,7 +18,7 @@ export class BankInformationComponent implements OnInit {
    open(content) {
     this.modalService.open(content);
   }
-
+  
   ngOnInit() {
   }
 
