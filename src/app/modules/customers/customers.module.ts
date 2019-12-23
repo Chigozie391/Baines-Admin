@@ -7,6 +7,7 @@ import { LendersComponent } from './lenders/lenders.component';
 import { SharedModule } from '../shared/shared.module';
 import { LendersViewComponent } from './lenders-view/lenders-view.component';
 import { BorrowersComponent } from './borrowers/borrowers.component';
+<<<<<<< HEAD
 import { BorrowersViewComponent } from './borrowers-view/borrowers-view.component';
 import { SaversComponent } from './savers/savers.component';
 import { SaversViewComponent } from './savers-view/savers-view.component';
@@ -23,6 +24,14 @@ import { UserDetailsComponent } from './users/user-details/user-details.componen
 
 @NgModule({
   declarations: [CustomersComponent, LendersComponent, LendersViewComponent, BorrowersComponent, BorrowersViewComponent, SaversComponent, SaversViewComponent, SavingsComponent, BankDetailsComponent, SavingsDetailsComponent, BorrowersBankDetailsComponent, LoansComponent, WalletComponent, LoanDetailsComponent, UsersComponent, UserDetailsComponent],
+=======
+import { BorrowersViewComponent } from './borrowers-view/borrowers-view.component';
+import { SaversComponent } from './savers/savers.component';
+import { SaversViewComponent } from './savers-view/savers-view.component';
+
+@NgModule({
+  declarations: [CustomersComponent, LendersComponent, LendersViewComponent, BorrowersComponent, BorrowersViewComponent, SaversComponent, SaversViewComponent],
+>>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
   imports: [
     CommonModule,
     CustomersRoutingModule,

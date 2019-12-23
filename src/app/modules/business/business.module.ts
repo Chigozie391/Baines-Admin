@@ -7,6 +7,7 @@ import { CollectionComponent } from './collection/collection.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { LoanProductComponent } from './loan-product/loan-product.component';
 import { SharedModule } from '../shared/shared.module';
+<<<<<<< HEAD
 import { TransactionDetailsComponent } from './transaction-details/transaction-details.component';
 import { LoansComponent } from './loans/loans.component';
 import { SavingsComponent } from './savings/savings.component';
@@ -23,6 +24,11 @@ import { SavingsDetailsComponent } from './savings/savings-details/savings-detai
 
 @NgModule({
   declarations: [BusinessComponent,TransactionComponent, CollectionComponent, LoanProductComponent, TransactionDetailsComponent, LoansComponent, SavingsComponent, SavingsProductComponent, LoanProductDetailsComponent, NewLoanProductComponent, SavingsProductDetailsComponent, NewSavingsProductComponent, LoanDetailsComponent, BorrowerDetailsComponent, LoanScheduleComponent, SaverDetailsComponent, SavingsDetailsComponent],
+=======
+
+@NgModule({
+  declarations: [BusinessComponent,TransactionComponent, CollectionComponent, LoanProductComponent],
+>>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
   imports: [
     CommonModule,
     BusinessRoutingModule,

@@ -3,16 +3,26 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
+<<<<<<< HEAD
     <mat-toolbar>
         <img src=".../../../../../assets/img/logo.png" class="img-fluid pr-5 logo" alt="Lendsqr">
     </mat-toolbar>
+=======
+    <!-- <mat-toolbar>
+        <img src=".../../../../../assets/img/logo.svg" class="img-fluid pr-5 logo" alt="Lendsqr">
+    </mat-toolbar> -->
+>>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
     <mat-nav-list>
 
       <ul class="app-nav" id="navigate">
         <ng-container *ngFor="let view of general; let i = index">
           <li routerLinkActive="active">
             <a routerLink="{{view.url}}"  mat-list-item>
+<<<<<<< HEAD
               <mat-icon mat-list-icon svgIcon="{{view.icon}}"></mat-icon>
+=======
+              <!-- <mat-icon mat-list-icon svgIcon="{{view.icon}}"></mat-icon> -->
+>>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
               <span mat-line class="w-100 d-flex justify-content-between align-items-center ">
                 {{view.route}}
                 <mat-icon mat-list-icon *ngIf="view.sub && view.sub.length > 0">
@@ -36,7 +46,11 @@
         <ng-container *ngFor="let view of customers; let i = index">
           <li routerLinkActive="active">
             <a routerLink="{{view.url}}"  mat-list-item>
+<<<<<<< HEAD
               <mat-icon mat-list-icon svgIcon="{{view.icon}}"></mat-icon>
+=======
+              <!-- <mat-icon mat-list-icon svgIcon="{{view.icon}}"></mat-icon> -->
+>>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
               <span mat-line class="w-100 d-flex justify-content-between align-items-center ">
                 {{view.route}}
                 <mat-icon mat-list-icon *ngIf="view.sub && view.sub.length > 0">
@@ -60,7 +74,11 @@
         <ng-container *ngFor="let view of business; let i = index">
           <li routerLinkActive="active">
             <a routerLink="{{view.url}}"  mat-list-item>
+<<<<<<< HEAD
               <mat-icon mat-list-icon svgIcon="{{view.icon}}"></mat-icon>
+=======
+              <!-- <mat-icon mat-list-icon svgIcon="{{view.icon}}"></mat-icon> -->
+>>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
               <span mat-line class="w-100 d-flex justify-content-between align-items-center ">
                 {{view.route}}
                 <mat-icon mat-list-icon *ngIf="view.sub && view.sub.length > 0">
@@ -84,7 +102,11 @@
         <ng-container *ngFor="let view of settings; let i = index">
           <li routerLinkActive="active" (click)="showSub[i] = !showSub[i]">
             <a routerLink="{{view.url}}" mat-list-item>
+<<<<<<< HEAD
               <mat-icon mat-list-icon svgIcon="{{view.icon}}"></mat-icon>
+=======
+              <!-- <mat-icon mat-list-icon svgIcon="{{view.icon}}"></mat-icon> -->
+>>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
               <span mat-line class="w-100 d-flex justify-content-between align-items-center ">
                 {{view.route}}
                 <mat-icon mat-list-icon *ngIf="view.sub && view.sub.length > 0">
@@ -117,7 +139,11 @@
       </button>
       <span class="col-xl-8 col-md-6 col-6">
         <span class="has-search">
+<<<<<<< HEAD
           <mat-icon class="icon text-success ml-1 search-icon">search</mat-icon>
+=======
+          <mat-icon class="icon text-success ml-2">search</mat-icon>
+>>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
           <input type="text" name="search" class="search form-control" placeholder="Search for anything" />
         </span>
       </span>
@@ -129,8 +155,13 @@
       <span [matMenuTriggerFor]="menu" class="col-auto p-0">
 
 
+<<<<<<< HEAD
         <span class="pic small ml-3" style="width: 25px; height: 25px; margin-top: 5px;">
           <img src="../../../../assets/img/nav/notify.svg" alt="" class="img-fluid">
+=======
+        <span class="pic small round ml-3">
+          <img src="../../../../assets/img/notification-placeholder.png" alt="" class="img-fluid">
+>>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
         </span>
 
         <span class="pic small round ml-3">
