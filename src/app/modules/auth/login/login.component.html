@@ -15,7 +15,7 @@
                 <a routerLink="/auth/forgot-password" class="text-green">Forgot password?</a>
             </div>
             <div class="my-3">
-                <button type="submit" [disabled]="loginForm.invalid || loading" class="btn py-2 bg-green text-white btn-block">
+                <button type="submit" [disabled]="loginForm.invalid || loading" class="btn py-2 btn btn-primary bg-green text-white btn-block">
                   {{!loading ? 'LOG IN' : ''}} <span class="spinner-grow spinner-grow-sm" *ngIf="loading"></span>
                 </button>
             </div>
