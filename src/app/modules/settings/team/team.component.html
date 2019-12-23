@@ -1,16 +1,30 @@
 <app-headers title="Team"></app-headers>
 
-<div class="text-right">
-    <a routerLink="./">
-      <button class="btn btn-primary">Invite Team Member</button>
-    </a>
-  </div>
+<div class="row">
+  <div class="col-md-7"></div>
+  <div class="col-md-5 text-right">
+    <div class="row">
+      <div class="col-md-6">
+        <a routerLink="manage">
+          <button class="btn btn-primary">Manage Permissions</button>
+        </a>  
+      </div>
+    
+      <div class="col-md-6">
+        <a routerLink="invite">
+          <button class="btn btn-primary">Invite Team Member</button>
+        </a>
+      </div>
+    </div>
+    </div>
+</div>
+
 
 <div class="row">
     <div class="col-md-12">
-        <ngb-tabset type="pills" justify=justified>
-            <ngb-tab title="Team Members">
-              <ng-template ngbTabContent>
+        <!-- <ngb-tabset type="pills" justify=justified> -->
+            <!-- <ngb-tab title="Team Members"> -->
+              <!-- <ng-template ngbTabContent> -->
                 <div class="row">
                     <div class="table-responsive">
                         <table class="table">
@@ -27,21 +41,36 @@
                                 <td>Foluke Akerele</td>
                                 <td>sunnyblue@baines.com</td>
                                 <td>Super Admin</td>
-                                <td>Change Role</td>
-                            </tr>
+                                <span [matMenuTriggerFor]="action" class="action">
+                                  <td>&#8226;&#8226;&#8226;</td>
+                                  </span>                            </tr>
                           </tbody>
                       </table>
                     </div>
                 </div>
-              </ng-template>
-            </ngb-tab>
-            <ngb-tab title="Manage Rules">
+
+                <mat-menu #action="matMenu" class="mt-3">
+                  <ng-container>
+                    <button mat-menu-item routerLink="/">
+                      <mat-icon svgIcon="activate"></mat-icon>
+                      <span>Change Role</span>
+                    </button>
+                    <button mat-menu-item routerLink="/">
+                      <mat-icon svgIcon="delete"></mat-icon>
+                      <span>Delete User</span>
+                    </button>
+                  </ng-container>
+                </mat-menu>
+                
+              <!-- </ng-template> -->
+            <!-- </ngb-tab> -->
+            <!-- <ngb-tab title="Manage Rules">
               <ng-template ngbTabContent>
 
                 
 
               </ng-template>
-            </ngb-tab>
-          </ngb-tabset>
+            </ngb-tab> -->
+          <!-- </ngb-tabset> -->
     </div>
 </div>

@@ -8,9 +8,11 @@ import { SharedModule } from '../shared/shared.module';
 import { PreferenceComponent } from './preference/preference.component';
 import { AccountComponent } from './account/account.component';
 import { TeamComponent } from './team/team.component';
+import { ManageComponent } from './team/manage/manage.component';
+import { InviteComponent } from './team/invite/invite.component';
 
 @NgModule({
-  declarations: [SettingsComponent, BankInformationComponent, PreferenceComponent, AccountComponent, TeamComponent],
+  declarations: [SettingsComponent, BankInformationComponent, PreferenceComponent, AccountComponent, TeamComponent, ManageComponent, InviteComponent],
   imports: [
     CommonModule,
     SettingsRoutingModule,

@@ -1,48 +1,50 @@
 <app-headers title="Users"></app-headers>
 
 <div class="row">
+  <div class="col-12">
     <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Lender</th>
-              <th scope="col">ID</th>
-              <th scope="col">Email</th>
-              <th scope="col">type</th>
-              <th scope="col">date joined</th>
-              <th scope="col">status</th>
-              <th scope="col">Actions</th>
-            </tr>
-          </thead>
-          <tbody class="text-muted">
-            <tr *ngFor="let country of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]">
-                <td><a routerLink="LSQ1234876">Afenifere Olabode</a></td>
-                <td><a routerLink="LSQ1234876">LSQ1234876</a></td>
-              <td>afeola@loans.com</td>
-              <td>Saver</td>
-              <td>14 Sep 2019</td>
-              <td><ul class="status"><li class="active">Active</li></ul></td>
-              <span [matMenuTriggerFor]="action" class="action">
-                <td>&#8226;&#8226;&#8226;</td>
-                </span>
-            </tr>
-          </tbody>
-          <mat-menu #action="matMenu" class="mt-3">
-            <ng-container>
-              <button mat-menu-item routerLink="/">
-                <mat-icon svgIcon="activate"></mat-icon>
-                <span>Activate</span>
-              </button>
-              <button mat-menu-item routerLink="/">
-                <mat-icon svgIcon="deactivate"></mat-icon>
-                <span>Dectivate</span>
-              </button>
-              <button mat-menu-item routerLink="/">
-                <mat-icon svgIcon="blacklist"></mat-icon>
-                <span>Blacklist</span>
-              </button>
-            </ng-container>
-          </mat-menu>
-        </table>
-      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Lender</th>
+            <th scope="col">ID</th>
+            <th scope="col">Email</th>
+            <th scope="col">type</th>
+            <th scope="col">date joined</th>
+            <th scope="col">status</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="text-muted">
+          <tr *ngFor="let country of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]">
+              <td><a routerLink="LSQ1234876">Afenifere Olabode</a></td>
+              <td><a routerLink="LSQ1234876">LSQ1234876</a></td>
+            <td>afeola@loans.com</td>
+            <td>Saver</td>
+            <td>14 Sep 2019</td>
+            <td><ul class="status"><li class="active">Active</li></ul></td>
+            <span [matMenuTriggerFor]="action" class="action">
+              <td>&#8226;&#8226;&#8226;</td>
+              </span>
+          </tr>
+        </tbody>
+        <mat-menu #action="matMenu" class="mt-3">
+          <ng-container>
+            <button mat-menu-item routerLink="/">
+              <mat-icon svgIcon="activate"></mat-icon>
+              <span>Activate</span>
+            </button>
+            <button mat-menu-item routerLink="/">
+              <mat-icon svgIcon="deactivate"></mat-icon>
+              <span>Dectivate</span>
+            </button>
+            <button mat-menu-item routerLink="/">
+              <mat-icon svgIcon="blacklist"></mat-icon>
+              <span>Blacklist</span>
+            </button>
+          </ng-container>
+        </mat-menu>
+      </table>
+    </div>
+  </div>
 </div>
