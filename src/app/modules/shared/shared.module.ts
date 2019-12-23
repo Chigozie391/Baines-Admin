@@ -9,10 +9,7 @@ import { HeadersComponent } from '../../component/headers/headers.component';
 import { AlertModule } from 'ngx-bootstrap';
 import { TokenInterceptorService } from 'src/app/service/token-interceptor/token-interceptor.service';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-=======
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
 
 @NgModule({
   declarations: [NavigationComponent, HeadersComponent],
@@ -29,12 +26,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     MatTabsModule,
     AlertModule.forRoot(),
-<<<<<<< HEAD
     FormsModule,
     NgbModule
-=======
-    FormsModule
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
   ],
   exports: [
     MatToolbarModule,
@@ -49,12 +42,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HeadersComponent,
     MatTabsModule,
     AlertModule,
-<<<<<<< HEAD
     FormsModule,
     NgbModule
-=======
-    FormsModule
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
   ],
   providers: [
     {

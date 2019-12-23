@@ -39,29 +39,16 @@ $custom-typography: mat-typography-config(
 @include mat-core($custom-typography);
 
 $colors: (
-<<<<<<< HEAD
-=======
-  white: #ffffff,
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
   dark: #545F7D,
   dark-blue: #213f7d,
   off-white: #f4f5f7,
   plain-white: #ffffff,
-<<<<<<< HEAD
   plain-blue: #2059b1,
   plain-green: #39cdcc,
   success: #1bb133,
   plain-orange: #d45021,
   plain-gray: #e8eaef,
   plain-red: #ea3869,
-=======
-  blue: #2059b1,
-  green: #39cdcc,
-  success: #1bb133,
-  orange: #d45021,
-  gray: #e8eaef,
-  red: #ea3869,
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
   dark-light: #d1d6dc
 );
 
@@ -89,7 +76,6 @@ $colors: (
   font-family: 'PT Mono', monospace;
 }
 
-<<<<<<< HEAD
 .grid-type{
   float: right;
   width: 17px; 
@@ -109,10 +95,6 @@ $colors: (
   margin-top: 1rem;
   margin-right: 0;
   margin-left: 0;
-=======
-.row{
-  margin-top: 2rem;
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
 }
 
 .card-gradient{
@@ -154,11 +136,7 @@ button:active {
 }
 
 .sidenav {
-<<<<<<< HEAD
   background-color: color(plain-white);
-=======
-  background-color: color(white);
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
   ul {
     color: color(dark-blue);
@@ -170,7 +148,6 @@ button:active {
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
   background-color: rgb(243, 242, 242);
 
-<<<<<<< HEAD
   &-body-menu{
     padding: 2px 2px !important;
   }
@@ -395,31 +372,22 @@ hr {
     left: 1.6rem;
   }
 
-=======
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
 }
 
 .red {
   color: #ea3869;
 }
 
-<<<<<<< HEAD
 .green {
   color: color(success);
 }
 
-=======
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
 .card:focus {
   outline: none;
 }
 
 .green-square {
-<<<<<<< HEAD
   background: color(plain-green);
-=======
-  background: color(green);
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
   width: 20px;
   height: 10px;
   display: inline-block;
@@ -433,11 +401,7 @@ hr {
 }
 
 .red-square {
-<<<<<<< HEAD
   background: color(plain-red);
-=======
-  background: color(red);
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
   width: 20px;
   height: 10px;
   display: inline-block;
@@ -557,11 +521,7 @@ input[type="checkbox"] {
     vertical-align: text-top;
     width: 1rem;
     height: 1rem;
-<<<<<<< HEAD
     background: color(plain-white);
-=======
-    background: color(white);
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
     border: 1px solid rgba(0, 0, 0, 0.12);
   }
 
@@ -592,19 +552,11 @@ input[type="checkbox"] {
     position: absolute;
     left: 3px;
     top: 9px;
-<<<<<<< HEAD
     background: color(plain-white);
     width: 2px;
     height: 2px;
     box-shadow: 2px 0 0 color(plain-white), 4px 0 0 color(plain-white), 4px -2px 0 color(plain-white), 4px -4px 0 color(plain-white),
       4px -6px 0 color(plain-white), 4px -8px 0 color(plain-white);
-=======
-    background: color(white);
-    width: 2px;
-    height: 2px;
-    box-shadow: 2px 0 0 color(white), 4px 0 0 color(white), 4px -2px 0 color(white), 4px -4px 0 color(white),
-      4px -6px 0 color(white), 4px -8px 0 color(white);
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
     transform: rotate(45deg);
   }
 }
@@ -616,10 +568,7 @@ input[type="checkbox"] {
     vertical-align: bottom;
     border-top: 0;
     border-bottom: 1.2rem solid #f4f5f7;
-<<<<<<< HEAD
     text-transform: uppercase;
-=======
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
   }
 
   tbody{
@@ -642,13 +591,8 @@ input[type="checkbox"] {
   text-transform: uppercase;
 
   &.badge-pending {
-<<<<<<< HEAD
     background: rgba(color(plain-red), 0.2);
     color: rgba(color(plain-red), 1);
-=======
-    background: rgba(color(red), 0.2);
-    color: rgba(color(red), 1);
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
   }
 
   &.badge-verified {

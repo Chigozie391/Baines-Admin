@@ -7,7 +7,6 @@ import { BorrowersComponent } from './borrowers/borrowers.component';
 import { BorrowersViewComponent } from './borrowers-view/borrowers-view.component';
 import { SaversComponent } from './savers/savers.component';
 import { SaversViewComponent } from './savers-view/savers-view.component';
-<<<<<<< HEAD
 import { SavingsComponent } from './savers-details/savings/savings.component';
 import { BankDetailsComponent } from './savers-details/bank-details/bank-details.component';
 import { SavingsDetailsComponent } from './savers-details/savings-details/savings-details.component';
@@ -17,13 +16,10 @@ import { BorrowersBankDetailsComponent } from './borrowers-details/bank-details/
 import { LoanDetailsComponent } from './borrowers-details/loan-details/loan-details.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
-=======
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
 
 const routes: Routes = [
   {
     path: '', component: CustomersComponent, children: [
-<<<<<<< HEAD
       {path: 'users', component: UsersComponent},
       {path: 'users/:id', component: UserDetailsComponent},
       {path: 'lenders', component: LendersComponent},
@@ -41,14 +37,6 @@ const routes: Routes = [
       {path: 'savers/:id/bank-details', component: BankDetailsComponent},
       {path: 'savers/:id/savings/:id', component: SavingsDetailsComponent},
 
-=======
-      {path: 'lenders', component: LendersComponent},
-      {path: 'lenders/view', component: LendersViewComponent},
-      {path: 'borrowers', component: BorrowersComponent},
-      {path: 'borrowers/view', component: BorrowersViewComponent},
-      {path: 'savers', component: SaversComponent},
-      {path: 'savers/view', component: SaversViewComponent}
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
     ]
   }
 ];

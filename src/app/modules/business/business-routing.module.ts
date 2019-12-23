@@ -4,7 +4,6 @@ import { TransactionComponent } from './transaction/transaction.component';
 import { CollectionComponent } from './collection/collection.component';
 import { LoanProductComponent } from './loan-product/loan-product.component';
 import { BusinessComponent } from './business.component';
-<<<<<<< HEAD
 import { TransactionDetailsComponent } from './transaction-details/transaction-details.component';
 import { SavingsProductComponent } from './savings-product/savings-product.component';
 import { LoansComponent } from './loans/loans.component';
@@ -18,14 +17,11 @@ import { BorrowerDetailsComponent } from './loans/borrower-details/borrower-deta
 import { LoanScheduleComponent } from './loans/loan-schedule/loan-schedule.component';
 import { SaverDetailsComponent } from './savings/saver-details/saver-details.component';
 import { SavingsDetailsComponent } from './savings/savings-details/savings-details.component';
-=======
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
 
 const routes: Routes = [
   {
     path: '', component: BusinessComponent, children: [
       { path: 'transactions', component: TransactionComponent },
-<<<<<<< HEAD
       { path: 'transactions/:id', component: TransactionDetailsComponent },
       { path: 'collections', component: CollectionComponent },
       { path: 'loan-product', component: LoanProductComponent },
@@ -45,10 +41,6 @@ const routes: Routes = [
       { path: 'savings/:id/savings-details', component: SavingsDetailsComponent },
       { path: 'new-loan-product', component: NewLoanProductComponent},
       { path: 'new-savings-product', component: NewSavingsProductComponent}
-=======
-      { path: 'collections', component: CollectionComponent },
-      { path: 'loan-product', component: LoanProductComponent },
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
     ]
   }
 ];

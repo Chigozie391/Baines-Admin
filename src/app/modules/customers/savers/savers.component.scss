@@ -1,33 +1,5 @@
-<<<<<<< HEAD
 
 
-=======
-.status {
-    list-style: none;
-
-    & > .active::before {
-        content: "\2022";
-        color: #1bb133;
-        font-weight: bold;
-        display: inline-block;
-        width: 1em;
-        margin-left: -1em;
-    }
-
-    & > .inactive::before {
-        content: "\2022";
-        color: #ea3869;
-        font-weight: bold;
-        display: inline-block;
-        width: 1em;
-        margin-left: -1em;
-    }
-}
-
-a {
-    text-decoration: none;
-}
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
 
 .table-head {
     background-color: transparent;

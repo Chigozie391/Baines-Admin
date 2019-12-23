@@ -30,7 +30,6 @@ export class BorrowersViewComponent implements OnInit {
   getBorrowersState() {
     this.borrowers = history.state.data;
     console.log(this.borrowers)
-<<<<<<< HEAD
     // if (!this.borrowers) {
     //   this.router.navigate([Path.BORROWERS]);
     //   return
@@ -41,18 +40,6 @@ export class BorrowersViewComponent implements OnInit {
     //   this.getCollectionsForSpecificBorrower();
     //   this.getBankDetails();
     // }
-=======
-    if (!this.borrowers) {
-      this.router.navigate([Path.BORROWERS]);
-      return
-    }
-    else {
-      this.showName();
-      this.collection.borrower_id = this.borrowers.user_id;
-      this.getCollectionsForSpecificBorrower();
-      this.getBankDetails();
-    }
->>>>>>> 2157538685f6408fc442fd0e90c2587d5f8433a8
   }
 
   showName() {
