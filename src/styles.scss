@@ -39,16 +39,16 @@ $custom-typography: mat-typography-config(
 @include mat-core($custom-typography);
 
 $colors: (
-  white: #ffffff,
   dark: #545F7D,
   dark-blue: #213f7d,
   off-white: #f4f5f7,
-  blue: #2059b1,
-  green: #39cdcc,
+  plain-white: #ffffff,
+  plain-blue: #2059b1,
+  plain-green: #39cdcc,
   success: #1bb133,
-  orange: #d45021,
-  gray: #e8eaef,
-  red: #ea3869,
+  plain-orange: #d45021,
+  plain-gray: #e8eaef,
+  plain-red: #ea3869,
   dark-light: #d1d6dc
 );
 
@@ -76,6 +76,27 @@ $colors: (
   font-family: 'PT Mono', monospace;
 }
 
+.grid-type{
+  float: right;
+  width: 17px; 
+  height: 17px;
+  margin-left: 5px;
+  top: 0;
+  // bottom: -3px;
+}
+
+.row{
+  margin-top: 2rem;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.row-no-margin{
+  margin-top: 1rem;
+  margin-right: 0;
+  margin-left: 0;
+}
+
 .card-gradient{
   background: linear-gradient(360deg, #0575E6 -44.29%, #021B79 136.25%);
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15); 
@@ -100,7 +121,7 @@ body {
 body {
   margin: 0;
   font-family: "Avenir", sans-serif !important;
-  background-color: color(off-white);
+  background-color: color(plain-white);
 }
 
 button:focus,
@@ -115,7 +136,7 @@ button:active {
 }
 
 .sidenav {
-  background-color: color(white);
+  background-color: color(plain-white);
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
   ul {
     color: color(dark-blue);
@@ -125,6 +146,240 @@ button:active {
 .card {
   border: 0;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+  background-color: rgb(243, 242, 242);
+
+  &-body-menu{
+    padding: 2px 2px !important;
+  }
+}
+
+.card-white {
+  border: 0;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.action {
+  cursor: pointer;
+}
+
+.loan-action{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ccc;
+  padding: 5px 5px;
+  border-radius: 50%;
+  transition: all .3s;
+
+  &:hover {
+    background-color: #e8e8e9;
+  }
+}
+
+
+.status {
+  list-style: none;
+  position: relative;
+
+  & > .active::before {
+      content: "\2022";
+      color: #1bb133;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      position: absolute;
+      top: 1%;
+      left: 5%;
+  }
+
+  & > .inactive::before {
+      content: "\2022";
+      color: #ea3869;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+  }
+}
+
+.active-link {
+  background-color: #193152;
+  color: #ffffff;
+}
+
+.search-icon {
+  position: absolute;
+  top: 12%;
+}
+
+.menu-list{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  & > li{
+      width: 33.3333333%;
+      float: left;
+
+      & > a {
+          display: block;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+
+          &:hover, &:active{
+              background-color: #193152;
+              color: #f4f5f7;
+          }
+      }
+  }    
+}
+
+.menu-list-2{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  & > li{
+      width: 25%;
+      float: left;
+
+      & > a {
+          display: block;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+
+          &:hover, &:active{
+              background-color: #193152;
+              color: #f4f5f7;
+          }
+      }
+  }    
+}
+
+.menu-list-3{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  & > li{
+      width: 50%;
+      float: left;
+
+      & > a {
+          display: block;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+
+          &:hover, &:active{
+              background-color: #193152;
+              color: #f4f5f7;
+          }
+      }
+  }    
+}
+
+.centered {
+  position: relative;
+  top: 30%;
+  left: 0;
+}
+
+hr {
+  border: 1px solid #ccc;
+}
+
+.return {
+  color: blue;
+  text-decoration: underline;
+}
+
+.user-data {
+  display: inline-block;
+  margin-bottom: 0;
+  padding-left: 1rem;
+  line-height: 2px;
+}
+
+.user-data-space{
+  display: inline-block;
+  margin-bottom: 2rem;
+  line-height: 2px;
+}
+
+.cosmos {
+  position: relative;
+  &-1 {
+    position: absolute;
+    background-color: rgb(221, 219, 219);
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    width: 15px;
+    height: 15px;
+    top: .2rem;
+    left: 0;
+  }
+
+  &-2 {
+    position: absolute;
+    background-color:rgb(219, 218, 218);
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    width: 15px;
+    height: 15px;
+    top: .2rem;
+    left: .4rem;
+  }
+
+  &-3 {
+    position: absolute;
+    background-color:rgb(214, 212, 212);
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    width: 15px;
+    height: 15px;
+    top: .2rem;
+    left: .8rem;
+  }
+
+  &-4 {
+    position: absolute;
+    background-color:rgb(207, 204, 204);
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    width: 15px;
+    height: 15px;
+    top: .2rem;
+    left: 1.2rem;
+  }
+
+  &-5 {
+    position: absolute;
+    background-color:rgb(199, 196, 196);
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    width: 15px;
+    height: 15px;
+    top: .2rem;
+    left: 1.6rem;
+  }
+
+}
+
+.red {
+  color: #ea3869;
+}
+
+.green {
+  color: color(success);
 }
 
 .card:focus {
@@ -132,7 +387,7 @@ button:active {
 }
 
 .green-square {
-  background: color(green);
+  background: color(plain-green);
   width: 20px;
   height: 10px;
   display: inline-block;
@@ -146,7 +401,7 @@ button:active {
 }
 
 .red-square {
-  background: color(red);
+  background: color(plain-red);
   width: 20px;
   height: 10px;
   display: inline-block;
@@ -221,6 +476,7 @@ tr:first-child {
 /**======= Loading ========**/
 .loading {
   -webkit-animation: rotation 2s infinite linear;
+  animation: rotation 2s infinite linear;
 }
 
 @-webkit-keyframes rotation {
@@ -265,7 +521,7 @@ input[type="checkbox"] {
     vertical-align: text-top;
     width: 1rem;
     height: 1rem;
-    background: color(white);
+    background: color(plain-white);
     border: 1px solid rgba(0, 0, 0, 0.12);
   }
 
@@ -296,11 +552,11 @@ input[type="checkbox"] {
     position: absolute;
     left: 3px;
     top: 9px;
-    background: color(white);
+    background: color(plain-white);
     width: 2px;
     height: 2px;
-    box-shadow: 2px 0 0 color(white), 4px 0 0 color(white), 4px -2px 0 color(white), 4px -4px 0 color(white),
-      4px -6px 0 color(white), 4px -8px 0 color(white);
+    box-shadow: 2px 0 0 color(plain-white), 4px 0 0 color(plain-white), 4px -2px 0 color(plain-white), 4px -4px 0 color(plain-white),
+      4px -6px 0 color(plain-white), 4px -8px 0 color(plain-white);
     transform: rotate(45deg);
   }
 }
@@ -311,11 +567,17 @@ input[type="checkbox"] {
   thead th {
     vertical-align: bottom;
     border-top: 0;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1.2rem solid #f4f5f7;
+    text-transform: uppercase;
   }
 
   tbody{
     font-size: 14px;
+    font-weight: bold;
+
+    & > tr {
+      border-bottom: 1.2rem solid #f4f5f7;;
+    }
   }
 
   th, td {
@@ -329,8 +591,8 @@ input[type="checkbox"] {
   text-transform: uppercase;
 
   &.badge-pending {
-    background: rgba(color(red), 0.2);
-    color: rgba(color(red), 1);
+    background: rgba(color(plain-red), 0.2);
+    color: rgba(color(plain-red), 1);
   }
 
   &.badge-verified {

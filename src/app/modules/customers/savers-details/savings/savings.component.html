@@ -1,0 +1,95 @@
+<a routerLink="/app/customers/savers" class="return">&larr; Back to Savers</a>
+
+<div class="row">
+    <div class="col-md-12 col-12 col-mb-12">
+        <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-8 col-12 col-mb-12">
+                  <span class="pic small round ml-12">
+                      <img src="../../../../assets/img/placeholder-user.png" alt="" class="img-fluid">
+                  </span>
+                  <div class="user-data">
+                      <h3>Chihurumanya Okwechime</h3>
+                      <p>LSQ38389290</p>
+                  </div>
+              </div>
+
+              <div class="col-md-4 col-12 col-mb-12 text-right">
+                <div class="user-data">
+                  <p>Total Savings Balance</p>
+                    <h3>1,205,675.00</h3>
+                </div>
+            </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-12 col-mb-12">
+        <div class="card">
+            <div class="card-body-menu">
+              <ul class="menu-list">
+                  <li><a routerLink="/app/customers/savers/LSQ1234876/general/" routerLinkActive="active-link">General</a></li>
+                  <li><a routerLink="/app/customers/savers/LSQ1234876/savings" routerLinkActive="active-link">Savings Plans</a></li>
+                  <!-- <li><a routerLink="general">Wallet</a></li> -->
+                  <li><a routerLink="/app/customers/savers/LSQ1234876/bank-details" routerLinkActive="active-link">Bank Details</a></li>
+              </ul> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="row">
+    <div class="col-md-12 col-12 col-mb-12">
+    <div class="topnav">
+        <p>Savings Plan</p>
+        <input type="text" placeholder="Search by ID, date, type, e.t.c">
+      </div>
+      </div>
+</div> -->
+
+<div class="row">
+    <div class="col-12">
+          <div class="row justify-content-between align-items-center">
+            <div class="col">
+              <h5 class="m-0 p-0 text-dark-blue">Savings Plans</h5>
+            </div>
+  
+            <div class="col-md-5 col-12 mb-12">
+              <span class="has-search">
+                  <mat-icon class="icon ml-1 search-icon">search</mat-icon>
+                <input type="text" name="search" placeholder="Search by ID, date, type, e.t.c" class="search form-control" />
+              </span>
+              <!-- <button class="btn btn-primary">filter</button> -->
+            </div>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Status</th>
+                <th scope="col">ID</th>
+                <th scope="col">Savings Plans</th>
+                <th scope="col">Savings Product</th>
+                <th scope="col">last payment date</th>
+                <th scope="col">balance</th>
+              </tr>
+            </thead>
+            <tbody class="text-muted">
+              <tr *ngFor="let country of [1,2,3,4,5,6,6,7,8,9,10]">
+                <td> <span class="badge badge-verified">Active</span></td>
+                <td><a routerLink="LSQ1234876">LSQ1234876</a></td>
+                <td><a routerLink="LSQ1234876">Student Savings</a></td>
+                <td>Fixed Deposit</td>
+                <td>14 Jan 2019, 07:45:21</td>
+                <td>₦20,500</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>

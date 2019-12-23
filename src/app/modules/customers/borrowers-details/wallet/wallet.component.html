@@ -1,0 +1,114 @@
+<a routerLink="/app/customers/borrowers" class="return">&larr; Back To Borrowers</a>
+
+
+<div class="row">
+    <div class="col-md-12 col-12 col-mb-12">
+        <div class="card">
+            <div class="card-body">
+                    <div class="col-md-12 col-12 col-mb-12">
+                        <span class="pic small round ml-12">
+                            <img src="../../../../assets/img/placeholder-user.png" alt="" class="img-fluid">
+                        </span>
+                        <div class="user-data">
+                            <h3>Chihurumanya Okwechime</h3>
+                            <small>LSQ38389290</small>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-12 col-mb-12">
+        <div class="card">
+            <div class="card-body-menu">
+              <ul class="menu-list-2">
+                  <li><a routerLink="/app/customers/borrowers/LSQ1234876/general/" routerLinkActive="active-link">General</a></li>
+                  <li><a routerLink="/app/customers/borrowers/LSQ1234876/loans" routerLinkActive="active-link">Loans</a></li>
+                  <li><a routerLink="/app/customers/borrowers/LSQ1234876/wallet" routerLinkActive="active-link">Wallet</a></li>
+                  <li><a routerLink="/app/customers/borrowers/LSQ1234876/bank-details" routerLinkActive="active-link">Bank Details</a></li>
+              </ul>  
+  
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="col-md-12 col-12 mb-12">
+                This section shows the Borrower's wallet balances - both the ledger balance (available) and the book balance (collected but not settled).
+                <hr>
+            </div>
+              <div class="row">
+                <div class="col-md-4">
+                    <div class="col-md-12">
+                        <small class="text-muted">
+                            Available Wallet Balance
+                        </small>
+                        <h5><strong>1,205,675.00</strong></h5>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-12">
+                        <small class="text-muted">
+                            Book Balance 
+                            <!-- <span class="badge badge-info">!</span> -->
+                        </small>
+                        <h5><strong>1,249,675.00</strong></h5>
+                    </div>
+                </div>
+              </div>
+            </div>    
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-left">Wallet Transactions</h3>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Loan Product</th>
+              <th scope="col">type</th>
+              <th scope="col">date</th>
+              <th scope="col">Amount (NGN)</th>
+            </tr>
+          </thead>
+          <tbody class="text-muted">
+            <tr *ngFor="let country of [1,2,3]">
+              <td>LSQ1234876</td>
+              <td>Student Loan Product</td>
+              <td>Loan Repayment</td>
+              <td>14 Sep 2019, 07:45:21</td>
+              <td>₦100,510.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+
+  <!-- <div class="row">
+    <div class="col-md-4 col-12 mb-12"></div>
+    <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="col-md-12 col-12 mb-12 text-center">
+                You currently do not have a wallet transaction.
+            </div>
+            </div>    
+          </div>
+      </div>
+      <div class="col-md-4 col-12 mb-12"></div>
+    </div> -->

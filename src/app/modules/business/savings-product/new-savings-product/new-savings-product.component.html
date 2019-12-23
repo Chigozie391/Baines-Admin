@@ -1,0 +1,254 @@
+<a routerLink="/app/business/savings-product" class="return">&larr; Back</a>
+
+<app-headers title="Add New Savings Products"></app-headers>
+
+
+<div class="row">
+    <div class="col-md-12 col-12 col-mb-12">
+        <div class="card">
+            <div class="card-body-menu">
+
+
+                <ngb-tabset type="pills" justify="justified">
+                    <br>
+                    <ngb-tab title="Loan Details">
+                        
+                        <ng-template ngbTabContent>
+
+                            <div class="row" style="padding: 2rem 2rem;">
+                                <div class="col-md-6 col-12 col-mb-12">
+                                    <div class="user-data centered">
+                                        <h4>Savings Details</h4>
+                                        <small class="text-muted">Enter savings details here</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12 mb-12">
+                                    <form action="">
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <label for="productName">Loan Savings Name</label>
+                                                <input type="text" id="productName" class="form-control ">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <label for="productName">Loan Savings Description</label>
+                                                <input type="text" id="productName" class="form-control ">
+                                            </div>
+                                        </div>
+                                            <div class="row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="productName">Amount Range <span class="text-right">(N)</span> </label>
+                                                    <input type="text" id="productName" placeholder="Min" class="form-control ">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="productName"> </label>
+                                                    <input type="text" id="productName" placeholder="Max" class="form-control ">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="productName">Interest Rate</label>
+                                                    <input type="text" id="productName" placeholder="Interest %" class="form-control ">
+                                                </div>
+                                                
+                                                <div class="form-group col-md-6">
+                                                    <label for="productName">Penal Charge</label>
+                                                    <input type="text" id="productName" placeholder="Rate %" class="form-control ">
+                                                </div>                                            
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="productName">Witholding Tax</label>
+                                                    <input type="text" id="productName" placeholder="Rate %" class="form-control ">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="productName">Tenor Range</label>
+                                                    <select id="productName" class="form-control ">
+                                                        <option value="15 days">15 Days</option>
+                                                        <option value="30 days">30 Days</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-check col-md-6">
+                                                    <input type="checkbox" id="productName" placeholder="Rate %" class="form-check-input ">
+                                                    <label class="form-check-label" for="productName">Fixed Deposit?</label>
+                                                </div>  
+                                            </div>
+                                            <div class="row">
+                                                <!-- <div class="form-group col-md-6"></div> -->
+                                                <div class="form-group col-md-6">
+                                                    <button type="submit" class="btn btn-success col-md-12">Save for later</button>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <button type="submit" class="btn btn-primary col-md-12">Next</button>
+                                                </div>
+                                            
+                                            </div>
+                                    </form>
+                                </div>
+                            </div>   
+
+                            </ng-template>
+                            </ngb-tab>
+
+                            <ngb-tab title="Payment Details">
+                                <ng-template ngbTabContent>
+                                    <div class="row" style="padding: 2rem 2rem;">
+                                        <div class="col-md-6 col-12 col-mb-12">
+                                            <div class="user-data centered">
+                                                <h4>Payment Details</h4>
+                                                <small class="text-muted">Enter savings payment details here</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12 mb-12">
+                                            <form action="">
+                                                <div class="row">
+                                                    <div class="form-group col-md-12">
+                                                        <label for="productName">Payment Method</label>
+                                                        <select id="productName" class="form-control ">
+                                                            <option value="15 days">Card</option>
+                                                            <option value="30 days">Wallet</option>
+                                                            <option value="30 days">Transfer</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+              
+                                                    <div class="row">
+                                                        <!-- <div class="form-group col-md-3"></div> -->
+                                                        <div class="form-group col-md-6">
+                                                            <button type="submit" class="btn btn-success col-md-12">Save for later</button>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <button type="submit" class="btn btn-primary col-md-12">Save</button>
+                                                        </div>
+                                                    
+                                                    </div>
+                                            </form>
+                                        </div>
+                                    </div>     
+                                    </ng-template>
+                                    </ngb-tab>
+
+
+                            </ngb-tabset>
+
+
+
+
+              <!-- <mat-tab-group>
+                    <mat-tab label="Loan Details">
+                        <div class="row" style="padding: 2rem 2rem;">
+                            <div class="col-md-6 col-12 col-mb-12">
+                                <div class="user-data centered">
+                                    <h4>Savings Details</h4>
+                                    <small class="text-muted">Enter savings details here</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12 mb-12">
+                                <form action="">
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label for="productName">Loan Savings Name</label>
+                                            <input type="text" id="productName" class="form-control ">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label for="productName">Loan Savings Description</label>
+                                            <input type="text" id="productName" class="form-control ">
+                                        </div>
+                                    </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-6">
+                                                <label for="productName">Amount Range <span class="text-right">(N)</span> </label>
+                                                <input type="text" id="productName" placeholder="Min" class="form-control ">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="productName"> </label>
+                                                <input type="text" id="productName" placeholder="Max" class="form-control ">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-6">
+                                                <label for="productName">Interest Rate</label>
+                                                <input type="text" id="productName" placeholder="Interest %" class="form-control ">
+                                            </div>
+                                            
+                                            <div class="form-group col-md-6">
+                                                <label for="productName">Penal Charge</label>
+                                                <input type="text" id="productName" placeholder="Rate %" class="form-control ">
+                                            </div>                                            
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-6">
+                                                <label for="productName">Witholding Tax</label>
+                                                <input type="text" id="productName" placeholder="Rate %" class="form-control ">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="productName">Tenor Range</label>
+                                                <select id="productName" class="form-control ">
+                                                    <option value="15 days">15 Days</option>
+                                                    <option value="30 days">30 Days</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-check col-md-6">
+                                                <input type="checkbox" id="productName" placeholder="Rate %" class="form-check-input ">
+                                                <label class="form-check-label" for="productName">Fixed Deposit?</label>
+                                            </div>  
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-6"></div> 
+                                            <div class="form-group col-md-6">
+                                                <button type="submit" class="btn btn-success col-md-12">Save for later</button>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <button type="submit" class="btn btn-primary col-md-12">Next</button>
+                                            </div>
+                                        
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Payment Details">
+                        <div class="row" style="padding: 2rem 2rem;">
+                            <div class="col-md-6 col-12 col-mb-12">
+                                <div class="user-data centered">
+                                    <h4>Payment Details</h4>
+                                    <small class="text-muted">Enter savings payment details here</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12 mb-12">
+                                <form action="">
+                                        <div class="form-group">
+                                            <label for="productName">Payment Method</label>
+                                            <select id="productName" class="form-control ">
+                                                <option value="15 days">Card</option>
+                                                <option value="30 days">Wallet</option>
+                                                <option value="30 days">Transfer</option>
+                                            </select>
+                                        </div>
+  
+                                        <div class="row">
+                                            <div class="form-group col-md-3"></div>
+                                            <div class="form-group col-md-6">
+                                                <button type="submit" class="btn btn-success col-md-12">Save for later</button>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <button type="submit" class="btn btn-primary col-md-12">Save</button>
+                                            </div>
+                                        
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                    </mat-tab>
+                </mat-tab-group> -->
+            </div>
+        </div>
+    </div>
+</div>

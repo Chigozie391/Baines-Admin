@@ -1,0 +1,321 @@
+<a routerLink="/app/business/savings-product" class="return">&larr; Back</a>
+
+<app-headers title="Savings Products"></app-headers>
+
+
+<!-- <div class="row">
+    <div class="col-md-12 col-12 col-mb-12">
+        <div class="card">
+            <div class="card-body-menu">
+              <ul class="menu-list-3">
+                  <li><a (click)="checkDetails()" routerLink="/app/business/general/" routerLinkActive="active-link">General</a></li>
+                  <li><a (click)="checkBorrowers()" routerLink="/app/business/save" routerLinkActive="active-link">Savings Plans</a></li>
+              </ul>  
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="row">
+    <div class="col-md-12 col-12 col-mb-12">
+        <div class="card">
+            <div class="card-body-menu">
+
+
+              <ngb-tabset type="pills" justify="justified">
+                <br>
+                <ngb-tab title="Loan Details">
+                    
+                    <ng-template ngbTabContent>
+                      <div class="container-fluid">
+                        <div class="col-md-12 col-12 mb-12">
+                                <div class="row">
+                                    <div class="col-md-12 col-12 col-mb-12">
+                                        <div class="user-data">
+                                            <h3>Student Savings</h3>
+                                            <small class="text-muted">LSQ38389290</small>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <div class="row">
+                                  <div class="col-md-6 text-left">
+                                      <div class="col-md-12">
+                                        <small class="text-muted">
+                                            Amount
+         
+         
+                                        </small>
+                                        <h6>5,000.00 - 35,000.00</h6>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 text-left">
+                                      <div class="col-md-12 green">
+                                        <small class="text-muted">
+                                            Status
+                                        </small>
+                                        <h6>Active</h6>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 text-left">
+                                      <div class="col-md-12">
+                                        <small class="text-muted">
+                                            Tenor
+                                        </small>
+                                        <h6>3 - 5 Months</h6>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 text-left">
+                                      <div class="col-md-12">
+                                        <small class="text-muted">
+                                            Description
+                                        </small>
+                                        <h6>Save money for educational needs</h6>
+                                      </div>
+                                  </div>
+                    
+                                  <div class="col-md-6 text-left">
+                                    <div class="col-md-12 green">
+                                      <small class="text-muted">
+                                          Interest
+                                      </small>
+                                      <h6>9% - 11%</h6>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 text-left">
+                                    <div class="col-md-12">
+                                      <small class="text-muted">
+                                          Frequency
+                                      </small>
+                                      <h6>Debited every week, monthly, daily</h6>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 text-left">
+                                    <div class="col-md-12">
+                                      <small class="text-muted">
+                                          Payment Method
+                                      </small>
+                                      <h6>Card, Wallet</h6>
+                                    </div>
+                                </div>
+                                </div>
+                          </div>
+                </div>
+                      </ng-template>
+
+                      </ngb-tab>
+                      
+                      <ngb-tab title="Savers">
+                          <ng-template ngbTabContent>
+                                <div class="table-responsive">
+                                  <br>
+                                  <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Number Of Savings Plan</th>
+                                        <th scope="col">Total Amount Saved</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody class="text-muted">
+                                      <tr *ngFor="let country of [1,2,3]">
+                                        <td>Olabode Samuel</td>
+                                        <td>3</td>
+                                        <td>₦120,510</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                          </ng-template>
+                      </ngb-tab>
+
+                      </ngb-tabset>
+
+
+                    
+
+
+
+              <!-- <mat-tab-group>
+                    <mat-tab label="Details">
+                        <div class="container-fluid">
+                                <div class="col-md-12 col-12 mb-12">
+                                        <div class="row">
+                                            <div class="col-md-12 col-12 col-mb-12">
+                                                <div class="user-data">
+                                                    <h3>Student Savings</h3>
+                                                    <small class="text-muted">LSQ38389290</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                
+                                        <div class="row">
+                                          <div class="col-md-6 text-left">
+                                              <div class="col-md-12">
+                                                <small class="text-muted">
+                                                    Amount
+                 
+                 
+                                                </small>
+                                                <h6>5,000.00 - 35,000.00</h6>
+                                              </div>
+                                          </div>
+                                          <div class="col-md-6 text-left">
+                                              <div class="col-md-12 green">
+                                                <small class="text-muted">
+                                                    Status
+                                                </small>
+                                                <h6>Active</h6>
+                                              </div>
+                                          </div>
+                                          <div class="col-md-6 text-left">
+                                              <div class="col-md-12">
+                                                <small class="text-muted">
+                                                    Tenor
+                                                </small>
+                                                <h6>3 - 5 Months</h6>
+                                              </div>
+                                          </div>
+                                          <div class="col-md-6 text-left">
+                                              <div class="col-md-12">
+                                                <small class="text-muted">
+                                                    Description
+                                                </small>
+                                                <h6>Save money for educational needs</h6>
+                                              </div>
+                                          </div>
+                            
+                                          <div class="col-md-6 text-left">
+                                            <div class="col-md-12 green">
+                                              <small class="text-muted">
+                                                  Interest
+                                              </small>
+                                              <h6>9% - 11%</h6>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 text-left">
+                                            <div class="col-md-12">
+                                              <small class="text-muted">
+                                                  Frequency
+                                              </small>
+                                              <h6>Debited every week, monthly, daily</h6>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 text-left">
+                                            <div class="col-md-12">
+                                              <small class="text-muted">
+                                                  Payment Method
+                                              </small>
+                                              <h6>Card, Wallet</h6>
+                                            </div>
+                                        </div>
+                                        </div>
+                                  </div>
+                        </div>
+                    </mat-tab>
+                  <mat-tab label="Savers">
+                      <div class="container-fluid">
+                        <div class="table-responsive">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Name</th>
+                                  <th scope="col">Number Of Savings Plan</th>
+                                  <th scope="col">Total Amount Saved</th>
+                                </tr>
+                              </thead>
+                              <tbody class="text-muted">
+                                <tr *ngFor="let country of [1,2,3]">
+                                  <td>Olabode Samuel</td>
+                                  <td>3</td>
+                                  <td>₦120,510</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                      </div>
+                  </mat-tab>
+              </mat-tab-group> -->
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+
+ 
+
+
+<!-- <div class="row">
+
+    <div class="col-md-12 col-12 mb-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+                <div class="col-md-12 col-12 col-mb-12">
+                    <div class="user-data">
+                        <h3>Loan Product 001</h3>
+                        <small class="text-muted">LSQ38389290</small>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+              <div class="col-md-6 text-left">
+                  <div class="col-md-12">
+                    <small class="text-muted">
+                        Amount
+                    </small>
+                    <h6>5,000.00 - 25,000.00</h6>
+                  </div>
+              </div>
+              <div class="col-md-6 text-left">
+                  <div class="col-md-12 green">
+                    <small class="text-muted">
+                        Status
+                    </small>
+                    <h6>Active</h6>
+                  </div>
+              </div>
+              <div class="col-md-6 text-left">
+                  <div class="col-md-12">
+                    <small class="text-muted">
+                        Tenor
+                    </small>
+                    <h6>15 Days</h6>
+                  </div>
+              </div>
+              <div class="col-md-6 text-left">
+                  <div class="col-md-12 red">
+                    <small class="text-muted">
+                        Repayment Method
+                    </small>
+                    <h6>Card & Wallet</h6>
+                  </div>
+              </div>
+
+              <div class="col-md-6 text-left">
+                <div class="col-md-12 red">
+                  <small class="text-muted">
+                      Interest
+                  </small>
+                  <h6>25%</h6>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div> -->

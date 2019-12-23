@@ -1,6 +1,57 @@
 <app-headers title="Borrowers"></app-headers>
 
 
+
+<div class="row">
+  <div class="col-12">
+      <mat-divider></mat-divider>
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="table-head">
+            <tr>
+              <th scope="col">Borrower</th>
+              <th scope="col">ID</th>
+              <th scope="col">Date Joined</th>
+              <th scope="col">Status</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="text-muted">
+              <tr *ngFor="let country of [1,2,3,4,5,6,6,7,8,9,10]">
+                  <!-- <td> <span class="badge badge-verified">Successful</span></td> -->
+                  <td><a routerLink="LSQ1234876/general">Okonkwo Henry</a></td>
+                  <td><a routerLink="LSQ1234876/general">LSQ1234876</a></td>
+                  <td>14, Sept 2019</td>
+                  <td><ul class="status"><li class="active">Active</li></ul></td>
+                  <span [matMenuTriggerFor]="action" class="action">
+                  <td>&#8226;&#8226;&#8226;</td>
+                  </span>
+                </tr>
+                <mat-menu #action="matMenu" class="mt-3">
+                  <ng-container>
+                    <button mat-menu-item routerLink="/">
+                      <mat-icon svgIcon="activate"></mat-icon>
+                      <span>Activate</span>
+                    </button>
+                    <button mat-menu-item routerLink="/">
+                      <mat-icon svgIcon="deactivate"></mat-icon>
+                      <span>Dectivate</span>
+                    </button>
+                    <button mat-menu-item routerLink="/">
+                      <mat-icon svgIcon="blacklist"></mat-icon>
+                      <span>Blacklist</span>
+                    </button>
+                  </ng-container>
+                </mat-menu>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- 
 <div class="row">
   <div class="col-xl-12">
     <div class="card mb-5">
@@ -91,4 +142,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

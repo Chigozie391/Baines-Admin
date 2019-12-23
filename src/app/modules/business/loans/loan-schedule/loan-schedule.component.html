@@ -1,0 +1,46 @@
+<a routerLink="/app/business/loans" class="return">&larr; Back</a>
+
+
+<div class="row">
+    <div class="col-md-12 col-12 col-mb-12">
+        <div class="card">
+            <div class="card-body-menu">
+              <ul class="menu-list">
+                  <li><a routerLink="/app/business/loans/LSQ1293943/borrower-details" routerLinkActive="active-link">Borrower's Details</a></li>
+                  <li><a routerLink="/app/business/loans/LSQ1293943/loan-details" routerLinkActive="active-link">Loan Details</a></li>
+                  <li><a routerLink="/app/business/loans/LSQ1293943/loan-schedule" routerLinkActive="active-link">Loan Schedule</a></li>
+              </ul>  
+  
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Status</th>
+              <th scope="col">Due Date</th>
+              <th scope="col">Balance</th>
+              <th scope="col">Amount Due</th>
+              <th scope="col">Principal</th>
+              <th scope="col">Interest</th>
+              <th scope="col">Fees</th>
+            </tr>
+          </thead>
+          <tbody class="text-muted">
+            <tr *ngFor="let country of [1,2,3,4,5]">
+              <td> <span class="badge badge-verified">Successful</span></td>
+              <td>14 Sep 2019</td>
+              <td>3,000,000.00</td>
+              <td>500,000.00</td>
+              <td>700,000.00</td>
+              <td>5%</td>
+              <td>50,0000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>

@@ -1,0 +1,127 @@
+<app-headers title="Bank Information"></app-headers>
+
+<div class="text-right">
+    <a routerLink="./">
+      <button class="btn btn-primary"> + Add Bank</button>
+    </a>
+</div>
+
+<div class="container-fluid">
+    <div class="row row-eq-height my-5">
+      <div class="col-md-5 mb-4">
+        <div class="card ">
+          <!-- <div class="card-body"> -->
+            <!-- <div class="row"> -->
+              <div class="col-12 text-dark">
+                <!-- <div class="row"> -->
+                  <div class="col-12 mb-4">
+                    <div class="row">
+                      <div class="col">
+                        <div class="text-muted">Bank</div>
+                        <div class="text-uppercase">GTBank</div>
+                      </div>
+                      <!-- <div class="col-auto">
+                        <img src="../../../../assets/img/gt.svg" class="img-fluid" alt="">
+                      </div> -->
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="row mt-1">
+                      <div class="col mb-4">
+                        <div class="text-muted">Account Number</div>
+                        <div class="text-uppercase">0115946917</div>
+                      </div>
+                      <div class="col-auto mb-4 text-right">
+                        <div class="text-muted">BVN</div>
+                        <div class="text-uppercase">22213136660</div>
+                      </div>
+                    </div>
+                  </div>
+                <!-- </div> -->
+              </div>
+            <!-- </div> -->
+          <!-- </div> -->
+          <div class="card-footer">
+            <div class="col-12">
+                <div class="row mt-1">
+                  <div class="col mb-4">
+                    <b>Loan Savings</b>
+                  </div>
+                  <div class="col-auto mb-4 text-right">
+                    <button type="button" class="btn btn-danger" (click)="open(content)">Remove</button>
+                  </div>
+                </div>
+              </div>
+         
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-2 mb-4 mono"></div>
+
+      <div class="col-md-5 mb-4">
+      <div class="card  card-top-blue">
+        <!-- <div class="card-body"> -->
+          <!-- <div class="row"> -->
+            <div class="col-12 text-dark">
+              <!-- <div class="row"> -->
+                <div class="col-12 mb-4">
+                  <div class="row">
+                    <div class="col">
+                      <div class="text-muted">Bank</div>
+                      <div class="text-uppercase">GTBank</div>
+                    </div>
+                    <!-- <div class="col-auto">
+                      <img src="../../../../assets/img/gt.svg" class="img-fluid" alt="">
+                    </div> -->
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="row mt-1">
+                    <div class="col mb-4">
+                      <div class="text-muted">Account Number</div>
+                      <div class="text-uppercase">0115946917</div>
+                    </div>
+                    <div class="col-auto mb-4 text-right">
+                      <div class="text-muted">BVN</div>
+                      <div class="text-uppercase">22213136660</div>
+                    </div>
+                  </div>
+                </div>
+              <!-- </div> -->
+            </div>
+          <!-- </div> -->
+        <!-- </div> -->
+        <div class="card-footer">
+            <div class="col-12">
+                <div class="row mt-1">
+                  <div class="col mb-4">
+                    <b>Loan Savings</b>
+                  </div>
+                  <div class="col-auto mb-4 text-right">
+                    <button type="button" class="btn btn-danger" (click)="open(content)">Remove</button>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Please Confirm!</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Do you want to remove bank details?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-success" (click)="c('Save click')">Yes, Proceed</button>
+      <button type="button" class="btn btn-outline-danger"  (click)="d('Cross click')">Cancel</button>
+    </div>
+  </ng-template>
