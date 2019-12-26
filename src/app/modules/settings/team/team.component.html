@@ -3,20 +3,10 @@
 <div class="row">
   <div class="col-md-7"></div>
   <div class="col-md-5 text-right">
-    <div class="row">
-      <div class="col-md-6">
-        <a routerLink="manage">
-          <button class="btn btn-primary">Manage Permissions</button>
-        </a>  
-      </div>
-    
-      <div class="col-md-6">
-        <a routerLink="invite">
-          <button class="btn btn-primary">Invite Team Member</button>
-        </a>
-      </div>
-    </div>
-    </div>
+      <a routerLink="invite">
+        <button class="btn btn-primary">Invite Team Member</button>
+      </a>
+  </div>
 </div>
 
 
@@ -53,7 +43,7 @@
                   <ng-container>
                     <button mat-menu-item routerLink="/">
                       <mat-icon svgIcon="activate"></mat-icon>
-                      <span>Change Role</span>
+                      <span>Manage Permissions</span>
                     </button>
                     <button mat-menu-item routerLink="/">
                       <mat-icon svgIcon="delete"></mat-icon>

@@ -1,1 +1,64 @@
-<p>invite works!</p>
+
+<app-headers title="Team"></app-headers>
+
+
+        <div class="col-md-12 col-12 col-mb-12">
+            <div class="card">
+                <div class="card-body">
+                        <div class="col-md-12 col-12 col-mb-12">
+                            <div class="col-md-12 user-data" >
+                                <h3>Create new users, one at a time.</h3>
+                                <small>Add a new user to your team with an email address.</small>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+<br>
+<div class="col-md-12">
+    <div class="card">
+    <div class="card-body">
+            <mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper" style="background-color: transparent;">
+                <mat-step [stepControl]="firstFormGroup">
+                  <form [formGroup]="firstFormGroup">
+                    <mat-form-field class="col-md-6">
+                      <input matInput placeholder="Email Address" formControlName="firstCtrl" required>
+                    </mat-form-field>
+                    <div class="col-md-6 text-right">
+                      <button mat-button matStepperNext class="btn btn-primary">Next</button>
+                    </div>
+                  </form>
+                </mat-step>
+                <mat-step>
+
+
+                  <form [formGroup]="secondFormGroup">
+                    <div class="row col-md-12">
+                      <h5 class="text-muted"> <b>The permissions below apply to your new user.</b> </h5>
+                    </div>
+                      <div class="row col-md-12">
+                        <mat-checkbox color="primary">Can Export Transactions</mat-checkbox>
+                      </div>
+                      <div class="row col-md-12">
+                        <mat-checkbox color="primary">Can View Transactions</mat-checkbox>
+                      </div>
+                      <div class="row col-md-12">
+                        <mat-checkbox color="primary">Can View Customers</mat-checkbox>
+                      </div>
+                      <div class="row col-md-12">
+                        <mat-checkbox color="primary">Can Manage Customers</mat-checkbox>
+                      </div>
+                      <div class="row col-md-12">
+                        <div class="col-md-6 text-right" >
+                          <button mat-button matStepperPrevious class="btn btn-primary">Back</button>
+                      </div>
+                      <div class="col-md-6 text-left">
+                          <button mat-button (click)="stepper.reset()" class="btn btn-primary">Reset</button>
+                        </div>
+                      </div>
+                  </form>
+                </mat-step>
+              </mat-horizontal-stepper>
+        </div>   
+    </div>
+</div>

@@ -2,8 +2,278 @@
 
 <a routerLink="/app/customers/savers" class="return">&larr; Back to Savers</a>
 
+<div class="row"></div>
 
-<div class="row">
+<ngb-tabset type="pills" justify="justified">
+  <ngb-tab title="General">
+    <ng-template ngbTabContent>
+
+      <div class="row">
+        <div class="col-md-12 col-12 col-mb-12">
+            <div class="card">
+                <div class="card-body">
+                        <div class="col-md-12 col-12 col-mb-12">
+                            <div class="user-data">
+                                <h3>Chihurumanya Okwechime</h3>
+                                <small>LSQ38389290</small>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <div class="col-md-12 col-12 mb-12">
+                This section contains important details about the saver.
+                <hr>
+            </div>
+            <div class="col-md-12 col-12 mb-12">
+            <div class="row">
+              <div class="col-md-4">
+                  <div class="row">
+                    <div class="col-md-12">
+                        <small class="text-muted">
+                            Full name
+                        </small>
+                        <h5><strong>Saidi Balogun</strong></h5>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="row">
+                    <div class="col-md-12 red">
+                        <small class="text-muted">
+                            Mobile Number
+                        </small>
+                        <h5><strong>09089544444</strong></h5>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="row">
+                    <div class="col-md-12 red">
+                        <small class="text-muted">
+                            BVN
+                        </small>
+                        <h5><strong>9829379234</strong></h5>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                <div class="row">
+                  <div class="col-md-12">
+                    <small class="text-muted">
+                        Email Address
+                    </small>
+                    <h5><strong>xyz@domain.com</strong></h5>
+                  </div>
+                </div>
+              </div>
+            <!-- </div> -->
+          </div>
+          </div>
+      </div>
+      </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <span class="pic medium square ml-12 profile-img" style="height: 15.6rem;">
+              <img src="../../../../assets/img/nav/image.svg" alt="" class="img-fluid">
+            </span>  
+            </div>    
+          </div>
+      </div>
+</div>    
+
+
+    </ng-template>
+  </ngb-tab>
+
+
+  <ngb-tab title="Savings">
+    <ng-template ngbTabContent>
+
+      <div class="row">
+        <div class="col-md-12 col-12 col-mb-12">
+            <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-8 col-12 col-mb-12">
+                      <span class="pic small round ml-12">
+                          <img src="../../../../assets/img/placeholder-user.png" alt="" class="img-fluid">
+                      </span>
+                      <div class="user-data">
+                          <h3>Chihurumanya Okwechime</h3>
+                          <p>LSQ38389290</p>
+                      </div>
+                  </div>
+    
+                  <div class="col-md-4 col-12 col-mb-12 text-right">
+                    <div class="user-data">
+                      <p>Total Savings Balance</p>
+                        <h3>1,205,675.00</h3>
+                    </div>
+                </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-12">
+            <div class="row justify-content-between align-items-center">
+              <div class="col">
+                <h5 class="m-0 p-0 text-dark-blue">Savings Plans</h5>
+              </div>
+    
+              <div class="col-md-5 col-12 mb-12">
+                <span class="has-search">
+                    <mat-icon class="icon ml-1 search-icon">search</mat-icon>
+                  <input type="text" name="search" placeholder="Search by ID, date, type, e.t.c" class="search form-control" />
+                </span>
+                <!-- <button class="btn btn-primary">filter</button> -->
+              </div>
+            </div>
+          </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <mat-divider></mat-divider>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Status</th>
+              <th scope="col">ID</th>
+              <th scope="col">Savings Plans</th>
+              <th scope="col">Savings Product</th>
+              <th scope="col">last payment date</th>
+              <th scope="col">balance</th>
+            </tr>
+          </thead>
+          <tbody class="text-muted">
+            <tr *ngFor="let country of [1,2,3,4,5,6,6,7,8,9,10]">
+              <td> <span class="badge badge-verified">Active</span></td>
+              <td><a routerLink="LSQ1234876">LSQ1234876</a></td>
+              <td><a routerLink="LSQ1234876">Student Savings</a></td>
+              <td>Fixed Deposit</td>
+              <td>14 Jan 2019, 07:45:21</td>
+              <td>₦20,500</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+    </ng-template>
+  </ngb-tab>
+
+
+  <ngb-tab title="Bank Details">
+    <ng-template ngbTabContent>
+
+      <div class="container-fluid">
+        <div class="row row-eq-height my-5" style="padding-left: 0; padding-right: 0;">
+          <div class="col-md-5 mb-4">
+            <div style="position: relative; top: 0; left: -1rem;">
+              <h4>Bank</h4>
+            </div>
+            <div class="card " style="position: relative; top: 0; left: -1rem;">
+              <div class="card-body" style="padding-left: 0;
+              padding-right: 0;
+              padding-top: 1rem;
+              padding-bottom: 1rem;">
+                <!-- <div class="row"> -->
+                  <div class="col-12 text-dark">
+                    <!-- <div class="row"> -->
+                      <div class="col-12 mb-4">
+                        <div class="row">
+                          <div class="col">
+                            <div class="text-muted">Bank</div>
+                            <div class="text-uppercase">GTBank</div>
+                          </div>
+                          <div class="col-auto">
+                            <img src="../../../../assets/img/gt.svg" class="img-fluid" alt="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="row mt-1">
+                          <div class="col mb-4">
+                            <div class="text-muted">Account Number</div>
+                            <div class="text-uppercase">0115946917</div>
+                          </div>
+                          <div class="col-auto mb-4 text-right">
+                            <div class="text-muted">BVN</div>
+                            <div class="text-uppercase">22213136660</div>
+                          </div>
+                        </div>
+                      </div>
+                    <!-- </div> -->
+                  </div>
+                <!-- </div> -->
+              </div>
+              <div class="card-footer">
+                <!-- <div class="row"> -->
+                  <div class="col-12 text-right text-success">
+                    <b>ACTIVE</b>
+                  </div>
+                <!-- </div> -->
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-md-2 mb-4 mono"></div>
+      
+          <div class="col-md-5 mb-4">
+            <div style="position: relative; top: 0; right: -1rem;">
+              <h4>Card</h4>
+            </div>
+            <div class="card  card-gradient text-white" style="position: relative; top: 0; right: -1rem;">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-12 my-2">
+                    <h3>**** **** **** 3452</h3>
+                  </div>
+      
+                </div>
+                <div class="row align-items-end">
+                  <div class="col mt-5">
+                    <small>EXPIRES 12/20</small>
+                    <div class="mb-3">Chihurumanya Okwechime</div>
+                  </div>
+                  <div class="col-auto text-right">
+                    <img src="../../../../assets/img/master.svg"><br />
+                    mastercard
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </ng-template>
+  </ngb-tab>
+
+
+</ngb-tabset>
+
+
+
+
+<!-- <div class="row">
     <div class="col-md-12 col-12 col-mb-12">
         <div class="card">
             <div class="card-body">
@@ -37,10 +307,10 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
-
+<!-- 
 <div class="row">
   <div class="col-md-8">
     <div class="card">
@@ -91,7 +361,6 @@
               </div>
             </div>
           </div>
-        <!-- </div> -->
       </div>
       </div>
   </div>
@@ -105,4 +374,4 @@
         </span>  
         </div>    
       </div>
-  </div>
+  </div> -->
