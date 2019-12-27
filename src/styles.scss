@@ -180,10 +180,17 @@ button:active {
   color: #aaa;
 }
 
+.table-responsive {
+  background-color: #ffffff !important;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+
+}
+
+
 .card {
   border: 0;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
-  background-color: rgb(243, 242, 242);
+  // background-color: rgb(243, 242, 242);
 
   &-body-menu{
     padding: 2px 2px !important;
@@ -214,6 +221,11 @@ button:active {
   &:hover {
     background-color: #e8e8e9;
   }
+}
+
+.mat-list-base .mat-list-item.mat-list-item-with-avatar, .mat-list-base .mat-list-option.mat-list-item-with-avatar {
+  height: 40px !important;
+  font-size: 0.9rem;
 }
 
 
@@ -613,10 +625,10 @@ input[type="checkbox"] {
 /**========= Form End ===========**/
 
 .table {
+
   thead th {
     vertical-align: bottom;
     border-top: 0;
-    border-bottom: 1.2rem solid #f4f5f7;
     text-transform: uppercase;
   }
 
@@ -625,7 +637,6 @@ input[type="checkbox"] {
     font-weight: bold;
 
     & > tr {
-      border-bottom: 1.2rem solid #f4f5f7;
       margin-left: 1rem;
       margin-right: 1rem;
     }

@@ -3,6 +3,20 @@
 <div class="row">
   <div class="col-12">
     <div class="table-responsive">
+
+      <div class="row justify-content-between align-items-center">
+        <div class="col">
+          <h5 class="m-0 p-0 text-dark-blue">All Users</h5>
+        </div>
+
+        <div class="col-md-5 col-12 mb-12">
+          <span class="has-search">
+              <mat-icon class="icon ml-1 search-icon">search</mat-icon>
+            <input type="text" name="search" placeholder="Search by ID, name, e.t.c" class="search form-control" />
+          </span>
+        </div>
+      </div>
+
       <table class="table">
         <thead>
           <tr>
@@ -23,9 +37,12 @@
             <td>Saver</td>
             <td>14 Sep 2019</td>
             <td><ul class="status"><li class="active">Active</li></ul></td>
-            <span [matMenuTriggerFor]="action" class="action">
-              <td>&#8226;&#8226;&#8226;</td>
-              </span>
+            <td>
+              <span [matMenuTriggerFor]="action" class="action">
+                &#8226;&#8226;&#8226;
+                </span>
+            </td>
+
           </tr>
         </tbody>
         <mat-menu #action="matMenu" class="mt-3">

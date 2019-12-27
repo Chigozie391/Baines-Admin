@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://v2-test.lendsqr.com/api/v1'
+  baseUrl: 'https://blinkcashapi.herokuapp.com/api/v1'
 };
 
 /*
