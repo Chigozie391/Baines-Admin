@@ -22,7 +22,7 @@
 
             </a>
           </li>
-          <ul style="font-size:10px;" *ngIf="view.sub && view.sub.length > 0" [hidden]="!showSub[i]">
+          <ul *ngIf="view.sub && view.sub.length > 0" [hidden]="!showSub[i]">
             <li *ngFor="let sub of view.sub" >
               <a routerLink="{{sub.url}}" class="pl-5" mat-list-item>
                 <span mat-line>{{sub.route}}</span>
@@ -30,7 +30,7 @@
             </li>
           </ul>
         </ng-container>
-        <div class="px-3 py-2 bg-gray text-muted">
+        <div class="px-3 py-2 bg-gray text-muted text-uppercase">
           Customers
         </div>
         <ng-container *ngFor="let view of customers; let i = index">
@@ -54,7 +54,7 @@
             </li>
           </ul>
         </ng-container>
-        <div class="px-3 py-2 bg-gray text-muted">
+        <div class="px-3 py-2 bg-gray text-muted text-uppercase">
           Business
         </div>
         <ng-container *ngFor="let view of business; let i = index">
@@ -78,7 +78,7 @@
             </li>
           </ul>
         </ng-container>
-        <div class="px-3 py-2 bg-gray text-muted">
+        <div class="px-3 py-2 bg-gray text-muted text-uppercase">
           Settings
         </div>
         <ng-container *ngFor="let view of settings; let i = index">
