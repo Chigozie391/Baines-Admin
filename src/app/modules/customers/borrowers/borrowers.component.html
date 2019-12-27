@@ -64,7 +64,7 @@
   </div>
 
 
-
+<!-- 
 <div class="row">
   <div class="col-xl-12">
     <div class="card mb-5">
@@ -109,7 +109,7 @@
             <tr>
               <th scope="col">Borrowers</th>
               <th scope="col">ID</th>
-              <!-- <th scope="col">Type</th> -->
+              <th scope="col">Type</th>
               <th scope="col">Date</th>
               <th scope="col">Status</th>
               <th scope="col"></th>
@@ -123,7 +123,7 @@
               <td class="cursor" (click)="viewDetails(obj)">
                   <span class="text-uppercase">{{obj.user_id}}</span>
               </td>
-              <!-- <td class="cursor" (click)="viewDetails(obj)">{{!obj.user.business_name ? 'Individual': 'Business'}}</td> -->
+              <td class="cursor" (click)="viewDetails(obj)">{{!obj.user.business_name ? 'Individual': 'Business'}}</td>
               <td class="cursor" (click)="viewDetails(obj)">{{obj.created_on | date:'mediumDate'}}</td>
               <td class="cursor" (click)="viewDetails(obj)">
                 <span class="badge badge-verified" *ngIf="obj.activated === 1">Activated</span>
@@ -155,4 +155,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
