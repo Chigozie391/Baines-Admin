@@ -48,17 +48,21 @@ export class AuthService {
     return this.http.post(Endpoint.FORGOT_PASSWORD, credential);
   }
 
-  logout() {
-    return this.http.post('delete', `${Endpoint.LOGIN}/logout`)
-      .pipe(
-       map((res: any)=> {
-          if(res.status === Constant.SUCCESS){
-            localStorage.clear();
-            this.router.navigate([Path.LOGIN])
-            return;
-          }
-         }
-       )
-      );
+  // logout() {
+  //   return this.http.post('delete', `${Endpoint.ADMIN_LOGOUT}`)
+  //     .pipe(
+  //      map((res: any)=> {
+  //         if(res.status === Constant.SUCCESS){
+  //           localStorage.clear();
+  //           this.router.navigate([Path.LOGIN])
+  //           return;
+  //         }
+  //        }
+  //      )
+  //     );
+  // }
+
+  logout(){
+    localStorage.clear();
   }
 }

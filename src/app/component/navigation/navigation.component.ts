@@ -52,13 +52,13 @@ export class NavigationComponent implements OnInit {
         sub: []
       },
       {
-        icon: 'group',
+        icon: 'Borrowers',
         route: 'Borrowers',
         url: '/app/customers/borrowers',
         sub: []
       },
       {
-        icon: 'group',
+        icon: 'Savers',
         route: 'Savers',
         url: '/app/customers/savers',
         sub: []
@@ -156,6 +156,8 @@ export class NavigationComponent implements OnInit {
     private authService: AuthService) {
       this.matIconRegistry.addSvgIcon('dashboard', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/dashboard.svg'));
       this.matIconRegistry.addSvgIcon('group', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/group.svg'));
+      this.matIconRegistry.addSvgIcon('Borrowers', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/Borrowers.svg'));
+      this.matIconRegistry.addSvgIcon('Savers', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/Savers.svg'));
       this.matIconRegistry.addSvgIcon('savings', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/savings.svg'));
       this.matIconRegistry.addSvgIcon('savings-products', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/savings-product.svg'));
       this.matIconRegistry.addSvgIcon('loan-products', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/loan-products.svg'));

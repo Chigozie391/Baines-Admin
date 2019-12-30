@@ -46,12 +46,12 @@
               </tr>
             </thead>
             <tbody class="text-muted">
-                <tr *ngFor="let country of [1,2,3,4,5,6,6,7,8,9,10]">
-                  <td><a routerLink="LSQ1234876/general">Okonkwo Henry</a></td>
-                  <td><a routerLink="LSQ1234876/general">LSQ1234876</a></td>
-                    <td>14, Sept 2019</td>
-                    <td><ul class="status"><li class="active">Active</li></ul></td>
-                    <td>
+                <tr *ngFor="let saver of savers">
+                  <td><a routerLink="{{saver.user_id}}/general">{{saver.last_name | titlecase}} {{saver.first_name | titlecase}}</a></td>
+                  <td><a routerLink="{{saver.user_id}}/general">{{saver.user_id}}</a></td>
+                    <td>{{saver.created_on | date}}</td>
+                    <td *ngIf="saver.activated === 1"><span class="badge badge-success">Active</span></td>
+                    <td *ngIf="saver.activated !== 1"><span class="badge badge-danger">Inactive</span></td>                   <td>
                       <span [matMenuTriggerFor]="action" class="action">
                         &#8226;&#8226;&#8226;
                         </span>

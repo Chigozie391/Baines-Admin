@@ -3,14 +3,14 @@
 
 
 
-<div class="row">
+<div class="row" *ngIf="list">
   <div class="col-12">
       <!-- <mat-divider></mat-divider> -->
       <div class="table-responsive">
 
         <div class="row justify-content-between align-items-center">
           <div class="col">
-            <h5 class="m-0 p-0 text-dark-blue">All Users</h5>
+            <h5 class="m-0 p-0 text-dark-blue">All Borrowers</h5>
           </div>
 
           <div class="col-md-5 col-12 mb-12">
@@ -32,11 +32,25 @@
             </tr>
           </thead>
           <tbody class="text-muted">
-              <tr *ngFor="let country of [1,2,3,4,5,6,6,7,8,9,10]">
-                  <td><a routerLink="LSQ1234876/general">Okonkwo Henry</a></td>
-                  <td><a routerLink="LSQ1234876/general">LSQ1234876</a></td>
-                  <td>14, Sept 2019</td>
-                  <td><ul class="status"><li class="active">Active</li></ul></td>
+
+<!-- 
+            <td>Okonkwo Henry</td>
+            <td>LSQ1234876</td>
+            <td>14, Sept 2019</td>
+            <td> <span class="badge badge-success">Active</span></td>
+            <td><ul class="status"><li class="active">Active</li></ul></td>
+            <span [matMenuTriggerFor]="action" class="action">
+            <td>&#8226;&#8226;&#8226;</td>
+            </span> -->
+
+
+
+              <tr *ngFor="let each of list">
+                  <td><a routerLink="{{each.user_id}}/general">{{each.last_name | titlecase}} {{each.first_name | titlecase}}</a></td>
+                  <td><a routerLink="{{each.user_id}}/general">{{each.user_id}}</a></td>
+                  <td>{{each.created_on | date}}</td>
+                  <td *ngIf="each.activated === 1"><span class="badge badge-success">Active</span></td>
+                  <td *ngIf="each.activated !== 1"><span class="badge badge-danger">Inactive</span></td>
                   <td><span [matMenuTriggerFor]="action" class="action">
                   &#8226;&#8226;&#8226;</span></td>
                   
@@ -63,6 +77,15 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card" *ngIf="!list">
+        <div class="card-body">
+          <h3 class="text-center text-muted">Retrieving Borrowers...</h3>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <!-- 
 <div class="row">

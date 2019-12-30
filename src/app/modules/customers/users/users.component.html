@@ -1,6 +1,94 @@
 <app-headers title="Users"></app-headers>
 
 <div class="row">
+
+
+  <div class="col-md-4 col-sm-12 col-12 col-mb-6">
+    <div class="card">
+      <div class="card-body">
+          <div class="col-md-12 text-left">
+            <h3>User Count</h3>
+          </div>
+
+          <div class="row">
+            <div class="col-md-7 text-left green">
+                  <small class="text-muted">
+                      Active
+                  </small>
+                  <h5>45,263</h5>
+            </div>
+ 
+
+            <div class="col-md-5 text-left red">
+                  <small class="text-muted">
+                      Inactive
+                  </small>
+                  <h5>504</h5>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-12 col-12 col-mb-6">
+    <div class="card">
+      <div class="card-body">
+          <div class="col-md-12 text-left">
+            <h3>Activity <small>(last 14 days)</small></h3>
+          </div>
+
+          <div class="row">
+            <div class="col-md-7 text-left green">
+                  <small class="text-muted">
+                      Active
+                  </small>
+                  <h5>36,998</h5>
+            </div>
+ 
+
+            <div class="col-md-5 text-left red">
+                  <small class="text-muted">
+                      Not Active
+                  </small>
+                  <h5>54</h5>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-12 col-12 col-mb-6">
+    <div class="card">
+      <div class="card-body">
+          <div class="col-md-12 text-left">
+            <h3>Category</h3>
+          </div>
+
+          <div class="row">
+            <div class="col-md-7 text-left green">
+                  <small class="text-muted">
+                      Savers
+                  </small>
+                  <h5>33,998</h5>
+            </div>
+ 
+
+            <div class="col-md-5 text-left red">
+                  <small class="text-muted">
+                      Borrowers
+                  </small>
+                  <h5>5,408</h5>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+<div class="row" *ngIf="user">
   <div class="col-12">
     <div class="table-responsive">
 
@@ -17,10 +105,10 @@
         </div>
       </div>
 
-      <table class="table">
+      <table class="table" *ngIf="user">
         <thead>
           <tr>
-            <th scope="col">Lender</th>
+            <th scope="col">Full Name</th>
             <th scope="col">ID</th>
             <th scope="col">Email</th>
             <th scope="col">type</th>
@@ -30,13 +118,29 @@
           </tr>
         </thead>
         <tbody class="text-muted">
-          <tr *ngFor="let country of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]">
-              <td><a routerLink="LSQ1234876">Afenifere Olabode</a></td>
-              <td><a routerLink="LSQ1234876">LSQ1234876</a></td>
-            <td>afeola@loans.com</td>
+
+
+            <!-- <td>Okonkwo Henry</td>
+              <td>LSQ1234876</td>
+              <td><a routerLink="LSQ1234876">henry@mailer.com</a></td>
+              <td><a routerLink="LSQ1234876">Loaner</a></td>
+              <td>14, Sept 2019</td>
+              <td> <span class="badge badge-success">Active</span></td>
+              <td><ul class="status"><li class="active">Active</li></ul></td>
+              <span [matMenuTriggerFor]="action" class="action">
+              <td>&#8226;&#8226;&#8226;</td>
+              </span> -->
+
+
+
+          <tr *ngFor="let each of user">
+              <td><a routerLink="{{each.id}}">{{each.last_name}} {{each.first_name}}</a></td>
+              <td><a routerLink="{{each.id}}">{{each.client_id}}</a></td>
+            <td>{{each.email}}</td>
             <td>Saver</td>
-            <td>14 Sep 2019</td>
-            <td><ul class="status"><li class="active">Active</li></ul></td>
+            <td>{{each.created_on | date}}</td>
+                  <td *ngIf="each.activated === 1"><span class="badge badge-success">Active</span></td>
+                  <td *ngIf="each.activated !== 1"><span class="badge badge-danger">Inactive</span></td>
             <td>
               <span [matMenuTriggerFor]="action" class="action">
                 &#8226;&#8226;&#8226;
@@ -62,6 +166,16 @@
           </ng-container>
         </mat-menu>
       </table>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card" *ngIf="!user">
+      <div class="card-body">
+        <h3 class="text-center text-muted">Fetching users...</h3>
+      </div>
     </div>
   </div>
 </div>

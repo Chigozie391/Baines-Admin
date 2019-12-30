@@ -1,24 +1,33 @@
-<div class="row justify-content-center align-items-center h-100">
-    <div class="col-md-6 mt-3">
-        <h3 class="text-dark-blue pb-4">Welcome Back</h3>
+<div class="row justify-content-center align-items-center h-100 full-page">
+    <div class="half-page"></div>
 
-        <form #loginForm="ngForm" (submit)="loginUser()">
-						<p class="pt-4">Log in to your BlinkCash account</p>
-						<alert [type]="showAlert" dismissible="true" (onClosed)="onClosed()" *ngIf="msg">{{ msg }}</alert>
-            <div class="form-group">
-                <input type="email" name="email" required [(ngModel)]="login.email" id="email" placeholder="Email" class="form-control"/>
+    <div class="col-md-4 col-mb-12 col-sm-12 col-xs-12">
+        <div class="text-center" style="margin-bottom: 5rem;">
+            <img style="width: 10rem;" src="../../../../assets/img/logo.svg" alt="blinkcash admin">
+        </div>
+    <div class="card">
+        <div class="card-body">
+        
+                <form #loginForm="ngForm" (submit)="loginUser()">
+                  <p class="pt-4 text-center">Log in with your credentials</p>
+                  <alert [type]="showAlert" dismissible="true" (onClosed)="onClosed()" *ngIf="msg">{{ msg }}</alert>
+                    <div class="form-group">
+                        <input type="email" name="email" required [(ngModel)]="login.email" id="email" placeholder="Email" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="passwword" required [(ngModel)]="login.password" id="password" placeholder="Password" class="form-control"/>
+                    </div>
+                    <div class="text-right">
+                        <a routerLink="/auth/forgot-password" class="text-green">Forgot password?</a>
+                    </div>
+                    <div class="my-3">
+                        <button type="submit" [disabled]="loginForm.invalid || loading" class="btn py-2 btn btn-primary bg-green text-white btn-block">
+                          {{!loading ? 'LOG IN' : ''}} <span class="spinner-grow spinner-grow-sm" *ngIf="loading"></span>
+                        </button>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <input type="password" name="passwword" required [(ngModel)]="login.password" id="password" placeholder="Password" class="form-control"/>
-            </div>
-            <div class="text-right">
-                <a routerLink="/auth/forgot-password" class="text-green">Forgot password?</a>
-            </div>
-            <div class="my-3">
-                <button type="submit" [disabled]="loginForm.invalid || loading" class="btn py-2 btn btn-primary bg-green text-white btn-block">
-                  {{!loading ? 'LOG IN' : ''}} <span class="spinner-grow spinner-grow-sm" *ngIf="loading"></span>
-                </button>
-            </div>
-        </form>
+        </div>
     </div>
+
 </div>

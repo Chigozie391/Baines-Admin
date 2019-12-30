@@ -11,13 +11,16 @@ export class BorrowersService {
 
   constructor(private http: HttpClient,private authService: AuthService) { }
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Authorization': this.authService.token
-    })
-  }
 
   getAllBorrowers() {
     return this.http.get(Endpoint.GET_ALL_BORROWERS);
+  }
+
+  getBorrower() {
+
+  }
+
+  getLoans(borrower_id) {
+    return this.http.get(`${Endpoint.USER}/${borrower_id}/loans`);
   }
 }

@@ -32,7 +32,6 @@ export class BorrowersComponent implements OnInit {
     this.loading = true;
     this.borrowersService.getAllBorrowers().subscribe((res: any) => {
       this.loading = false;
-      console.log(res);
       if (res.status === Constant.SUCCESS) {
         this.list = res.data;
       }

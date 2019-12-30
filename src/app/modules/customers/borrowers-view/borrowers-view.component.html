@@ -8,136 +8,138 @@
 <ngb-tabset type="pills" justify="justified">
   <ngb-tab title="General">
     <ng-template ngbTabContent>
+
+      <div *ngIf="borrower">
+        <div class="row">
+          <div class="col-md-12 col-12 col-mb-12">
+              <div class="card">
+                  <div class="card-body">
+                          <div class="col-md-12 col-12 col-mb-12">
+                              <div class="user-data">
+                                  <h3>{{borrower?.last_name | titlecase}} {{borrower?.first_name | titlecase}}</h3>
+                                  <small>{{id}}</small>
+                              </div>
+                          </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+  
       <div class="row">
-        <div class="col-md-12 col-12 col-mb-12">
-            <div class="card">
-                <div class="card-body">
-                        <div class="col-md-12 col-12 col-mb-12">
-                            <div class="user-data">
-                                <h3>Chihurumanya Okwechime</h3>
-                                <small>LSQ38389290</small>
-                            </div>
-                        </div>
+     
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-body">
+              <div class="col-md-12 col-12 mb-12">
+                  This section contains important details about the Borrower, in the form of list items. The same details provided by the lender when they joined the platform as well as other important data needed for the admin user.
+                  <hr>
+              </div>
+              <div class="col-md-12 col-12 mb-12">
+                <h3>Personal Information</h3>
+              </div>
+                <div class="row">
+                  <div class="col-md-4">
+                        <div class="col-md-12">
+                            <small class="text-muted">
+                                Full name
+                            </small>
+                            <h5><strong>{{!borrower?.last_name ? 'N/A' : borrower?.last_name | titlecase}} {{!borrower?.first_name ? 'N/A' : borrower?.first_name | titlecase}}</strong></h5>
+                          </div>
+                  </div>
+                  <div class="col-md-4">
+                        <div class="col-md-12">
+                            <small class="text-muted">
+                                Mobile Number
+                            </small>
+                            <h5><strong>{{!borrower?.phone_number ? 'N/A' : borrower?.phone_number}}</strong></h5>
+                          </div>
+                  </div>
+                  <div class="col-md-4">
+                        <div class="col-md-12 ">
+                            <small class="text-muted">
+                                BVN
+                            </small>
+                            <h5><strong>{{!borrower?.bvn ? 'N/A' : borrower?.bvn}}</strong></h5>
+                          </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="col-md-12">
+                        <small class="text-muted">
+                            Gender
+                        </small>
+                        <h5><strong>{{!moreProfile?.gender ? 'N/A' : moreProfile?.gender}}</strong></h5>
+                      </div>
+                  </div>
+      
+                  <div class="col-md-4">
+                      <div class="col-md-12">
+                        <small class="text-muted">
+                            Email Address
+                        </small>
+                        <h5><strong>{{!borrower?.email ? 'N/A' : borrower?.email}}</strong></h5>
+                      </div>
+                  </div>
+      
+                  <div class="col-md-4">
+                      <div class="col-md-12">
+                        <small class="text-muted">
+                            Marital Status
+                        </small>
+                        <h5><strong>{{!moreProfile?.marital_status ? 'N/A' : moreProfile?.marital_status}}</strong></h5>
+                      </div>
+                  </div>
+      
+                  <div class="col-md-4">
+                      <div class="col-md-12">
+                        <small class="text-muted">
+                            Dependants
+                        </small>
+                        <h5><strong>{{!moreProfile?.no_of_dependent ? 'N/A' : moreProfile?.no_of_dependent}}</strong></h5>
+                      </div>
+                  </div>
+      
+                  <div class="col-md-4">
+                      <div class="col-md-12">
+                        <small class="text-muted">
+                            Type of Residence
+                        </small>
+                        <h5><strong>{{!moreProfile?.type_of_residence ? 'N/A' : moreProfile?.type_of_residence}}</strong></h5>
+                      </div>
+                  </div>
                 </div>
+              </div>    
             </div>
         </div>
-    </div>
-
-
-    <div class="row">
-   
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-body">
-            <div class="col-md-12 col-12 mb-12">
-                This section contains important details about the Borrower, in the form of list items. The same details provided by the lender when they joined the platform as well as other important data needed for the admin user.
-                <hr>
+      
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <span class="pic medium square ml-12 profile-img">
+                <img src="{{borrower?.photo_url}}" alt="" class="img-fluid">
+              </span>  
+              </div>    
             </div>
-            <div class="col-md-12 col-12 mb-12">
-              <h3>Personal Information</h3>
-            </div>
-              <div class="row">
-                <div class="col-md-4">
-                      <div class="col-md-12">
-                          <small class="text-muted">
-                              Full name
-                          </small>
-                          <h5><strong>Saidi Balogun</strong></h5>
-                        </div>
-                </div>
-                <div class="col-md-4">
-                      <div class="col-md-12">
-                          <small class="text-muted">
-                              Mobile Number
-                          </small>
-                          <h5><strong>09089544444</strong></h5>
-                        </div>
-                </div>
-                <div class="col-md-4">
-                      <div class="col-md-12 ">
-                          <small class="text-muted">
-                              BVN
-                          </small>
-                          <h5><strong>9829379234</strong></h5>
-                        </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="col-md-12">
-                      <small class="text-muted">
-                          Gender
-                      </small>
-                      <h5><strong>Male</strong></h5>
-                    </div>
-                </div>
-    
-                <div class="col-md-4">
-                    <div class="col-md-12">
-                      <small class="text-muted">
-                          Email Address
-                      </small>
-                      <h5><strong>xyz@domain.com</strong></h5>
-                    </div>
-                </div>
-    
-                <div class="col-md-4">
-                    <div class="col-md-12">
-                      <small class="text-muted">
-                          Marital Status
-                      </small>
-                      <h5><strong>Single</strong></h5>
-                    </div>
-                </div>
-    
-                <div class="col-md-4">
-                    <div class="col-md-12">
-                      <small class="text-muted">
-                          Children
-                      </small>
-                      <h5><strong>3</strong></h5>
-                    </div>
-                </div>
-    
-                <div class="col-md-4">
-                    <div class="col-md-12">
-                      <small class="text-muted">
-                          Type of Residence
-                      </small>
-                      <h5><strong>Parents Apartment</strong></h5>
-                    </div>
-                </div>
+        </div>
+      </div>
+  
+  
+  
+      <div class="row">
+     
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="col-md-12 col-12 mb-12">
+                <h3>Education &amp; Employment Details</h3>
               </div>
-            </div>    
-          </div>
-      </div>
-    
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <span class="pic medium square ml-12 profile-img">
-              <img src="../../../../assets/img/nav/image.svg" alt="" class="img-fluid">
-            </span>  
-            </div>    
-          </div>
-      </div>
-    </div>
-
-
-
-    <div class="row">
-   
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-body">
-            <div class="col-md-12 col-12 mb-12">
-              <h3>Education &amp; Employment Details</h3>
-            </div>
               <div class="row">
                 <div class="col-md-3">
                       <div class="col-md-12">
                           <small class="text-muted">
                               Level Of Education
                           </small>
-                          <h5><strong>B.Sc.</strong></h5>
+                          <h5><strong>{{!moreProfile?.educational_attainment? 'N/A' : moreProfile?.educational_attainment}}</strong></h5>
                         </div>
                 </div>
                 <div class="col-md-3">
@@ -145,7 +147,7 @@
                           <small class="text-muted">
                               Employment Status
                           </small>
-                          <h5><strong>Federal: Public</strong></h5>
+                          <h5><strong>{{!moreProfile?.employment_status ? 'N/A' : moreProfile?.employment_status}}</strong></h5>
                         </div>
                 </div>
                 <div class="col-md-3">
@@ -153,15 +155,15 @@
                           <small class="text-muted">
                               Sector Of Employment
                           </small>
-                          <h5><strong>IT</strong></h5>
+                          <h5><strong>{{!moreProfile?.sector_of_employment ? 'N/A' : moreProfile?.sector_of_employment}}</strong></h5>
                         </div>
                 </div>
                 <div class="col-md-3">
                     <div class="col-md-12">
                       <small class="text-muted">
-                        Duration Of Employment
+                        Employment Date
                       </small>
-                      <h5><strong>2 years</strong></h5>
+                      <h5><strong>{{!moreProfile?.work_start_date ? 'N/A' : moreProfile?.work_start_date | date}}</strong></h5>
                     </div>
                 </div>
     
@@ -170,7 +172,7 @@
                       <small class="text-muted">
                           Monthly Income
                       </small>
-                      <h5><strong>100,000 - 200,000</strong></h5>
+                      <h5><strong>{{!moreProfile?.monthly_net_income ? 'N/A': moreProfile?.monthly_net_income}}</strong></h5>
                     </div>
                 </div>
     
@@ -188,12 +190,23 @@
                       <small class="text-muted">
                           Official Email Address
                       </small>
-                      <h5><strong>wed@dmola.com</strong></h5>
+                      <h5><strong>{{!moreProfile?.work_email ? 'N/A' : moreProfile?.work_email}}</strong></h5>
                     </div>
                 </div>    
               </div>
-            </div>    
+              </div>    
+            </div>
+        </div>
+      </div>
+      </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card" *ngIf="!borrower">
+          <div class="card-body">
+            <h3 class="text-center text-muted">Please wait...</h3>
           </div>
+        </div>
       </div>
     </div>
 
@@ -201,7 +214,7 @@
    </ngb-tab>
 
   <ngb-tab title="Loans">
-    <ng-template ngbTabContent>
+    <ng-template ngbTabContent *ngIf="loan_details">
 
       <div class="row">
         <div class="col-md-12 col-12 col-mb-12">
@@ -213,15 +226,15 @@
                           <img src="../../../../assets/img/placeholder-user.png" alt="" class="img-fluid">
                       </span>
                       <div class="user-data">
-                          <h3>Chihurumanya Okwechime</h3>
-                          <p>LSQ38389290</p>
+                          <h3>{{borrower?.last_name | titlecase}} {{borrower?.first_name | titlecase}}</h3>
+                          <p>{{id}}</p>
                       </div>
                   </div>
       
                   <div class="col-md-4 col-12 col-mb-12 text-right">
                     <div class="user-data">
                       <p>Total Loans Received</p>
-                        <h3>1,205,675.00</h3>
+                        <h3>{{borrowerLoans?.total_loan_amount}}</h3>
                     </div>
                 </div>
                   </div>
@@ -266,19 +279,31 @@
                       </tr>
                     </thead>
                     <tbody class="text-muted">
-                      <tr *ngFor="let country of [1,2,3,4,5,6,6,7,8,9,10]">
-                        <td> <span class="badge badge-danger">running</span></td>
-                        <td><a routerLink="/app/customers/borrowers/LSQ1234876/loans/LSQ1234876">LSQ1234876</a></td>
-                        <td><a routerLink="/app/customers/borrowers/LSQ1234876/loans/LSQ1234876">Household Expenses</a></td>
-                        <td>30 Days</td>
-                        <td>14 Jan 2019, 07:45:21</td>
-                        <td>₦200,500.00</td>
+                      <tr *ngFor="let loan of loan_details">
+                        <td *ngIf="loan.status.status === 'SETTLED'"><span class="badge badge-success">{{loan.status.status}}</span></td>
+                        <td *ngIf="loan.status.status !== 'SETTLED'"><span class="badge badge-danger">{{loan.status.status}}</span></td>
+                        <td><a routerLink="/app/customers/borrowers/{{loan.id}}/loans/{{loan.id}}">{{loan.id}}</a></td>
+                        <td><a routerLink="/app/customers/borrowers/{{loan.id}}/loans/{{loan.id}}">{{!loan.loan_profile ? 'Not available' : loan.loan_profile.purpose}}</a></td>
+                        <td>{{loan.tenor_type.value}} days</td>
+                        <!-- <td>{{loan.created_on | date}}</td> -->
+                        <td>--------</td>
+                        <td>₦{{loan.loan_amount}}</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
             <!-- </div> -->
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card" *ngIf="!loan_details">
+                <div class="card-body">
+                  <h3 class="text-center text-muted">Please wait...</h3>
+                </div>
+              </div>
+            </div>
           </div>
 
     </ng-template>
@@ -296,9 +321,9 @@
                                 <img src="../../../../assets/img/placeholder-user.png" alt="" class="img-fluid">
                             </span>
                             <div class="user-data">
-                                <h3>Chihurumanya Okwechime</h3>
-                                <small>LSQ38389290</small>
-                            </div>
+                              <h3>{{borrower?.last_name | titlecase}} {{borrower?.first_name | titlecase}}</h3>
+                              <small>{{id}}</small>
+                          </div>
                         </div>
                 </div>
             </div>
@@ -312,47 +337,50 @@
           <div style="position: relative; top: 0; left: -1rem;">
             <h4>Bank</h4>
           </div>
-          <div class="card " style="position: relative; top: 0; left: -1rem;">
-            <div class="card-body" style="padding-left: 0;
-            padding-right: 0;
-            padding-top: 1rem;
-            padding-bottom: 1rem;">
-              <!-- <div class="row"> -->
-                <div class="col-12 text-dark">
-                  <!-- <div class="row"> -->
-                    <div class="col-12 mb-4" style="padding-left: 0; padding-right: 0;">
-                      <div class="row">
-                        <div class="col">
-                          <div class="text-muted">Bank</div>
-                          <div class="text-uppercase">GTBank</div>
-                        </div>
-                        <div class="col-auto">
-                          <img src="../../../../assets/img/gt.svg" class="img-fluid" alt="">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12" style="padding-left: 0; padding-right: 0;">
-                      <div class="row mt-1">
-                        <div class="col mb-4">
-                          <div class="text-muted">Account Number</div>
-                          <div class="text-uppercase">0115946917</div>
-                        </div>
-                        <div class="col-auto mb-4 text-right">
-                          <div class="text-muted">BVN</div>
-                          <div class="text-uppercase">22213136660</div>
+          
+          <div class="col-md-12" *ngFor="let each of banks">
+            <div class="card " style="position: relative; top: 0; left: -1rem; margin-bottom: 1rem;">
+              <div class="card-body" style="padding-left: 0;
+              padding-right: 0;
+              padding-top: 1rem;
+              padding-bottom: 1rem;">
+                <!-- <div class="row"> -->
+                  <div class="col-12 text-dark">
+                    <!-- <div class="row"> -->
+                      <div class="col-12 mb-4" style="padding-left: 0; padding-right: 0;">
+                        <div class="row">
+                          <div class="col">
+                            <div class="text-muted">Bank</div>
+                            <div class="text-uppercase">{{each.bank_code}}</div>
+                          </div>
+                          <div class="col-auto">
+                            <img src="../../../../assets/img/gt.svg" class="img-fluid" alt="">
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  <!-- </div> -->
-                </div>
-              <!-- </div> -->
-            </div>
-            <div class="card-footer">
-              <!-- <div class="row"> -->
-                <div class="col-12 text-right text-success">
-                  <b>ACTIVE</b>
-                </div>
-              <!-- </div> -->
+                      <div class="col-12" style="padding-left: 0; padding-right: 0;">
+                        <div class="row mt-1">
+                          <div class="col mb-4">
+                            <div class="text-muted">Account Number</div>
+                            <div class="text-uppercase">{{each.account_number}}</div>
+                          </div>
+                          <div class="col-auto mb-4 text-right">
+                            <div class="text-muted">BVN</div>
+                            <div class="text-uppercase">{{borrower?.bvn}}</div>
+                          </div>
+                        </div>
+                      </div>
+                    <!-- </div> -->
+                  </div>
+                <!-- </div> -->
+              </div>
+              <div class="card-footer">
+                <!-- <div class="row"> -->
+                  <div class="col-12 text-right">
+                    <p class=" badge badge-success">ACTIVE</p>
+                  </div>
+                <!-- </div> -->
+              </div>
             </div>
           </div>
         </div>
@@ -363,26 +391,32 @@
           <div style="position: relative; top: 0; right: -1rem;">
             <h4>Card</h4>
           </div>
-          <div class="card  card-gradient text-white" style="position: relative; top: 0; right: -1rem;">
-            <div class="card-body ">
-              <div class="row">
-                <div class="col-12 my-2">
-                  <h3>**** **** **** 3452</h3>
-                </div>
+          
+          <div class="col-md-12" *ngFor="let each of cards">
 
-              </div>
-              <div class="row align-items-end">
-                <div class="col mt-5">
-                  <small>EXPIRES 12/20</small>
-                  <div class="mb-3">Chihurumanya Okwechime</div>
+            <div class="card  card-gradient text-white" style="position: relative; top: 0; right: -1rem; margin-bottom: 1rem;">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-12 my-2">
+                    <h3>**** **** **** {{each.card_last4}}</h3>
+                  </div>
+  
                 </div>
-                <div class="col-auto text-right">
-                  <img src="../../../../assets/img/master.svg"><br />
-                  mastercard
+                <div class="row align-items-end">
+                  <div class="col mt-5">
+                    <small>EXPIRES {{each.card_exp_month}}/{{each.card_exp_year}}</small>
+                    <div class="mb-3">{{each.card_owner_name}}</div>
+                  </div>
+                  <div class="col-auto text-right">
+                    <img src="../../../../assets/img/master.svg"><br />
+                    mastercard
+                  </div>
                 </div>
               </div>
             </div>
+
           </div>
+
         </div>
       </div>
     </div>

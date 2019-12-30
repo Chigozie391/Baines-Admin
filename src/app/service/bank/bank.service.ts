@@ -12,6 +12,6 @@ export class BankService {
   }
 
   specificUserBank (id) {
-    return this.http.get(`${Endpoint.USERS}/${id}/bank`)
+    return this.http.get(`${Endpoint.GET_ALL_USERS}/${id}/bank`)
   } 
 }
