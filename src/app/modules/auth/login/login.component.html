@@ -3,18 +3,26 @@
 
     <div class="col-md-4 col-mb-12 col-sm-12 col-xs-12">
         <div class="text-center" style="margin-bottom: 5rem;">
-            <img style="width: 10rem;" src="../../../../assets/img/logo.svg" alt="blinkcash admin">
+            <img style="width: 10rem;" src="../../../../assets/img/logo.png" alt="blinkcash admin">
         </div>
-    <div class="card">
+    <div class="card more-shadow">
         <div class="card-body">
+            
+
         
                 <form #loginForm="ngForm" (submit)="loginUser()">
                   <p class="pt-4 text-center">Log in with your credentials</p>
                   <alert [type]="showAlert" dismissible="true" (onClosed)="onClosed()" *ngIf="msg">{{ msg }}</alert>
-                    <div class="form-group">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"> <mat-icon>mail_outline</mat-icon> </span>
+                          </div>
                         <input type="email" name="email" required [(ngModel)]="login.email" id="email" placeholder="Email" class="form-control"/>
                     </div>
-                    <div class="form-group">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"> <mat-icon>lock</mat-icon> </span>
+                          </div>
                         <input type="password" name="passwword" required [(ngModel)]="login.password" id="password" placeholder="Password" class="form-control"/>
                     </div>
                     <div class="text-right">

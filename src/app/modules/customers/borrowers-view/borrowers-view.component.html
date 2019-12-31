@@ -44,7 +44,7 @@
                             <small class="text-muted">
                                 Full name
                             </small>
-                            <h5><strong>{{!borrower?.last_name ? 'N/A' : borrower?.last_name | titlecase}} {{!borrower?.first_name ? 'N/A' : borrower?.first_name | titlecase}}</strong></h5>
+                            <h6><strong>{{!borrower?.last_name ? 'N/A' : borrower?.last_name | titlecase}} {{!borrower?.first_name ? 'N/A' : borrower?.first_name | titlecase}}</strong></h6>
                           </div>
                   </div>
                   <div class="col-md-4">
@@ -52,7 +52,7 @@
                             <small class="text-muted">
                                 Mobile Number
                             </small>
-                            <h5><strong>{{!borrower?.phone_number ? 'N/A' : borrower?.phone_number}}</strong></h5>
+                            <h6><strong>{{!borrower?.phone_number ? 'N/A' : borrower?.phone_number}}</strong></h6>
                           </div>
                   </div>
                   <div class="col-md-4">
@@ -60,7 +60,7 @@
                             <small class="text-muted">
                                 BVN
                             </small>
-                            <h5><strong>{{!borrower?.bvn ? 'N/A' : borrower?.bvn}}</strong></h5>
+                            <h6><strong>{{!borrower?.bvn ? 'N/A' : borrower?.bvn}}</strong></h6>
                           </div>
                   </div>
                   <div class="col-md-4">
@@ -68,7 +68,7 @@
                         <small class="text-muted">
                             Gender
                         </small>
-                        <h5><strong>{{!moreProfile?.gender ? 'N/A' : moreProfile?.gender}}</strong></h5>
+                        <h6><strong>{{!moreProfile?.gender ? 'N/A' : moreProfile?.gender}}</strong></h6>
                       </div>
                   </div>
       
@@ -77,7 +77,7 @@
                         <small class="text-muted">
                             Email Address
                         </small>
-                        <h5><strong>{{!borrower?.email ? 'N/A' : borrower?.email}}</strong></h5>
+                        <h6><strong>{{!borrower?.email ? 'N/A' : borrower?.email}}</strong></h6>
                       </div>
                   </div>
       
@@ -86,7 +86,7 @@
                         <small class="text-muted">
                             Marital Status
                         </small>
-                        <h5><strong>{{!moreProfile?.marital_status ? 'N/A' : moreProfile?.marital_status}}</strong></h5>
+                        <h6><strong>{{!moreProfile?.marital_status ? 'N/A' : moreProfile?.marital_status}}</strong></h6>
                       </div>
                   </div>
       
@@ -95,7 +95,7 @@
                         <small class="text-muted">
                             Dependants
                         </small>
-                        <h5><strong>{{!moreProfile?.no_of_dependent ? 'N/A' : moreProfile?.no_of_dependent}}</strong></h5>
+                        <h6><strong>{{!moreProfile?.no_of_dependent ? 'N/A' : moreProfile?.no_of_dependent}}</strong></h6>
                       </div>
                   </div>
       
@@ -104,7 +104,7 @@
                         <small class="text-muted">
                             Type of Residence
                         </small>
-                        <h5><strong>{{!moreProfile?.type_of_residence ? 'N/A' : moreProfile?.type_of_residence}}</strong></h5>
+                        <h6><strong>{{!moreProfile?.type_of_residence ? 'N/A' : moreProfile?.type_of_residence}}</strong></h6>
                       </div>
                   </div>
                 </div>
@@ -139,7 +139,7 @@
                           <small class="text-muted">
                               Level Of Education
                           </small>
-                          <h5><strong>{{!moreProfile?.educational_attainment? 'N/A' : moreProfile?.educational_attainment}}</strong></h5>
+                          <h6><strong>{{!moreProfile?.educational_attainment? 'N/A' : moreProfile?.educational_attainment}}</strong></h6>
                         </div>
                 </div>
                 <div class="col-md-3">
@@ -147,7 +147,7 @@
                           <small class="text-muted">
                               Employment Status
                           </small>
-                          <h5><strong>{{!moreProfile?.employment_status ? 'N/A' : moreProfile?.employment_status}}</strong></h5>
+                          <h6><strong>{{!moreProfile?.employment_status ? 'N/A' : moreProfile?.employment_status}}</strong></h6>
                         </div>
                 </div>
                 <div class="col-md-3">
@@ -155,7 +155,7 @@
                           <small class="text-muted">
                               Sector Of Employment
                           </small>
-                          <h5><strong>{{!moreProfile?.sector_of_employment ? 'N/A' : moreProfile?.sector_of_employment}}</strong></h5>
+                          <h6><strong>{{!moreProfile?.sector_of_employment ? 'N/A' : moreProfile?.sector_of_employment}}</strong></h6>
                         </div>
                 </div>
                 <div class="col-md-3">
@@ -163,7 +163,7 @@
                       <small class="text-muted">
                         Employment Date
                       </small>
-                      <h5><strong>{{!moreProfile?.work_start_date ? 'N/A' : moreProfile?.work_start_date | date}}</strong></h5>
+                      <h6><strong>{{!moreProfile?.work_start_date ? 'N/A' : moreProfile?.work_start_date | date}}</strong></h6>
                     </div>
                 </div>
     
@@ -172,7 +172,7 @@
                       <small class="text-muted">
                           Monthly Income
                       </small>
-                      <h5><strong>{{!moreProfile?.monthly_net_income ? 'N/A': moreProfile?.monthly_net_income}}</strong></h5>
+                      <h6><strong>{{!moreProfile?.monthly_net_income ? 'N/A': moreProfile?.monthly_net_income}}</strong></h6>
                     </div>
                 </div>
     
@@ -181,7 +181,7 @@
                       <small class="text-muted">
                           Loan Repayment
                       </small>
-                      <h5><strong>40,000</strong></h5>
+                      <h6><strong>40,000</strong></h6>
                     </div>
                 </div>
     
@@ -190,7 +190,7 @@
                       <small class="text-muted">
                           Official Email Address
                       </small>
-                      <h5><strong>{{!moreProfile?.work_email ? 'N/A' : moreProfile?.work_email}}</strong></h5>
+                      <h6><strong>{{!moreProfile?.work_email ? 'N/A' : moreProfile?.work_email}}</strong></h6>
                     </div>
                 </div>    
               </div>
@@ -256,7 +256,7 @@
                   <!-- <div class="col-12"> -->
                     <div class="row justify-content-between align-items-center">
                       <div class="col-md-5">
-                        <h5 class="m-0 p-0 text-left text-dark-blue">All Loans</h5>
+                        <h6 class="m-0 p-0 text-left text-dark-blue">All Loans</h6>
                       </div>
             
                       <div class="col-md-5 col-12 mb-12 text-right">
@@ -474,7 +474,7 @@
                       <small class="text-muted">
                           Full name
                       </small>
-                      <h5><strong>Saidi Balogun</strong></h5>
+                      <h6><strong>Saidi Balogun</strong></h6>
                     </div>
             </div>
             <div class="col-md-4">
@@ -482,7 +482,7 @@
                       <small class="text-muted">
                           Mobile Number
                       </small>
-                      <h5><strong>09089544444</strong></h5>
+                      <h6><strong>09089544444</strong></h6>
                     </div>
             </div>
             <div class="col-md-4">
@@ -490,7 +490,7 @@
                       <small class="text-muted">
                           BVN
                       </small>
-                      <h5><strong>9829379234</strong></h5>
+                      <h6><strong>9829379234</strong></h6>
                     </div>
             </div>
             <div class="col-md-4">
@@ -498,7 +498,7 @@
                   <small class="text-muted">
                       Gender
                   </small>
-                  <h5><strong>Male</strong></h5>
+                  <h6><strong>Male</strong></h6>
                 </div>
             </div>
 
@@ -507,7 +507,7 @@
                   <small class="text-muted">
                       Email Address
                   </small>
-                  <h5><strong>xyz@domain.com</strong></h5>
+                  <h6><strong>xyz@domain.com</strong></h6>
                 </div>
             </div>
 
@@ -516,7 +516,7 @@
                   <small class="text-muted">
                       Marital Status
                   </small>
-                  <h5><strong>Single</strong></h5>
+                  <h6><strong>Single</strong></h6>
                 </div>
             </div>
 
@@ -525,7 +525,7 @@
                   <small class="text-muted">
                       Children
                   </small>
-                  <h5><strong>3</strong></h5>
+                  <h6><strong>3</strong></h6>
                 </div>
             </div>
 
@@ -534,7 +534,7 @@
                   <small class="text-muted">
                       Type of Residence
                   </small>
-                  <h5><strong>Parents Apartment</strong></h5>
+                  <h6><strong>Parents Apartment</strong></h6>
                 </div>
             </div>
           </div>
@@ -568,7 +568,7 @@
                       <small class="text-muted">
                           Level Of Education
                       </small>
-                      <h5><strong>B.Sc.</strong></h5>
+                      <h6><strong>B.Sc.</strong></h6>
                     </div>
             </div>
             <div class="col-md-3">
@@ -576,7 +576,7 @@
                       <small class="text-muted">
                           Employment Status
                       </small>
-                      <h5><strong>Federal: Public</strong></h5>
+                      <h6><strong>Federal: Public</strong></h6>
                     </div>
             </div>
             <div class="col-md-3">
@@ -584,7 +584,7 @@
                       <small class="text-muted">
                           Sector Of Employment
                       </small>
-                      <h5><strong>IT</strong></h5>
+                      <h6><strong>IT</strong></h6>
                     </div>
             </div>
             <div class="col-md-3">
@@ -592,7 +592,7 @@
                   <small class="text-muted">
                     Duration Of Employment
                   </small>
-                  <h5><strong>2 years</strong></h5>
+                  <h6><strong>2 years</strong></h6>
                 </div>
             </div>
 
@@ -601,7 +601,7 @@
                   <small class="text-muted">
                       Monthly Income
                   </small>
-                  <h5><strong>100,000 - 200,000</strong></h5>
+                  <h6><strong>100,000 - 200,000</strong></h6>
                 </div>
             </div>
 
@@ -610,7 +610,7 @@
                   <small class="text-muted">
                       Loan Repayment
                   </small>
-                  <h5><strong>40,000</strong></h5>
+                  <h6><strong>40,000</strong></h6>
                 </div>
             </div>
 
@@ -619,7 +619,7 @@
                   <small class="text-muted">
                       Official Email Address
                   </small>
-                  <h5><strong>wed@dmola.com</strong></h5>
+                  <h6><strong>wed@dmola.com</strong></h6>
                 </div>
             </div>    
           </div>
@@ -643,7 +643,7 @@
                 <div class="card-body">
                   <div class="row justify-content-between align-items-center">
                     <div class="col">
-                      <h5 class="m-0 p-0 text-dark-blue">All Loans</h5>
+                      <h6 class="m-0 p-0 text-dark-blue">All Loans</h6>
                     </div>
 
                     <div class="col-3">
@@ -723,7 +723,7 @@
                 <div class="card-body">
                   <div class="row justify-content-between align-items-center">
                     <div class="col">
-                      <h5 class="m-0 p-0 text-dark-blue">Payment History</h5>
+                      <h6 class="m-0 p-0 text-dark-blue">Payment History</h6>
                     </div>
 
                     <div class="col-3">

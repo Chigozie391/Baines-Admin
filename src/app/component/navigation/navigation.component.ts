@@ -28,6 +28,10 @@ export class NavigationComponent implements OnInit {
     }
   }
 
+  logout(){
+    this.authService.logout();
+  }
+
   @ViewChild('drawer', {static: true}) drawer: MatSidenav;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(

@@ -147,7 +147,7 @@
       <mat-menu #menu="matMenu" class="mt-3">
         <small class="mx-3 pb-2">WELCOME!</small>
         <ng-container *ngFor="let item of userMenu">
-          <button mat-menu-item routerLink="{{item.url}}">
+          <button mat-menu-item (click)="logout()">
             <mat-icon svgIcon="{{item.icon}}"></mat-icon>
             <span>{{item.route}}</span>
           </button>
