@@ -81,18 +81,18 @@
                       <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
                       <div class="user-data-space">
                        <a routerLink="LSQ1293943"><h5>{{eachLoan.loan_profile.purpose}} </h5></a>
-                        <small class="text-muted">{{eachLoan.id}}</small>
+                        <small class="text-muted">{{!eachLoan.id ? 'N/A' : eachLoan.id}}</small>
                         </div>
                     </div>
                     <div class="col-md-12">
                       <div class="user-data-space">
-                        <h5>{{eachLoan.loan_amount}}</h5>
+                        <h5>{{!eachLoan.loan_amount ? 'N/A' : eachLoan.loan_amount}}</h5>
                         <small class="text-muted">Amount(NGN)</small>
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="user-data-space">
-                        <h5>11%</h5>
+                        <h5>{{!eachLoan.interest_rate ? 'N/A' : eachLoan.interest_rate}} %</h5>
                         <small class="text-muted">Interest Rate</small>
                       </div>
                     </div>
