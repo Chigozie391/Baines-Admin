@@ -28,10 +28,14 @@
                     <div class="text-right">
                         <a routerLink="/auth/forgot-password" class="text-green">Forgot password?</a>
                     </div>
-                    <div class="my-3">
-                        <button type="submit" [disabled]="loginForm.invalid || loading" class="btn py-2 btn btn-primary bg-green text-white btn-block">
-                          {{!loading ? 'LOG IN' : ''}} <span class="spinner-grow spinner-grow-sm" *ngIf="loading"></span>
-                        </button>
+                    <div class="row ">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6 my-1">
+                            <button type="submit" [disabled]="loginForm.invalid || loading" class="btn py-2 btn btn-primary bg-green text-white btn-block">
+                              {{!loading ? 'LOG IN' : ''}} <span class="spinner-grow spinner-grow-sm" *ngIf="loading"></span>
+                            </button>
+                        </div>
+                        <div class="col-md-3"></div>
                     </div>
                 </form>
             </div>

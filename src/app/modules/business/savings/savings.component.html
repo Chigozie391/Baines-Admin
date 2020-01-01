@@ -69,25 +69,25 @@
     <ng-template ngbTabContent>
 <hr>
       <div class="row">
-        <div class="col-md-4 col-12 col-mb-6">
+        <div class="col-md-4 col-12 col-mb-6" *ngFor="let eachSaving of savings">
           <div class="card-white">
             <div class="card-body">
               <div class="col-md-12">
                 <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
                 <div class="user-data-space">
-                 <a routerLink="LSQ1293943"><h5>Travel Savings </h5></a>
-                  <small class="text-muted">LSQ1738383</small>
+                 <a routerLink="{{eachSaving.id}}"><h5>{{!eachSaving.name ? 'N/A' : eachSaving.name}} </h5></a>
+                  <small class="text-muted">{{!eachSaving.id ? 'N/A' : eachSaving.id}}</small>
                   </div>
               </div>
               <div class="col-md-12">
                 <div class="user-data-space">
-                  <h5>50,000.00 - 135,000.00</h5>
+                  <h5>{{!eachSaving.balance  ? 'N/A' : eachSaving.balance}}</h5>
                   <small class="text-muted">Amount(NGN)</small>
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="user-data-space">
-                  <h5>9% - 11%</h5>
+                  <h5>{{!eachSaving.interest_rate ? 'N/A' : eachSaving.interest_rate}} %</h5>
                   <small class="text-muted">Interest Rate</small>
                 </div>
               </div>
@@ -97,144 +97,7 @@
           </div>
       </div>
 
-      <div class="col-md-4 col-12 col-mb-6">
-        <div class="card-white">
-          <div class="card-body">
-            <div class="col-md-12">
-              <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
-              <div class="user-data-space">
-                <a routerLink="LSQ1293943"><h5>Wedding Savings </h5></a>
-                <small class="text-muted">LSQ1738383</small>
-                </div>
-            </div>
-            <div class="col-md-12">
-              <div class="user-data-space">
-                <h5>50,000.00 - 120,000.00</h5>
-                <small class="text-muted">Amount(NGN)</small>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="user-data-space">
-                <h5>11% - 15%</h5>
-                <small class="text-muted">Interest Rate</small>
-              </div>
-            </div>
-            <hr>
-     
-          </div>
-        </div>
-    </div>
 
-    <div class="col-md-4 col-12 col-mb-6">
-      <div class="card-white">
-        <div class="card-body">
-          <div class="col-md-12">
-            <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
-            <div class="user-data-space">
-              <a routerLink="LSQ1293943"><h5>Vacation Savings </h5></a>
-              <small class="text-muted">LSQ1738383</small>
-              </div>
-          </div>
-          <div class="col-md-12">
-            <div class="user-data-space">
-              <h5>50,000.00 - 135,000.00</h5>
-              <small class="text-muted">Amount(NGN)</small>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="user-data-space">
-              <h5>11% - 15%</h5>
-              <small class="text-muted">Interest Rate</small>
-            </div>
-          </div>
-          <hr>
-      
-        </div>
-      </div>
-  </div>
-
-  <div class="col-md-4 col-12 col-mb-6">
-    <div class="card-white">
-      <div class="card-body">
-        <div class="col-md-12">
-          <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
-          <div class="user-data-space">
-            <a routerLink="LSQ1293943"><h5>Friends Savings </h5></a>
-            <small class="text-muted">LSQ1738383</small>
-            </div>
-        </div>
-        <div class="col-md-12">
-          <div class="user-data-space">
-            <h5>50,000.00 - 135,000.00</h5>
-            <small class="text-muted">Amount(NGN)</small>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="user-data-space">
-            <h5>11% - 17%</h5>
-            <small class="text-muted">Interest Rate</small>
-          </div>
-        </div>
-        <hr>
-     
-      </div>
-    </div>
-</div>
-
-<div class="col-md-4 col-12 col-mb-6">
-  <div class="card-white">
-    <div class="card-body">
-      <div class="col-md-12">
-        <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
-        <div class="user-data-space">
-          <a routerLink="LSQ1293943"><h5>Gift Savings </h5></a>
-          <small class="text-muted">LSQ1738383</small>
-          </div>
-      </div>
-      <div class="col-md-12">
-        <div class="user-data-space">
-          <h5>50,000.00 - 135,000.00</h5>
-          <small class="text-muted">Amount(NGN)</small>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="user-data-space">
-          <h5>11% - 20%</h5>
-          <small class="text-muted">Interest Rate</small>
-        </div>
-      </div>
-      <hr>
-      
-    </div>
-  </div>
-</div>
-
-<div class="col-md-4 col-12 col-mb-6">
-<div class="card-white">
-  <div class="card-body">
-    <div class="col-md-12">
-      <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
-      <div class="user-data-space">
-        <a routerLink="LSQ1293943"><h5>Any Savings</h5></a>
-        <small class="text-muted">LSQ1738383</small>
-        </div>
-    </div>
-    <div class="col-md-12">
-      <div class="user-data-space">
-        <h5>50,000.00 - 135,000.00</h5>
-        <small class="text-muted">Amount(NGN)</small>
-      </div>
-    </div>
-    <div class="col-md-12">
-      <div class="user-data-space">
-        <h5>11% - 20%</h5>
-        <small class="text-muted">Interest Rate</small>
-      </div>
-    </div>
-    <hr>
-  </div>
-</div>
-</div>
 
   </div>
 
@@ -255,17 +118,15 @@
                     <th scope="col">ID</th>
                     <th scope="col">Interest</th>
                     <th scope="col">Amount</th>
-                    <th scope="col">Savers</th>
                     <th scope="col">Actions</th>
                   </tr>
                 </thead>
                 <tbody class="text-muted">
-                  <tr *ngFor="let country of [1,2,3,4,5]">
-                    <td><a routerLink="LSQ1234876">Vacation Savings</a></td>
-                    <td><a routerLink="LSQ1234876">LSQ1234876</a></td>
-                    <td><a routerLink="LSQ1234876">23%</a></td>
-                    <td>500 - 500,000</td>
-                    <td>23</td>
+                  <tr *ngFor="let eachSaving of savings">
+                    <td><a routerLink="{{eachSaving.id}}">{{!eachSaving.name ? 'N/A' : eachSaving.name}}</a></td>
+                    <td><a routerLink="{{eachSaving.id}}">{{!eachSaving.id ? 'N/A' : eachSaving.id}}</a></td>
+                    <td><a routerLink="{{eachSaving.id}}">{{!eachSaving.interest_rate ? 'N/A' : eachSaving.interest_rate}}%</a></td>
+                    <td>&#8358; {{!eachSaving.balance ? 'N/A' : eachSaving.balance}}</td>
                     <td>
                       <span [matMenuTriggerFor]="action" class="action">
                         &#8226;&#8226;&#8226;

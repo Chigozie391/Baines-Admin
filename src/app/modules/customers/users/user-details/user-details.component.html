@@ -298,8 +298,10 @@
                       <tr *ngFor="let loan of loan_details">
                         <td *ngIf="loan.status.status === 'SETTLED'"><span class="badge badge-success">{{!loan.status.status ? 'N/A' : loan.status.status}}</span></td>
                         <td *ngIf="loan.status.status !== 'SETTLED'"><span class="badge badge-danger">{{!loan.status.status ? 'N/A' : loan.status.status}}</span></td>
-                        <td><a routerLink="/app/customers/borrowers/{{loan.id}}/loans/{{loan.id}}">{{loan.id}}</a></td>
-                        <td><a routerLink="/app/customers/borrowers/{{loan.id}}/loans/{{loan.id}}">{{!loan.loan_profile ? 'Not available' : loan.loan_profile.purpose}}</a></td>
+                        <td>{{loan.id}}</td>
+                        <td>{{!loan.loan_profile ? 'Not available' : loan.loan_profile.purpose}}</td>
+                        <!-- <td><a routerLink="loans/{{loan.id}}">{{loan.id}}</a></td> -->
+                        <!-- <td><a routerLink="loans/{{loan.id}}">{{!loan.loan_profile ? 'Not available' : loan.loan_profile.purpose}}</a></td> -->
                         <td>{{!loan.tenor_type.value ? 'N/A' :loan.tenor_type.value}} days</td>
                         <!-- <td>{{loan.created_on | date}}</td> -->
                         <td>{{!loan.schedule.repayment_day ? 'N/A' : loan.schedule.repayment_day | date}}</td>

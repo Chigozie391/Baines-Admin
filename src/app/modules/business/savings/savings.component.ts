@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SavingsService } from 'src/app/service/savings/savings.service';
 
 @Component({
   selector: 'app-savings',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SavingsComponent implements OnInit {
 
-  constructor() { }
+  savings: any;
+
+  constructor(private savingsService: SavingsService) { }
 
   ngOnInit() {
+    this.allSavings();
+  }
+
+  allSavings() {
+    this.savingsService.getAllSavings().subscribe((res: any) => {
+      console.log(res);
+      this.savings = res.data;
+    });
   }
 
 }

@@ -74,19 +74,19 @@
             <hr>
 
             <div class="row">
-              <div class="col-md-4 col-12 col-mb-6">
+              <div class="col-md-4 col-12 col-mb-6" *ngFor="let eachLoan of loans">
                 <div class="card-white">
                   <div class="card-body">
                     <div class="col-md-12">
                       <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
                       <div class="user-data-space">
-                       <a routerLink="LSQ1293943"><h5>Student Loan </h5></a>
-                        <small class="text-muted">LSQ1738383</small>
+                       <a routerLink="LSQ1293943"><h5>{{eachLoan.loan_profile.purpose}} </h5></a>
+                        <small class="text-muted">{{eachLoan.id}}</small>
                         </div>
                     </div>
                     <div class="col-md-12">
                       <div class="user-data-space">
-                        <h5>50,000.00</h5>
+                        <h5>{{eachLoan.loan_amount}}</h5>
                         <small class="text-muted">Amount(NGN)</small>
                       </div>
                     </div>
