@@ -34,10 +34,10 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="col-md-12 col-12 mb-12">
-                        <div class="user-data">
-                            <h3>Travel Savings</h3>
-                            <small>LSQ38389290</small>
-                        </div>
+                      <div class="user-data">
+                        <h3>{{!Details?.name ? 'N/A' : Details?.name}}</h3>
+                        <h6>{{!Details?.id ? 'N/A' : Details?.id}}</h6>
+                    </div>
                         <hr>
                     </div>
                     <div class="col-md-12 col-12 mb-12">
@@ -48,7 +48,7 @@
                                 <small class="text-muted">
                                     Full name
                                 </small>
-                                <h5><strong>Saidi Balogun</strong></h5>
+                                <h6><strong>{{!saver?.last_name ? 'N/A' : saver?.last_name | titlecase}} {{!saver?.first_name ? 'N/A' : saver?.first_name | titlecase}}</strong></h6>
                               </div>
                           </div>
                       </div>
@@ -58,7 +58,7 @@
                                 <small class="text-muted">
                                     Mobile Number
                                 </small>
-                                <h5><strong>09089544444</strong></h5>
+                                <h6><strong>{{!saver?.phone_number ? 'N/A' : saver?.phone_number}}</strong></h6>
                               </div>
                           </div>
                       </div>
@@ -68,7 +68,7 @@
                                 <small class="text-muted">
                                     BVN
                                 </small>
-                                <h5><strong>9829379234</strong></h5>
+                                <h5><strong>{{!saver?.bvn ? 'N/A' : saver?.bvn}}</strong></h5>
                               </div>
                           </div>
                       </div>
@@ -78,7 +78,7 @@
                             <small class="text-muted">
                                 Email Address
                             </small>
-                            <h5><strong>xyz@domain.com</strong></h5>
+                            <h6><strong>{{!saver?.email ? 'N/A' : saver?.email}}</strong></h6>
                           </div>
                         </div>
                       </div>
@@ -92,7 +92,7 @@
                 <div class="card">
                   <div class="card-body">
                     <span class="pic medium square ml-12 profile-img" style="height: 17.5rem;">
-                      <img src="../../../../assets/img/nav/image.svg" alt="" class="img-fluid">
+                      <img src="{{saver?.photo_url}}" alt="" class="img-fluid">
                     </span>  
                     </div>    
                   </div>
@@ -113,16 +113,16 @@
                     <div class="card-body">
                       <div class="row">
                           <div class="col-md-9 col-12 col-mb-12">
-                              <div class="user-data">
-                                  <h3>Student Savings</h3>
-                                  <h6>LSQ38389290</h6>
-                              </div>
+                            <div class="user-data">
+                              <h3>{{!Details?.name ? 'N/A' : Details?.name}}</h3>
+                              <h6>{{!Details?.id ? 'N/A' : Details?.id}}</h6>
+                            </div>
                           </div>
                           <div class="col-md-3 col-12 col-mb-12">
                               <div class="user-data">
                                   <h6>Plan Balance</h6>
-                                  <h4>₦1,205,675.00</h4>
-                              </div>
+                                  <h4>₦{{!Details?.balance ? 'N/A' : Details?.balance}}</h4>
+                                </div>
                           </div>
                       </div>
               
@@ -132,7 +132,7 @@
                               <small class="text-muted">
                                   Savings Frequency
                               </small>
-                              <h6>Daily</h6>
+                              <h6>{{!Details?.frequency.name ? 'N/A' : Details?.frequency.name}}</h6>
                             </div>
                         </div>
                         <div class="col-md-2 text-left">
@@ -140,7 +140,7 @@
                               <small class="text-muted">
                                   Periodic Amount
                               </small>
-                              <h6>₦45,000</h6>
+                              <h6>₦ {{!Details?.periodic_amount ? 'N/A' : Details?.periodic_amount}}</h6>
                             </div>
                         </div>
                         <div class="col-md-3 text-left">
@@ -148,7 +148,7 @@
                               <small class="text-muted">
                                   Start Date
                               </small>
-                              <h6>Apr, 10 2020.</h6>
+                              <h6>{{!Details?.start_date ? 'N/A' : Details?.start_date | date}}.</h6>
                             </div>
                         </div>
                         <div class="col-md-2 text-left">
@@ -156,7 +156,7 @@
                               <small class="text-muted">
                                   Withdraw By
                               </small>
-                              <h6>Sep 23 2020.</h6>
+                              <h6>{{!Details?.end_date ? 'N/A' : Details?.end_date | date}}.</h6>
                             </div>
                         </div>
                         <div class="col-md-2 text-left">
@@ -164,7 +164,8 @@
                               <small class="text-muted">
                                   Status
                               </small>
-                              <h6>Active</h6>
+                              <h6 *ngIf="Details?.is_matured === 0">Active</h6>
+                              <h6 *ngIf="Details?.is_matured === 1">Matured</h6>
                             </div>
                         </div>
                       </div>
@@ -175,7 +176,7 @@
           
           <div class="row">
               <div class="col-md-3 col-3 mb-3">
-                  <h6>Chihurumanya's Saving History</h6>
+                <h6>{{saver?.first_name}}'s Savings History</h6>
               </div>
               <div class="col-md-9 col-9 mb-9">
                   <hr>
@@ -210,13 +211,13 @@
                   </tr>
                 </thead>
                 <tbody class="text-muted">
-                  <tr *ngFor="let country of [1,2,3,4,5]">
-                    <td> <span class="badge badge-verified">Successful</span></td>
-                    <td>LSQ1234876</td>
-                    <td>Onetime Top-Up</td>
-                    <td>Card</td>
-                    <td>14 Sep 2019, 07:45:21</td>
-                    <td>₦20,000</td>
+                  <tr *ngFor="let each of Details.saving_transactions">
+                    <td> <span class="badge badge-verified">------</span></td>
+                    <td>{{!each.id ? 'N/A' : each.id}}</td>
+                    <td>{{!each.transaction_entry ? 'N/A' : each.transaction_entry.name}}</td>
+                    <td>{{!each.type ? "N/A" : each.type}}</td>
+                    <td>{{!each.created_on ? "N/A" : each.created_on | date:'medium'}}</td>
+                    <td>₦ {{!each.amount ? 'NA' : each.amount}}</td>
                   </tr>
                 </tbody>
               </table>

@@ -18,7 +18,6 @@ export class SavingsComponent implements OnInit {
 
   allSavings() {
     this.savingsService.getAllSavings().subscribe((res: any) => {
-      console.log(res);
       this.savings = res.data;
     });
   }

@@ -37,8 +37,7 @@ export class BorrowerDetailsComponent implements OnInit {
       this.tenor_type = res.data.tenor_type;
       this.loan_schedule = res.data.schedule;
       this.moreProfile = res.data.loan_profile;
-      console.log(res.data);
-    })
+    });
   }
 
 }

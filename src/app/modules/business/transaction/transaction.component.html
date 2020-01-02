@@ -2,45 +2,46 @@
 <app-headers title="Transactions"></app-headers>
 
 
-<div class="row">
+<div *ngIf="stat">
+  <div class="row">
     <div class="col-md-12 col-12 col-mb-12">
         <div class="card">
             <div class="card-body">
               <div class="row">
-                <div class="col-md-2 col-4 col-mb-4">
+                <div class="col-md-3 col-4 col-mb-4">
                   <div class="user-data">
-                      <h3>8,432</h3>
+                      <h3>{{!total ? 'N/A' :total}}</h3>
                       <p class="text-muted">Total</p>
                   </div>
               </div>
 
-              <div class="col-md-2 col-4 col-mb-4 green">
+              <div class="col-md-3 col-4 col-mb-4 green">
                 <div class="user-data">
-                    <h3>4,008</h3>
+                    <h3>{{!stat?.success ? 'N/A' : stat?.success}}</h3>
                     <p class="text-muted">Successful</p>
                 </div>
             </div>
 
-            <div class="col-md-2 col-4 col-mb-4 red">
+            <div class="col-md-3 col-4 col-mb-4 red">
               <div class="user-data">
-                  <h3>317</h3>
+                  <h3>{{!stat?.failed ? 'N/A' : stat?.failed}}</h3>
                   <p class="text-muted">Failed</p>
               </div>
           </div>
 
-          <div class="col-md-2 col-4 col-mb-4">
+          <div class="col-md-3 col-4 col-mb-4">
             <div class="user-data">
-                <h3>4,157</h3>
+                <h3>{{!stat?.reversed ? 'N/A' : stat?.reversed}}</h3>
                 <p class="text-muted">Reversed</p>
             </div>
         </div>
 
-        <div class="col-md-2 col-4 col-mb-4">
+        <!-- <div class="col-md-2 col-4 col-mb-4">
           <div class="user-data">
               <h3>0</h3>
               <p class="text-muted">Some Stat</p>
           </div>
-      </div>
+      </div> -->
               </div>
             </div>
         </div>
@@ -84,21 +85,32 @@
                 </tr>
               </thead>
               <tbody class="text-muted">
-                <tr *ngFor="let country of [1,2,3]">
-                  <td> <span class="badge badge-warning">Pending</span></td>
-                  <td><a routerLink="LSQ1234876">LSQ1234876</a></td>
-                  <td><a routerLink="LSQ1234876">Samuel Olabode</a></td>
-                  <td>Loan Repayment</td>
-                  <td>14 Jan 2019, 07:45:21</td>
-                  <td>₦2,300,500.00</td>
+                <tr *ngFor="let eachTransaction of transaction">
+                  <td *ngIf="eachTransaction.status === 'success'"> <span class="badge badge-success">{{!eachTransaction.status ? 'N/A' : eachTransaction.status}}</span></td>
+                  <td *ngIf="eachTransaction.status === 'pending'"> <span class="badge badge-warning">{{!eachTransaction.status ? 'N/A' : eachTransaction.status}}</span></td>
+                  <td *ngIf="eachTransaction.status === 'failed'"> <span class="badge badge-danger">{{!eachTransaction.status ? 'N/A' : eachTransaction.status}}</span></td>
+                  <td><a routerLink="{{eachTransaction.id}}">{{!eachTransaction.reference ? 'N/A' : eachTransaction.reference | uppercase}}</a></td>
+                  <td><a routerLink="{{eachTransaction.id}}">{{!eachTransaction.user.first_name ? 'N/A' : eachTransaction.user.first_name}} {{!eachTransaction.user.last_name ? 'N/A' : eachTransaction.user.last_name}}</a></td>
+                  <td>{{!eachTransaction.transaction_type.name ? 'N/A' : eachTransaction.transaction_type.name}}</td>
+                  <td>{{!eachTransaction.created_on ? 'N/A' : eachTransaction.created_on | date:'medium'}}</td>
+                  <td>₦ {{!eachTransaction.amount_charged ? 'N/A' : eachTransaction.amount_charged}}</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
       </div>
-
+</div>
 
     <!-- </div> -->
 
 
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card" *ngIf="!stat">
+          <div class="card-body">
+            <h3 class="text-center text-muted">Loading...</h3>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,35 +1,45 @@
  
   <app-headers title="Savings"></app-headers>
   
-  <div class="row">
-    <div class="col-md-12 col-12 col-mb-12">
-        <div class="card">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-2 col-4 col-mb-4">
+  <div *ngIf="savings">
+
+
+    <div class="row">
+      <div class="col-md-12 col-12 col-mb-12">
+          <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-2 col-4 col-mb-4">
+                    <div class="user-data">
+                        <h3>5,432</h3>
+                        <p class="text-muted">Total</p>
+                    </div>
+                </div>
+    
+                <div class="col-md-2 col-4 col-mb-4 green">
                   <div class="user-data">
-                      <h3>5,432</h3>
-                      <p class="text-muted">Total</p>
+                      <h3>2,008</h3>
+                      <p class="text-muted">Active</p>
                   </div>
               </div>
-  
-              <div class="col-md-2 col-4 col-mb-4 green">
+    
+              <div class="col-md-2 col-4 col-mb-4 red">
                 <div class="user-data">
-                    <h3>2,008</h3>
-                    <p class="text-muted">Active</p>
+                    <h3>2017</h3>
+                    <p class="text-muted">Inactive</p>
                 </div>
             </div>
-  
-            <div class="col-md-2 col-4 col-mb-4 red">
+    
+            <div class="col-md-2 col-4 col-mb-4">
               <div class="user-data">
-                  <h3>2017</h3>
-                  <p class="text-muted">Inactive</p>
+                  <h3>4,157</h3>
+                  <p class="text-muted">Some Stat</p>
               </div>
           </div>
-  
+    
           <div class="col-md-2 col-4 col-mb-4">
             <div class="user-data">
-                <h3>4,157</h3>
+                <h3>0</h3>
                 <p class="text-muted">Some Stat</p>
             </div>
         </div>
@@ -37,127 +47,133 @@
         <div class="col-md-2 col-4 col-mb-4">
           <div class="user-data">
               <h3>0</h3>
-              <p class="text-muted">Some Stat</p>
+              <p class="text-muted">Another Stat</p>
           </div>
       </div>
-
-      <div class="col-md-2 col-4 col-mb-4">
-        <div class="user-data">
-            <h3>0</h3>
-            <p class="text-muted">Another Stat</p>
-        </div>
-    </div>
+                </div>
               </div>
-            </div>
-        </div>
+          </div>
+      </div>
     </div>
-  </div>
-  
-  
-  <div class="row">
-    <div class="col-md-12 col-12 col-mb-12">
-        <div class="card">
-          <div class="card-body">
-
-
-            
-<ngb-tabset type="pills" justify="end">
-  <ngb-tab>
-    <ng-template ngbTabTitle>
-      <mat-icon svgIcon="grid"></mat-icon>
-    </ng-template>
-    <ng-template ngbTabContent>
-<hr>
-      <div class="row">
-        <div class="col-md-4 col-12 col-mb-6" *ngFor="let eachSaving of savings">
-          <div class="card-white">
+    
+    
+    <div class="row">
+      <div class="col-md-12 col-12 col-mb-12">
+          <div class="card">
             <div class="card-body">
-              <div class="col-md-12">
-                <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
-                <div class="user-data-space">
-                 <a routerLink="{{eachSaving.id}}"><h5>{{!eachSaving.name ? 'N/A' : eachSaving.name}} </h5></a>
-                  <small class="text-muted">{{!eachSaving.id ? 'N/A' : eachSaving.id}}</small>
+  
+  
+              
+  <ngb-tabset type="pills" justify="end">
+    <ngb-tab>
+      <ng-template ngbTabTitle>
+        <mat-icon svgIcon="grid"></mat-icon>
+      </ng-template>
+      <ng-template ngbTabContent>
+  <hr>
+        <div class="row">
+          <div class="col-md-4 col-12 col-mb-6" *ngFor="let eachSaving of savings">
+            <div class="card-white">
+              <div class="card-body">
+                <div class="col-md-12">
+                  <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
+                  <div class="user-data-space">
+                   <a routerLink="{{eachSaving.id}}"><h5>{{!eachSaving.name ? 'N/A' : eachSaving.name}} </h5></a>
+                    <small class="text-muted">{{!eachSaving.id ? 'N/A' : eachSaving.id}}</small>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="user-data-space">
+                    <h5>{{!eachSaving.balance  ? 'N/A' : eachSaving.balance}}</h5>
+                    <small class="text-muted">Amount(NGN)</small>
                   </div>
-              </div>
-              <div class="col-md-12">
-                <div class="user-data-space">
-                  <h5>{{!eachSaving.balance  ? 'N/A' : eachSaving.balance}}</h5>
-                  <small class="text-muted">Amount(NGN)</small>
                 </div>
-              </div>
-              <div class="col-md-12">
-                <div class="user-data-space">
-                  <h5>{{!eachSaving.interest_rate ? 'N/A' : eachSaving.interest_rate}} %</h5>
-                  <small class="text-muted">Interest Rate</small>
+                <div class="col-md-12">
+                  <div class="user-data-space">
+                    <h5>{{!eachSaving.interest_rate ? 'N/A' : eachSaving.interest_rate}} %</h5>
+                    <small class="text-muted">Interest Rate</small>
+                  </div>
                 </div>
+                <hr>
+            
               </div>
-              <hr>
-          
             </div>
+        </div>
+  
+  
+  
+    </div>
+  
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle>
+        <mat-icon svgIcon="list"></mat-icon>
+      </ng-template>
+      <ng-template ngbTabContent>
+        <hr>
+        <div class="row">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Savings</th>
+                      <th scope="col">ID</th>
+                      <th scope="col">Interest</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-muted">
+                    <tr *ngFor="let eachSaving of savings">
+                      <td><a routerLink="{{eachSaving.id}}">{{!eachSaving.name ? 'N/A' : eachSaving.name}}</a></td>
+                      <td><a routerLink="{{eachSaving.id}}">{{!eachSaving.id ? 'N/A' : eachSaving.id}}</a></td>
+                      <td><a routerLink="{{eachSaving.id}}">{{!eachSaving.interest_rate ? 'N/A' : eachSaving.interest_rate}}%</a></td>
+                      <td>&#8358; {{!eachSaving.balance ? 'N/A' : eachSaving.balance}}</td>
+                      <td>
+                        <span [matMenuTriggerFor]="action" class="action">
+                          &#8226;&#8226;&#8226;
+                          </span>
+                      </td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+  
+  <mat-menu #action="matMenu" class="mt-3">
+    <ng-container>
+      <button mat-menu-item routerLink="/">
+        <mat-icon svgIcon="activate"></mat-icon>
+        <span>Activate</span>
+      </button>
+      <button mat-menu-item routerLink="/">
+        <mat-icon svgIcon="deactivate"></mat-icon>
+        <span>Dectivate</span>
+      </button>
+      <button mat-menu-item routerLink="/">
+        <mat-icon svgIcon="blacklist"></mat-icon>
+        <span>Blacklist</span>
+      </button>
+    </ng-container>
+  </mat-menu>
+  
           </div>
+        </div>
       </div>
-
-
+    </div>
+  
 
   </div>
 
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab>
-    <ng-template ngbTabTitle>
-      <mat-icon svgIcon="list"></mat-icon>
-    </ng-template>
-    <ng-template ngbTabContent>
-      <hr>
-      <div class="row">
-            <div class="table-responsive">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Savings</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Interest</th>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Actions</th>
-                  </tr>
-                </thead>
-                <tbody class="text-muted">
-                  <tr *ngFor="let eachSaving of savings">
-                    <td><a routerLink="{{eachSaving.id}}">{{!eachSaving.name ? 'N/A' : eachSaving.name}}</a></td>
-                    <td><a routerLink="{{eachSaving.id}}">{{!eachSaving.id ? 'N/A' : eachSaving.id}}</a></td>
-                    <td><a routerLink="{{eachSaving.id}}">{{!eachSaving.interest_rate ? 'N/A' : eachSaving.interest_rate}}%</a></td>
-                    <td>&#8358; {{!eachSaving.balance ? 'N/A' : eachSaving.balance}}</td>
-                    <td>
-                      <span [matMenuTriggerFor]="action" class="action">
-                        &#8226;&#8226;&#8226;
-                        </span>
-                    </td>
-                    </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-    </ng-template>
-  </ngb-tab>
-</ngb-tabset>
-
-<mat-menu #action="matMenu" class="mt-3">
-  <ng-container>
-    <button mat-menu-item routerLink="/">
-      <mat-icon svgIcon="activate"></mat-icon>
-      <span>Activate</span>
-    </button>
-    <button mat-menu-item routerLink="/">
-      <mat-icon svgIcon="deactivate"></mat-icon>
-      <span>Dectivate</span>
-    </button>
-    <button mat-menu-item routerLink="/">
-      <mat-icon svgIcon="blacklist"></mat-icon>
-      <span>Blacklist</span>
-    </button>
-  </ng-container>
-</mat-menu>
-
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card" *ngIf="!savings">
+        <div class="card-body">
+          <h3 class="text-center text-muted">Loading...</h3>
         </div>
       </div>
     </div>

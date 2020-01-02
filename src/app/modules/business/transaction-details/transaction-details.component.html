@@ -1,6 +1,6 @@
 <a routerLink="/app/business/transactions" class="return">&larr; Back to Transactions</a>
 
-<div class="row">
+<div class="row" *ngIf="trans_details">
 
     <div class="col-md-12 col-12 mb-12">
         <div class="card">
@@ -8,8 +8,10 @@
             <div class="row">
                 <div class="col-md-12 col-12 col-mb-12">
                     <div class="user-data">
-                        <h3>LSQ38389290</h3>
-                        <p class="text-muted"><span class="status"><small class="badge badge-warning">pending</small></span> 14 September 2019</p>
+                        <h3>{{trans_details?.reference | uppercase}}</h3>
+                        <p *ngIf="trans_details?.status === 'success'"> <span class="badge badge-success">{{!trans_details?.status ? 'N/A' : trans_details?.status}}</span> {{trans_details?.transaction_date | date}}</p>
+                        <p *ngIf="trans_details?.status === 'pending'"> <span class="badge badge-warning">{{!trans_details?.status ? 'N/A' : trans_details?.status}}</span>{{trans_details?.transaction_date | date}}</p>
+                        <p *ngIf="trans_details?.status === 'failed'"> <span class="badge badge-danger">{{!trans_details?.status ? 'N/A' : trans_details?.status}}</span>{{trans_details?.transaction_date | date}}</p>
                     </div>
                 </div>
             </div>
@@ -18,42 +20,42 @@
               <div class="col-md-3 text-left">
                   <div class="col-md-12">
                     <small class="text-muted">
-                        Item 1
+                        Amount Charged
                     </small>
-                    <h6>One Info</h6>
+                    <h6>{{!trans_details?.amount_charged ? 'N/A' : trans_details?.amount_charged}}</h6>
                   </div>
               </div>
               <div class="col-md-3 text-left">
                   <div class="col-md-12">
                     <small class="text-muted">
-                        Item 2
+                        Customer name
                     </small>
-                    <h6>Another Info</h6>
+                    <h6>{{!trans_details?.user.first_name ? 'N/A' : trans_details?.user.first_name | titlecase}} {{!trans_details?.user.last_name ? 'N/A' : trans_details?.user.last_name | titlecase}}</h6>
                   </div>
               </div>
               <div class="col-md-3 text-left">
                   <div class="col-md-12">
                     <small class="text-muted">
-                        Item 3
+                        Mobile no
                     </small>
-                    <h6>One more Info</h6>
+                    <h6>{{!trans_details?.user.phone_number ? 'N/A' : trans_details?.user.phone_number}}</h6>
                   </div>
               </div>
               <div class="col-md-3 text-left">
                   <div class="col-md-12">
                     <small class="text-muted">
-                        Item 4
+                        Transaction name
                     </small>
-                    <h6>Last Info</h6>
+                    <h6>{{!trans_details?.transaction_entry.name ? 'N/A' : trans_details?.transaction_entry.name}}</h6>
                   </div>
               </div>
               <div class="col-md-3 text-left">
                 <!-- <div class="row"> -->
                     <div class="col-md-12">
                         <small class="text-muted">
-                            Item 5
+                            Transaction Type
                         </small>
-                        <h6>Not an Info</h6>
+                        <h6>{{!trans_details?.transaction_type.name ? 'N/A' : trans_details?.transaction_type.name}}</h6>
                       </div>
                 <!-- </div> -->
             </div>
@@ -62,25 +64,35 @@
                 <!-- <div class="row"> -->
                     <div class="col-md-12">
                         <small class="text-muted">
-                            Item 6
+                            Email Address
                         </small>
-                        <h6>Maybe Info</h6>
+                        <h6>{{!trans_details?.user.email ? 'N/A' : trans_details?.user.email}}</h6>
                       </div>
                 <!-- </div> -->
             </div>
 
-            <div class="col-md-3 text-left">
+            <!-- <div class="col-md-3 text-left"> -->
                 <!-- <div class="row"> -->
-                    <div class="col-md-12">
+                    <!-- <div class="col-md-12">
                         <small class="text-muted">
                             Item 7
                         </small>
                         <h6>Final Info</h6>
-                      </div>
+                      </div> -->
                 <!-- </div> -->
-            </div>
+            <!-- </div> -->
             </div>
           </div>
         </div>
       </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card" *ngIf="!trans_details">
+        <div class="card-body">
+          <h3 class="text-center text-muted">Loading...</h3>
+        </div>
+      </div>
+    </div>
   </div>

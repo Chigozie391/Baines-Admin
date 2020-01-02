@@ -14,4 +14,8 @@ export class SavingsService {
   getAllSavings() {
     return this.http.get(Endpoint.SAVINGS);
   }
+
+  getSavingsDetails(id) {
+    return this.http.get(`${Endpoint.SAVINGS}/${id}?profile=true&schedules=true&transaction=true`);
+  }
 }
