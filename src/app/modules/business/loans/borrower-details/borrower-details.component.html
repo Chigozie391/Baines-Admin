@@ -11,13 +11,12 @@
     <ng-template ngbTabContent>
 
       <div class="row">
-   
+     
         <div class="col-md-8">
           <div class="card">
             <div class="card-body">
               <div class="col-md-12 col-12 mb-12">
-                  &nbsp;
-                  <!-- This section contains important details about the Borrower, in the form of list items. The same details provided by the lender when they joined the platform as well as other important data needed for the admin user. -->
+                  This section contains important details about the Borrower, in the form of list items. The same details provided by the lender when they joined the platform as well as other important data needed for the admin user.
                   <hr>
               </div>
               <div class="col-md-12 col-12 mb-12">
@@ -29,7 +28,7 @@
                             <small class="text-muted">
                                 Full name
                             </small>
-                            <h5><strong>Saidi Balogun</strong></h5>
+                            <h6><strong>{{!borrower?.last_name ? 'N/A' : borrower?.last_name | titlecase}} {{!borrower?.first_name ? 'N/A' : borrower?.first_name | titlecase}}</strong></h6>
                           </div>
                   </div>
                   <div class="col-md-4">
@@ -37,7 +36,7 @@
                             <small class="text-muted">
                                 Mobile Number
                             </small>
-                            <h5><strong>09089544444</strong></h5>
+                            <h6><strong>{{!borrower?.phone_number ? 'N/A' : borrower?.phone_number}}</strong></h6>
                           </div>
                   </div>
                   <div class="col-md-4">
@@ -45,7 +44,7 @@
                             <small class="text-muted">
                                 BVN
                             </small>
-                            <h5><strong>9829379234</strong></h5>
+                            <h6><strong>{{!borrower?.bvn ? 'N/A' : borrower?.bvn}}</strong></h6>
                           </div>
                   </div>
                   <div class="col-md-4">
@@ -53,7 +52,7 @@
                         <small class="text-muted">
                             Gender
                         </small>
-                        <h5><strong>Male</strong></h5>
+                        <h6><strong>{{!moreProfile?.gender ? 'N/A' : moreProfile?.gender}}</strong></h6>
                       </div>
                   </div>
       
@@ -62,7 +61,7 @@
                         <small class="text-muted">
                             Email Address
                         </small>
-                        <h5><strong>xyz@domain.com</strong></h5>
+                        <h6><strong>{{!borrower?.email ? 'N/A' : borrower?.email}}</strong></h6>
                       </div>
                   </div>
       
@@ -71,16 +70,16 @@
                         <small class="text-muted">
                             Marital Status
                         </small>
-                        <h5><strong>Single</strong></h5>
+                        <h6><strong>{{!moreProfile?.marital_status ? 'N/A' : moreProfile?.marital_status}}</strong></h6>
                       </div>
                   </div>
       
                   <div class="col-md-4">
                       <div class="col-md-12">
                         <small class="text-muted">
-                            Children
+                            Dependants
                         </small>
-                        <h5><strong>3</strong></h5>
+                        <h6><strong>{{!moreProfile?.no_of_dependent ? 'N/A' : moreProfile?.no_of_dependent}}</strong></h6>
                       </div>
                   </div>
       
@@ -89,7 +88,7 @@
                         <small class="text-muted">
                             Type of Residence
                         </small>
-                        <h5><strong>Parents Apartment</strong></h5>
+                        <h6><strong>{{!moreProfile?.type_of_residence ? 'N/A' : moreProfile?.type_of_residence}}</strong></h6>
                       </div>
                   </div>
                 </div>
@@ -101,83 +100,84 @@
           <div class="card">
             <div class="card-body">
               <span class="pic medium square ml-12 profile-img">
-                <img src="../../../../assets/img/nav/image.svg" alt="" class="img-fluid">
+                <img src="{{borrower?.photo_url}}" alt="" class="img-fluid">
               </span>  
               </div>    
             </div>
         </div>
       </div>
+  
 
 
       <div class="row">
-   
+     
         <div class="col-md-12">
           <div class="card">
             <div class="card-body">
               <div class="col-md-12 col-12 mb-12">
                 <h3>Education &amp; Employment Details</h3>
               </div>
-                <div class="row">
-                  <div class="col-md-3">
-                        <div class="col-md-12">
-                            <small class="text-muted">
-                                Level Of Education
-                            </small>
-                            <h5><strong>B.Sc.</strong></h5>
-                          </div>
-                  </div>
-                  <div class="col-md-3">
-                        <div class="col-md-12">
-                            <small class="text-muted">
-                                Employment Status
-                            </small>
-                            <h5><strong>Federal: Public</strong></h5>
-                          </div>
-                  </div>
-                  <div class="col-md-3">
-                        <div class="col-md-12 ">
-                            <small class="text-muted">
-                                Sector Of Employment
-                            </small>
-                            <h5><strong>IT</strong></h5>
-                          </div>
-                  </div>
-                  <div class="col-md-3">
+              <div class="row">
+                <div class="col-md-3">
                       <div class="col-md-12">
-                        <small class="text-muted">
-                          Duration Of Employment
-                        </small>
-                        <h5><strong>2 years</strong></h5>
-                      </div>
-                  </div>
-      
-                  <div class="col-md-3">
-                      <div class="col-md-12">
-                        <small class="text-muted">
-                            Monthly Income
-                        </small>
-                        <h5><strong>100,000 - 200,000</strong></h5>
-                      </div>
-                  </div>
-      
-                  <div class="col-md-3">
-                      <div class="col-md-12">
-                        <small class="text-muted">
-                            Loan Repayment
-                        </small>
-                        <h5><strong>40,000</strong></h5>
-                      </div>
-                  </div>
-      
-                  <div class="col-md-3">
-                      <div class="col-md-12">
-                        <small class="text-muted">
-                            Official Email Address
-                        </small>
-                        <h5><strong>wed@dmola.com</strong></h5>
-                      </div>
-                  </div>    
+                          <small class="text-muted">
+                              Level Of Education
+                          </small>
+                          <h6><strong>{{!moreProfile?.educational_attainment? 'N/A' : moreProfile?.educational_attainment}}</strong></h6>
+                        </div>
                 </div>
+                <div class="col-md-3">
+                      <div class="col-md-12">
+                          <small class="text-muted">
+                              Employment Status
+                          </small>
+                          <h6><strong>{{!moreProfile?.employment_status ? 'N/A' : moreProfile?.employment_status}}</strong></h6>
+                        </div>
+                </div>
+                <div class="col-md-3">
+                      <div class="col-md-12 ">
+                          <small class="text-muted">
+                              Sector Of Employment
+                          </small>
+                          <h6><strong>{{!moreProfile?.sector_of_employment ? 'N/A' : moreProfile?.sector_of_employment}}</strong></h6>
+                        </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                      <small class="text-muted">
+                        Employment Date
+                      </small>
+                      <h6><strong>{{!moreProfile?.work_start_date ? 'N/A' : moreProfile?.work_start_date | date}}</strong></h6>
+                    </div>
+                </div>
+    
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                      <small class="text-muted">
+                          Monthly Income
+                      </small>
+                      <h6><strong>{{!moreProfile?.monthly_net_income ? 'N/A': moreProfile?.monthly_net_income}}</strong></h6>
+                    </div>
+                </div>
+    
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                      <small class="text-muted">
+                          Loan Repayment
+                      </small>
+                      <h6><strong>{{!loan_schedule?.repayment_amount ? 'N/A' : loan_schedule?.repayment_amount}}</strong></h6>
+                    </div>
+                </div>
+    
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                      <small class="text-muted">
+                          Official Email Address
+                      </small>
+                      <h6><strong>{{!moreProfile?.work_email ? 'N/A' : moreProfile?.work_email}}</strong></h6>
+                    </div>
+                </div>    
+              </div>
               </div>    
             </div>
         </div>
@@ -197,35 +197,35 @@
             <div class="card">
               <div class="card-body">
                 <div class="row">
-                    <div class="col-md-9 col-12 col-mb-12">
-                        <div class="user-data">
-                            <h3>Household Expenses</h3>
-                            <h6>LSQ38389290</h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-12 col-mb-12">
-                        <div class="user-data">
-                            <h6>Loan Amount</h6>
-                            <h4>₦1,205,675.00</h4>
-                        </div>
-                    </div>
-                </div>
+                  <div class="col-md-9 col-12 col-mb-12">
+                      <div class="user-data">
+                          <h3>{{!Details?.loan_profile.purpose ? 'N/A' : Details?.loan_profile.purpose}}</h3>
+                          <h6>{{!Details?.loan_profile.loan_id ? 'N/A' : Details?.loan_profile.loan_id}}</h6>
+                      </div>
+                  </div>
+                  <div class="col-md-3 col-12 col-mb-12">
+                      <div class="user-data">
+                          <h6>Loan Amount</h6>
+                          <h4>₦{{!Details?.loan_amount ? 'N/A' : Details?.loan_amount}}</h4>
+                      </div>
+                  </div>
+              </div>
         
                 <div class="row">
                   <div class="col-md-3 text-left">
-                      <div class="col-md-12">
-                        <small class="text-muted">
-                            Loan Product
-                        </small>
-                        <h6>15 Days</h6>
-                      </div>
+                    <div class="col-md-12">
+                      <small class="text-muted">
+                          Tenor
+                      </small>
+                      <h6>{{!Details?.tenor_type.value ? 'N/A' : Details?.tenor_type.value}} days</h6>
+                    </div>
                   </div>
                   <div class="col-md-3 text-left">
                       <div class="col-md-12">
                         <small class="text-muted">
                             Application Date
                         </small>
-                        <h6>Apr, 10 2020.</h6>
+                        <h6>{{!Details?.created_on ? 'N/A' : Details?.created_on | date}}.</h6>
                       </div>
                   </div>
                   <div class="col-md-3 text-left">
@@ -233,7 +233,7 @@
                         <small class="text-muted">
                             Repayment Date
                         </small>
-                        <h6>Sep, 23 2020.</h6>
+                        <h6>{{!Details?.schedule.repayment_day ? 'N/A' : Details?.schedule.repayment_day | date}}.</h6>
                       </div>
                   </div>
                   <div class="col-md-3 text-left">
@@ -241,7 +241,7 @@
                         <small class="text-muted">
                             Status
                         </small>
-                        <h6>Running</h6>
+                        <h6>{{!Details?.status.status ? 'N/A' : Details?.status.status}}</h6>
                       </div>
                   </div>
                 </div>
@@ -252,7 +252,7 @@
     
       <div class="row">
         <div class="col-md-3 col-3 mb-3">
-            <h6>Chihurumanya's Saving History</h6>
+            <h6>{{borrower?.first_name}}'s Loan History</h6>
         </div>
         <div class="col-md-9 col-9 mb-9">
             <hr>
@@ -289,13 +289,13 @@
               </tr>
             </thead>
             <tbody class="text-muted">
-              <tr *ngFor="let country of [1,2,3,4,5]">
-                <td> <span class="badge badge-verified">Successful</span></td>
-                <td>LSQ1234876</td>
-                <td>Card</td>
-                <td>14 Sep 2019, 07:45:21</td>
-                <td>₦20,000</td>
-                <td>₦20,000</td>
+              <tr *ngFor="let each of Details.loan_transactions">
+                <td> <span class="badge badge-verified">-------</span></td>
+                <td>{{each.transaction_id}}</td>
+                <td>{{each.type}}</td>
+                <td>{{each.created_on | date:'medium'}}</td>
+                <td>₦ {{each.amount}}</td>
+                <td>₦ {{'------'}}</td>
               </tr>
             </tbody>
           </table>

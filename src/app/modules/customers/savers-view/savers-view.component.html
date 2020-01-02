@@ -179,13 +179,14 @@
             </tr>
           </thead>
           <tbody class="text-muted">
-            <tr *ngFor="let country of [1,2,3,4,5,6,6,7,8,9,10]">
-              <td> <span class="badge badge-verified">Active</span></td>
-              <td><a routerLink="LSQ1234876">LSQ1234876</a></td>
-              <td><a routerLink="LSQ1234876">Student Savings</a></td>
-              <td>Fixed Deposit</td>
-              <td>14 Jan 2019, 07:45:21</td>
-              <td>₦20,500</td>
+            <tr *ngFor="let eachSavings of userSavings">
+              <td *ngIf="eachSavings.is_matured === 0"> <span class="badge badge-danger">Running</span></td>
+              <td *ngIf="eachSavings.is_matured !== 0"> <span class="badge badge-success">Active</span></td>
+              <td><a routerLink="{{eachSavings.id}}">{{!eachSavings.id ? 'N/A' : eachSavings.id}}</a></td>
+              <td><a routerLink="{{eachSavings.id}}">{{!eachSavings.name ? 'N/A' : eachSavings.name}}</a></td>
+              <td>{{!eachSavings.product_id ? 'N/A' : eachSavings.product_id}}</td>
+              <td>{{'--------'}}</td>
+              <td>₦ {{!eachSavings.balance ? 'N/A' : eachSavings.balance}}</td>
             </tr>
           </tbody>
         </table>
@@ -207,77 +208,86 @@
             <div style="position: relative; top: 0; left: -1rem;">
               <h4>Bank</h4>
             </div>
-            <div class="card " style="position: relative; top: 0; left: -1rem;">
-              <div class="card-body" style="padding-left: 0;
-              padding-right: 0;
-              padding-top: 1rem;
-              padding-bottom: 1rem;">
-                <!-- <div class="row"> -->
-                  <div class="col-12 text-dark">
-                    <!-- <div class="row"> -->
-                      <div class="col-12 mb-4">
-                        <div class="row">
-                          <div class="col">
-                            <div class="text-muted">Bank</div>
-                            <div class="text-uppercase">GTBank</div>
-                          </div>
-                          <div class="col-auto">
-                            <img src="../../../../assets/img/gt.svg" class="img-fluid" alt="">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="row mt-1">
-                          <div class="col mb-4">
-                            <div class="text-muted">Account Number</div>
-                            <div class="text-uppercase">0115946917</div>
-                          </div>
-                          <div class="col-auto mb-4 text-right">
-                            <div class="text-muted">BVN</div>
-                            <div class="text-uppercase">22213136660</div>
+            
+            <div class="col-md-12" *ngFor="let each of banks">
+              <div class="card " style="position: relative; top: 0; left: -1rem; margin-bottom: 1rem;">
+                <div class="card-body" style="padding-left: 0;
+                padding-right: 0;
+                padding-top: 1rem;
+                padding-bottom: 1rem;">
+                  <!-- <div class="row"> -->
+                    <div class="col-12 text-dark">
+                      <!-- <div class="row"> -->
+                        <div class="col-12 mb-4" style="padding-left: 0; padding-right: 0;">
+                          <div class="row">
+                            <div class="col">
+                              <div class="text-muted">Bank</div>
+                              <div class="text-uppercase">{{each.bank_code}}</div>
+                            </div>
+                            <div class="col-auto">
+                              <img src="../../../../assets/img/gt.svg" class="img-fluid" alt="">
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    <!-- </div> -->
-                  </div>
-                <!-- </div> -->
-              </div>
-              <div class="card-footer">
-                <!-- <div class="row"> -->
-                  <div class="col-12 text-right">
-                    <p class="badge badge-success">ACTIVE</p>
-                  </div>
-                <!-- </div> -->
+                        <div class="col-12" style="padding-left: 0; padding-right: 0;">
+                          <div class="row mt-1">
+                            <div class="col mb-4">
+                              <div class="text-muted">Account Number</div>
+                              <div class="text-uppercase">{{each.account_number}}</div>
+                            </div>
+                            <div class="col-auto mb-4 text-right">
+                              <div class="text-muted">BVN</div>
+                              <div class="text-uppercase">{{borrower?.bvn}}</div>
+                            </div>
+                          </div>
+                        </div>
+                      <!-- </div> -->
+                    </div>
+                  <!-- </div> -->
+                </div>
+                <div class="card-footer">
+                  <!-- <div class="row"> -->
+                    <div class="col-12 text-right">
+                      <p class=" badge badge-success">ACTIVE</p>
+                    </div>
+                  <!-- </div> -->
+                </div>
               </div>
             </div>
           </div>
-      
+  
           <div class="col-md-2 mb-4 mono"></div>
-      
+  
           <div class="col-md-5 mb-4">
             <div style="position: relative; top: 0; right: -1rem;">
               <h4>Card</h4>
             </div>
-            <div class="card  card-gradient text-white" style="position: relative; top: 0; right: -1rem;">
-              <div class="card-body ">
-                <div class="row">
-                  <div class="col-12 my-2">
-                    <h3>**** **** **** 3452</h3>
+            
+            <div class="col-md-12" *ngFor="let each of cards">
+  
+              <div class="card  card-gradient text-white" style="position: relative; top: 0; right: -1rem; margin-bottom: 1rem;">
+                <div class="card-body ">
+                  <div class="row">
+                    <div class="col-12 my-2">
+                      <h3>**** **** **** {{each.card_last4}}</h3>
+                    </div>
+    
                   </div>
-      
-                </div>
-                <div class="row align-items-end">
-                  <div class="col mt-5">
-                    <small>EXPIRES 12/20</small>
-                    <div class="mb-3">Chihurumanya Okwechime</div>
-                  </div>
-                  <div class="col-auto text-right">
-                    <img src="../../../../assets/img/master.svg"><br />
-                    mastercard
+                  <div class="row align-items-end">
+                    <div class="col mt-5">
+                      <small>EXPIRES {{each.card_exp_month}}/{{each.card_exp_year}}</small>
+                      <div class="mb-3">{{each.card_owner_name}}</div>
+                    </div>
+                    <div class="col-auto text-right">
+                      <img src="../../../../assets/img/master.svg"><br />
+                      mastercard
+                    </div>
                   </div>
                 </div>
               </div>
+  
             </div>
+  
           </div>
         </div>
       </div>

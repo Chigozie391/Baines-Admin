@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoansService } from 'src/app/service/loans/loans.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-loans',
@@ -9,6 +10,8 @@ import { LoansService } from 'src/app/service/loans/loans.service';
 export class LoansComponent implements OnInit {
 
   loans: any;
+  loanDetail: any;
+  loan_id: any;
 
   constructor(private loansService: LoansService) { }
 
@@ -18,9 +21,10 @@ export class LoansComponent implements OnInit {
 
   allLoans() {
     this.loansService.getAllLoans().subscribe((res: any) => {
-      console.log(res.data);
       this.loans = res.data;
     });
   }
+
+
 
 }

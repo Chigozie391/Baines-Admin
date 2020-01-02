@@ -35,7 +35,7 @@ const routes: Routes = [
       {path: 'savers/:id/general', component: SaversViewComponent},
       {path: 'savers/:id/savings', component: SavingsComponent},
       {path: 'savers/:id/bank-details', component: BankDetailsComponent},
-      {path: 'savers/:id/savings/:id', component: SavingsDetailsComponent},
+      {path: 'savers/:id/general/:id', component: SavingsDetailsComponent},
 
     ]
   }

@@ -1,7 +1,8 @@
-<a routerLink="/app/customers/savers/LSQ1234876/savings" class="return">&larr; Back</a>
+<a routerLink="/app/customers/savers" class="return">&larr; Back to Savers</a>
 
 
-<div class="row">
+<div *ngIf="savings_details">
+  <div class="row">
    
     <div class="col-md-12 col-12 mb-12">
         <div class="card">
@@ -9,14 +10,14 @@
             <div class="row">
                 <div class="col-md-9 col-12 col-mb-12">
                     <div class="user-data">
-                        <h3>Student Savings</h3>
-                        <h6>LSQ38389290</h6>
+                        <h3>{{!savings_details?.name ? 'N/A' : savings_details?.name}}</h3>
+                        <h6>{{savings_details?.id}}</h6>
                     </div>
                 </div>
                 <div class="col-md-3 col-12 col-mb-12">
                     <div class="user-data">
                         <h6>Plan Balance</h6>
-                        <h4>₦1,205,675.00</h4>
+                        <h4>₦ {{savings_details?.balance}}</h4>
                     </div>
                 </div>
             </div>
@@ -27,7 +28,7 @@
                     <small class="text-muted">
                         Savings Frequency
                     </small>
-                    <h6>Daily</h6>
+                    <h6>{{savings_details?.frequency.name}}</h6>
                   </div>
               </div>
               <div class="col-md-2 text-left">
@@ -35,7 +36,7 @@
                     <small class="text-muted">
                         Periodic Amount
                     </small>
-                    <h6>₦45,000</h6>
+                    <h6>₦ {{savings_details?.periodic_amount}}</h6>
                   </div>
               </div>
               <div class="col-md-3 text-left">
@@ -51,15 +52,16 @@
                     <small class="text-muted">
                         Withdraw By
                     </small>
-                    <h6>Sep 23 2020.</h6>
+                    <h6>{{savings_details?.start_date | date}}</h6>
                   </div>
               </div>
               <div class="col-md-2 text-left">
-                  <div class="col-md-12 green">
+                  <div class="col-md-12">
                     <small class="text-muted">
                         Status
                     </small>
-                    <h6 class="badge badge-success">Active</h6>
+                    <h6 *ngIf="savings_details?.status === 1" class="green">Active</h6>
+                    <h6 *ngIf="savings_details?.status !== 1" class="red">Inactive</h6>
                   </div>
               </div>
             </div>
@@ -70,12 +72,13 @@
 
 <div class="row">
     <div class="col-md-3 col-3 mb-3">
-        <h6>Chihurumanya's Saving History</h6>
+        <h6>{{savings_details?.user.first_name | titlecase}}'s Saving History</h6>
     </div>
     <div class="col-md-9 col-9 mb-9">
         <hr>
     </div>
 </div>
+
 
 <div class="table-responsive">
     <table class="table">
@@ -90,14 +93,27 @@
         </tr>
       </thead>
       <tbody class="text-muted">
-        <tr *ngFor="let country of [1,2,3,4,5]">
-          <td> <span class="badge badge-verified">Successful</span></td>
-          <td>LSQ1234876</td>
-          <td>Onetime Top-Up</td>
-          <td>Card</td>
-          <td>14 Sep 2019, 07:45:21</td>
-          <td>₦20,000</td>
+        <tr *ngFor="let each of saving_transactions">
+          <td> <span class="badge badge-verified">-------</span></td>
+          <td>{{each.transaction_id}}</td>
+          <td>{{each.transaction_entry.name}}</td>
+          <td>{{each.type}}</td>
+          <td>{{each.created_on | date}}</td>
+          <td>₦ {{each.amount}}</td>
         </tr>
       </tbody>
     </table>
+  </div>
+</div>
+
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card" *ngIf="!savings_details">
+        <div class="card-body">
+          <h3 class="text-center text-muted">Please wait...</h3>
+        </div>
+      </div>
+    </div>
   </div>

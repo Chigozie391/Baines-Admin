@@ -3,6 +3,7 @@ import { UsersService } from 'src/app/service/users/users.service';
 import { Constant } from 'src/app/utils/constant';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SaversService } from 'src/app/service/savers/savers.service';
+import { BankService } from 'src/app/service/bank/bank.service';
 
 @Component({
   selector: 'app-savers-view',
@@ -15,11 +16,13 @@ export class SaversViewComponent implements OnInit {
   saver: any;
   userSavings: any;
   totalSavings: any;
-
+  banks: any;
+  cards: any;
 
   constructor(private userService: UsersService,
       private route: ActivatedRoute,
       private saverService: SaversService,
+      private bankService: BankService
       ) { }
 
   getAllInfo(){
@@ -30,9 +33,7 @@ export class SaversViewComponent implements OnInit {
 
     this.userService.getUser(this.id).subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
-        console.log(res);
         this.saver = res.data.user;
-        // this.moreProfile = res.data.loan_profile;
       }
     });
 
@@ -40,9 +41,17 @@ export class SaversViewComponent implements OnInit {
       if(res.status === Constant.SUCCESS) {
         this.userSavings = res.data.plans;
         this.totalSavings = res.data.total_balance;
-        console.log(res);
       }
     });
+
+    this.userService.getUserBankingInfo(this.id).subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS) {
+        this.banks = res.data.banks;
+        this.cards = res.data.cards;
+
+      }
+    });
+
 
   }
 

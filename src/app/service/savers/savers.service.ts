@@ -17,4 +17,8 @@ export class SaversService {
   getUserSavings(user_id) {
     return this.http.get(`${Endpoint.USER}/${user_id}/saving-plans`);
   }
+
+  getSavingsDetails(savings_id) {
+    return this.http.get(`${Endpoint.SAVINGS}/${savings_id}?profile=true&schedules=true&transaction=true`);
+  }
 }

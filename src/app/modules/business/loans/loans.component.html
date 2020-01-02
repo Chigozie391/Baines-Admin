@@ -80,7 +80,7 @@
                     <div class="col-md-12">
                       <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
                       <div class="user-data-space">
-                       <a routerLink="LSQ1293943"><h5>{{eachLoan.loan_profile.purpose}} </h5></a>
+                       <a routerLink="{{!eachLoan.id ? './' : eachLoan.id}}"><h5>{{!eachLoan.loan_profile ? 'N/A' : eachLoan.loan_profile.purpose}} </h5></a>
                         <small class="text-muted">{{!eachLoan.id ? 'N/A' : eachLoan.id}}</small>
                         </div>
                     </div>
@@ -100,146 +100,7 @@
  
                   </div>
                 </div>
-            </div>
-  
-            <div class="col-md-4 col-12 col-mb-6">
-              <div class="card-white">
-                <div class="card-body">
-                  <div class="col-md-12">
-                    <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
-                    <div class="user-data-space">
-                      <a routerLink="LSQ1293943"><h5>SME Loan </h5></a>
-                      <small class="text-muted">LSQ1738383</small>
-                      </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="user-data-space">
-                      <h5>135,000.00</h5>
-                      <small class="text-muted">Amount(NGN)</small>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="user-data-space">
-                      <h5>11%</h5>
-                      <small class="text-muted">Interest Rate</small>
-                    </div>
-                  </div>
-                  <hr>
-                </div>
-              </div>
-          </div>
-  
-          <div class="col-md-4 col-12 col-mb-6">
-            <div class="card-white">
-              <div class="card-body">
-                <div class="col-md-12">
-                  <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
-                  <div class="user-data-space">
-                    <a routerLink="LSQ1293943"><h5>Loan 003 </h5></a>
-                    <small class="text-muted">LSQ1738383</small>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="user-data-space">
-                    <h5>50,000.00</h5>
-                    <small class="text-muted">Amount(NGN)</small>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="user-data-space">
-                    <h5>11%</h5>
-                    <small class="text-muted">Interest Rate</small>
-                  </div>
-                </div>
-                <hr>
- 
-              </div>
-            </div>
-        </div>
-  
-        <div class="col-md-4 col-12 col-mb-6">
-          <div class="card-white">
-            <div class="card-body">
-              <div class="col-md-12">
-                <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
-                <div class="user-data-space">
-                  <a routerLink="LSQ1293943"><h5>Loan 004 </h5></a>
-                  <small class="text-muted">LSQ1738383</small>
-                  </div>
-              </div>
-              <div class="col-md-12">
-                <div class="user-data-space">
-                  <h5>50,000.00</h5>
-                  <small class="text-muted">Amount(NGN)</small>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="user-data-space">
-                  <h5>11%</h5>
-                  <small class="text-muted">Interest Rate</small>
-                </div>
-              </div>
-              <hr>
-    
-            </div>
-          </div>
-      </div>
-  
-      <div class="col-md-4 col-12 col-mb-6">
-        <div class="card-white">
-          <div class="card-body">
-            <div class="col-md-12">
-              <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
-              <div class="user-data-space">
-                <a routerLink="LSQ1293943"><h5>Loan 005 </h5></a>
-                <small class="text-muted">LSQ1738383</small>
-                </div>
-            </div>
-            <div class="col-md-12">
-              <div class="user-data-space">
-                <h5>50,000.00</h5>
-                <small class="text-muted">Amount(NGN)</small>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="user-data-space">
-                <h5>11%</h5>
-                <small class="text-muted">Interest Rate</small>
-              </div>
-            </div>
-            <hr>
-          </div>
-        </div>
-    </div>
-  
-    <div class="col-md-4 col-12 col-mb-6">
-      <div class="card-white">
-        <div class="card-body">
-          <div class="col-md-12">
-            <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
-            <div class="user-data-space">
-              <a routerLink="LSQ1293943"><h5>Loan 006 </h5></a>
-              <small class="text-muted">LSQ1738383</small>
-              </div>
-          </div>
-          <div class="col-md-12">
-            <div class="user-data-space">
-              <h5>50,000.00</h5>
-              <small class="text-muted">Amount(NGN)</small>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="user-data-space">
-              <h5>11%</h5>
-              <small class="text-muted">Interest Rate</small>
-            </div>
-          </div>
-          <hr>
-   
-        </div>
-      </div>
-  </div>
-  
+            </div>     
         </div>
 
             </ng-template>
@@ -261,17 +122,15 @@
                     <th scope="col">ID</th>
                     <th scope="col">Interest</th>
                     <th scope="col">Amount</th>
-                    <th scope="col">Borrowers</th>
                     <th scope="col">Actions</th>
                   </tr>
                 </thead>
                 <tbody class="text-muted">
-                  <tr *ngFor="let country of [1,2,3,4,5]">
-                    <td><a routerLink="LSQ1234876">Student Loans 001</a></td>
-                    <td><a routerLink="LSQ1234876">LSQ1234876</a></td>
-                    <td><a routerLink="LSQ1234876">23%</a></td>
-                    <td>500 - 500,000</td>
-                    <td>23</td>
+                  <tr *ngFor="let eachLoan of loans">
+                    <td><a routerLink="{{!eachLoan.id ? 'N/A' : eachLoan.id}}">{{!eachLoan.loan_profile ? 'N/A' : eachLoan.loan_profile.purpose}}</a></td>
+                    <td><a routerLink="{{!eachLoan.id ? 'N/A' : eachLoan.id}}">{{!eachLoan.id ? 'N/A' : eachLoan.id}}</a></td>
+                    <td><a routerLink="{{!eachLoan.id ? 'N/A' : eachLoan.id}}">{{!eachLoan.interest_rate ? 'N/A' : eachLoan.interest_rate}} %</a></td>
+                    <td>{{!eachLoan.loan_amount ? 'N/A' : eachLoan.loan_amount}}</td>
                     <td>
                       <span [matMenuTriggerFor]="action" class="action">
                         &#8226;&#8226;&#8226;
