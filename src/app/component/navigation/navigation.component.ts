@@ -100,6 +100,12 @@ export class NavigationComponent implements OnInit {
         route: 'Transactions',
         url: '/app/business/transactions',
         sub: []
+      },
+      {
+        icon: 'reports',
+        route: 'Reports',
+        url: '/app/business/reports',
+        sub: []
       }
     ]; 
     
@@ -184,6 +190,7 @@ export class NavigationComponent implements OnInit {
       this.matIconRegistry.addSvgIcon('delete', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/Delete.svg'));
       this.matIconRegistry.addSvgIcon('list', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/List.svg'));
       this.matIconRegistry.addSvgIcon('grid', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/Grid.svg'));
+      this.matIconRegistry.addSvgIcon('reports', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/file.svg'));
 
       router.events.pipe(
         withLatestFrom(this.isHandset$),

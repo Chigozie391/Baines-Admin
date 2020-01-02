@@ -26,207 +26,227 @@
   <!-- <div class="card"> -->
     <!-- <div class="card-body"> -->
 
-      <ngb-tabset type="pills" justify="justified">
-        <ngb-tab title="Saver's Details">
-          <ng-template ngbTabContent>
-            <div class="row">
-              <div class="col-md-8">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="col-md-12 col-12 mb-12">
-                      <div class="user-data">
-                        <h3>{{!Details?.name ? 'N/A' : Details?.name}}</h3>
-                        <h6>{{!Details?.id ? 'N/A' : Details?.id}}</h6>
-                    </div>
-                        <hr>
-                    </div>
-                    <div class="col-md-12 col-12 mb-12">
-                    <div class="row">
-                      <div class="col-md-4">
-                          <div class="row">
-                            <div class="col-md-12">
-                                <small class="text-muted">
-                                    Full name
-                                </small>
-                                <h6><strong>{{!saver?.last_name ? 'N/A' : saver?.last_name | titlecase}} {{!saver?.first_name ? 'N/A' : saver?.first_name | titlecase}}</strong></h6>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-4">
-                          <div class="row">
-                            <div class="col-md-12 red">
-                                <small class="text-muted">
-                                    Mobile Number
-                                </small>
-                                <h6><strong>{{!saver?.phone_number ? 'N/A' : saver?.phone_number}}</strong></h6>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-4">
-                          <div class="row">
-                            <div class="col-md-12 red">
-                                <small class="text-muted">
-                                    BVN
-                                </small>
-                                <h5><strong>{{!saver?.bvn ? 'N/A' : saver?.bvn}}</strong></h5>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="row">
-                          <div class="col-md-12">
-                            <small class="text-muted">
-                                Email Address
-                            </small>
-                            <h6><strong>{{!saver?.email ? 'N/A' : saver?.email}}</strong></h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  </div>
-              </div>
-              </div>
-        
-              <div class="col-md-4">
-                <div class="card">
-                  <div class="card-body">
-                    <span class="pic medium square ml-12 profile-img" style="height: 17.5rem;">
-                      <img src="{{saver?.photo_url}}" alt="" class="img-fluid">
-                    </span>  
-                    </div>    
-                  </div>
-              </div>
-        
-            </div>
-         
-          </ng-template>
-        </ngb-tab>
-      
-        <ngb-tab title="Savings Details">
-          <ng-template ngbTabContent>
+      <div *ngIf="Details">
 
-            <div class="row">
-         
-              <div class="col-md-12 col-12 mb-12">
+
+        <ngb-tabset type="pills" justify="justified">
+          <ngb-tab title="Saver's Details">
+            <ng-template ngbTabContent>
+              <div class="row">
+                <div class="col-md-8">
                   <div class="card">
                     <div class="card-body">
-                      <div class="row">
-                          <div class="col-md-9 col-12 col-mb-12">
-                            <div class="user-data">
-                              <h3>{{!Details?.name ? 'N/A' : Details?.name}}</h3>
-                              <h6>{{!Details?.id ? 'N/A' : Details?.id}}</h6>
-                            </div>
-                          </div>
-                          <div class="col-md-3 col-12 col-mb-12">
-                              <div class="user-data">
-                                  <h6>Plan Balance</h6>
-                                  <h4>₦{{!Details?.balance ? 'N/A' : Details?.balance}}</h4>
-                                </div>
-                          </div>
+                      <div class="col-md-12 col-12 mb-12">
+                        <div class="user-data">
+                          <h3>{{!Details?.name ? 'N/A' : Details?.name}}</h3>
+                          <h6>{{!Details?.id ? 'N/A' : Details?.id}}</h6>
                       </div>
-              
+                          <hr>
+                      </div>
+                      <div class="col-md-12 col-12 mb-12">
                       <div class="row">
-                        <div class="col-md-2 text-left">
+                        <div class="col-md-4">
+                            <div class="row">
+                              <div class="col-md-12">
+                                  <small class="text-muted">
+                                      Full name
+                                  </small>
+                                  <h6><strong>{{!saver?.last_name ? 'N/A' : saver?.last_name | titlecase}} {{!saver?.first_name ? 'N/A' : saver?.first_name | titlecase}}</strong></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row">
+                              <div class="col-md-12 red">
+                                  <small class="text-muted">
+                                      Mobile Number
+                                  </small>
+                                  <h6><strong>{{!saver?.phone_number ? 'N/A' : saver?.phone_number}}</strong></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row">
+                              <div class="col-md-12 red">
+                                  <small class="text-muted">
+                                      BVN
+                                  </small>
+                                  <h5><strong>{{!saver?.bvn ? 'N/A' : saver?.bvn}}</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="row">
                             <div class="col-md-12">
                               <small class="text-muted">
-                                  Savings Frequency
+                                  Email Address
                               </small>
-                              <h6>{{!Details?.frequency.name ? 'N/A' : Details?.frequency.name}}</h6>
+                              <h6><strong>{{!saver?.email ? 'N/A' : saver?.email}}</strong></h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+          
+                <div class="col-md-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <span class="pic medium square ml-12 profile-img" style="height: 17.5rem;">
+                        <img src="{{saver?.photo_url}}" alt="" class="img-fluid">
+                      </span>  
+                      </div>    
+                    </div>
+                </div>
+          
+              </div>
+              
+           
+            </ng-template>
+          </ngb-tab>
+        
+          <ngb-tab title="Savings Details">
+            <ng-template ngbTabContent>
+  
+              <div class="row">
+           
+                <div class="col-md-12 col-12 mb-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-9 col-12 col-mb-12">
+                              <div class="user-data">
+                                <h3>{{!Details?.name ? 'N/A' : Details?.name}}</h3>
+                                <h6>{{!Details?.id ? 'N/A' : Details?.id}}</h6>
+                              </div>
+                            </div>
+                            <div class="col-md-3 col-12 col-mb-12">
+                                <div class="user-data">
+                                    <h6>Plan Balance</h6>
+                                    <h4>₦{{!Details?.balance ? 'N/A' : Details?.balance}}</h4>
+                                  </div>
                             </div>
                         </div>
-                        <div class="col-md-2 text-left">
-                            <div class="col-md-12">
-                              <small class="text-muted">
-                                  Periodic Amount
-                              </small>
-                              <h6>₦ {{!Details?.periodic_amount ? 'N/A' : Details?.periodic_amount}}</h6>
-                            </div>
-                        </div>
-                        <div class="col-md-3 text-left">
-                            <div class="col-md-12">
-                              <small class="text-muted">
-                                  Start Date
-                              </small>
-                              <h6>{{!Details?.start_date ? 'N/A' : Details?.start_date | date}}.</h6>
-                            </div>
-                        </div>
-                        <div class="col-md-2 text-left">
-                            <div class="col-md-12 red">
-                              <small class="text-muted">
-                                  Withdraw By
-                              </small>
-                              <h6>{{!Details?.end_date ? 'N/A' : Details?.end_date | date}}.</h6>
-                            </div>
-                        </div>
-                        <div class="col-md-2 text-left">
-                            <div class="col-md-12 green">
-                              <small class="text-muted">
-                                  Status
-                              </small>
-                              <h6 *ngIf="Details?.is_matured === 0">Active</h6>
-                              <h6 *ngIf="Details?.is_matured === 1">Matured</h6>
-                            </div>
+                
+                        <div class="row">
+                          <div class="col-md-2 text-left">
+                              <div class="col-md-12">
+                                <small class="text-muted">
+                                    Savings Frequency
+                                </small>
+                                <h6>{{!Details?.frequency.name ? 'N/A' : Details?.frequency.name}}</h6>
+                              </div>
+                          </div>
+                          <div class="col-md-2 text-left">
+                              <div class="col-md-12">
+                                <small class="text-muted">
+                                    Periodic Amount
+                                </small>
+                                <h6>₦ {{!Details?.periodic_amount ? 'N/A' : Details?.periodic_amount}}</h6>
+                              </div>
+                          </div>
+                          <div class="col-md-3 text-left">
+                              <div class="col-md-12">
+                                <small class="text-muted">
+                                    Start Date
+                                </small>
+                                <h6>{{!Details?.start_date ? 'N/A' : Details?.start_date | date}}.</h6>
+                              </div>
+                          </div>
+                          <div class="col-md-2 text-left">
+                              <div class="col-md-12 red">
+                                <small class="text-muted">
+                                    Withdraw By
+                                </small>
+                                <h6>{{!Details?.end_date ? 'N/A' : Details?.end_date | date}}.</h6>
+                              </div>
+                          </div>
+                          <div class="col-md-2 text-left">
+                              <div class="col-md-12 green">
+                                <small class="text-muted">
+                                    Status
+                                </small>
+                                <h6 *ngIf="Details?.is_matured === 0">Active</h6>
+                                <h6 *ngIf="Details?.is_matured === 1">Matured</h6>
+                              </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-3 col-3 mb-3">
+                  <h6>{{saver?.first_name | titlecase}}'s Savings History</h6>
                 </div>
-          </div>
-          
-          <div class="row">
-              <div class="col-md-3 col-3 mb-3">
-                <h6>{{saver?.first_name}}'s Savings History</h6>
+                <div class="col-md-9 col-9 mb-9">
+                    <hr>
+                </div>
+            </div>
+            
+            <div class="row col-md-12">
+              <div class="table-responsive">
+  
+                <div class="row justify-content-between align-items-center">
+                  <div class="col">
+                    <!-- <h5 class="m-0 p-0 text-dark-blue">Team members</h5> -->
+                  </div>
+        
+                  <div class="col-md-5 col-12 mb-12">
+                    <span class="has-search">
+                        <mat-icon class="icon ml-1 search-icon">search</mat-icon>
+                      <input type="text" name="search" placeholder="Search by ID, type, e.t.c" class="search form-control" />
+                    </span>
+                  </div>
+                </div>
+  
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Status</th>
+                      <th scope="col">Transaction ID</th>
+                      <th scope="col">Transaction</th>
+                      <th scope="col">type</th>
+                      <th scope="col">date</th>
+                      <th scope="col">Amount (NGN)</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-muted">
+                    <tr *ngFor="let each of Details.saving_transactions">
+                      <td> <span class="badge badge-success">Successful</span></td>
+                      <td>{{!each.id ? 'N/A' : each.id}}</td>
+                      <td>{{!each.transaction_entry ? 'N/A' : each.transaction_entry.name}}</td>
+                      <td>{{!each.type ? "N/A" : each.type}}</td>
+                      <td>{{!each.created_on ? "N/A" : each.created_on | date:'medium'}}</td>
+                      <td>₦ {{!each.amount ? 'NA' : each.amount}}</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <div class="col-md-9 col-9 mb-9">
-                  <hr>
-              </div>
-          </div>
-          
-          <div class="row col-md-12">
-            <div class="table-responsive">
+            </div>
+            </ng-template>
+          </ngb-tab>
+        
+          </ngb-tabset>
+  
 
-              <div class="row justify-content-between align-items-center">
-                <div class="col">
-                  <!-- <h5 class="m-0 p-0 text-dark-blue">Team members</h5> -->
-                </div>
-      
-                <div class="col-md-5 col-12 mb-12">
-                  <span class="has-search">
-                      <mat-icon class="icon ml-1 search-icon">search</mat-icon>
-                    <input type="text" name="search" placeholder="Search by ID, type, e.t.c" class="search form-control" />
-                  </span>
-                </div>
-              </div>
 
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Status</th>
-                    <th scope="col">Transaction ID</th>
-                    <th scope="col">Transaction</th>
-                    <th scope="col">type</th>
-                    <th scope="col">date</th>
-                    <th scope="col">Amount (NGN)</th>
-                  </tr>
-                </thead>
-                <tbody class="text-muted">
-                  <tr *ngFor="let each of Details.saving_transactions">
-                    <td> <span class="badge badge-verified">------</span></td>
-                    <td>{{!each.id ? 'N/A' : each.id}}</td>
-                    <td>{{!each.transaction_entry ? 'N/A' : each.transaction_entry.name}}</td>
-                    <td>{{!each.type ? "N/A" : each.type}}</td>
-                    <td>{{!each.created_on ? "N/A" : each.created_on | date:'medium'}}</td>
-                    <td>₦ {{!each.amount ? 'NA' : each.amount}}</td>
-                  </tr>
-                </tbody>
-              </table>
+      </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card" *ngIf="!Details">
+              <div class="card-body">
+                <h3 class="text-center text-muted">Loading...</h3>
+              </div>
             </div>
           </div>
-          </ng-template>
-        </ngb-tab>
-      
-        </ngb-tabset>
+        </div>
+
+
     
     <!-- </div> -->
   <!-- </div> -->

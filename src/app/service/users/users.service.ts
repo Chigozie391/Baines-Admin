@@ -21,8 +21,8 @@ export class UsersService {
     return this.http.get(`${Endpoint.USER}/${user_id}/bank-info?card=true`);
   }
 
-  // getBorrowersFromALender(id) {
-  //   return this.http.get(`${Endpoint.PROFILES}/${id}/borrowers`)
-  // }
+  getUsersStats() {
+    return this.http.get(Endpoint.USERS_STATS);
+  }
 
 }

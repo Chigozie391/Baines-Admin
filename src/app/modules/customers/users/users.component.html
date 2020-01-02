@@ -1,174 +1,181 @@
 <app-headers title="Users"></app-headers>
 
-<div class="row">
+
+<div *ngIf="user">
+
+  <div class="row">
 
 
-  <div class="col-md-4 col-sm-12 col-12 col-mb-6">
-    <div class="card">
-      <div class="card-body">
-          <div class="col-md-12 text-left">
-            <h3>User Count</h3>
-          </div>
-
-          <div class="row">
-            <div class="col-md-7 text-left green">
-                  <small class="text-muted">
-                      Active
-                  </small>
-                  <h5>45,263</h5>
+    <div class="col-md-4 col-sm-12 col-12 col-mb-6">
+      <div class="card">
+        <div class="card-body">
+            <div class="col-md-12 text-left">
+              <h3>User Count</h3>
             </div>
- 
-
-            <div class="col-md-5 text-left red">
-                  <small class="text-muted">
-                      Inactive
-                  </small>
-                  <h5>504</h5>
+  
+            <div class="row">
+              <div class="col-md-7 text-left green">
+                    <small class="text-muted">
+                        Active
+                    </small>
+                    <h5>{{!stats?.userCount.active ? 'N/A' : stats?.userCount.active}}</h5>
+              </div>
+   
+  
+              <div class="col-md-5 text-left red">
+                    <small class="text-muted">
+                        Inactive
+                    </small>
+                    <h5>{{!stats?.userCount.active ? 'N/A' : stats?.userCount.active}}</h5>
+              </div>
             </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-4 col-sm-12 col-12 col-mb-6">
+      <div class="card">
+        <div class="card-body">
+            <div class="col-md-12 text-left">
+              <h3>Activity <small>(last 14 days)</small></h3>
+            </div>
+  
+            <div class="row">
+              <div class="col-md-7 text-left green">
+                    <small class="text-muted">
+                        Active
+                    </small>
+                    <h5>{{!stats?.activity.userActiveLoginCount ? 'N/A' : stats?.activity.userActiveLoginCount}}</h5>
+              </div>
+   
+  
+              <div class="col-md-5 text-left red">
+                    <small class="text-muted">
+                        Not Active
+                    </small>
+                    <h5>{{!stats?.activity.userInActiveLoginCount ? 'N/A' : stats?.activity.userInActiveLoginCount}}</h5>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-4 col-sm-12 col-12 col-mb-6">
+      <div class="card">
+        <div class="card-body">
+            <div class="col-md-12 text-left">
+              <h3>Category</h3>
+            </div>
+  
+            <div class="row">
+              <div class="col-md-7 text-left green">
+                    <small class="text-muted">
+                        Savers
+                    </small>
+                    <h5>{{!stats?.category.saverCount ? 'N/A' : stats?.category.saverCount}}</h5>
+              </div>
+   
+  
+              <div class="col-md-5 text-left red">
+                    <small class="text-muted">
+                        Borrowers
+                    </small>
+                    <h5>{{!stats?.category.loanCount ? 'N/A' : stats?.category.loanCount}}</h5>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+  </div>
+  
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive">
+  
+        <div class="row justify-content-between align-items-center">
+          <div class="col">
+            <h5 class="m-0 p-0 text-dark-blue">All Users</h5>
           </div>
+  
+          <div class="col-md-5 col-12 mb-12">
+            <span class="has-search">
+                <mat-icon class="icon ml-1 search-icon">search</mat-icon>
+              <input type="text" name="search" placeholder="Search by ID, name, e.t.c" class="search form-control" />
+            </span>
+          </div>
+        </div>
+  
+        <table class="table" *ngIf="user">
+          <thead>
+            <tr>
+              <th scope="col">Full Name</th>
+              <th scope="col">ID</th>
+              <th scope="col">Email</th>
+              <th scope="col">type</th>
+              <th scope="col">date joined</th>
+              <th scope="col">status</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="text-muted">
+  
+  
+              <!-- <td>Okonkwo Henry</td>
+                <td>LSQ1234876</td>
+                <td><a routerLink="LSQ1234876">henry@mailer.com</a></td>
+                <td><a routerLink="LSQ1234876">Loaner</a></td>
+                <td>14, Sept 2019</td>
+                <td> <span class="badge badge-success">Active</span></td>
+                <td><ul class="status"><li class="active">Active</li></ul></td>
+                <span [matMenuTriggerFor]="action" class="action">
+                <td>&#8226;&#8226;&#8226;</td>
+                </span> -->
+  
+  
+  
+            <tr *ngFor="let each of user">
+                <td><a routerLink="{{each.id}}">{{!each.last_name ? "N/A" : each.last_name}} {{!each.first_name ? 'N/A' : each.first_name}}</a></td>
+                <td><a routerLink="{{each.id}}">{{!each.client_id ? 'N/A' : each.client_id}}</a></td>
+              <td>{{!each.email ? 'N/A' : each.email}}</td>
+              <td>Saver</td>
+              <td>{{!each.created_on ? 'N/A' : each.created_on | date}}</td>
+                    <td *ngIf="each.activated === 1"><span class="badge badge-success">Active</span></td>
+                    <td *ngIf="each.activated !== 1"><span class="badge badge-danger">Inactive</span></td>
+              <td>
+                <span [matMenuTriggerFor]="action" class="action">
+                  &#8226;&#8226;&#8226;
+                  </span>
+              </td>
+  
+            </tr>
+          </tbody>
+          <mat-menu #action="matMenu" class="mt-3">
+            <ng-container>
+              <button mat-menu-item routerLink="/">
+                <mat-icon svgIcon="activate"></mat-icon>
+                <span>Activate</span>
+              </button>
+              <button mat-menu-item routerLink="/">
+                <mat-icon svgIcon="deactivate"></mat-icon>
+                <span>Dectivate</span>
+              </button>
+              <button mat-menu-item routerLink="/">
+                <mat-icon svgIcon="blacklist"></mat-icon>
+                <span>Blacklist</span>
+              </button>
+            </ng-container>
+          </mat-menu>
+        </table>
       </div>
     </div>
   </div>
-
-  <div class="col-md-4 col-sm-12 col-12 col-mb-6">
-    <div class="card">
-      <div class="card-body">
-          <div class="col-md-12 text-left">
-            <h3>Activity <small>(last 14 days)</small></h3>
-          </div>
-
-          <div class="row">
-            <div class="col-md-7 text-left green">
-                  <small class="text-muted">
-                      Active
-                  </small>
-                  <h5>36,998</h5>
-            </div>
- 
-
-            <div class="col-md-5 text-left red">
-                  <small class="text-muted">
-                      Not Active
-                  </small>
-                  <h5>54</h5>
-            </div>
-          </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-4 col-sm-12 col-12 col-mb-6">
-    <div class="card">
-      <div class="card-body">
-          <div class="col-md-12 text-left">
-            <h3>Category</h3>
-          </div>
-
-          <div class="row">
-            <div class="col-md-7 text-left green">
-                  <small class="text-muted">
-                      Savers
-                  </small>
-                  <h5>33,998</h5>
-            </div>
- 
-
-            <div class="col-md-5 text-left red">
-                  <small class="text-muted">
-                      Borrowers
-                  </small>
-                  <h5>5,408</h5>
-            </div>
-          </div>
-      </div>
-    </div>
-  </div>
-
-
+  
 
 </div>
 
-<div class="row" *ngIf="user">
-  <div class="col-12">
-    <div class="table-responsive">
-
-      <div class="row justify-content-between align-items-center">
-        <div class="col">
-          <h5 class="m-0 p-0 text-dark-blue">All Users</h5>
-        </div>
-
-        <div class="col-md-5 col-12 mb-12">
-          <span class="has-search">
-              <mat-icon class="icon ml-1 search-icon">search</mat-icon>
-            <input type="text" name="search" placeholder="Search by ID, name, e.t.c" class="search form-control" />
-          </span>
-        </div>
-      </div>
-
-      <table class="table" *ngIf="user">
-        <thead>
-          <tr>
-            <th scope="col">Full Name</th>
-            <th scope="col">ID</th>
-            <th scope="col">Email</th>
-            <th scope="col">type</th>
-            <th scope="col">date joined</th>
-            <th scope="col">status</th>
-            <th scope="col">Actions</th>
-          </tr>
-        </thead>
-        <tbody class="text-muted">
-
-
-            <!-- <td>Okonkwo Henry</td>
-              <td>LSQ1234876</td>
-              <td><a routerLink="LSQ1234876">henry@mailer.com</a></td>
-              <td><a routerLink="LSQ1234876">Loaner</a></td>
-              <td>14, Sept 2019</td>
-              <td> <span class="badge badge-success">Active</span></td>
-              <td><ul class="status"><li class="active">Active</li></ul></td>
-              <span [matMenuTriggerFor]="action" class="action">
-              <td>&#8226;&#8226;&#8226;</td>
-              </span> -->
-
-
-
-          <tr *ngFor="let each of user">
-              <td><a routerLink="{{each.id}}">{{each.last_name}} {{each.first_name}}</a></td>
-              <td><a routerLink="{{each.id}}">{{each.client_id}}</a></td>
-            <td>{{each.email}}</td>
-            <td>Saver</td>
-            <td>{{each.created_on | date}}</td>
-                  <td *ngIf="each.activated === 1"><span class="badge badge-success">Active</span></td>
-                  <td *ngIf="each.activated !== 1"><span class="badge badge-danger">Inactive</span></td>
-            <td>
-              <span [matMenuTriggerFor]="action" class="action">
-                &#8226;&#8226;&#8226;
-                </span>
-            </td>
-
-          </tr>
-        </tbody>
-        <mat-menu #action="matMenu" class="mt-3">
-          <ng-container>
-            <button mat-menu-item routerLink="/">
-              <mat-icon svgIcon="activate"></mat-icon>
-              <span>Activate</span>
-            </button>
-            <button mat-menu-item routerLink="/">
-              <mat-icon svgIcon="deactivate"></mat-icon>
-              <span>Dectivate</span>
-            </button>
-            <button mat-menu-item routerLink="/">
-              <mat-icon svgIcon="blacklist"></mat-icon>
-              <span>Blacklist</span>
-            </button>
-          </ng-container>
-        </mat-menu>
-      </table>
-    </div>
-  </div>
-</div>
 
 <div class="row">
   <div class="col-md-12">

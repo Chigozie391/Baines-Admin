@@ -39,6 +39,8 @@ export class Endpoint {
  
   public static GET_ALL_BORROWERS = `${environment.baseUrl}/admin/user/borrowers`;
 
+  public static USERS_STATS = `${environment.baseUrl}/admin/report/user-stats`;
+
 
   public static GET_ALL_TRANSACTIONS = `${environment.baseUrl}/admin/transaction`;
 

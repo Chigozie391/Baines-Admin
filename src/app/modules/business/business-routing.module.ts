@@ -17,6 +17,7 @@ import { BorrowerDetailsComponent } from './loans/borrower-details/borrower-deta
 import { LoanScheduleComponent } from './loans/loan-schedule/loan-schedule.component';
 import { SaverDetailsComponent } from './savings/saver-details/saver-details.component';
 import { SavingsDetailsComponent } from './savings/savings-details/savings-details.component';
+import { ReportComponent } from './report/report.component';
 
 const routes: Routes = [
   {
@@ -40,7 +41,8 @@ const routes: Routes = [
       { path: 'savings/:id/saver-details', component: SaverDetailsComponent },
       { path: 'savings/:id/savings-details', component: SavingsDetailsComponent },
       { path: 'new-loan-product', component: NewLoanProductComponent},
-      { path: 'new-savings-product', component: NewSavingsProductComponent}
+      { path: 'new-savings-product', component: NewSavingsProductComponent},
+      { path: 'reports', component: ReportComponent}
     ]
   }
 ];

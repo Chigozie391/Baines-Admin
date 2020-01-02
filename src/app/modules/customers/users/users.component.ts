@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/service/auth/auth.service';
 export class UsersComponent implements OnInit {
 
   user: any;
+  stats: any;
 
   constructor(private userService: UsersService,
               private authService: AuthService) { }
@@ -25,7 +26,13 @@ export class UsersComponent implements OnInit {
         this.authService.logout();
       }
     });
+    this.usersStats();
+  }
 
+  usersStats() {
+    this.userService.getUsersStats().subscribe((res: any) => {
+      this.stats = res.data;
+    });
   }
 
 }

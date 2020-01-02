@@ -20,9 +20,10 @@ import { BorrowerDetailsComponent } from './loans/borrower-details/borrower-deta
 import { LoanScheduleComponent } from './loans/loan-schedule/loan-schedule.component';
 import { SaverDetailsComponent } from './savings/saver-details/saver-details.component';
 import { SavingsDetailsComponent } from './savings/savings-details/savings-details.component';
+import { ReportComponent } from './report/report.component';
 
 @NgModule({
-  declarations: [BusinessComponent,TransactionComponent, CollectionComponent, LoanProductComponent, TransactionDetailsComponent, LoansComponent, SavingsComponent, SavingsProductComponent, LoanProductDetailsComponent, NewLoanProductComponent, SavingsProductDetailsComponent, NewSavingsProductComponent, LoanDetailsComponent, BorrowerDetailsComponent, LoanScheduleComponent, SaverDetailsComponent, SavingsDetailsComponent],
+  declarations: [BusinessComponent,TransactionComponent, CollectionComponent, LoanProductComponent, TransactionDetailsComponent, LoansComponent, SavingsComponent, SavingsProductComponent, LoanProductDetailsComponent, NewLoanProductComponent, SavingsProductDetailsComponent, NewSavingsProductComponent, LoanDetailsComponent, BorrowerDetailsComponent, LoanScheduleComponent, SaverDetailsComponent, SavingsDetailsComponent, ReportComponent],
   imports: [
     CommonModule,
     BusinessRoutingModule,

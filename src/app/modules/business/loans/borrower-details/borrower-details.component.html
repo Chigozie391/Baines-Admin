@@ -253,7 +253,7 @@
     
       <div class="row">
         <div class="col-md-3 col-3 mb-3">
-            <h6>{{borrower?.first_name}}'s Loan History</h6>
+            <h6>{{borrower?.first_name | titlecase}}'s Loan History</h6>
         </div>
         <div class="col-md-9 col-9 mb-9">
             <hr>
@@ -291,7 +291,7 @@
             </thead>
             <tbody class="text-muted">
               <tr *ngFor="let each of Details.loan_transactions">
-                <td> <span class="badge badge-verified">-------</span></td>
+                <td> <span class="badge badge-success">Successful</span></td>
                 <td>{{each.transaction_id}}</td>
                 <td>{{each.type}}</td>
                 <td>{{each.created_on | date:'medium'}}</td>
@@ -340,14 +340,15 @@
                 </tr>
               </thead>
               <tbody class="text-muted">
-                <tr *ngFor="let country of [1,2,3,4,5]">
-                  <td> <span class="badge badge-verified">Successful</span></td>
-                  <td>14 Sep 2019</td>
-                  <td>3,000,000.00</td>
-                  <td>500,000.00</td>
-                  <td>700,000.00</td>
-                  <td>5%</td>
-                  <td>50,0000</td>
+                <tr >
+                  <td *ngIf="Details?.status.status === 'SETTLED'"> <span class="badge badge-success">{{!Details?.status.status ? 'N/A' : Details?.status.status}}</span></td>
+                  <td *ngIf="Details?.status.status !== 'SETTLED'"> <span class="badge badge-warning">{{!Details?.status.status ? 'N/A' : Details?.status.status}}</span></td>
+                  <td>{{Details?.schedule.repayment_day | date}}</td>
+                  <td>{{'------'}}</td>
+                  <td>{{Details?.schedule.repayment_amount}}</td>
+                  <td>{{Details?.loan_amount}}</td>
+                  <td>--%</td>
+                  <td>0</td>
                 </tr>
               </tbody>
             </table>
@@ -367,7 +368,7 @@
 
 <div class="row">
   <div class="col-md-12">
-    <div class="card" *ngIf="!loans">
+    <div class="card" *ngIf="!borrower">
       <div class="card-body">
         <h3 class="text-center text-muted">Loading...</h3>
       </div>
