@@ -3,20 +3,6 @@
 <app-headers title="Savings Products"></app-headers>
 
 
-<!-- <div class="row">
-    <div class="col-md-12 col-12 col-mb-12">
-        <div class="card">
-            <div class="card-body-menu">
-              <ul class="menu-list-3">
-                  <li><a (click)="checkDetails()" routerLink="/app/business/general/" routerLinkActive="active-link">General</a></li>
-                  <li><a (click)="checkBorrowers()" routerLink="/app/business/save" routerLinkActive="active-link">Savings Plans</a></li>
-              </ul>  
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
 <!-- <div class="row"> -->
     <div class="col-md-12 col-12 col-mb-12">
         <!-- <div class="card"> -->
@@ -39,8 +25,8 @@
                             <!-- <div class="row"> -->
                               <div class="col-md-12 col-12 col-mb-12">
                                   <div class="user-data">
-                                      <h3>Student Savings</h3>
-                                      <small class="text-muted">LSQ38389290</small>
+                                    <h3>{{!details?.name ? 'N/A' : details?.name | titlecase}}</h3>
+                                    <small class="text-muted">{{!details?.id ? 'N/A' : details?.id}}</small>
                                   </div>
                               </div>
                           <!-- </div> -->
@@ -57,7 +43,7 @@
                                         <small class="text-muted">
                                             Amount
                                         </small>
-                                        <h5>5,000.00 - 35,000.00</h5>
+                                        <h6>{{!details?.min_amount ? 'N/A' : details?.min_amount}} - {{!details?.max_amount ? 'N/A' : details?.max_amount}}</h6>
                                       </div>
                                   </div>
                                   <div class="col-md-6 text-left">
@@ -65,7 +51,8 @@
                                         <small class="text-muted">
                                             Status
                                         </small>
-                                        <h5>Active</h5>
+                                        <h6 *ngIf="details?.status === 1" class="green">Active</h6>
+                                        <h6 *ngIf="details?.status === 0" class="red">Inactive</h6>
                                       </div>
                                   </div>
                                   <div class="col-md-6 text-left">
@@ -73,7 +60,7 @@
                                         <small class="text-muted">
                                             Tenor
                                         </small>
-                                        <h5>3 - 5 Months</h5>
+                                        <h6>3 - 5 Months</h6>
                                       </div>
                                   </div>
                                   <div class="col-md-6 text-left">
@@ -81,7 +68,7 @@
                                         <small class="text-muted">
                                             Description
                                         </small>
-                                        <h5>Save money for educational needs</h5>
+                                        <h6>{{!details?.description ? 'N/A' : details?.description}}</h6>
                                       </div>
                                   </div>
                     
@@ -90,7 +77,7 @@
                                       <small class="text-muted">
                                           Interest
                                       </small>
-                                      <h5>9% - 11%</h5>
+                                      <h6>{{!details?.interest_rate ? 'N/A' : details?.interest_rate}}%</h6>
                                     </div>
                                 </div>
 
@@ -99,7 +86,7 @@
                                       <small class="text-muted">
                                           Frequency
                                       </small>
-                                      <h5>Debited every week, monthly, daily</h5>
+                                      <h6>---------------</h6>
                                     </div>
                                 </div>
 
@@ -108,7 +95,7 @@
                                       <small class="text-muted">
                                           Payment Method
                                       </small>
-                                      <h5>Card, Wallet</h5>
+                                      <h6>{{!details?.repayment_method.name ? 'N/A' : details?.repayment_method.name}}</h6>
                                     </div>
                                 </div>
                                 </div>
@@ -125,7 +112,7 @@
 
                                   <div class="row justify-content-between align-items-center">
                                     <div class="col">
-                                      <!-- <h5 class="m-0 p-0 text-dark-blue">Team members</h5> -->
+                                      <!-- <h6 class="m-0 p-0 text-dark-blue">Team members</h6> -->
                                     </div>
                           
                                     <div class="col-md-5 col-12 mb-12">

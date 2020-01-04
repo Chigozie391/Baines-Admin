@@ -76,37 +76,28 @@
                 </div>
                 <ng-template ngbTabContent>
 
-
-
-                <!-- <span class="pic small square ml-3" style="float: right; width: 20px; height: 20px;">
-                  <img src="../../../../assets/img/nav/List.svg" alt="" class="img-fluid">
-              </span>
-              &nbsp;
-                <span class="pic small square ml-3" style="float: right; width: 20px; height: 20px;">
-                  <img src="../../../../assets/img/nav/Grid.svg" alt="" class="img-fluid">
-              </span> -->
             <hr>
   
             <div class="row">
-              <div class="col-md-4 col-12 col-mb-6">
+              <div class="col-md-4 col-12 col-mb-6" *ngFor="let eachProduct of savingsProduct">
                 <div class="card-white">
                   <div class="card-body">
                     <div class="col-md-12">
                       <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
                       <div class="user-data-space">
-                       <a routerLink="LSQ1293943"><h5>Student Savings </h5></a>
-                        <small class="text-muted">LSQ1738383</small>
-                        </div>
+                        <a routerLink="{{eachProduct.id}}"><h5>{{!eachProduct.name ? 'N/A' : eachProduct.name}}</h5></a>
+                        <small class="text-muted">{{!eachProduct.id ? 'N/A' : eachProduct.id}}</small>
+                      </div>
                     </div>
                     <div class="col-md-12">
                       <div class="user-data-space">
-                        <h5>50,000.00 - 135,000.00</h5>
+                        <h6>{{!eachProduct.min_amount ? 'N/A' : eachProduct.min_amount}} - {{!eachProduct.max_amount ? 'N/A' : eachProduct.max_amount}}</h6>
                         <small class="text-muted">Amount(NGN)</small>
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="user-data-space">
-                        <h5>9% - 11%</h5>
+                        <h6>{{!eachProduct.interest_rate ? 'N/A' : eachProduct.interest_rate}}%</h6>
                         <small class="text-muted">Interest Rate</small>
                       </div>
                     </div>
@@ -123,193 +114,7 @@
                     </div>
                   </div>
                 </div>
-            </div>
-  
-            <div class="col-md-4 col-12 col-mb-6">
-              <div class="card-white">
-                <div class="card-body">
-                  <div class="col-md-12">
-                    <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
-                    <div class="user-data-space">
-                      <a routerLink="LSQ1293943"><h5>Family Savings </h5></a>
-                      <small class="text-muted">LSQ1738383</small>
-                      </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="user-data-space">
-                      <h5>50,000.00 - 120,000.00</h5>
-                      <small class="text-muted">Amount(NGN)</small>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="user-data-space">
-                      <h5>11% - 15%</h5>
-                      <small class="text-muted">Interest Rate</small>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="col-md-12">
-                    <div class="cosmos">
-                      <span class="cosmos-1"></span>
-                      <span class="cosmos-2"></span>
-                      <span class="cosmos-3"></span>
-                      <span class="cosmos-4"></span>
-                      <span class="cosmos-5"></span>
-                    </div>
-                    <p class="text-right text-muted">11 Savers</p>
-                  </div>
-                </div>
-              </div>
-          </div>
-  
-          <div class="col-md-4 col-12 col-mb-6">
-            <div class="card-white">
-              <div class="card-body">
-                <div class="col-md-12">
-                  <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
-                  <div class="user-data-space">
-                    <a routerLink="LSQ1293943"><h5>Vacation Savings </h5></a>
-                    <small class="text-muted">LSQ1738383</small>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="user-data-space">
-                    <h5>50,000.00 - 135,000.00</h5>
-                    <small class="text-muted">Amount(NGN)</small>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="user-data-space">
-                    <h5>11% - 15%</h5>
-                    <small class="text-muted">Interest Rate</small>
-                  </div>
-                </div>
-                <hr>
-                <div class="col-md-12">
-                  <div class="cosmos">
-                    <span class="cosmos-1"></span>
-                    <span class="cosmos-2"></span>
-                    <span class="cosmos-3"></span>
-                    <span class="cosmos-4"></span>
-                    <span class="cosmos-5"></span>
-                  </div>
-                  <p class="text-right text-muted">20 Savers</p>
-                </div>
-              </div>
-            </div>
-        </div>
-  
-        <div class="col-md-4 col-12 col-mb-6">
-          <div class="card-white">
-            <div class="card-body">
-              <div class="col-md-12">
-                <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
-                <div class="user-data-space">
-                  <a routerLink="LSQ1293943"><h5>Any Savings </h5></a>
-                  <small class="text-muted">LSQ1738383</small>
-                  </div>
-              </div>
-              <div class="col-md-12">
-                <div class="user-data-space">
-                  <h5>50,000.00 - 135,000.00</h5>
-                  <small class="text-muted">Amount(NGN)</small>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="user-data-space">
-                  <h5>11% - 17%</h5>
-                  <small class="text-muted">Interest Rate</small>
-                </div>
-              </div>
-              <hr>
-              <div class="col-md-12">
-                <div class="cosmos">
-                  <span class="cosmos-1"></span>
-                  <span class="cosmos-2"></span>
-                  <span class="cosmos-3"></span>
-                  <span class="cosmos-4"></span>
-                  <span class="cosmos-5"></span>
-                </div>
-                <p class="text-right text-muted">20 Savers</p>
-              </div>
-            </div>
-          </div>
-      </div>
-  
-      <div class="col-md-4 col-12 col-mb-6">
-        <div class="card-white">
-          <div class="card-body">
-            <div class="col-md-12">
-              <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
-              <div class="user-data-space">
-                <a routerLink="LSQ1293943"><h5>Halal Savings </h5></a>
-                <small class="text-muted">LSQ1738383</small>
-                </div>
-            </div>
-            <div class="col-md-12">
-              <div class="user-data-space">
-                <h5>50,000.00 - 135,000.00</h5>
-                <small class="text-muted">Amount(NGN)</small>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="user-data-space">
-                <h5>11% - 20%</h5>
-                <small class="text-muted">Interest Rate</small>
-              </div>
-            </div>
-            <hr>
-            <div class="col-md-12">
-              <div class="cosmos">
-                <span class="cosmos-1"></span>
-                <span class="cosmos-2"></span>
-                <span class="cosmos-3"></span>
-                <span class="cosmos-4"></span>
-                <span class="cosmos-5"></span>
-              </div>
-              <p class="text-right text-muted">2 Savers</p>
-            </div>
-          </div>
-        </div>
-    </div>
-  
-    <div class="col-md-4 col-12 col-mb-6">
-      <div class="card-white">
-        <div class="card-body">
-          <div class="col-md-12">
-            <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
-            <div class="user-data-space">
-              <a routerLink="LSQ1293943"><h5>Life Goals Savings</h5></a>
-              <small class="text-muted">LSQ1738383</small>
-              </div>
-          </div>
-          <div class="col-md-12">
-            <div class="user-data-space">
-              <h5>50,000.00 - 135,000.00</h5>
-              <small class="text-muted">Amount(NGN)</small>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="user-data-space">
-              <h5>11% - 20%</h5>
-              <small class="text-muted">Interest Rate</small>
-            </div>
-          </div>
-          <hr>
-          <div class="col-md-12">
-            <div class="cosmos">
-              <span class="cosmos-1"></span>
-              <span class="cosmos-2"></span>
-              <span class="cosmos-3"></span>
-              <span class="cosmos-4"></span>
-              <span class="cosmos-5"></span>
-            </div>
-            <p class="text-right text-muted">20 Savers</p>
-          </div>
-        </div>
-      </div>
-  </div>
-  
+            </div> 
 
   </div>
 

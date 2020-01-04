@@ -4,6 +4,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Constant } from 'src/app/utils/constant';
 import { BorrowersService } from 'src/app/service/borrowers/borrowers.service';
 import { SaversService } from 'src/app/service/savers/savers.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-user-details',
@@ -28,7 +29,8 @@ export class UserDetailsComponent implements OnInit {
   constructor(private userService: UsersService,
     private borrowersService: BorrowersService,
     private saverService: SaversService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute
+    ) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -71,5 +73,6 @@ export class UserDetailsComponent implements OnInit {
 
 
   }
+
 
 }

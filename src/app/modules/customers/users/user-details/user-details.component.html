@@ -2,7 +2,6 @@
   <a routerLink="/app/customers/users/" class="return">&larr; Back to Users</a>
 </div>
 
-
 <app-headers title="User Details" [crumbs]="borrowersName"></app-headers>
 
 <ngb-tabset type="pills" justify="justified">
@@ -298,8 +297,8 @@
                       <tr *ngFor="let loan of loan_details">
                         <td *ngIf="loan.status.status === 'SETTLED'"><span class="badge badge-success">{{!loan.status.status ? 'N/A' : loan.status.status}}</span></td>
                         <td *ngIf="loan.status.status !== 'SETTLED'"><span class="badge badge-danger">{{!loan.status.status ? 'N/A' : loan.status.status}}</span></td>
-                        <td>{{loan.id}}</td>
-                        <td>{{!loan.loan_profile ? 'Not available' : loan.loan_profile.purpose}}</td>
+                        <td><a routerLink="/app/business/loans/{{loan.id}}">{{loan.id}}</a></td>
+                        <td><a routerLink="/app/business/loans/{{loan.id}}">{{!loan.loan_profile ? 'Not available' : loan.loan_profile.purpose}}</a></td>
                         <!-- <td><a routerLink="loans/{{loan.id}}">{{loan.id}}</a></td> -->
                         <!-- <td><a routerLink="loans/{{loan.id}}">{{!loan.loan_profile ? 'Not available' : loan.loan_profile.purpose}}</a></td> -->
                         <td>{{!loan.tenor_type.value ? 'N/A' :loan.tenor_type.value}} days</td>

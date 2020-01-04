@@ -25,4 +25,11 @@ export class UsersService {
     return this.http.get(Endpoint.USERS_STATS);
   }
 
+  activateUser(user_id){
+    return this.http.put(`${Endpoint.USER}/${user_id}/activate`, JSON.stringify(user_id));
+  }
+
+  deactivateUser(user_id) {
+    return this.http.put(`${Endpoint.USER}/${user_id}/deactivate`, JSON.stringify(user_id));
+  }
 }

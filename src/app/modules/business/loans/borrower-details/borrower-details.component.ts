@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoansService } from 'src/app/service/loans/loans.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-borrower-details',
@@ -20,7 +21,8 @@ export class BorrowerDetailsComponent implements OnInit {
   Details: any;
   
   constructor(private loansService: LoansService,
-    private route: ActivatedRoute) { 
+    private route: ActivatedRoute,
+    private _location: Location) { 
     this.route.paramMap.subscribe(params => {
       this.loan_id = params.get("id");
     });
@@ -37,8 +39,11 @@ export class BorrowerDetailsComponent implements OnInit {
       this.tenor_type = res.data.tenor_type;
       this.loan_schedule = res.data.schedule;
       this.moreProfile = res.data.loan_profile;
-      console.log(this.Details);
     });
+  }
+
+  backClicked() {
+    this._location.back();
   }
 
 }

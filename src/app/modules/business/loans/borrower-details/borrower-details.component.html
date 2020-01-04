@@ -1,4 +1,8 @@
-<a routerLink="/app/business/loans/" class="return">&larr; Back to Loans</a>
+<!-- <a routerLink="/app/business/loans/" class="return">&larr; Back to Loans</a> -->
+
+<div class="row">
+  <a (click)="backClicked()" style="cursor: pointer;"><u>&larr; Back</u></a>
+</div>
 
 
 <app-headers title="Loan Details" [crumbs]="borrowersName"></app-headers>

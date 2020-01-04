@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { LoanProductService } from 'src/app/service/loan-product/loan-product.service';
+import { ActivatedRoute } from '@angular/router';
+import { Constant } from 'src/app/utils/constant';
 
 @Component({
   selector: 'app-loan-product-details',
@@ -7,28 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoanProductDetailsComponent implements OnInit {
 
-  details: Boolean;
-  borrowers: Boolean;
+  details: any;
+  borrowers: any;
+  id: any;
 
-  constructor() { 
-    this.details = true;
-    this.borrowers = false;
+  constructor(private route: ActivatedRoute, private loanProductService: LoanProductService) { 
+    this.route.paramMap.subscribe(params => {
+      this.id = params.get("id");
+    });
   }
 
   checkDetails() {
-    this.details = true;
-    this.borrowers = false
-    console.table(this.details, this.borrowers);
+    this.loanProductService.getProductDetails(this.id).subscribe((res: any) => {
+      if (res.status === Constant.SUCCESS) {
+        this.details = res.data;
+      }
+    });
   }
 
-  checkBorrowers() {
-    this.details = false;
-    this.borrowers = true;
-    console.table(this.details, this.borrowers);
-  }
 
   ngOnInit() {
-
+    this.checkDetails();
   }
 
 }

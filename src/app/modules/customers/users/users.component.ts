@@ -12,11 +12,18 @@ export class UsersComponent implements OnInit {
 
   user: any;
   stats: any;
+  id: any;
+  msg: any;
 
   constructor(private userService: UsersService,
               private authService: AuthService) { }
 
   ngOnInit() {
+    this.users();
+    this.usersStats();
+  }
+
+  users() {
     this.userService.getAllUsers().subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
         this.user = res.data;
@@ -26,13 +33,42 @@ export class UsersComponent implements OnInit {
         this.authService.logout();
       }
     });
-    this.usersStats();
   }
 
   usersStats() {
     this.userService.getUsersStats().subscribe((res: any) => {
       this.stats = res.data;
     });
+  }
+
+  activate(id) {
+    this.userService.activateUser(id).subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS) {
+        this.msg = res;
+        this.users();
+      }
+    }, (err) => {
+      if (err.status === 409) {
+        this.msg = err;
+      }
+    });
+  }
+
+  deactivate(id) {
+    this.userService.deactivateUser(id).subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS) {
+        this.msg = res;
+        this.users();
+      }
+    }, (err) => {
+      if (err.status === 409) {
+        this.msg = err;
+      }
+    });
+  }
+
+  onClosed() {
+    this.msg = '';
   }
 
 }

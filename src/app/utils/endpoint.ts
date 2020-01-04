@@ -23,7 +23,7 @@ export class Endpoint {
 
   public static TENOR_TYPES = `${environment.baseUrl}/admin/products/tenor-types`;
 
-  public static GET_PRODUCT = `${environment.baseUrl}/admin/products/7`;
+  public static GET_PRODUCT = `${environment.baseUrl}/admin/product`;
   public static GET_PRODUCTS = `${environment.baseUrl}/admin/products`;
   public static CHANGE_PRODUCT_STATUS = `${environment.baseUrl}/admin/products/status/7`;
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Constant } from 'src/app/utils/constant';
+import { SavingsProductService } from 'src/app/service/savings-product/savings-product.service';
 
 @Component({
   selector: 'app-savings-product',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SavingsProductComponent implements OnInit {
 
-  constructor() { }
+  savingsProduct: any;
+
+  constructor(private savingsProductService: SavingsProductService) { }
 
   ngOnInit() {
+    this.getSavingsProduct();
+  }
+
+  getSavingsProduct(){
+    this.savingsProductService.getSavingsProduct().subscribe((res: any) => {
+      if (res.status === Constant.SUCCESS) {
+        this.savingsProduct = res.data;
+      }
+    });
   }
 
 }

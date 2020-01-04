@@ -3,42 +3,24 @@
 <app-headers title="Loan Products"></app-headers>
 
 
-<!-- <div class="row">
-    <div class="col-md-12 col-12 col-mb-12">
-        <div class="card">
-            <div class="card-body-menu">
-              <ul class="menu-list-3">
-                  <li><a (click)="checkDetails()" routerLink="/app/business/general/" routerLinkActive="active-link">General</a></li>
-                  <li><a (click)="checkBorrowers()" routerLink="/app/business/save" routerLinkActive="active-link">Savings Plans</a></li>
-              </ul>  
-            </div>
-        </div>
-    </div>
-</div> -->
-
 
 <div class="row">
     <div class="col-md-12 col-12 col-mb-12">
-        <!-- <div class="card"> -->
-            <!-- <div class="card-body-menu"> -->
               <ngb-tabset type="pills" justify="justified">
                 <br>
                 <ngb-tab title="Details">
                   <ng-template ngbTabContent>
-                    <!-- <div class="container-fluid"> -->
 <br>
                 
                         
                         <div class="card">
                           <div class="card-body">
-                            <!-- <div class="row"> -->
                               <div class="col-md-12 col-12 col-mb-12">
                                   <div class="user-data">
-                                      <h3>Loan Product 001</h3>
-                                      <small class="text-muted">LSQ38389290</small>
+                                      <h3>{{!details?.name ? 'N/A' : details?.name}}</h3>
+                                      <small class="text-muted">{{!details?.id ? 'N/A' : details?.id}}</small>
                                   </div>
                               </div>
-                          <!-- </div> -->
                   
                           </div>
                         </div>
@@ -46,7 +28,6 @@
                         <div class="card">
                           <div class="card-body">
 
-                            <!-- <div class="col-md-12 col-12 mb-12"> -->
                           
                               <div class="row">
                                 <div class="col-md-6 text-left">
@@ -56,15 +37,16 @@
        
        
                                       </small>
-                                      <h5>5,000.00 - 25,000.00</h5>
+                                      <h5>{{!details?.min_amount ? 'N/A' : details?.min_amount}} - {{!details?.max_amount ? 'N/A' : details?.max_amount}}</h5>
                                     </div>
                                 </div>
                                 <div class="col-md-6 text-left">
-                                    <div class="col-md-12 green">
+                                    <div class="col-md-12">
                                       <small class="text-muted">
                                           Status
                                       </small>
-                                      <h5>Active</h5>
+                                      <h5 *ngIf="details?.status === 1" class="green">Active</h5>
+                                      <h5 *ngIf="details?.status === 0" class="red">Inactive</h5>
                                     </div>
                                 </div>
                                 <div class="col-md-6 text-left">
@@ -72,7 +54,7 @@
                                       <small class="text-muted">
                                           Tenor
                                       </small>
-                                      <h5>15 Days</h5>
+                                      <h5>------ Days</h5>
                                     </div>
                                 </div>
                                 <div class="col-md-6 text-left">
@@ -80,7 +62,7 @@
                                       <small class="text-muted">
                                           Repayment Method
                                       </small>
-                                      <h5>Card & Wallet</h5>
+                                      <h5>{{!details?.repayment_method.name ? 'N/A' : details?.repayment_method.name}}</h5>
                                     </div>
                                 </div>
                   
@@ -89,17 +71,15 @@
                                     <small class="text-muted">
                                         Interest
                                     </small>
-                                    <h5>25%</h5>
+                                    <h5>{{!details?.interest_rate ? 'N/A' : details?.interest_rate}}%</h5>
                                   </div>
                               </div>
                               </div>
-                        <!-- </div> -->
 
                           </div>
                         </div>
 
 
-              <!-- </div> -->
                   </ng-template>
                 </ngb-tab>
 

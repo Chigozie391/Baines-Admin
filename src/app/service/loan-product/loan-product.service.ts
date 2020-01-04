@@ -25,4 +25,30 @@ export class LoanProductService {
     
     return this.http.get(`${Endpoint.LOAN_PRODUCT}?${page}${limit}${product_name}${product_description}${repayment_model}${min_loan_amount}${max_loan_amount}${tenor_type}${interest}${profile_id}`);
   }
+
+  getTenor() {
+    return this.http.get(`${Endpoint.GET_PRODUCT}/tenor-types`)
+  }
+  
+  getRepaymentModel(){
+    return this.http.get(`${Endpoint.GET_PRODUCT}/repayment-models`)
+  }
+
+  getRepaymentMethods(){
+    return this.http.get(`${Endpoint.GET_PRODUCT}/repayment-methods`)
+  }
+
+  createLoanProduct(data){
+    return this.http.post(Endpoint.GET_PRODUCT, data);
+  }
+
+  getLoanProducts(){
+    return this.http.get(`${Endpoint.GET_PRODUCT}?type=loan`)
+  }
+
+  getProductDetails(id){
+    return this.http.get(`${Endpoint.GET_PRODUCT}/${id}`)
+  }
 }
+
+  
