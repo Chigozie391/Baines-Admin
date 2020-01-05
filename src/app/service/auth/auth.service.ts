@@ -7,6 +7,7 @@ import { ForgotPasswordModel } from 'src/app/modules/auth/forgot-password/forgot
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Path } from 'src/app/utils/path';
+import { AccountModel } from 'src/app/modules/settings/account/account.model';
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +47,11 @@ export class AuthService {
 
   forgotPasword(credential: ForgotPasswordModel) {
     return this.http.post(Endpoint.FORGOT_PASSWORD, credential);
+  }
+
+  changePassword(credential: AccountModel){
+    console.log(credential);
+    return this.http.post(Endpoint.CHANGE_PASSWORD, credential);
   }
 
   // logout() {

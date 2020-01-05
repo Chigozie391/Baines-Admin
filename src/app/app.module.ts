@@ -22,6 +22,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     BrowserAnimationsModule,
     SharedModule,
     NgxPaginationModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

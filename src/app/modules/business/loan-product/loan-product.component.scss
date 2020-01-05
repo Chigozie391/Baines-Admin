@@ -1,0 +1,10 @@
+  @for $i from 0 through 36 { 
+    a#ngb-tab-#{$i}.nav-link.active {
+        background-color: #f4f5f7 !important;
+    }
+  }
+
+  .nav-item .ng-star-inserted {
+    background-color:#f4f5f7 !important;
+  }
+

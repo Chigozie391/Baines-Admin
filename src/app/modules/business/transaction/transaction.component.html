@@ -85,7 +85,7 @@
                 </tr>
               </thead>
               <tbody class="text-muted">
-                <tr *ngFor="let eachTransaction of transaction">
+                <tr *ngFor="let eachTransaction of transaction | paginate: {itemsPerPage: 10, currentPage: p}">
                   <td *ngIf="eachTransaction.status === 'success'"> <span class="badge badge-success">{{!eachTransaction.status ? 'N/A' : eachTransaction.status}}</span></td>
                   <td *ngIf="eachTransaction.status === 'pending'"> <span class="badge badge-warning">{{!eachTransaction.status ? 'N/A' : eachTransaction.status}}</span></td>
                   <td *ngIf="eachTransaction.status === 'failed'"> <span class="badge badge-danger">{{!eachTransaction.status ? 'N/A' : eachTransaction.status}}</span></td>
@@ -95,12 +95,17 @@
                   <td>{{!eachTransaction.created_on ? 'N/A' : eachTransaction.created_on | date:'medium'}}</td>
                   <td>₦ {{!eachTransaction.amount_charged ? 'N/A' : eachTransaction.amount_charged}}</td>
                 </tr>
-                <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
               </tbody>
             </table>
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
 </div>
 
     <!-- </div> -->
@@ -115,3 +120,28 @@
         </div>
       </div>
     </div>
+
+
+    <!-- <div style="text-align:center">
+      <h4>
+        Basic Pagination
+      </h4>
+     
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Item</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of collection.data | paginate: config">
+            <th scope="row">{{item.id}}</th>
+            <td>{{item.value}}</td>
+          </tr>
+        </tbody>
+      </table>
+     
+      <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+     
+    </div> -->

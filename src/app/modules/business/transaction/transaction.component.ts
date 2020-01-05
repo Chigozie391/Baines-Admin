@@ -11,9 +11,17 @@ export class TransactionComponent implements OnInit {
   transaction: any;
   stat: any;
   total: any;
-  p : number = 1;
+  pageActual : number = 1;
 
-  constructor(private transactionService: TransactionsService) { }
+  config: any;
+
+  constructor(private transactionService: TransactionsService) { 
+
+  }
+
+  pageChanged(event){
+    this.config.currentPage = event;
+  }
 
   ngOnInit() {
     this.allTransactions();

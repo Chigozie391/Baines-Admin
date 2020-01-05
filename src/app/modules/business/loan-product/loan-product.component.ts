@@ -11,6 +11,7 @@ import { Constant } from 'src/app/utils/constant';
 export class LoanProductComponent implements OnInit {
 
   loanProduct: any;
+  msg: any;
 
   constructor( private loanProductService: LoanProductService) { }
 
@@ -24,6 +25,9 @@ export class LoanProductComponent implements OnInit {
         this.loanProduct = res.data;
       }
     }, (err) => {
+      if(err.status === 401){
+        this.msg = `${err.error.message} - Please logout to begin a new session`;
+      }
       console.log(err);
     });
   }

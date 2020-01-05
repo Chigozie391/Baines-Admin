@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationComponent } from '../../component/navigation/navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatTabsModule, MatMenuModule, MatStepperModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatCheckboxModule, MatSelectModule} from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatTabsModule, MatMenuModule, MatStepperModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatCheckboxModule, MatSelectModule, MatPaginatorModule} from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HeadersComponent } from '../../component/headers/headers.component';
@@ -10,6 +10,7 @@ import { AlertModule } from 'ngx-bootstrap';
 import { TokenInterceptorService } from 'src/app/service/token-interceptor/token-interceptor.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [NavigationComponent, HeadersComponent],
@@ -28,13 +29,15 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MatStepperModule,
     MatCheckboxModule,
     MatMenuModule,
+    MatPaginatorModule,
     RouterModule,
     HttpClientModule,
     MatTabsModule,
     AlertModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    NgxPaginationModule
   ],
   exports: [
     MatToolbarModule,
@@ -57,7 +60,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AlertModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    NgxPaginationModule
   ],
   providers: [
     {

@@ -5,6 +5,7 @@ export class Endpoint {
   public static ADMIN_LOGIN = `${environment.baseUrl}/auth/admin/login`;
   public static ADMIN_LOGOUT = `${environment.baseUrl}/auth/admin/logout`;
   public static FORGOT_PASSWORD = `${environment.baseUrl}/auth/password/forgot`;
+  public static CHANGE_PASSWORD = `${environment.baseUrl}/admin/account/password`;
 
   public static LOANS = `${environment.baseUrl}/admin/loan`;
   public static LOAN_DETAILS = `${environment.baseUrl}/admin/loan/2?profile=true&schedule=true&transaction=true`;
