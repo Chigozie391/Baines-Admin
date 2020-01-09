@@ -21,9 +21,15 @@ import { LoanScheduleComponent } from './loans/loan-schedule/loan-schedule.compo
 import { SaverDetailsComponent } from './savings/saver-details/saver-details.component';
 import { SavingsDetailsComponent } from './savings/savings-details/savings-details.component';
 import { ReportComponent } from './report/report.component';
+import { LoanProductReportComponent } from './report/loan-product-report/loan-product-report.component';
+import { SavingsProductReportComponent } from './report/savings-product-report/savings-product-report.component';
+import { MatureSavingsReportComponent } from './report/mature-savings-report/mature-savings-report.component';
+import { DueLoansReportComponent } from './report/due-loans-report/due-loans-report.component';
+import { OverdueLoansReportComponent } from './report/overdue-loans-report/overdue-loans-report.component';
+import { UsersReportComponent } from './report/users-report/users-report.component';
 
 @NgModule({
-  declarations: [BusinessComponent,TransactionComponent, CollectionComponent, LoanProductComponent, TransactionDetailsComponent, LoansComponent, SavingsComponent, SavingsProductComponent, LoanProductDetailsComponent, NewLoanProductComponent, SavingsProductDetailsComponent, NewSavingsProductComponent, LoanDetailsComponent, BorrowerDetailsComponent, LoanScheduleComponent, SaverDetailsComponent, SavingsDetailsComponent, ReportComponent],
+  declarations: [BusinessComponent,TransactionComponent, CollectionComponent, LoanProductComponent, TransactionDetailsComponent, LoansComponent, SavingsComponent, SavingsProductComponent, LoanProductDetailsComponent, NewLoanProductComponent, SavingsProductDetailsComponent, NewSavingsProductComponent, LoanDetailsComponent, BorrowerDetailsComponent, LoanScheduleComponent, SaverDetailsComponent, SavingsDetailsComponent, ReportComponent, LoanProductReportComponent, SavingsProductReportComponent, MatureSavingsReportComponent, DueLoansReportComponent, OverdueLoansReportComponent, UsersReportComponent],
   imports: [
     CommonModule,
     BusinessRoutingModule,

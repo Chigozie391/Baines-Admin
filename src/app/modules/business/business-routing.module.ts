@@ -18,6 +18,12 @@ import { LoanScheduleComponent } from './loans/loan-schedule/loan-schedule.compo
 import { SaverDetailsComponent } from './savings/saver-details/saver-details.component';
 import { SavingsDetailsComponent } from './savings/savings-details/savings-details.component';
 import { ReportComponent } from './report/report.component';
+import { DueLoansReportComponent } from './report/due-loans-report/due-loans-report.component';
+import { LoanProductReportComponent } from './report/loan-product-report/loan-product-report.component';
+import { MatureSavingsReportComponent } from './report/mature-savings-report/mature-savings-report.component';
+import { OverdueLoansReportComponent } from './report/overdue-loans-report/overdue-loans-report.component';
+import { SavingsProductReportComponent } from './report/savings-product-report/savings-product-report.component';
+import { UsersReportComponent } from './report/users-report/users-report.component';
 
 const routes: Routes = [
   {
@@ -42,7 +48,13 @@ const routes: Routes = [
       { path: 'savings/:id/savings-details', component: SavingsDetailsComponent },
       { path: 'new-loan-product', component: NewLoanProductComponent},
       { path: 'new-savings-product', component: NewSavingsProductComponent},
-      { path: 'reports', component: ReportComponent}
+      { path: 'reports', component: ReportComponent},
+      { path: 'reports/due-loans', component: DueLoansReportComponent},
+      { path: 'reports/loan-product', component: LoanProductReportComponent},
+      { path: 'reports/mature-savings', component: MatureSavingsReportComponent},
+      { path: 'reports/overdue-loans', component: OverdueLoansReportComponent},
+      { path: 'reports/savings-product', component: SavingsProductReportComponent},
+      { path: 'reports/users', component: UsersReportComponent}
     ]
   }
 ];

@@ -1,0 +1,153 @@
+<app-headers title="Reports/Overdue Loans"></app-headers>
+
+<div class="row">
+
+
+
+  <div class="col-md-7 col-12 mb-6">
+    <div class="card">
+      <div class="card-body">
+          <div class="col">
+            <!-- <small class="text-muted">Overview</small> -->
+            <!-- <h5 class="font-weight-bold">Loans</h5> -->
+          </div>
+        <canvas id="loanFailed"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-1 col-12 mb-6"></div>
+
+
+  <div class="col-md-4 col-12 mb-6">
+
+    <div class="card" style="margin-top: 17%;">
+        <div class="card-body">
+            <div class="col-md-12 text-left">
+                <small class="text-muted">
+                    Total Overdue
+                </small>
+                <h5 class="font-weight-bold">3,998,000</h5>
+                <small>5% (10 days) </small> 
+                <mat-icon style="position: absolute;">arrow_drop_down</mat-icon>
+            </div>
+  
+            <div class="row">
+              <div class="col-md-6 text-left green">
+                  <!-- <div class="col-md-12 "> -->
+                    <small class="text-muted">
+                        Borrowers
+                    </small>
+                    <h5 class="font-weight-bold" style="color: orange;">3,998,000</h5>
+                  <!-- </div> -->
+              </div>
+   
+  
+              <div class="col-md-6 text-left red">
+                  <!-- <div class="col-md-12"> -->
+                    <small class="text-muted">
+                        Mature Loans
+                    </small>
+                    <h5 class="font-weight-bold">54</h5>
+                  <!-- </div> -->
+              </div>
+
+            </div>
+        </div>
+      </div>
+      <!-- <br> -->
+      <!-- <div class="card">
+        <div class="card-body">
+            <div class="row">
+              <div class="col-md-7 text-left">
+                    <small class="text-muted">
+                        Loan Count
+                    </small>
+                    <h5 class="font-weight-bold">3,998,000</h5>
+                    <small>5% (10 days)</small>
+                    <mat-icon style="position: absolute;">arrow_drop_down</mat-icon>
+                </div>
+   
+  
+              <div class="col-md-5 text-left">
+                    <small class="text-muted">
+                        Borrowers
+                    </small>
+                    <h5 class="font-weight-bold">54</h5>
+                    <small>5% (10 days)</small>
+                    <mat-icon style="position: absolute;">arrow_drop_down</mat-icon>
+                </div>
+            </div>
+        </div>
+      </div> -->
+
+  </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-12 mb-12">
+    <div class="card">
+        <div class="card-body">
+            <div class="row justify-content-between align-items-center">
+
+
+                    <div class="col-md-3 col-12 mb-12">
+                        <span class="has-search">
+                          <input type="text" name="search" placeholder="Start Date" class="search form-control" />
+                          <mat-icon class="icon ml-1 search-icon">filter_list</mat-icon>
+                        </span>
+                      </div>
+
+                    <div class="col-md-3 col-12 mb-12">
+                        <span class="has-search">
+                          <input type="text" name="search" placeholder="End Date" class="search form-control" />
+                          <mat-icon class="icon ml-1 search-icon">filter_list</mat-icon>
+                        </span>
+                      </div>
+
+                      <div class="col-md-3 col-12 mb-12">
+                        <button class="btn btn-primary">Filter</button>
+                      </div>
+                    
+                <div class="col-md-3 col-12 mb-12 text-right">
+                    <button class="btn btn-primary">Export</button>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+<div class="row">
+
+    <div class="col-md-12 col-12 mb-12">
+
+        <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Date Due</th>
+                  <th scope="col">Due Loans</th>
+                  <th scope="col">Principal</th>
+                  <th scope="col">Interest Due</th>
+                  <th scope="col">Due Loans</th>
+                </tr>
+              </thead>
+              <tbody class="text-muted">
+                <tr *ngFor="let eachProduct of [1,2,3,4,5]">
+                  <td><a routerLink="{{eachProduct.id}}">15 Sep 2019, 07:45:21</a></td>
+                  <td><a routerLink="{{eachProduct.id}}">45</a></td>
+                  <td>345,000</td>
+                  <td>45,000</td>
+                  <td>345,000</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
+  </div>

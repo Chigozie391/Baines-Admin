@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { LoanProductService } from 'src/app/service/loan-product/loan-product.service';
 import { LoanProductModel } from 'src/app/modules/business/loan-product/new-loan-product/new-loan-product.model';
+import { Constant } from 'src/app/utils/constant';
 
 @Component({
   selector: 'app-new-loan-product',
@@ -30,14 +31,12 @@ export class NewLoanProductComponent implements OnInit {
 
   getTenor() {
     this.loanProductService.getTenor().subscribe((res: any) => {
-      console.log(res.data);
       this.tenor = res.data;
     });
   }
 
   getRepaymentModel() {
     this.loanProductService.getRepaymentModel().subscribe((res: any) => {
-      console.log(res.data);
       this.model = res.data;
     });
   }
@@ -60,9 +59,13 @@ export class NewLoanProductComponent implements OnInit {
       "product_type_id": "2"
     };
     this.loanProductService.createLoanProduct(data).subscribe((res :any) => {
-      console.log(res.status);
-      this.msg = res.message;
-      // console.log(this.msg);
+      if(res.status === Constant.SUCCESS) {
+        this.msg = res.message;
+      }
+    }, (err) => {
+      if(err.status !== 200){
+        this.msg = err.error.message;
+      }
     });
   }
 

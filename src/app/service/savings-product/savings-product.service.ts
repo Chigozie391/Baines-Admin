@@ -17,4 +17,16 @@ export class SavingsProductService {
     return this.http.get(`${Endpoint.GET_PRODUCT}/${id}`)
   }
 
+  getTenor() {
+    return this.http.get(`${Endpoint.GET_PRODUCT}/tenor-types`)
+  }
+
+  getRepaymentMethods(){
+    return this.http.get(`${Endpoint.GET_PRODUCT}/repayment-methods`)
+  }
+
+  createSavingsProduct(data){
+    return this.http.post(Endpoint.GET_PRODUCT, data);
+  }
+
 }
