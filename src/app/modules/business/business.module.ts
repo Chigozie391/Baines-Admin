@@ -27,9 +27,31 @@ import { MatureSavingsReportComponent } from './report/mature-savings-report/mat
 import { DueLoansReportComponent } from './report/due-loans-report/due-loans-report.component';
 import { OverdueLoansReportComponent } from './report/overdue-loans-report/overdue-loans-report.component';
 import { UsersReportComponent } from './report/users-report/users-report.component';
+import { OverDueReportDetailsComponent } from './report/overdue-loans-report/details/details.component';
+import { DueReportDetailsComponent } from './report/due-loans-report/details/details.component';
+import { LoanReportDetailsComponent } from './report/loan-product-report/details/details.component';
+import { MatureReportDetailsComponent } from './report/mature-savings-report/details/details.component';
+import { SavingsReportDetailsComponent } from './report/savings-product-report/details/details.component';
+import { UsersReportDetailsComponent } from './report/users-report/details/details.component';
 
 @NgModule({
-  declarations: [BusinessComponent,TransactionComponent, CollectionComponent, LoanProductComponent, TransactionDetailsComponent, LoansComponent, SavingsComponent, SavingsProductComponent, LoanProductDetailsComponent, NewLoanProductComponent, SavingsProductDetailsComponent, NewSavingsProductComponent, LoanDetailsComponent, BorrowerDetailsComponent, LoanScheduleComponent, SaverDetailsComponent, SavingsDetailsComponent, ReportComponent, LoanProductReportComponent, SavingsProductReportComponent, MatureSavingsReportComponent, DueLoansReportComponent, OverdueLoansReportComponent, UsersReportComponent],
+  declarations: [
+     BusinessComponent,TransactionComponent,
+     CollectionComponent, LoanProductComponent, 
+     TransactionDetailsComponent, LoansComponent, 
+     SavingsComponent, SavingsProductComponent, 
+     LoanProductDetailsComponent, NewLoanProductComponent, 
+     SavingsProductDetailsComponent, NewSavingsProductComponent, 
+     LoanDetailsComponent, BorrowerDetailsComponent, 
+     LoanScheduleComponent, SaverDetailsComponent, 
+     SavingsDetailsComponent, ReportComponent, 
+     LoanProductReportComponent, SavingsProductReportComponent, 
+     MatureSavingsReportComponent, DueLoansReportComponent, 
+     OverdueLoansReportComponent, UsersReportComponent, 
+     OverDueReportDetailsComponent, DueReportDetailsComponent,
+     LoanReportDetailsComponent, MatureReportDetailsComponent,
+     SavingsReportDetailsComponent, UsersReportDetailsComponent
+    ],
   imports: [
     CommonModule,
     BusinessRoutingModule,

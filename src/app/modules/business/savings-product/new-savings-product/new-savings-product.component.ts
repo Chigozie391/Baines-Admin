@@ -47,7 +47,7 @@ export class NewSavingsProductComponent implements OnInit {
       "description": this.savingsProduct.description,
       "product_type_id": "1",
       "repayment_method_id": this.savingsProduct.repayment_method_id,
-      "repayment_model_id": null,
+      // "repayment_model_id": null,
       "penal_charge_rate": this.savingsProduct.penal_charge,
       "is_fixed": this.savingsProduct.fixed ? this.savingsProduct.fixed = 1 : this.savingsProduct.fixed = 0,
       "withholding_tax_rate": this.savingsProduct.withholding_tax,

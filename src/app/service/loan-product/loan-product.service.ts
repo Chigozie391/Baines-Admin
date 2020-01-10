@@ -10,21 +10,21 @@ export class LoanProductService {
   constructor(private http: HttpClient) { }
 
 
-  loanProduct(data){
-    console.log(data)
-    let page = data.page ? `page=${data.page}` : '';
-    let limit = data.limit ? `&limit=${data.limit}` : '';
-    let product_name = data.product_name ? `&product_name=${data.product_name}` : '';
-    let product_description = data.product_description ? `&product_description=${data.product_description}` : '';
-    let repayment_model = data.repayment_model ? `&repayment_model=${data.repayment_model}` : '';
-    let min_loan_amount = data.min_loan_amount ? `&min_loan_amount=${data.min_loan_amount}` : '';
-    let max_loan_amount = data.max_loan_amount ? `&max_loan_amount=${data.max_loan_amount}` : '';
-    let tenor_type = data.tenor_type ? `&tenor_type=${data.tenor_type}` : '';
-    let interest = data.interest ? `&interest=${data.interest}` : '';
-    let profile_id = data.profile_id ? `&profile_id=${data.profile_id}` : '';
+  // loanProduct(data){
+  //   console.log(data)
+  //   let page = data.page ? `page=${data.page}` : '';
+  //   let limit = data.limit ? `&limit=${data.limit}` : '';
+  //   let product_name = data.product_name ? `&product_name=${data.product_name}` : '';
+  //   let product_description = data.product_description ? `&product_description=${data.product_description}` : '';
+  //   let repayment_model = data.repayment_model ? `&repayment_model=${data.repayment_model}` : '';
+  //   let min_loan_amount = data.min_loan_amount ? `&min_loan_amount=${data.min_loan_amount}` : '';
+  //   let max_loan_amount = data.max_loan_amount ? `&max_loan_amount=${data.max_loan_amount}` : '';
+  //   let tenor_type = data.tenor_type ? `&tenor_type=${data.tenor_type}` : '';
+  //   let interest = data.interest ? `&interest=${data.interest}` : '';
+  //   let profile_id = data.profile_id ? `&profile_id=${data.profile_id}` : '';
     
-    return this.http.get(`${Endpoint.LOAN_PRODUCT}?${page}${limit}${product_name}${product_description}${repayment_model}${min_loan_amount}${max_loan_amount}${tenor_type}${interest}${profile_id}`);
-  }
+  //   return this.http.get(`${Endpoint.LOAN_PRODUCT}?${page}${limit}${product_name}${product_description}${repayment_model}${min_loan_amount}${max_loan_amount}${tenor_type}${interest}${profile_id}`);
+  // }
 
   getTenor() {
     return this.http.get(`${Endpoint.GET_PRODUCT}/tenor-types`)
@@ -48,6 +48,10 @@ export class LoanProductService {
 
   getProductDetails(id){
     return this.http.get(`${Endpoint.GET_PRODUCT}/${id}`)
+  }
+
+  getLoanStats(){
+    return this.http.get(`${Endpoint.GET_PRODUCT}/stats?type=loan`);
   }
 }
 

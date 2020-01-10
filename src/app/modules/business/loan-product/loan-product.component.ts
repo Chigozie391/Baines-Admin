@@ -12,11 +12,13 @@ export class LoanProductComponent implements OnInit {
 
   loanProduct: any;
   msg: any;
+  Stats: any;
 
   constructor( private loanProductService: LoanProductService) { }
 
   ngOnInit() {
     this.getLoanProduct();
+    this.loanStat();
   }
 
   getLoanProduct(){
@@ -32,6 +34,13 @@ export class LoanProductComponent implements OnInit {
     });
   }
 
+  loanStat(){
+    this.loanProductService.getLoanStats().subscribe((res: any) => {
+      if (res.status === Constant.SUCCESS){
+        this.Stats = res.data[0];
+      }
+    });
+  }
 
 
 }

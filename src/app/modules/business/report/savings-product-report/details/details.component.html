@@ -1,0 +1,62 @@
+<app-headers title="Reports/Savings Products/Regular" ></app-headers>
+
+<a routerLink="/app/business/reports/savings-product/" class="return">&larr; Back </a>
+
+
+
+<div class="row">
+    <div class="col-md-12 col-12 mb-12">
+    <div class="card">
+        <div class="card-body">
+            <div class="row justify-content-between align-items-center">
+                <div class="col">
+      
+                    <div class="col-md-7 col-12 mb-12">
+                        <span class="has-search">
+                          <input type="text" name="search" placeholder="Filter" class="search form-control" />
+                          <mat-icon class="icon ml-1 search-icon">filter_list</mat-icon>
+                        </span>
+                      </div>
+                    </div>
+      
+                <div class="col-md-5 col-12 mb-12 text-right">
+                    <button class="btn btn-primary">Export</button>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-12">          
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Savers</th>
+              <th scope="col">no of plans</th>
+              <th scope="col">phone</th>
+              <th scope="col">savings amount</th>
+              <th scope="col">savings due</th>
+              <th scope="col">start date</th>
+              <th scope="col">due date</th>
+            </tr>
+          </thead>
+          <tbody class="text-muted">
+            <tr *ngFor="let loan of [1,2,3,4,5]">
+              <td>Samuel Ajayi</td>
+              <td>2</td>
+              <td>08123456789</td>
+              <td>23,000</td>
+              <td>23,000</td>
+              <td>14 Sep 2019, 07:45:41</td>
+              <td>14 Sep 2019, 07:45:41</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>

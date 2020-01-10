@@ -26,23 +26,23 @@ export class LendersViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getLenderState()
+    // this.getLenderState()
   }
 
-  getLenderState() {
-    this.lender = history.state.data;
-    if (!this.lender) {
-      this.router.navigate([Path.LENDER]);
-      return
-    }
-    else {
-      this.showName();
-      this.loanModel.profile_id = this.lender.id;
-      this.invitedBorrowers();
-      this.getLoanProduct();
-    }
+  // getLenderState() {
+  //   this.lender = history.state.data;
+  //   if (!this.lender) {
+  //     this.router.navigate([Path.LENDER]);
+  //     return
+  //   }
+  //   else {
+  //     this.showName();
+  //     this.loanModel.profile_id = this.lender.id;
+  //     this.invitedBorrowers();
+  //     this.getLoanProduct();
+  //   }
 
-  }
+  // }
 
   showName() {
     !this.lender.user.last_name && this.lender.user.first_name ?
@@ -63,18 +63,18 @@ export class LendersViewComponent implements OnInit {
     })
   }
 
-  getLoanProduct() {
-    this.loadingProduct = true;
-    console.log(this.loanModel);
-    this.loanProductService.loanProduct(this.loanModel).subscribe((res: any) => {
-      this.loadingProduct = false;
-      if (res.status === Constant.SUCCESS) {
-        this.loanProduct = res.data.products;
-      }
-    }, err => {
-      console.log(err)
-      this.loadingProduct = false;
-    })
-  }
+  // getLoanProduct() {
+  //   this.loadingProduct = true;
+  //   console.log(this.loanModel);
+  //   this.loanProductService.loanProduct(this.loanModel).subscribe((res: any) => {
+  //     this.loadingProduct = false;
+  //     if (res.status === Constant.SUCCESS) {
+  //       this.loanProduct = res.data.products;
+  //     }
+  //   }, err => {
+  //     console.log(err)
+  //     this.loadingProduct = false;
+  //   })
+  // }
 
 }

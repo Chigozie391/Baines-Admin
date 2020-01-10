@@ -1,0 +1,63 @@
+<app-headers title="Reports/Due Loans/Regular" ></app-headers>
+
+<a routerLink="/app/business/reports/due-loans/" class="return">&larr; Back </a>
+
+
+
+<div class="row">
+    <div class="col-md-12 col-12 mb-12">
+    <div class="card">
+        <div class="card-body">
+            <div class="row justify-content-between align-items-center">
+                <div class="col">
+      
+                    <div class="col-md-7 col-12 mb-12">
+                        <span class="has-search">
+                          <input type="text" name="search" placeholder="Filter" class="search form-control" />
+                          <mat-icon class="icon ml-1 search-icon">filter_list</mat-icon>
+                        </span>
+                      </div>
+                    </div>
+      
+                <div class="col-md-5 col-12 mb-12 text-right">
+                    <button class="btn btn-primary">Export</button>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-12">          
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Borrowers</th>
+              <th scope="col">Loan Product</th>
+              <th scope="col">bvn</th>
+              <th scope="col">Loan amount</th>
+              <th scope="col">interest due</th>
+              <th scope="col">total amount</th>
+              <th scope="col">date due</th>
+            </tr>
+          </thead>
+          <tbody class="text-muted">
+            <tr *ngFor="let loan of [1,2,3,4,5]">
+              <td>Samuel Ajayi</td>
+              <td>15 days</td>
+              <td>2234465742</td>
+              <td>23,000</td>
+              <td>23,000</td>
+              <td>23,000</td>
+              <td>14 Sep 2019, 07:45:41</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>

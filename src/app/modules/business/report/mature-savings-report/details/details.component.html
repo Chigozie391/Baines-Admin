@@ -1,0 +1,193 @@
+<app-headers title="Reports/user onboarding/details" ></app-headers>
+
+<a routerLink="/app/business/reports/users/" class="return">&larr; Back </a>
+
+
+<div class="row"></div>
+
+<ngb-tabset type="pills" justify="justified">
+  <ngb-tab title="Saver's Details">
+    <ng-template ngbTabContent>
+
+
+        <div class="row">
+         
+            <div class="col-md-8">
+              <!-- <div class="card"> -->
+                <!-- <div class="card-body"> -->
+                  <div class="col-md-12 col-12 mb-12">
+                    <h3>Travel Savings</h3>
+                    <p>LSQ2492852</p>
+                    <hr>
+                  </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                            <div class="col-md-12">
+                                <small class="text-muted">
+                                    Full name
+                                </small>
+                                <h6><strong>Saidi Balogun</strong></h6>
+                              </div>
+                      </div>
+                      <div class="col-md-4">
+                            <div class="col-md-12">
+                                <small class="text-muted">
+                                    Mobile Number
+                                </small>
+                                <h6><strong>09012893813</strong></h6>
+                              </div>
+                      </div>
+                      <div class="col-md-4">
+                            <div class="col-md-12 ">
+                                <small class="text-muted">
+                                    BVN
+                                </small>
+                                <h6><strong>23829842934</strong></h6>
+                              </div>
+                      </div>
+          
+                      <div class="col-md-4">
+                          <div class="col-md-12">
+                            <small class="text-muted">
+                                Email Address
+                            </small>
+                            <h6><strong>sedf@gmail.com</strong></h6>
+                          </div>
+                      </div>
+          
+                    </div>
+                  <!-- </div>     -->
+                <!-- </div> -->
+            </div>
+          
+            <div class="col-md-4">
+              <!-- <div class="card"> -->
+                <!-- <div class="card-body"> -->
+                  <span class="pic medium square ml-12 profile-img">
+                    <img src="../../../../../../assets/img/nav/image.svg" alt="" class="img-fluid">
+                  </span>  
+                  <!-- </div>     -->
+                <!-- </div> -->
+            </div>
+          </div>
+
+
+
+    </ng-template>
+   </ngb-tab>
+
+  <ngb-tab title="Savings Details">
+    <ng-template ngbTabContent >
+
+        <div class="row">
+   
+            <div class="col-md-12 col-12 mb-12">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-9 col-12 col-mb-12">
+                            <div class="user-data">
+                                <h3>Student Savings</h3>
+                                <h6>LS2983324</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-12 col-mb-12">
+                            <div class="user-data">
+                                <h6>Plan Balance</h6>
+                                <h4>₦ 1,206,553.00</h4>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="row">
+                      <div class="col-md-2 text-left">
+                          <div class="col-md-12">
+                            <small class="text-muted">
+                                Savings Frequency
+                            </small>
+                            <h6>Daily</h6>
+                          </div>
+                      </div>
+                      <div class="col-md-2 text-left">
+                          <div class="col-md-12">
+                            <small class="text-muted">
+                                Periodic Amount
+                            </small>
+                            <h6>₦ 45,000</h6>
+                          </div>
+                      </div>
+                      <div class="col-md-3 text-left">
+                          <div class="col-md-12">
+                            <small class="text-muted">
+                                Start Date
+                            </small>
+                            <h6>Apr, 10 2020.</h6>
+                          </div>
+                      </div>
+                      <div class="col-md-2 text-left">
+                          <div class="col-md-12 red">
+                            <small class="text-muted">
+                                Withdraw By
+                            </small>
+                            <h6>Sep, 23 2020.</h6>
+                          </div>
+                      </div>
+                      <div class="col-md-2 text-left">
+                          <div class="col-md-12">
+                            <small class="text-muted">
+                                Status
+                            </small>
+                            <h6 class="green">Active</h6>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-3 col-3 mb-3">
+                <h6>chumaraya's Saving History</h6>
+            </div>
+            <div class="col-md-9 col-9 mb-9">
+                <hr>
+            </div>
+        </div>
+        
+        
+<div class="row">
+    <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Status</th>
+              <th scope="col">Transaction ID</th>
+              <th scope="col">Transaction</th>
+              <th scope="col">type</th>
+              <th scope="col">date</th>
+              <th scope="col">Amount (NGN)</th>
+            </tr>
+          </thead>
+          <tbody class="text-muted">
+            <tr *ngFor="let each of [1,2,3,4,5]">
+              <td> <span class="badge badge-success">Successful</span></td>
+              <td>LS2989442</td>
+              <td>Periodic Savings</td>
+              <td>card</td>
+              <td>14 Sep 2019, 07:45:41</td>
+              <td>20,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>
+
+    </ng-template>
+  </ngb-tab>
+
+
+</ngb-tabset>
+
