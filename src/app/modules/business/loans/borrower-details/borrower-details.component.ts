@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LoansService } from 'src/app/service/loans/loans.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { Constant } from 'src/app/utils/constant';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
   selector: 'app-borrower-details',
@@ -22,6 +24,7 @@ export class BorrowerDetailsComponent implements OnInit {
   
   constructor(private loansService: LoansService,
     private route: ActivatedRoute,
+    private authService: AuthService,
     private _location: Location) { 
     this.route.paramMap.subscribe(params => {
       this.loan_id = params.get("id");
@@ -34,11 +37,17 @@ export class BorrowerDetailsComponent implements OnInit {
 
   loanDetails(id) {
     this.loansService.getLoanDetails(id).subscribe((res: any) => {
-      this.Details = res.data;
-      this.borrower = res.data.user;
-      this.tenor_type = res.data.tenor_type;
-      this.loan_schedule = res.data.schedule;
-      this.moreProfile = res.data.loan_profile;
+      if(res.status === Constant.SUCCESS) {
+        this.Details = res.data;
+        this.borrower = res.data.user;
+        this.tenor_type = res.data.tenor_type;
+        this.loan_schedule = res.data.schedule;
+        this.moreProfile = res.data.loan_profile;      
+      }
+    }, (err) => {
+      if (err.status === 401) {
+        this.authService.logout();
+      }
     });
   }
 

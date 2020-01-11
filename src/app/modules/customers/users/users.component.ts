@@ -42,6 +42,7 @@ export class UsersComponent implements OnInit {
   }
 
   activate(id) {
+    this.msg = 'Activating...'
     this.userService.activateUser(id).subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
         this.msg = res;
@@ -55,6 +56,7 @@ export class UsersComponent implements OnInit {
   }
 
   deactivate(id) {
+    this.msg = 'Deactivating...'
     this.userService.deactivateUser(id).subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
         this.msg = res;

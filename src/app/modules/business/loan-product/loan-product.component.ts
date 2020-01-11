@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoanProductService } from 'src/app/service/loan-product/loan-product.service';
 import { LoanProductModel } from 'src/app/model/loan-product.model';
 import { Constant } from 'src/app/utils/constant';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
   selector: 'app-loan-product',
@@ -14,7 +15,8 @@ export class LoanProductComponent implements OnInit {
   msg: any;
   Stats: any;
 
-  constructor( private loanProductService: LoanProductService) { }
+  constructor( private loanProductService: LoanProductService,
+    private authService: AuthService) { }
 
   ngOnInit() {
     this.getLoanProduct();
@@ -28,9 +30,9 @@ export class LoanProductComponent implements OnInit {
       }
     }, (err) => {
       if(err.status === 401){
-        this.msg = `${err.error.message} - Please logout to begin a new session`;
+        // this.msg = `${err.error.message} - Please logout to begin a new session`;
+        this.authService.logout();
       }
-      console.log(err);
     });
   }
 

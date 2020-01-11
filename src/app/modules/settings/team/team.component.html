@@ -10,7 +10,7 @@
 </div>
 
 
-<div class="row">
+<div class="row" *ngIf="members">
     <div class="col-md-12">
         <!-- <ngb-tabset type="pills" justify=justified> -->
             <!-- <ngb-tab title="Team Members"> -->
@@ -41,15 +41,17 @@
                             </tr>
                           </thead>
                           <tbody class="text-muted">
-                            <tr *ngFor="let country of [1,2,3]">
-                                <td>Foluke Akerele</td>
-                                <td>sunnyblue@baines.com</td>
-                                <td>Super Admin</td>
+                            <tr *ngFor="let member of members">
+                              <td>{{!member.full_name ? 'N/A' : member.full_name}}</td>
+                              <td>{{!member.email ? 'N/A' : member.email}}</td>
+                                <td *ngIf="member.role_id === 1">{{'Super Admin'}} </td>
+                                <td *ngIf="member.role_id === 2">{{'Admin'}} </td>
                                 <td>
                                   <span [matMenuTriggerFor]="action" class="action">
                                     &#8226;&#8226;&#8226;
                                     </span> 
-                                </td>                           </tr>
+                                </td>                          
+                               </tr>
                           </tbody>
                       </table>
                     </div>
@@ -79,4 +81,14 @@
             </ngb-tab> -->
           <!-- </ngb-tabset> -->
     </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card" *ngIf="!members">
+      <div class="card-body">
+        <h3 class="text-center text-muted">Please wait...</h3>
+      </div>
+    </div>
+  </div>
 </div>

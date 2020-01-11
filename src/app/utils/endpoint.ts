@@ -38,7 +38,9 @@ export class Endpoint {
 
   public static GET_ALL_TRANSACTIONS = `${environment.baseUrl}/admin/transaction`;
 
+  public static AUDIT_LOGS = `${environment.baseUrl}/admin/audit`;
 
+  public static TEAM = `${environment.baseUrl}/admin/team`;
 
 
 

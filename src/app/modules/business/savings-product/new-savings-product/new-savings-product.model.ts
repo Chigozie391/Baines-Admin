@@ -9,5 +9,6 @@ export class SavingsProductModel {
     tenor_type:any;
     fixed :any;
     repayment_method_id:any;
+    repayment_model_id:any;
     product_type_id: any;
 }

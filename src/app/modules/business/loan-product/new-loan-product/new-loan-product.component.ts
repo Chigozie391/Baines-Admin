@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { LoanProductService } from 'src/app/service/loan-product/loan-product.service';
 import { LoanProductModel } from 'src/app/modules/business/loan-product/new-loan-product/new-loan-product.model';
 import { Constant } from 'src/app/utils/constant';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
   selector: 'app-new-loan-product',
@@ -20,6 +21,7 @@ export class NewLoanProductComponent implements OnInit {
   msg: String;
 
   constructor(private _formBuilder: FormBuilder,
+    private authService: AuthService,
               private loanProductService: LoanProductService) { }
 
   ngOnInit() {
@@ -31,7 +33,13 @@ export class NewLoanProductComponent implements OnInit {
 
   getTenor() {
     this.loanProductService.getTenor().subscribe((res: any) => {
-      this.tenor = res.data;
+      if(res.status === Constant.SUCCESS) {
+        this.tenor = res.data;
+      }
+    }, (err) => {
+      if (err.status === 401) {
+        this.authService.logout();
+      }
     });
   }
 

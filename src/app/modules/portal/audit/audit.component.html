@@ -2,7 +2,7 @@
 
 
 
-<div class="row">
+<div class="row" *ngIf="logs">
   <div class="col-md-12">
     <div class="table-responsive">
 
@@ -32,15 +32,30 @@
           </tr>
         </thead>
         <tbody class="text-muted">
-          <tr *ngFor="let country of [1,2,3,4,5,6,6,7,8,9,10]">
-            <td>Afenifere Olabode</td>
-            <td><a routerLink="LSQ1293943">Afenifere credited wallet</a></td>
-            <td>Borrower</td>
-            <th scope="row">12, Oct 2019</th>
-            <th> 12:00pm</th>
+          <tr *ngFor="let log of logs | paginate: {itemsPerPage: 10, currentPage: p}">
+            <td>{{!log.user.first_name ? 'N/A' : log.user.first_name}} {{!log.user.last_name ? 'N/A' : log.user.last_name}}</td>
+            <td><a routerLink="{{log.id}}">{{!log.description ? 'N/A' : log.description | titlecase}}</a></td>
+            <td>{{'--------'}}</td>
+            <th scope="row">{{log.created_on | date : 'mediumDate'}}</th>
+            <th> {{log.created_on | date : 'shortTime'}}</th>
           </tr>
         </tbody>
       </table>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card" *ngIf="!logs">
+      <div class="card-body">
+        <h3 class="text-center text-muted">Loading...</h3>
+      </div>
     </div>
   </div>
 </div>

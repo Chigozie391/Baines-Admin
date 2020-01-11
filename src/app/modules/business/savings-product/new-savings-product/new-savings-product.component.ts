@@ -15,6 +15,7 @@ export class NewSavingsProductComponent implements OnInit {
   firstFormGroup: FormGroup;
   tenor: any;
   method: any;
+  model: any;
   msg: String;
   savingsProduct = new SavingsProductModel();  
 
@@ -24,11 +25,18 @@ export class NewSavingsProductComponent implements OnInit {
   ngOnInit() {
     this.getTenor();
     this.getRepaymentMethod();
+    this.getRepaymentModel();
   }
 
   getTenor(){
     this.savingsProductService.getTenor().subscribe((res: any) => {
       this.tenor = res.data;
+    });
+  }
+
+  getRepaymentModel() {
+    this.savingsProductService.getRepaymentModel().subscribe((res: any) => {
+      this.model = res.data;
     });
   }
 
@@ -47,7 +55,7 @@ export class NewSavingsProductComponent implements OnInit {
       "description": this.savingsProduct.description,
       "product_type_id": "1",
       "repayment_method_id": this.savingsProduct.repayment_method_id,
-      // "repayment_model_id": null,
+      "repayment_model_id": this.savingsProduct.repayment_method_id,
       "penal_charge_rate": this.savingsProduct.penal_charge,
       "is_fixed": this.savingsProduct.fixed ? this.savingsProduct.fixed = 1 : this.savingsProduct.fixed = 0,
       "withholding_tax_rate": this.savingsProduct.withholding_tax,

@@ -21,6 +21,10 @@ export class SavingsProductService {
     return this.http.get(`${Endpoint.GET_PRODUCT}/tenor-types`)
   }
 
+  getRepaymentModel(){
+    return this.http.get(`${Endpoint.GET_PRODUCT}/repayment-models`)
+  }
+
   getRepaymentMethods(){
     return this.http.get(`${Endpoint.GET_PRODUCT}/repayment-methods`)
   }

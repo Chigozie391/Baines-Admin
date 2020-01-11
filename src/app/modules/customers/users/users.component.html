@@ -90,9 +90,9 @@
 
   <div class="row">
     <div class="col-md-12">
-      <div *ngIf="msg" class="text-center">
-        <alert [type]="showAlert" class="red" dismissible="true" (onClosed)="onClosed()" *ngIf="msg.status !== 'success'">User is already activated/deactivated!</alert>
-        <alert [type]="showAlert" class="green" dismissible="true" (onClosed)="onClosed()" *ngIf="msg.status === 'success'">Operation Successfull!</alert>
+      <div *ngIf="msg" class="alert alert-info text-center">
+        <alert [type]="showAlert" dismissible="true" (onClosed)="onClosed()" *ngIf="msg.status !== 'success'">No changes Detected!</alert>
+        <alert [type]="showAlert" dismissible="true" (onClosed)="onClosed()" *ngIf="msg.status === 'success'">Operation Successfull!</alert>
 
       </div>
     </div>
