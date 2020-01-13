@@ -19,20 +19,31 @@
 <div class="col-md-12">
     <div class="card">
     <div class="card-body">
-            <mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper" style="background-color: transparent;">
+      <div *ngIf="msg" class="alert alert-info text-center">
+        <alert [type]="showAlert" dismissible="true" (onClosed)="onClosed()">{{msg}}</alert>
+      </div>
+        <mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper" style="background-color: transparent;">
                 <mat-step [stepControl]="firstFormGroup">
-                  <form [formGroup]="firstFormGroup">
-                    <mat-form-field class="col-md-6">
-                      <input matInput placeholder="Email Address" formControlName="firstCtrl" required>
-                    </mat-form-field>
+                  <form #firstFormGroup="ngForm" (submit)="sendInvite()">
+                    <div class="row">
+                      <mat-form-field class="col-md-6">
+                        <input type="email" matInput placeholder="Email Address" [(ngModel)]="invitation.email" name="email" required>
+                      </mat-form-field>
+                    </div>
+                    <div class="row">
+                      <mat-select [(ngModel)]="invitation.role" id="role" name="role" name="role" style="margin-bottom: 2rem;" class="col-md-6" placeholder="Role" required>
+                        <mat-option  *ngFor="let each of roles" value="{{each.id}}">{{each.name | titlecase}}</mat-option>
+                    </mat-select>
+                    </div>
+
                     <div class="col-md-6 text-right">
-                      <button mat-button matStepperNext class="btn btn-primary">Next</button>
+                      <button type="submit" class="btn btn-primary">Send Invite</button>
                     </div>
                   </form>
                 </mat-step>
-                <mat-step>
 
 
+                <!-- <mat-step>
                   <form [formGroup]="secondFormGroup">
                     <div class="row col-md-12">
                       <h5 class="text-muted"> <b>The permissions below apply to your new user.</b> </h5>
@@ -58,7 +69,7 @@
                         </div>
                       </div>
                   </form>
-                </mat-step>
+                </mat-step> -->
               </mat-horizontal-stepper>
         </div>   
     </div>

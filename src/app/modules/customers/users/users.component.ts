@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/service/users/users.service';
 import { Constant } from 'src/app/utils/constant';
 import { AuthService } from 'src/app/service/auth/auth.service';
+import { UsersPipe } from './users.pipe';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  styleUrls: ['./users.component.scss'],
+  providers: [UsersPipe]
 })
 export class UsersComponent implements OnInit {
 
@@ -14,9 +16,15 @@ export class UsersComponent implements OnInit {
   stats: any;
   id: any;
   msg: any;
+  term: String;
+
+  title:String;
+  names:any;
 
   constructor(private userService: UsersService,
-              private authService: AuthService) { }
+              private authService: AuthService) { 
+
+              }
 
   ngOnInit() {
     this.users();
@@ -45,12 +53,15 @@ export class UsersComponent implements OnInit {
     this.msg = 'Activating...'
     this.userService.activateUser(id).subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
-        this.msg = res;
+        this.msg = res.message;
         this.users();
+        this.usersStats();
+        console.log(this.msg);
       }
     }, (err) => {
       if (err.status === 409) {
-        this.msg = err;
+        this.msg = err.error.message;
+        console.log(this.msg);
       }
     });
   }
@@ -59,12 +70,15 @@ export class UsersComponent implements OnInit {
     this.msg = 'Deactivating...'
     this.userService.deactivateUser(id).subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
-        this.msg = res;
+        this.msg = res.message;
         this.users();
+        this.usersStats();
+        console.log(this.msg);
       }
     }, (err) => {
       if (err.status === 409) {
-        this.msg = err;
+        this.msg = err.error.message;
+        console.log(this.msg);
       }
     });
   }

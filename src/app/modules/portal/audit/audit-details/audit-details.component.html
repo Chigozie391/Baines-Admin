@@ -3,7 +3,7 @@
 <app-headers title="Audit Logs"></app-headers>
 
 
-<div class="row">
+<div class="row" *ngIf="audit_details">
 
     <div class="col-md-12 col-12 mb-12">
         <div class="card">
@@ -15,7 +15,7 @@
                     <small class="text-muted">
                         User
                     </small>
-                    <h5>Afenifere Olabode</h5>
+                    <h5>{{!audit_details?.user.last_name ? 'N/A' : audit_details?.user.last_name | titlecase}} {{!audit_details?.user.first_name ? 'N/A' : audit_details?.user.first_name | titlecase}}</h5>
                   </div>
               </div>
               <div class="col-md-6 text-left">
@@ -23,7 +23,7 @@
                     <small class="text-muted">
                         Activity
                     </small>
-                    <h5>Afenifere credited wallet</h5>
+                    <h5>{{!audit_details?.action ? 'N/A' : audit_details?.action}}</h5>
                   </div>
               </div>
               <div class="col-md-6 text-left">
@@ -31,7 +31,7 @@
                     <small class="text-muted">
                         Type
                     </small>
-                    <h5>Saver</h5>
+                    <h5>{{'-------'}}</h5>
                   </div>
               </div>
               <div class="col-md-6 text-left">
@@ -39,7 +39,7 @@
                     <small class="text-muted">
                         Date and Time
                     </small>
-                    <h5>14 Sep, 2019 - 9:45PM</h5>
+                    <h5>{{!audit_details?.created_on ? 'N/A' : audit_details?.created_on | date: 'medium'}}</h5>
                   </div>
               </div>
               <div class="col-md-6 text-left">
@@ -48,7 +48,7 @@
                         <small class="text-muted">
                             Email
                         </small>
-                        <h5>anifere.olabode@loans.com</h5>
+                        <h5>{{!audit_details?.user.email ? 'N/A' : audit_details?.user.email}}</h5>
                       </div>
                 <!-- </div> -->
             </div>
@@ -59,7 +59,7 @@
                         <small class="text-muted">
                             IP Address
                         </small>
-                        <h5>41.98.102.12</h5>
+                        <h5>{{!audit_details?.ip ? 'N/A' : audit_details?.ip}}</h5>
                       </div>
                 <!-- </div> -->
             </div>
@@ -67,4 +67,15 @@
           </div>
         </div>
       </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card" *ngIf="!audit_details">
+        <div class="card-body">
+          <h3 class="text-center text-muted">Please wait...</h3>
+        </div>
+      </div>
+    </div>
   </div>

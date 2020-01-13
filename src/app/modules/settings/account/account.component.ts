@@ -39,7 +39,7 @@ export class AccountComponent implements OnInit {
   }
 
   changePwd(){
-    this.msg = "Please wait..."
+    this.msg = "Please wait...";
     this.authService.changePassword(this.pwd).subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
         this.msg = res.message;

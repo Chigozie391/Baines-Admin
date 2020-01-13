@@ -12,4 +12,8 @@ export class AuditService {
   getAuditLogs() {
     return this.http.get(Endpoint.AUDIT_LOGS);
   }
+
+  getAuditDetails(id){
+    return this.http.get(`${Endpoint.AUDIT_LOGS}/${id}`);
+  }
 }

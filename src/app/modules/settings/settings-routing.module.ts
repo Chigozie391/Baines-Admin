@@ -17,8 +17,9 @@ const routes: Routes = [
       {path: 'team', component: TeamComponent},
       {path: 'team/invite', component: InviteComponent},
       {path: 'team/manage', component: ManageComponent}
-    ]
+        ],
   }
+
 ];
 
 @NgModule({

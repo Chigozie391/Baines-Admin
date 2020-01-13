@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { VerifyComponent } from './verify/verify.component';
 
 const routes: Routes = [
   {
@@ -8,7 +9,9 @@ const routes: Routes = [
   {
     path: 'auth', loadChildren: () => import('./modules/auth/auth.module').then(mod => mod.AuthModule)
   },
-  {path: '', redirectTo: '/auth', pathMatch:'full'}
+  {path: '', redirectTo: '/auth', pathMatch:'full'},
+
+  { path: 'team/verify', component: VerifyComponent}
 ];
 
 @NgModule({

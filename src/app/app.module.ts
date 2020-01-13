@@ -8,11 +8,12 @@ import { environment } from '../environments/environment';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './modules/shared/shared.module';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { VerifyComponent } from './verify/verify.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VerifyComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -20,8 +21,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     RouterModule,
     BrowserAnimationsModule,
-    SharedModule,
-    NgxPaginationModule
+    SharedModule
 
   ],
   providers: [],

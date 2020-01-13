@@ -1,6 +1,8 @@
 <app-headers title="Users"></app-headers>
 
 
+
+
 <div *ngIf="user">
 
   <div class="row">
@@ -91,9 +93,7 @@
   <div class="row">
     <div class="col-md-12">
       <div *ngIf="msg" class="alert alert-info text-center">
-        <alert [type]="showAlert" dismissible="true" (onClosed)="onClosed()" *ngIf="msg.status !== 'success'">No changes Detected!</alert>
-        <alert [type]="showAlert" dismissible="true" (onClosed)="onClosed()" *ngIf="msg.status === 'success'">Operation Successfull!</alert>
-
+        <alert [type]="showAlert" dismissible="true" (onClosed)="onClosed()">{{msg}}</alert>
       </div>
     </div>
   </div>
@@ -108,12 +108,15 @@
             <h5 class="m-0 p-0 text-dark-blue">All Users</h5>
           </div>
   
-          <div class="col-md-5 col-12 mb-12">
-            <span class="has-search">
-                <mat-icon class="icon ml-1 search-icon">search</mat-icon>
-              <input type="text" name="search" placeholder="Search by ID, name, e.t.c" class="search form-control" />
-            </span>
+            <div class="col-md-5 col-12 mb-12">
+              <form>
+                <span class="has-search">
+                  <mat-icon class="icon ml-1 search-icon">search</mat-icon>
+                <input type="text" id="search" [(ngModel)]="term" name="search" placeholder="Search by ID, name, e.t.c" class="search form-control" />
+              </span>
+            </form>
           </div>
+
         </div>
   
         <table class="table" *ngIf="user">
@@ -144,7 +147,7 @@
   
   
   
-            <tr *ngFor="let each of user">
+            <tr *ngFor="let each of user | users: term">
                 <td><a routerLink="{{each.id}}">{{!each.last_name ? "N/A" : each.last_name}} {{!each.first_name ? 'N/A' : each.first_name}}</a></td>
                 <td><a routerLink="{{each.id}}">{{!each.client_id ? 'N/A' : each.client_id}}</a></td>
               <td>{{!each.email ? 'N/A' : each.email}}</td>
@@ -168,10 +171,10 @@
                     <mat-icon svgIcon="deactivate"></mat-icon>
                     <span>Dectivate</span>
                   </button>
-                  <button mat-menu-item routerLink="/">
+                  <!-- <button mat-menu-item routerLink="/">
                     <mat-icon svgIcon="blacklist"></mat-icon>
                     <span>Blacklist</span>
-                  </button>
+                  </button> -->
                 </ng-container>
               </mat-menu>
 

@@ -19,10 +19,11 @@ import { BorrowersBankDetailsComponent } from './borrowers-details/bank-details/
 import { LoanDetailsComponent } from './borrowers-details/loan-details/loan-details.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
+import { UsersPipe } from './users/users.pipe';
 
 
 @NgModule({
-  declarations: [CustomersComponent, LendersComponent, LendersViewComponent, BorrowersComponent, BorrowersViewComponent, SaversComponent, SaversViewComponent, SavingsComponent, BankDetailsComponent, SavingsDetailsComponent, BorrowersBankDetailsComponent, LoansComponent, WalletComponent, LoanDetailsComponent, UsersComponent, UserDetailsComponent],
+  declarations: [CustomersComponent, LendersComponent, LendersViewComponent, BorrowersComponent, BorrowersViewComponent, SaversComponent, SaversViewComponent, SavingsComponent, BankDetailsComponent, SavingsDetailsComponent, BorrowersBankDetailsComponent, LoansComponent, WalletComponent, LoanDetailsComponent, UsersComponent, UserDetailsComponent, UsersPipe],
   imports: [
     CommonModule,
     CustomersRoutingModule,

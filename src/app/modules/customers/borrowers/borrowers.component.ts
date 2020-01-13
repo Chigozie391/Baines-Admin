@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Constant } from 'src/app/utils/constant';
 import { BorrowersService } from '../../../service/borrowers/borrowers.service';
 import { Path } from 'src/app/utils/path';
+import { AuthService } from 'src/app/service/auth/auth.service';
+import { UsersService } from 'src/app/service/users/users.service';
 
 @Component({
   selector: 'app-borrowers',
@@ -10,10 +12,13 @@ import { Path } from 'src/app/utils/path';
   styleUrls: ['./borrowers.component.scss']
 })
 export class BorrowersComponent implements OnInit {
-  loading: boolean;
+  msg: any;
   list: any
 
-  constructor(private router: Router, private borrowersService: BorrowersService) { }
+  constructor(private router: Router, 
+    private borrowersService: BorrowersService,
+    private authService: AuthService,
+    private userService: UsersService) { }
 
   ngOnInit() {
     this.allBorrowers();
@@ -29,18 +34,51 @@ export class BorrowersComponent implements OnInit {
 
 
   allBorrowers() {
-    this.loading = true;
     this.borrowersService.getAllBorrowers().subscribe((res: any) => {
-      this.loading = false;
       if (res.status === Constant.SUCCESS) {
         this.list = res.data;
       }
-      else{
-
-      }
     }, (err) => {
-      this.loading = false;
-      console.log(err);
-    })
+      if (err.status === 401) {
+        this.authService.logout();
+      }
+    });
   }
+
+
+  // activate(id) {
+  //   this.msg = 'Activating...'
+  //   this.userService.activateUser(id).subscribe((res: any) => {
+  //     if(res.status === Constant.SUCCESS) {
+  //       this.msg = res.message;
+  //       this.allBorrowers();
+  //       console.log(this.msg);
+  //     }
+  //   }, (err) => {
+  //     if (err.status === 409) {
+  //       this.msg = err.error.message;
+  //       console.log(this.msg);
+  //     }
+  //   });
+  // }
+
+
+  // deactivate(id) {
+  //   this.msg = 'Deactivating...'
+  //   this.userService.deactivateUser(id).subscribe((res: any) => {
+  //     if(res.status === Constant.SUCCESS) {
+  //       this.msg = res.message;
+  //       this.allBorrowers();
+  //       console.log(this.msg);
+  //     }
+  //   }, (err) => {
+  //     if (err.status === 409) {
+  //       this.msg = err.error.message;
+  //       console.log(this.msg);
+  //     }
+  //   });
+  // }
+
+
+
 }
