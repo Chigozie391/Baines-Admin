@@ -9,9 +9,11 @@ export class Endpoint {
   public static CHANGE_PASSWORD = `${environment.baseUrl}/admin/account/password`;
 
   public static LOANS = `${environment.baseUrl}/admin/loan`;
+  public static LOANS_STATS = `${environment.baseUrl}/admin/report/loan-stats`;
 
 
   public static SAVINGS = `${environment.baseUrl}/admin/saving`;
+  public static SAVINGS_STATS = `${environment.baseUrl}/admin/report/saving-stats`;
 
   public static CREATE_PRODUCT = `${environment.baseUrl}/admin/products`;
   public static PRODUCT_FREQUENCY = `${environment.baseUrl}/admin/products/frequency`;
@@ -43,6 +45,7 @@ export class Endpoint {
 
   public static TEAM = `${environment.baseUrl}/admin/team`;
 
+  public static REPORTS = `${environment.baseUrl}/admin/report`;
 
 
 

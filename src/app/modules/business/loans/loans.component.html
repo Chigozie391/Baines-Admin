@@ -9,53 +9,39 @@
   <div *ngIf="loans">
 
 
-
     <div class="row">
       <div class="col-md-12 col-12 col-mb-12">
           <div class="card">
               <div class="card-body">
-                <div class="row">
-                  <div class="col-md-2 col-4 col-mb-4">
+                <div class="row" *ngFor="let each of stat">
+                  <div class="col-md-3 col-4 col-mb-4">
                     <div class="user-data">
-                        <h3>8,432</h3>
+                        <h3>{{!each.total ? 'N/A' : each.total}}</h3>
                         <p class="text-muted">Total</p>
                     </div>
                 </div>
     
-                <div class="col-md-2 col-4 col-mb-4 green">
+                <div class="col-md-3 col-4 col-mb-4 green">
                   <div class="user-data">
-                      <h3>4,008</h3>
-                      <p class="text-muted">Active</p>
+                      <h3>{{!each.settled ? 'N/A' : each.settled}}</h3>
+                      <p class="text-muted">Settled</p>
                   </div>
               </div>
     
-              <div class="col-md-2 col-4 col-mb-4 red">
+              <div class="col-md-3 col-4 col-mb-4 red">
                 <div class="user-data">
-                    <h3>317</h3>
-                    <p class="text-muted">Inactive</p>
+                    <h3>{{!each.running ? 'N/A' : each.running}}</h3>
+                    <p class="text-muted">Running</p>
                 </div>
             </div>
     
-            <div class="col-md-2 col-4 col-mb-4">
+            <div class="col-md-3 col-4 col-mb-4">
               <div class="user-data">
-                  <h3>4,157</h3>
-                  <p class="text-muted">Some Stat</p>
+                  <h3>{{!each.borrowers ? 'N/A' : each.borrowers}}</h3>
+                  <p class="text-muted">Borrowers</p>
               </div>
           </div>
     
-          <div class="col-md-2 col-4 col-mb-4">
-            <div class="user-data">
-                <h3>0</h3>
-                <p class="text-muted">Some Stat</p>
-            </div>
-        </div>
-    
-        <div class="col-md-2 col-4 col-mb-4">
-          <div class="user-data">
-              <h3>0</h3>
-              <p class="text-muted">Another Stat</p>
-          </div>
-      </div>
                 </div>
               </div>
           </div>

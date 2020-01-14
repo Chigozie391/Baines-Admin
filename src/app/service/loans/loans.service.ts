@@ -19,5 +19,7 @@ export class LoansService {
     return this.http.get(`${Endpoint.LOANS}/${id}?profile=true&schedule=true&transaction=true`);
   }
 
-  
+  getLoanStats(){
+    return this.http.get(Endpoint.LOANS_STATS);
+  }
 }

@@ -16,6 +16,7 @@
             <!-- <div class="row"> -->
                 <div *ngIf="msg" class="alert alert-info text-center">{{msg}}</div>
                 <div class="row">
+                    <div class="col-md-3"></div>
                     <div class="col-md-6">
                         <form #updateForm="ngForm" (submit)="verify()">
                             <div class="row">
@@ -45,16 +46,19 @@
                             </div>
 
                             <div class="row">
-                                <div class="form-group col-md-6">
-                                    <button type="submit" [disabled]="updateForm.invalid" class="btn btn-primary col-md-12">Update Account</button>
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <button type="submit" [disabled]="updateForm.invalid" class="btn btn-primary col-md-12">Update Account</button>
+                                    </div>
                                 </div>
-                            
+                                <div class="col-md-3"></div>
                             </div>
                             </form>
                     </div>
                 
                     <div class="col-md-3"></div>
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                         <div class="row">
                             <div class="col-md-12">
                                 <span class="pic medium square ml-12 profile-img" style="height: 17.5rem; ">
@@ -67,7 +71,7 @@
                                     <button type="submit" class="btn btn-primary col-md-12">Add Image</button>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                 
                        
                     </div>

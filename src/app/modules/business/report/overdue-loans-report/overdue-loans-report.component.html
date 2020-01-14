@@ -139,12 +139,12 @@
                 </tr>
               </thead>
               <tbody class="text-muted">
-                <tr *ngFor="let eachProduct of [1,2,3,4,5]">
-                  <td><a routerLink="{{eachProduct.id}}">15 Sep 2019, 07:45:21</a></td>
-                  <td><a routerLink="{{eachProduct.id}}">45</a></td>
-                  <td>345,000</td>
-                  <td>45,000</td>
-                  <td>345,000</td>
+                <tr *ngFor="let eachProduct of all">
+                  <td><a routerLink="{{eachProduct.id}}">{{eachProduct.created_on | date: 'medium'}}</a></td>
+                  <td><a routerLink="{{eachProduct.id}}">{{eachProduct.due_loans}}</a></td>
+                  <td>{{eachProduct.principal}}</td>
+                  <td>{{eachProduct.interest_due}}</td>
+                  <td>{{eachProduct.due_loans}}</td>
                   </tr>
               </tbody>
             </table>

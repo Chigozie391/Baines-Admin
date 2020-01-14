@@ -14,12 +14,14 @@ export class LoansComponent implements OnInit {
   loans: any;
   loanDetail: any;
   loan_id: any;
+  stat: any;
 
   constructor(private loansService: LoansService,
     private authService: AuthService) { }
 
   ngOnInit() {
     this.allLoans();
+    this.loansStat();
   }
 
   allLoans() {
@@ -30,6 +32,14 @@ export class LoansComponent implements OnInit {
     }, (err) => {
       if (err.status === 401) {
         this.authService.logout();
+      }
+    });
+  }
+
+  loansStat(){
+    this.loansService.getLoanStats().subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS){
+        this.stat = res.data;
       }
     });
   }

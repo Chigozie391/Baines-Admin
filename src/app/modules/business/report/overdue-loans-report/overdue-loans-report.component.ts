@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Chart} from 'chart.js';
+import { ReportService } from 'src/app/service/reports/report.service';
+import { Constant } from 'src/app/utils/constant';
 
 @Component({
   selector: 'app-overdue-loans-report',
@@ -8,10 +10,20 @@ import {Chart} from 'chart.js';
 })
 export class OverdueLoansReportComponent implements OnInit {
   chart: any;
+  all: any;
 
-  constructor() { }
+  constructor(private reportService: ReportService) { }
 
   ngOnInit() {
+    this.allOverDueLoans();
+  }
+
+  allOverDueLoans(){
+    this.reportService.overDueSavings().subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS){
+        this.all = res.data;
+      }
+    });
   }
 
   ngAfterViewInit() {
