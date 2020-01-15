@@ -38,6 +38,7 @@ export class VerifyComponent implements OnInit {
       console.log(res);
       if (res.status === Constant.SUCCESS) {
         this.msg = res.message;
+        this.router.navigate([Path.DASHBOARD]);
       }
     }, (err) => {
       if(err.status !== 200){
@@ -45,24 +46,6 @@ export class VerifyComponent implements OnInit {
       }
     });
 
-    const login = {
-      "email": this.email,
-      "password": data.password
-    }
-
-    this.authService.login(login).subscribe((res: any) => {
-      if (res.status === Constant.SUCCESS) {
-        this.authService.token = res.data.token;
-        this.authService.user = JSON.stringify(res.data);
-        this.authService.profile_token = res.data.profile_token;
-        this.router.navigate([Path.DASHBOARD]);
-      }
-      else {
-        this.msg = res.message;
-      }
-    }, err => {
-        this.msg = err.error.message;
-    })
 
   }
 
