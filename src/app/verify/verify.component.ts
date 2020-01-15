@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../service/team/team.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../service/auth/auth.service';
 import { VerifyModel } from './verify.model';
 import { Constant } from '../utils/constant';
+import { Path } from '../utils/path';
 
 @Component({
   selector: 'app-verify',
@@ -20,6 +21,7 @@ export class VerifyComponent implements OnInit {
 
   constructor(private teamService: TeamService,
               private route: ActivatedRoute,
+              private router: Router,
               private authService: AuthService) { }
 
   ngOnInit() {
@@ -42,6 +44,26 @@ export class VerifyComponent implements OnInit {
         this.msg = err.error.message;
       }
     });
+
+    const login = {
+      "email": this.email,
+      "password": data.password
+    }
+
+    this.authService.login(login).subscribe((res: any) => {
+      if (res.status === Constant.SUCCESS) {
+        this.authService.token = res.data.token;
+        this.authService.user = JSON.stringify(res.data);
+        this.authService.profile_token = res.data.profile_token;
+        this.router.navigate([Path.DASHBOARD]);
+      }
+      else {
+        this.msg = res.message;
+      }
+    }, err => {
+        this.msg = err.error.message;
+    })
+
   }
 
   getCredentials(){

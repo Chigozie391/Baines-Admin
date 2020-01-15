@@ -20,10 +20,32 @@ import { LoanDetailsComponent } from './borrowers-details/loan-details/loan-deta
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
 import { UsersPipe } from './users/users.pipe';
+import { FirstNamePipe } from 'src/app/filterPipes/byFirstname/first-name.pipe';
+import { LastNamePipe } from 'src/app/filterPipes/byLastname/last-name.pipe';
 
 
 @NgModule({
-  declarations: [CustomersComponent, LendersComponent, LendersViewComponent, BorrowersComponent, BorrowersViewComponent, SaversComponent, SaversViewComponent, SavingsComponent, BankDetailsComponent, SavingsDetailsComponent, BorrowersBankDetailsComponent, LoansComponent, WalletComponent, LoanDetailsComponent, UsersComponent, UserDetailsComponent, UsersPipe],
+  declarations: [
+    CustomersComponent,
+    LendersComponent, 
+    LendersViewComponent, 
+    BorrowersComponent, 
+    BorrowersViewComponent, 
+    SaversComponent, 
+    SaversViewComponent, 
+    SavingsComponent, 
+    BankDetailsComponent, 
+    SavingsDetailsComponent, 
+    BorrowersBankDetailsComponent, 
+    LoansComponent, 
+    WalletComponent, 
+    LoanDetailsComponent, 
+    UsersComponent, 
+    UserDetailsComponent, 
+    UsersPipe,
+    FirstNamePipe,
+    LastNamePipe
+  ],
   imports: [
     CommonModule,
     CustomersRoutingModule,

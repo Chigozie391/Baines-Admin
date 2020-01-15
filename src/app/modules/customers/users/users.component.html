@@ -147,8 +147,8 @@
   
   
   
-            <tr *ngFor="let each of user | users: term">
-                <td><a routerLink="{{each.id}}">{{!each.last_name ? "N/A" : each.last_name}} {{!each.first_name ? 'N/A' : each.first_name}}</a></td>
+            <tr *ngFor="let each of user | lastName: term">
+                <td><a routerLink="{{each.id}}">{{!each.last_name ? "N/A" : each.last_name | uppercase}} {{!each.first_name ? 'N/A' : each.first_name | uppercase}}</a></td>
                 <td><a routerLink="{{each.id}}">{{!each.client_id ? 'N/A' : each.client_id}}</a></td>
               <td>{{!each.email ? 'N/A' : each.email}}</td>
               <td>Saver</td>

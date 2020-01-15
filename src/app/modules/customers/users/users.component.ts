@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/service/users/users.service';
 import { Constant } from 'src/app/utils/constant';
 import { AuthService } from 'src/app/service/auth/auth.service';
-import { UsersPipe } from './users.pipe';
+import { FirstNamePipe } from 'src/app/filterPipes/byFirstname/first-name.pipe';
+import { LastNamePipe } from 'src/app/filterPipes/byLastname/last-name.pipe';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],
-  providers: [UsersPipe]
+  providers: [FirstNamePipe, LastNamePipe]
 })
 export class UsersComponent implements OnInit {
 
