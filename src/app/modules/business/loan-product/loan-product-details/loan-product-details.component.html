@@ -54,7 +54,7 @@
                                       <small class="text-muted">
                                           Tenor
                                       </small>
-                                      <h5>------ Days</h5>
+                                      <h5 *ngFor="let item of details?.tenor_types">{{!details?.tenor_types ? 'N/A' : item}}</h5>
                                     </div>
                                 </div>
                                 <div class="col-md-6 text-left">

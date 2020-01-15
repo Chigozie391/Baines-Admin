@@ -147,7 +147,7 @@
   
   
   
-            <tr *ngFor="let each of user | lastName: term">
+            <tr *ngFor="let each of user | lastName: term | paginate: {itemsPerPage: 10, currentPage: p}">
                 <td><a routerLink="{{each.id}}">{{!each.last_name ? "N/A" : each.last_name | uppercase}} {{!each.first_name ? 'N/A' : each.first_name | uppercase}}</a></td>
                 <td><a routerLink="{{each.id}}">{{!each.client_id ? 'N/A' : each.client_id}}</a></td>
               <td>{{!each.email ? 'N/A' : each.email}}</td>
@@ -177,11 +177,14 @@
                   </button> -->
                 </ng-container>
               </mat-menu>
-
-
             </tr>
           </tbody>
         </table>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
+        </div>
       </div>
     </div>
   </div>

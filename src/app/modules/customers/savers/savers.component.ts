@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SaversService } from 'src/app/service/savers/savers.service';
 import { Constant } from 'src/app/utils/constant';
+import { UsersService } from 'src/app/service/users/users.service';
 
 @Component({
   selector: 'app-savers',
@@ -11,8 +12,11 @@ export class SaversComponent implements OnInit {
 
   loading: boolean;
   savers: any;
+  msg: any;
+  config: any;
 
-  constructor(private saversService: SaversService) { }
+  constructor(private saversService: SaversService,
+              private userService: UsersService) { }
 
   ngOnInit() {
     this.allSavers();
@@ -32,6 +36,43 @@ export class SaversComponent implements OnInit {
       this.loading = false;
       console.log(err);
     })
+  }
+
+  pageChanged(event){
+    this.config.currentPage = event;
+  }
+
+  activate(id) {
+    this.msg = 'Activating...'
+    this.userService.activateUser(id).subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS) {
+        this.msg = res.message;
+        this.allSavers();
+      }
+    }, (err) => {
+      if (err.status === 409) {
+        this.msg = err.error.message;
+      }
+    });
+  }
+
+  deactivate(id) {
+    this.msg = 'Deactivating...'
+    this.userService.deactivateUser(id).subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS) {
+        this.msg = res.message;
+        this.allSavers();
+      }
+    }, (err) => {
+      if (err.status === 409) {
+        this.msg = err.error.message;
+        console.log(this.msg);
+      }
+    });
+  }
+
+  onClosed() {
+    this.msg = '';
   }
 
 }

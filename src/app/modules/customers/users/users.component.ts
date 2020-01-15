@@ -21,6 +21,7 @@ export class UsersComponent implements OnInit {
 
   title:String;
   names:any;
+  config: any;
 
   constructor(private userService: UsersService,
               private authService: AuthService) { 
@@ -30,6 +31,10 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
     this.users();
     this.usersStats();
+  }
+
+  pageChanged(event){
+    this.config.currentPage = event;
   }
 
   users() {

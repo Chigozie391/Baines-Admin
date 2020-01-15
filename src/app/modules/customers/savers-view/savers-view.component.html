@@ -16,7 +16,7 @@
                   <div class="card-body">
                           <div class="col-md-12 col-12 col-mb-12">
                             <div class="user-data">
-                              <h3>{{saver?.last_name | titlecase}} {{saver?.first_name | titlecase}}</h3>
+                              <h3>{{!saver?.last_name ? 'N/A' : saver?.last_name | titlecase}} {{!saver?.first_name ? 'N/A' : saver?.first_name | titlecase}}</h3>
                               <small>{{id}}</small>
                           </div>
                           </div>
@@ -124,8 +124,8 @@
                           <img src="../../../../assets/img/placeholder-user.png" alt="" class="img-fluid">
                       </span>
                       <div class="user-data">
-                        <h3>{{saver?.last_name | titlecase}} {{saver?.first_name | titlecase}}</h3>
-                        <small>{{id}}</small>
+                        <h3>{{!saver?.last_name ? 'N/A' : saver?.last_name | uppercase}} {{!saver?.first_name ? 'N/A' : saver?.first_name | uppercase}}</h3>
+                        <small>{{!id ? 'N/A' : id}}</small>
                     </div>
                   </div>
     
@@ -174,7 +174,7 @@
               <th scope="col">ID</th>
               <th scope="col">Savings Plans</th>
               <th scope="col">Savings Product</th>
-              <th scope="col">last payment date</th>
+              <th scope="col">Next savings date</th>
               <th scope="col">balance</th>
             </tr>
           </thead>
@@ -222,7 +222,7 @@
                           <div class="row">
                             <div class="col">
                               <div class="text-muted">Bank</div>
-                              <div class="text-uppercase">{{each.bank_code}}</div>
+                              <div class="text-uppercase">{{!each.bank_code ? 'N/A' : each.bank_code}}</div>
                             </div>
                             <div class="col-auto">
                               <img src="../../../../assets/img/gt.svg" class="img-fluid" alt="">
@@ -233,11 +233,11 @@
                           <div class="row mt-1">
                             <div class="col mb-4">
                               <div class="text-muted">Account Number</div>
-                              <div class="text-uppercase">{{each.account_number}}</div>
+                              <div class="text-uppercase">{{!each.account_number ? 'N/A' : each.account_number}}</div>
                             </div>
                             <div class="col-auto mb-4 text-right">
                               <div class="text-muted">BVN</div>
-                              <div class="text-uppercase">{{borrower?.bvn}}</div>
+                              <div class="text-uppercase">{{!borrower?.bvn ? 'N/A' : borrower?.bvn}}</div>
                             </div>
                           </div>
                         </div>
@@ -275,8 +275,8 @@
                   </div>
                   <div class="row align-items-end">
                     <div class="col mt-5">
-                      <small>EXPIRES {{each.card_exp_month}}/{{each.card_exp_year}}</small>
-                      <div class="mb-3">{{each.card_owner_name}}</div>
+                      <small>EXPIRES {{!each.card_exp_month ? 'N/A' : each.card_exp_month}}/{{!each.card_exp_year ? 'N/A' : each.card_exp_year}}</small>
+                      <div class="mb-3">{{!each.card_owner_name ? N/A : each.card_owner_name}}</div>
                     </div>
                     <div class="col-auto text-right">
                       <img src="../../../../assets/img/master.svg"><br />

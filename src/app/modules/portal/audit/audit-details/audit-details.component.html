@@ -29,14 +29,6 @@
               <div class="col-md-6 text-left">
                   <div class="col-md-12">
                     <small class="text-muted">
-                        Type
-                    </small>
-                    <h5>{{'-------'}}</h5>
-                  </div>
-              </div>
-              <div class="col-md-6 text-left">
-                  <div class="col-md-12">
-                    <small class="text-muted">
                         Date and Time
                     </small>
                     <h5>{{!audit_details?.created_on ? 'N/A' : audit_details?.created_on | date: 'medium'}}</h5>
@@ -63,6 +55,30 @@
                       </div>
                 <!-- </div> -->
             </div>
+            <div class="col-md-6 text-left">
+              <div class="col-md-12">
+                <small class="text-muted">
+                    City
+                </small>
+                <h5>{{!audit_details?.location.city ? 'N/A' : audit_details?.location.city}}</h5>
+              </div>
+          </div>
+          <div class="col-md-6 text-left">
+            <div class="col-md-12">
+              <small class="text-muted">
+                  Region
+              </small>
+              <h5>{{!audit_details?.location.region ? 'N/A' : audit_details?.location.region}}</h5>
+            </div>
+        </div>
+        <div class="col-md-6 text-left">
+          <div class="col-md-12">
+            <small class="text-muted">
+                Country
+            </small>
+            <h5>{{!audit_details?.location.country ? 'N/A' : audit_details?.location.country}}</h5>
+          </div>
+      </div>
             </div>
           </div>
         </div>

@@ -41,6 +41,7 @@ export class SaversViewComponent implements OnInit {
       if(res.status === Constant.SUCCESS) {
         this.userSavings = res.data.plans;
         this.totalSavings = res.data.total_balance;
+        console.log(res.data);
       }
     });
 

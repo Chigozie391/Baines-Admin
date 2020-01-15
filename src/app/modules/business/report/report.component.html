@@ -1,7 +1,6 @@
 
 <div class="row">
 
-
     <div class="col-md-8 col-12 mb-6">
         <div class="card">
           <div class="card-body">
@@ -13,11 +12,14 @@
           </div>
         </div>
       </div>
+
+
+
     
       <div class="col-md-4 col-12 mb-6">
-        <div class="card" style="margin-bottom: 0.5rem;">
+        <div class="card" style="margin-bottom: 25%;">
           <div class="card-body">
-                    <div class="col-md-12 text-left">
+                    <div class="col-md-12 text-left" style="margin-bottom: 15%;">
                           <small class="text-muted">
                               Total Accounts
                           </small>
@@ -38,24 +40,19 @@
           </div>
         </div>
 
-        <div class="card" style="margin-bottom: 0.5rem;">
+        <div class="card" style="margin-bottom: 0.5rem;" *ngIf="desc">
             <div class="card-body">
-                <div class="col-md-12 text-left">
-                      <small class="text-muted">
-                        Total Accounts
-                      </small>
+                <div class="col-md-12 text-center">
+                    <h5 class="font-weight-bold">{{desc[5].name}}</h5>
+                </div>
+                <div class="row col-md-12 text-center">
+                    <p class="text-muted ">{{desc[5].description}}</p>
                 </div>
             <div class="row">
-                <div class="col-md-7 text-left">
-                    <h5>₦45,000,000</h5>
-                    <small class="text-muted" style="position: relative; top: -.8rem;">
-                          5% (3 days)
-                      </small>
-                </div>
-     
-    
-                <div class="col-md-5 text-right">
-                    <button class="btn btn-outline-info">view more</button>
+                <div class="col-md-12 text-center">
+                    <a routerLink="users">
+                        <button class="btn btn-outline-info">View user Onboarding Reports <small>&gt;</small></button>
+                    </a>
                 </div>
               </div>
       </div>
@@ -63,28 +60,10 @@
 
 
 
-<div class="card">
-    <div class="card-body">
-        <div class="col-md-12 text-left">
-              <small class="text-muted">
-                Total Accounts
-              </small>
-        </div>
-    <div class="row">
-        <div class="col-md-7 text-left">
-            <h5>₦45,000,000</h5>
-            <small class="text-muted" style="position: relative; top: -.8rem;">
-                  5% (3 days)
-              </small>
-        </div>
 
 
-        <div class="col-md-5 text-right">
-            <button class="btn btn-outline-info">view more</button>
-        </div>
-      </div>
-</div>
-  </div>
+
+
 
       </div>
 
@@ -92,7 +71,7 @@
 </div>
 
 
-<div class="row">
+<div class="row" *ngIf="desc">
 
 
     
@@ -100,9 +79,9 @@
         <div class="card">
           <div class="card-body">
             <div class="col">
-                <h5 class="text-center font-weight-bold">Loan Products</h5>
+                <h5 class="text-center font-weight-bold">{{desc[0].name}}</h5>
                 <div class="row col-md-12 text-center">
-                    <p class="text-muted">Get Insights about all your loan products.</p>
+                    <p class="text-muted">{{desc[0].description}}</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12 text-center">
@@ -120,9 +99,9 @@
         <div class="card">
             <div class="card-body">
                 <div class="col">
-                    <h5 class="text-center font-weight-bold">Due Loans</h5>
-                    <div class="row">
-                        <p class="text-muted text-center">Get Insights about due loans and keep on top of your balances.</p>
+                    <h5 class="text-center font-weight-bold">{{desc[1].name}}</h5>
+                    <div class="row col-md-12 text-center">
+                        <p class="text-muted">{{desc[1].description}}</p>
                     </div>
                     <div class="row">
                         <div class="col-md-12 text-center">
@@ -140,9 +119,9 @@
         <div class="card">
             <div class="card-body">
                 <div class="col">
-                    <h5 class="text-center font-weight-bold">Overdue Loans</h5>
-                    <div class="row">
-                        <p class="text-muted text-center">Get Insights about overdue loans to assess credit worthiness of borrowers.</p>
+                    <h5 class="text-center font-weight-bold">{{desc[2].name}}</h5>
+                    <div class="row col-md-12 text-center">
+                        <p class="text-muted">{{desc[2].description}}</p>
                     </div>
                     <div class="row">
                         <div class="col-md-12 text-center">
@@ -160,23 +139,23 @@
 
 </div>
 
-<div class="row">
+<div class="row" *ngIf="desc">
 
     <div class="col-md-4 col-12 mb-6">
         <div class="card">
             <div class="card-body">
                 <div class="col">
-                    <h5 class="text-center font-weight-bold">Savings Products</h5>
-                    <div class="row">
-                        <p class="text-muted text-center">Get Insights on all savings products and be on top of your most active savers.</p>
+                    <h5 class="text-center font-weight-bold">{{desc[3].name}}</h5>
+                    <div class="row col-md-12 text-center">
+                        <p class="text-muted">{{desc[3].description}}</p>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12 text-center">
+                    <!-- <div class="row" > -->
+                        <div class="col-md-12 text-center" style="margin-bottom: 3%;">
                             <a routerLink="savings-product">
                                 <button class="btn btn-outline-info">View Savings Product Reports <small>&gt;</small></button>
                             </a>
                         </div>
-                      </div>
+                      <!-- </div> -->
                   </div>
               </div>
         </div>
@@ -186,9 +165,9 @@
         <div class="card">
             <div class="card-body">
                 <div class="col">
-                    <h5 class="text-center font-weight-bold">Mature Savings</h5>
+                    <h5 class="text-center font-weight-bold">{{desc[4].name}}</h5>
                     <div class="row col-md-12 text-center">
-                        <p class="text-muted ">Get Insights about all mature savings plans.</p>
+                        <p class="text-muted">{{desc[4].description}}</p>
                     </div>
                     <div class="row">
                         <div class="col-md-12 text-center">
@@ -203,7 +182,7 @@
       </div>
 
 
-      <div class="col-md-4 col-12 mb-6">
+      <!-- <div class="col-md-4 col-12 mb-6">
         <div class="card">
             <div class="card-body">
                 <div class="col">
@@ -221,7 +200,7 @@
                   </div>
               </div>
         </div>
-      </div>
+      </div> -->
 
 
       <!-- <div class="col-md-4 col-12 mb-6">
@@ -243,3 +222,4 @@
       </div> -->
 
 </div>
+

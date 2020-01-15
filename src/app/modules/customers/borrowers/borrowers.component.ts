@@ -13,7 +13,9 @@ import { UsersService } from 'src/app/service/users/users.service';
 })
 export class BorrowersComponent implements OnInit {
   msg: any;
-  list: any
+  list: any;
+  config: any;
+
 
   constructor(private router: Router, 
     private borrowersService: BorrowersService,
@@ -46,39 +48,41 @@ export class BorrowersComponent implements OnInit {
   }
 
 
-  // activate(id) {
-  //   this.msg = 'Activating...'
-  //   this.userService.activateUser(id).subscribe((res: any) => {
-  //     if(res.status === Constant.SUCCESS) {
-  //       this.msg = res.message;
-  //       this.allBorrowers();
-  //       console.log(this.msg);
-  //     }
-  //   }, (err) => {
-  //     if (err.status === 409) {
-  //       this.msg = err.error.message;
-  //       console.log(this.msg);
-  //     }
-  //   });
-  // }
+  activate(id) {
+    this.msg = 'Activating...'
+    this.userService.activateUser(id).subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS) {
+        this.msg = res.message;
+        this.allBorrowers();
+      }
+    }, (err) => {
+      if (err.status === 409) {
+        this.msg = err.error.message;
+      }
+    });
+  }
 
 
-  // deactivate(id) {
-  //   this.msg = 'Deactivating...'
-  //   this.userService.deactivateUser(id).subscribe((res: any) => {
-  //     if(res.status === Constant.SUCCESS) {
-  //       this.msg = res.message;
-  //       this.allBorrowers();
-  //       console.log(this.msg);
-  //     }
-  //   }, (err) => {
-  //     if (err.status === 409) {
-  //       this.msg = err.error.message;
-  //       console.log(this.msg);
-  //     }
-  //   });
-  // }
+  deactivate(id) {
+    this.msg = 'Deactivating...'
+    this.userService.deactivateUser(id).subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS) {
+        this.msg = res.message;
+        this.allBorrowers();
+      }
+    }, (err) => {
+      if (err.status === 409) {
+        this.msg = err.error.message;
+      }
+    });
+  }
 
+  onClosed() {
+    this.msg = '';
+  }
 
+  pageChanged(event){
+    this.config.currentPage = event;
+  }
 
 }

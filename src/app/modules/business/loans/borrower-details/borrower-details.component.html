@@ -242,11 +242,11 @@
                       </div>
                   </div>
                   <div class="col-md-3 text-left">
-                      <div class="col-md-12 red">
+                      <div class="col-md-12">
                         <small class="text-muted">
                             Status
                         </small>
-                        <h6>{{!Details?.status.status ? 'N/A' : Details?.status.status}}</h6>
+                        <h6 [ngClass]="{'green': Details?.status.status === 'SETTLED', 'red': Details?.status.status == 'RUNNING', 'orange': Details?.status.status == 'PENDING'}">{{!Details?.status.status ? 'N/A' : Details?.status.status}}</h6>
                       </div>
                   </div>
                 </div>
@@ -300,7 +300,7 @@
                 <td>{{each.type}}</td>
                 <td>{{each.created_on | date:'medium'}}</td>
                 <td>₦ {{each.amount}}</td>
-                <td>₦ {{'------'}}</td>
+                <td>₦ {{'-----'}}</td>
               </tr>
             </tbody>
           </table>
@@ -336,11 +336,10 @@
                 <tr>
                   <th scope="col">Status</th>
                   <th scope="col">Due Date</th>
-                  <th scope="col">Balance</th>
-                  <th scope="col">Amount Due</th>
+                  <th scope="col">Total Loan</th>
+                  <th scope="col">Balance Due</th>
                   <th scope="col">Principal</th>
                   <th scope="col">Interest</th>
-                  <th scope="col">Fees</th>
                 </tr>
               </thead>
               <tbody class="text-muted">
@@ -348,11 +347,10 @@
                   <td *ngIf="Details?.status.status === 'SETTLED'"> <span class="badge badge-success">{{!Details?.status.status ? 'N/A' : Details?.status.status}}</span></td>
                   <td *ngIf="Details?.status.status !== 'SETTLED'"> <span class="badge badge-warning">{{!Details?.status.status ? 'N/A' : Details?.status.status}}</span></td>
                   <td>{{Details?.schedule.repayment_day | date}}</td>
-                  <td>{{'------'}}</td>
+                  <td>{{Details?.schedule.repayment_amount + Details?.interest_due}}</td>
                   <td>{{Details?.schedule.repayment_amount}}</td>
                   <td>{{Details?.loan_amount}}</td>
-                  <td>--%</td>
-                  <td>0</td>
+                  <td>{{Details?.interest_due}}%</td>
                 </tr>
               </tbody>
             </table>

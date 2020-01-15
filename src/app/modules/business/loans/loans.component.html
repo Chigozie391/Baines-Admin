@@ -82,7 +82,7 @@
                       </div>
                       <div class="col-md-12">
                         <div class="user-data-space">
-                          <h5>{{!eachLoan.interest_rate ? 'N/A' : eachLoan.interest_rate}} %</h5>
+                          <h5>{{!eachLoan.interest_due ? 'N/A' : eachLoan.interest_due}} %</h5>
                           <small class="text-muted">Interest Rate</small>
                         </div>
                       </div>
@@ -119,7 +119,7 @@
                     <tr *ngFor="let eachLoan of loans">
                       <td><a routerLink="{{!eachLoan.id ? 'N/A' : eachLoan.id}}">{{!eachLoan.loan_profile ? 'N/A' : eachLoan.loan_profile.purpose}}</a></td>
                       <td><a routerLink="{{!eachLoan.id ? 'N/A' : eachLoan.id}}">{{!eachLoan.id ? 'N/A' : eachLoan.id}}</a></td>
-                      <td><a routerLink="{{!eachLoan.id ? 'N/A' : eachLoan.id}}">{{!eachLoan.interest_rate ? 'N/A' : eachLoan.interest_rate}} %</a></td>
+                      <td><a routerLink="{{!eachLoan.id ? 'N/A' : eachLoan.id}}">{{!eachLoan.interest_due ? 'N/A' : eachLoan.interest_due}} %</a></td>
                       <td>{{!eachLoan.loan_amount ? 'N/A' : eachLoan.loan_amount}}</td>
                       <td>
                         <span [matMenuTriggerFor]="action" class="action">

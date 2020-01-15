@@ -26,16 +26,14 @@
           <tr>
             <th>User</th>
             <th>Activity</th>
-            <th>Role</th>
             <th>Date</th>
             <th>Time</th>
           </tr>
         </thead>
         <tbody class="text-muted">
           <tr *ngFor="let log of logs | paginate: {itemsPerPage: 10, currentPage: p}">
-            <td>{{!log.user.first_name ? 'N/A' : log.user.first_name}} {{!log.user.last_name ? 'N/A' : log.user.last_name}}</td>
-            <td><a routerLink="{{log.id}}">{{!log.description ? 'N/A' : log.description | titlecase}}</a></td>
-            <td>{{'--------'}}</td>
+            <td><a routerLink="{{log.id}}">{{!log.user.first_name ? 'N/A' : log.user.first_name | uppercase}} {{!log.user.last_name ? 'N/A' : log.user.last_name | uppercase}}</a></td>
+            <td>{{!log.description ? 'N/A' : log.description | titlecase}}</td>
             <th scope="row">{{log.created_on | date : 'mediumDate'}}</th>
             <th> {{log.created_on | date : 'shortTime'}}</th>
           </tr>

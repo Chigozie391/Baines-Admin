@@ -21,5 +21,8 @@ export class ReportService {
     return this.http.get(`${Endpoint.REPORTS}/loan-due`);
   }
 
+  reportDescription(){
+    return this.http.get(Endpoint.REPORTS);
+  }
 
 }

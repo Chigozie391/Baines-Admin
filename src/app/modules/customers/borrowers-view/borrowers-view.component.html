@@ -16,8 +16,8 @@
                   <div class="card-body">
                           <div class="col-md-12 col-12 col-mb-12">
                               <div class="user-data">
-                                  <h3>{{borrower?.last_name | titlecase}} {{borrower?.first_name | titlecase}}</h3>
-                                  <small>{{id}}</small>
+                                  <h3>{{!borrower?.last_name ? 'N/A' : borrower?.last_name | titlecase}} {{!borrower?.first_name ? 'N/A' : borrower?.first_name | titlecase}}</h3>
+                                  <small>{{!id ? 'N/A' : id}}</small>
                               </div>
                           </div>
                   </div>
@@ -226,15 +226,15 @@
                           <img src="../../../../assets/img/placeholder-user.png" alt="" class="img-fluid">
                       </span>
                       <div class="user-data">
-                          <h3>{{borrower?.last_name | titlecase}} {{borrower?.first_name | titlecase}}</h3>
-                          <p>{{id}}</p>
+                          <h3>{{!borrower?.last_name ? 'N/A' : borrower?.last_name | titlecase}} {{!borrower?.first_name ? 'N/A' : borrower?.first_name | titlecase}}</h3>
+                          <p>{{!id ? 'N/A' : id}}</p>
                       </div>
                   </div>
       
                   <div class="col-md-4 col-12 col-mb-12 text-right">
                     <div class="user-data">
                       <p>Total Loans Received</p>
-                        <h3>{{borrowerLoans?.total_loan_amount}}</h3>
+                        <h3>{{!borrowerLoans?.total_loan_amount ? 'N/A' : borrowerLoans?.total_loan_amount}}</h3>
                     </div>
                 </div>
                   </div>
@@ -282,12 +282,12 @@
                       <tr *ngFor="let loan of loan_details">
                         <td *ngIf="loan.status.status === 'SETTLED'"><span class="badge badge-success">{{loan.status.status}}</span></td>
                         <td *ngIf="loan.status.status !== 'SETTLED'"><span class="badge badge-danger">{{loan.status.status}}</span></td>
-                        <td><a routerLink="/app/customers/borrowers/{{loan.id}}/loans/{{loan.id}}">{{loan.id}}</a></td>
+                        <td><a routerLink="/app/customers/borrowers/{{loan.id}}/loans/{{loan.id}}">{{!loan.id ? 'N/A' : loan.id}}</a></td>
                         <td><a routerLink="/app/customers/borrowers/{{loan.id}}/loans/{{loan.id}}">{{!loan.loan_profile ? 'Not available' : loan.loan_profile.purpose}}</a></td>
-                        <td>{{loan.tenor_type.value}} days</td>
+                        <td>{{!loan.tenor_type.value ? 'N/A' : loan.tenor_type.value}} days</td>
                         <!-- <td>{{loan.created_on | date}}</td> -->
-                        <td>--------</td>
-                        <td>₦{{loan.loan_amount}}</td>
+                        <td>{{!loan.schedule.repayment_day ? 'N/A' : loan.schedule.repayment_day | date}}</td>
+                        <td>₦{{!loan.loan_amount ? 'N/A' : loan.loan_amount}}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -309,7 +309,7 @@
     </ng-template>
   </ngb-tab>
 
-  <ngb-tab title="Savings Details">
+  <ngb-tab title="Bank Details">
     <ng-template ngbTabContent>
 
       <div class="row">

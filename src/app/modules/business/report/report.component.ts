@@ -1,5 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import {Chart} from 'chart.js';
+import { ReportService } from 'src/app/service/reports/report.service';
+import { Constant } from 'src/app/utils/constant';
 
 @Component({
   selector: 'app-report',
@@ -9,10 +11,20 @@ import {Chart} from 'chart.js';
 export class ReportComponent implements OnInit {
 
   chart: any;
+  desc: any;
 
-  constructor() { }
+  constructor(private reportService: ReportService) { }
 
   ngOnInit() {
+    this.allReportDescriptions();
+  }
+
+  allReportDescriptions(){
+    this.reportService.reportDescription().subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS){
+        this.desc = res.data;
+      }
+    });
   }
 
   ngAfterViewInit() {
