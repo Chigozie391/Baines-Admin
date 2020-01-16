@@ -14,6 +14,8 @@ export class LoanProductComponent implements OnInit {
   loanProduct: any;
   msg: any;
   Stats: any;
+  config: any;
+
 
   constructor( private loanProductService: LoanProductService,
     private authService: AuthService) { }
@@ -21,6 +23,10 @@ export class LoanProductComponent implements OnInit {
   ngOnInit() {
     this.getLoanProduct();
     this.loanStat();
+  }
+
+  pageChanged(event){
+    this.config.currentPage = event;
   }
 
   getLoanProduct(){

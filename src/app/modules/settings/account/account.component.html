@@ -1,6 +1,8 @@
 <app-headers title="Account"></app-headers>
 
-<div class="row">
+
+
+<div class="row col-md-12">
     <div class="col-md-6">
         <form action="">
             <div class="row">
@@ -37,9 +39,43 @@
                 <span class="pic medium square ml-12 profile-img" style="height: 17.5rem; ">
                   <img src="../../../../assets/img/nav/image.svg" alt="" class="img-fluid">
                 </span>  
-                <div class="form-group col-md-12">
-                    <button type="submit" class="btn btn-primary col-md-12">Add Image</button>
+
+
+                <!-- <label class="image-upload-container btn btn-bwm"> -->
+                    <input #imageInput
+                           type="file"
+                           style="display: none;"
+                           accept="image/*"
+                           (change)="processFile(imageInput)">
+                           <button (click)="imageInput.click()" class="btn btn-primary col-md-12">Add Image</button>
+                  <!-- </label> -->
+                  
+                  
+                  <div *ngIf="selectedFile" style="margin-top: 5%;">
+                  
+                    <div class="img-preview{{selectedFile.status === 'fail' ? '-error' : ''}}"
+                         [ngStyle]="{'background-image': 'url('+ selectedFile.src + ')'}">
+                    </div>
+                  
+                    <div *ngIf="selectedFile.pending" class="alert alert-info">
+                      Uploading image...
+                    </div>
+                    <!-- <div class="row"> -->
+                        <div *ngIf="selectedFile.status === 'ok'" class="alert alert-success"> Image Uploaded Succesfuly!</div>
+                        <div *ngIf="selectedFile.status === 'fail'" class="alert alert-danger"> Image Upload Failed!</div>
+                    <!-- </div> -->
+                  </div>
+
+
+
+                <!-- <div class="form-group col-md-12">
+                    <input style="display: none;" type="file" accept="image/*" (change)="onFileChanged($event)" #fileInput>
+                    <button (click)="fileInput.click()" class="btn btn-primary col-md-12">Add Image</button>
                 </div>
+
+                <div class="form-group col-md-12">
+                    <button (click)="onUpload" class="btn btn-success col-md-12">Upload!</button>
+                </div> -->
             </div>
         </div>
 

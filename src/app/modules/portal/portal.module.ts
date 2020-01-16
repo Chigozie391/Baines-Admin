@@ -9,9 +9,18 @@ import { UsersComponent } from './users/users.component';
 import { ApisComponent } from './apis/apis.component';
 import { AuditComponent } from './audit/audit.component';
 import { AuditDetailsComponent } from './audit/audit-details/audit-details.component';
+import { InnerLastNamePipe } from 'src/app/filterPipes/byLastname/inner-last-name.pipe';
 
 @NgModule({
-  declarations: [PortalComponent, DashboardComponent, UsersComponent, ApisComponent, AuditComponent, AuditDetailsComponent],
+  declarations: [
+    PortalComponent, 
+    DashboardComponent, 
+    UsersComponent, 
+    ApisComponent, 
+    AuditComponent, 
+    AuditDetailsComponent,
+    InnerLastNamePipe
+  ],
   imports: [
     CommonModule,
     PortalRoutingModule,

@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { TransactionsService } from 'src/app/service/transactions/transactions.service';
+import { InnerLastNamePipe } from 'src/app/filterPipes/byLastname/inner-last-name.pipe';
 
 @Component({
   selector: 'app-transaction',
   templateUrl: './transaction.component.html',
-  styleUrls: ['./transaction.component.scss']
+  styleUrls: ['./transaction.component.scss'],
+  providers: [InnerLastNamePipe]
 })
 export class TransactionComponent implements OnInit {
 

@@ -65,11 +65,15 @@
                 </div>
       
                 <div class="col-md-5 col-12 mb-12">
-                  <span class="has-search">
+                  <form>
+                    <span class="has-search">
                       <mat-icon class="icon ml-1 search-icon">search</mat-icon>
-                    <input type="text" name="search" placeholder="Search by ID, date, type, e.t.c" class="search form-control" />
+                    <input type="text" id="search" [(ngModel)]="term" name="search" placeholder="Search by name" class="search form-control" />
                   </span>
-                </div>
+                </form>
+              </div>
+
+
               </div>
             <!-- </div> -->
 
@@ -90,7 +94,7 @@
                   <td *ngIf="eachTransaction.status === 'pending'"> <span class="badge badge-warning">{{!eachTransaction.status ? 'N/A' : eachTransaction.status}}</span></td>
                   <td *ngIf="eachTransaction.status === 'failed'"> <span class="badge badge-danger">{{!eachTransaction.status ? 'N/A' : eachTransaction.status}}</span></td>
                   <td><a routerLink="{{eachTransaction.id}}">{{!eachTransaction.reference ? 'N/A' : eachTransaction.reference | uppercase}}</a></td>
-                  <td><a routerLink="{{eachTransaction.id}}">{{!eachTransaction.user.first_name ? 'N/A' : eachTransaction.user.first_name}} {{!eachTransaction.user.last_name ? 'N/A' : eachTransaction.user.last_name}}</a></td>
+                  <td><a routerLink="{{eachTransaction.id}}">{{!eachTransaction.user.first_name ? 'N/A' : eachTransaction.user.first_name | uppercase}} {{!eachTransaction.user.last_name ? 'N/A' : eachTransaction.user.last_name | uppercase}}</a></td>
                   <td>{{!eachTransaction.transaction_type.name ? 'N/A' : eachTransaction.transaction_type.name}}</td>
                   <td>{{!eachTransaction.created_on ? 'N/A' : eachTransaction.created_on | date:'medium'}}</td>
                   <td>₦ {{!eachTransaction.amount_charged ? 'N/A' : eachTransaction.amount_charged}}</td>

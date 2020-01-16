@@ -5,11 +5,13 @@ import { Constant } from 'src/app/utils/constant';
 import { BorrowersService } from 'src/app/service/borrowers/borrowers.service';
 import { SaversService } from 'src/app/service/savers/savers.service';
 import {Location} from '@angular/common';
+import { LoanPurposePipe } from 'src/app/filterPipes/byLoanPurpose/loan-purpose-pipe.pipe';
 
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
-  styleUrls: ['./user-details.component.scss']
+  styleUrls: ['./user-details.component.scss'],
+  providers: [LoanPurposePipe]
 })
 export class UserDetailsComponent implements OnInit {
 
@@ -25,6 +27,8 @@ export class UserDetailsComponent implements OnInit {
   totalSavings: any;
   banks: any;
   cards: any;
+  term: any;
+  config: any;
 
   constructor(private userService: UsersService,
     private borrowersService: BorrowersService,
@@ -74,5 +78,10 @@ export class UserDetailsComponent implements OnInit {
 
   }
 
+  pageChanged(event){
+    this.config.currentPage = event;
+  }
+
+  
 
 }

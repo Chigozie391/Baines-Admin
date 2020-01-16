@@ -50,8 +50,11 @@ export class AuthService {
   }
 
   changePassword(credential: AccountModel){
-    console.log(credential);
     return this.http.post(Endpoint.CHANGE_PASSWORD, credential);
+  }
+
+  uploadImage(image){
+    return this.http.post(Endpoint.UPLOAD_IMAGE, image);
   }
 
   // logout() {

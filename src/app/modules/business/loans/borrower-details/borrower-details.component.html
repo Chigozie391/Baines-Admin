@@ -275,11 +275,15 @@
             </div>
   
             <div class="col-md-5 col-12 mb-12">
-              <span class="has-search">
+              <form>
+                <span class="has-search">
                   <mat-icon class="icon ml-1 search-icon">search</mat-icon>
-                <input type="text" name="search" placeholder="Search by ID, type, e.t.c" class="search form-control" />
+                <input type="text" id="search" [(ngModel)]="term" name="search" placeholder="Search by type" class="search form-control" />
               </span>
-            </div>
+            </form>
+          </div>
+
+
           </div>
 
           <table class="table">
@@ -294,7 +298,7 @@
               </tr>
             </thead>
             <tbody class="text-muted">
-              <tr *ngFor="let each of Details.loan_transactions">
+              <tr *ngFor="let each of Details.loan_transactions | type : term | paginate: {itemsPerPage: 10, currentPage: p}">
                 <td> <span class="badge badge-success">Successful</span></td>
                 <td>{{each.transaction_id}}</td>
                 <td>{{each.type}}</td>
@@ -304,6 +308,11 @@
               </tr>
             </tbody>
           </table>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -323,12 +332,14 @@
                 <!-- <h5 class="m-0 p-0 text-dark-blue">Team members</h5> -->
               </div>
     
-              <div class="col-md-5 col-12 mb-12">
+              <!-- <div class="col-md-5 col-12 mb-12">
                 <span class="has-search">
                     <mat-icon class="icon ml-1 search-icon">search</mat-icon>
                   <input type="text" name="search" placeholder="Search by Principal, status, Balance, e.t.c" class="search form-control" />
                 </span>
-              </div>
+              </div> -->
+
+
             </div>
 
             <table class="table">
@@ -377,207 +388,3 @@
     </div>
   </div>
 </div>
-
-
-<!-- <div class="row">
-    <div class="col-md-12 col-12 col-mb-12">
-        <div class="card">
-            <div class="card-body">
-                    <div class="col-md-12 col-12 col-mb-12">
-                        <div class="user-data">
-                            <h3>Chihurumanya Okwechime</h3>
-                            <small>LSQ38389290</small>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-<!-- <div class="row">
-  <div class="col-md-12 col-12 col-mb-12">
-      <div class="card">
-          <div class="card-body-menu">
-            <ul class="menu-list">
-                <li><a routerLink="/app/business/loans/LSQ1293943/" routerLinkActive="active-link">Borrower's Details</a></li>
-                <li><a routerLink="/app/business/loans/LSQ1293943/loan-details" routerLinkActive="active-link">Loan Details</a></li>
-                <li><a routerLink="/app/business/loans/LSQ1293943/loan-schedule" routerLinkActive="active-link">Loan Schedule</a></li>
-            </ul>  
-
-          </div>
-      </div>
-  </div>
-</div> -->
-<!-- 
-<div class="row">
-   
-  <div class="col-md-8">
-    <div class="card">
-      <div class="card-body">
-        <div class="col-md-12 col-12 mb-12">
-            &nbsp;
-            <hr>
-        </div>
-        <div class="col-md-12 col-12 mb-12">
-          <h3>Personal Information</h3>
-        </div>
-          <div class="row">
-            <div class="col-md-4">
-                  <div class="col-md-12">
-                      <small class="text-muted">
-                          Full name
-                      </small>
-                      <h5><strong>Saidi Balogun</strong></h5>
-                    </div>
-            </div>
-            <div class="col-md-4">
-                  <div class="col-md-12">
-                      <small class="text-muted">
-                          Mobile Number
-                      </small>
-                      <h5><strong>09089544444</strong></h5>
-                    </div>
-            </div>
-            <div class="col-md-4">
-                  <div class="col-md-12 ">
-                      <small class="text-muted">
-                          BVN
-                      </small>
-                      <h5><strong>9829379234</strong></h5>
-                    </div>
-            </div>
-            <div class="col-md-4">
-                <div class="col-md-12">
-                  <small class="text-muted">
-                      Gender
-                  </small>
-                  <h5><strong>Male</strong></h5>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="col-md-12">
-                  <small class="text-muted">
-                      Email Address
-                  </small>
-                  <h5><strong>xyz@domain.com</strong></h5>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="col-md-12">
-                  <small class="text-muted">
-                      Marital Status
-                  </small>
-                  <h5><strong>Single</strong></h5>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="col-md-12">
-                  <small class="text-muted">
-                      Children
-                  </small>
-                  <h5><strong>3</strong></h5>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="col-md-12">
-                  <small class="text-muted">
-                      Type of Residence
-                  </small>
-                  <h5><strong>Parents Apartment</strong></h5>
-                </div>
-            </div>
-          </div>
-        </div>    
-      </div>
-  </div>
-
-  <div class="col-md-4">
-    <div class="card">
-      <div class="card-body">
-        <span class="pic medium square ml-12 profile-img">
-          <img src="../../../../assets/img/nav/image.svg" alt="" class="img-fluid">
-        </span>  
-        </div>    
-      </div>
-  </div>
-</div>
-
-
-<div class="row">
-   
-  <div class="col-md-12">
-    <div class="card">
-      <div class="card-body">
-        <div class="col-md-12 col-12 mb-12">
-          <h3>Education &amp; Employment Details</h3>
-        </div>
-          <div class="row">
-            <div class="col-md-3">
-                  <div class="col-md-12">
-                      <small class="text-muted">
-                          Level Of Education
-                      </small>
-                      <h5><strong>B.Sc.</strong></h5>
-                    </div>
-            </div>
-            <div class="col-md-3">
-                  <div class="col-md-12">
-                      <small class="text-muted">
-                          Employment Status
-                      </small>
-                      <h5><strong>Federal: Public</strong></h5>
-                    </div>
-            </div>
-            <div class="col-md-3">
-                  <div class="col-md-12 ">
-                      <small class="text-muted">
-                          Sector Of Employment
-                      </small>
-                      <h5><strong>IT</strong></h5>
-                    </div>
-            </div>
-            <div class="col-md-3">
-                <div class="col-md-12">
-                  <small class="text-muted">
-                    Duration Of Employment
-                  </small>
-                  <h5><strong>2 years</strong></h5>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="col-md-12">
-                  <small class="text-muted">
-                      Monthly Income
-                  </small>
-                  <h5><strong>100,000 - 200,000</strong></h5>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="col-md-12">
-                  <small class="text-muted">
-                      Loan Repayment
-                  </small>
-                  <h5><strong>40,000</strong></h5>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="col-md-12">
-                  <small class="text-muted">
-                      Official Email Address
-                  </small>
-                  <h5><strong>wed@dmola.com</strong></h5>
-                </div>
-            </div>    
-          </div>
-        </div>    
-      </div>
-  </div>
-</div>
- -->

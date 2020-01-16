@@ -3,21 +3,6 @@
 <a routerLink="/app/business/savings" class="return">&larr; Back</a>
 
 
-
-<!-- <div class="row">
-    <div class="col-md-12 col-12 col-mb-12">
-        <div class="card">
-            <div class="card-body-menu">
-              <ul class="menu-list-3">
-                  <li><a routerLink="/app/business/savings/LSQ1293943/saver-details/" routerLinkActive="active-link">Saver's Details</a></li>
-                  <li><a routerLink="/app/business/savings/LSQ1293943/savings-details" routerLinkActive="active-link">Savings Details</a></li>
-              </ul>  
-
-            </div>
-        </div>
-    </div>
-</div> -->
-
 <div class="row"></div>
 
 <!-- <div class="row"> -->
@@ -196,11 +181,14 @@
                   </div>
         
                   <div class="col-md-5 col-12 mb-12">
-                    <span class="has-search">
+                    <form>
+                      <span class="has-search">
                         <mat-icon class="icon ml-1 search-icon">search</mat-icon>
-                      <input type="text" name="search" placeholder="Search by ID, type, e.t.c" class="search form-control" />
+                      <input type="text" id="search" [(ngModel)]="term" name="search" placeholder="Search by type" class="search form-control" />
                     </span>
-                  </div>
+                  </form>
+                </div>
+
                 </div>
   
                 <table class="table">
@@ -215,7 +203,7 @@
                     </tr>
                   </thead>
                   <tbody class="text-muted">
-                    <tr *ngFor="let each of Details.saving_transactions">
+                    <tr *ngFor="let each of Details.saving_transactions | type: term | paginate: {itemsPerPage: 10, currentPage: p}">
                       <td> <span class="badge badge-success">Successful</span></td>
                       <td>{{!each.id ? 'N/A' : each.id}}</td>
                       <td>{{!each.transaction_entry ? 'N/A' : each.transaction_entry.name}}</td>
@@ -225,6 +213,11 @@
                     </tr>
                   </tbody>
                 </table>
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                  </div>
+                </div>
               </div>
             </div>
             </ng-template>

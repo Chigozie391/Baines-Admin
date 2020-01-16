@@ -47,7 +47,8 @@ export class Endpoint {
 
   public static REPORTS = `${environment.baseUrl}/admin/report`;
 
-
+  public static UPLOAD_IMAGE = `${environment.baseUrl}/util/upload/photo`;
+  
 
   public static GET_ALL_LENDERS = `${environment.baseUrl}/profiles/lenders`;
   public static PROFILES = `${environment.baseUrl}/profiles`;

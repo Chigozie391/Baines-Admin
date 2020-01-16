@@ -22,11 +22,14 @@
           </div>
 
           <div class="col-md-5 col-12 mb-12">
-            <span class="has-search">
+            <form>
+              <span class="has-search">
                 <mat-icon class="icon ml-1 search-icon">search</mat-icon>
-              <input type="text" name="search" placeholder="Search by ID, name, e.t.c" class="search form-control" />
+              <input type="text" id="search" [(ngModel)]="term" name="search" placeholder="Search by name" class="search form-control" />
             </span>
-          </div>
+          </form>
+        </div>
+
         </div>
 
         <table class="table">
@@ -53,7 +56,7 @@
 
 
 
-              <tr *ngFor="let each of list | paginate: {itemsPerPage: 10, currentPage: p}">
+              <tr *ngFor="let each of list | lastName : term | paginate: {itemsPerPage: 10, currentPage: p}">
                   <td><a routerLink="{{each.user_id}}/general">{{each.last_name | uppercase}} {{each.first_name | uppercase}}</a></td>
                   <td><a routerLink="{{each.user_id}}/general">{{each.user_id}}</a></td>
                   <td>{{each.created_on | date}}</td>

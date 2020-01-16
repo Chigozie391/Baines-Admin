@@ -25,6 +25,7 @@ export class SavingsProductComponent implements OnInit {
     this.savingsProductService.getSavingsProduct().subscribe((res: any) => {
       if (res.status === Constant.SUCCESS) {
         this.savingsProduct = res.data;
+        console.log(res.data);
       }
     }, (err) => {
       if(err.status === 401){

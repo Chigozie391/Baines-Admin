@@ -5,11 +5,13 @@ import { BorrowersService } from '../../../service/borrowers/borrowers.service';
 import { Path } from 'src/app/utils/path';
 import { AuthService } from 'src/app/service/auth/auth.service';
 import { UsersService } from 'src/app/service/users/users.service';
+import { LastNamePipe } from 'src/app/filterPipes/byLastname/last-name.pipe';
 
 @Component({
   selector: 'app-borrowers',
   templateUrl: './borrowers.component.html',
-  styleUrls: ['./borrowers.component.scss']
+  styleUrls: ['./borrowers.component.scss'],
+  providers: [LastNamePipe]
 })
 export class BorrowersComponent implements OnInit {
   msg: any;

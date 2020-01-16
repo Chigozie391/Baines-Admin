@@ -27,6 +27,7 @@ export class LoanProductDetailsComponent implements OnInit {
     this.loanProductService.getProductDetails(this.id).subscribe((res: any) => {
       if (res.status === Constant.SUCCESS) {
         this.details = res.data;
+        console.log(res.data);
       }
     }, (err) => {
       if(err.status === 401){

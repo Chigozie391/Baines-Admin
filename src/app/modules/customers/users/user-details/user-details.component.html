@@ -262,27 +262,29 @@
 
             <!-- <div class="row"> -->
               <div class="col-md-12">
-                <!-- <mat-divider></mat-divider> -->
 
                 
 
                 <div class="table-responsive">
 
-                  <!-- <div class="col-12"> -->
-                    <div class="row justify-content-between align-items-center">
+                    <!-- <div class="row justify-content-between align-items-center">
                       <div class="col-md-5">
                         <h6 class="m-0 p-0 text-left text-dark-blue">All Loans</h6>
                       </div>
             
-                      <div class="col-md-5 col-12 mb-12 text-right">
-                        <span class="has-search">
+                      <div class="col-md-5 col-12 mb-12">
+                        <form>
+                          <span class="has-search">
                             <mat-icon class="icon ml-1 search-icon">search</mat-icon>
-                          <input type="text" name="search" placeholder="Search by ID, date, type, e.t.c" class="search form-control" />
+                          <input type="text" id="search" [(ngModel)]="term" name="search" placeholder="Search by ID, name, e.t.c" class="search form-control" />
                         </span>
-                      </div>
+                      </form>
                     </div>
-                  <!-- </div> -->
-                  <table class="table">
+                    </div> -->
+
+
+
+                    <table class="table">
                     <thead>
                       <tr>
                         <th scope="col">Status</th>
@@ -294,20 +296,22 @@
                       </tr>
                     </thead>
                     <tbody class="text-muted">
-                      <tr *ngFor="let loan of loan_details">
+                      <tr *ngFor="let loan of loan_details | paginate: {itemsPerPage: 10, currentPage: p}">
                         <td *ngIf="loan.status.status === 'SETTLED'"><span class="badge badge-success">{{!loan.status.status ? 'N/A' : loan.status.status}}</span></td>
                         <td *ngIf="loan.status.status !== 'SETTLED'"><span class="badge badge-danger">{{!loan.status.status ? 'N/A' : loan.status.status}}</span></td>
                         <td><a routerLink="/app/business/loans/{{loan.id}}">{{loan.id}}</a></td>
                         <td><a routerLink="/app/business/loans/{{loan.id}}">{{!loan.loan_profile ? 'Not available' : loan.loan_profile.purpose}}</a></td>
-                        <!-- <td><a routerLink="loans/{{loan.id}}">{{loan.id}}</a></td> -->
-                        <!-- <td><a routerLink="loans/{{loan.id}}">{{!loan.loan_profile ? 'Not available' : loan.loan_profile.purpose}}</a></td> -->
                         <td>{{!loan.tenor_type.value ? 'N/A' :loan.tenor_type.value}} days</td>
-                        <!-- <td>{{loan.created_on | date}}</td> -->
                         <td>{{!loan.schedule.repayment_day ? 'N/A' : loan.schedule.repayment_day | date}}</td>
                         <td>₦{{!loan.loan_amount ? 'N/A' : loan.loan_amount}}</td>
                       </tr>
                     </tbody>
                   </table>
+                  <div class="row">
+                    <div class="col-md-12 text-center">
+                      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    </div>
+                  </div>
                 </div>
               </div>
             <!-- </div> -->
@@ -376,7 +380,7 @@
                 </tr>
               </thead>
               <tbody class="text-muted">
-                <tr *ngFor="let eachSavings of userSavings">
+                <tr *ngFor="let eachSavings of userSavings | paginate: {itemsPerPage: 10, currentPage: p}">
                   <td>{{!eachSavings.id ? 'N/A' : eachSavings.id}}</td>
                   <td>{{!eachSavings.name ? "N/A" : eachSavings.name}}</td>
                   <td>{{!eachSavings.start_date ? 'N/A' : eachSavings.start_date | date}}</td>
@@ -387,6 +391,11 @@
                 </tr>
               </tbody>
             </table>
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+              </div>
+            </div>
           </div>
         </div>
       </div>

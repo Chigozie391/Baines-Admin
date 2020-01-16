@@ -33,6 +33,8 @@ import { LoanReportDetailsComponent } from './report/loan-product-report/details
 import { MatureReportDetailsComponent } from './report/mature-savings-report/details/details.component';
 import { SavingsReportDetailsComponent } from './report/savings-product-report/details/details.component';
 import { UsersReportDetailsComponent } from './report/users-report/details/details.component';
+import { TypePipe } from 'src/app/filterPipes/byType/type.pipe';
+import { InnerLastNamePipe } from 'src/app/filterPipes/byLastname/inner-last-name.pipe';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { UsersReportDetailsComponent } from './report/users-report/details/detai
      OverdueLoansReportComponent, UsersReportComponent, 
      OverDueReportDetailsComponent, DueReportDetailsComponent,
      LoanReportDetailsComponent, MatureReportDetailsComponent,
-     SavingsReportDetailsComponent, UsersReportDetailsComponent
+     SavingsReportDetailsComponent, UsersReportDetailsComponent,
+     TypePipe
     ],
   imports: [
     CommonModule,

@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AuditService } from 'src/app/service/audits/audit.service';
 import { Constant } from 'src/app/utils/constant';
+import { InnerLastNamePipe } from 'src/app/filterPipes/byLastname/inner-last-name.pipe';
 
 @Component({
   selector: 'app-audit',
   templateUrl: './audit.component.html',
-  styleUrls: ['./audit.component.scss']
+  styleUrls: ['./audit.component.scss'],
+  providers: [InnerLastNamePipe]
 })
 export class AuditComponent implements OnInit {
 
@@ -26,7 +28,6 @@ export class AuditComponent implements OnInit {
   auditLogs(){
     this.auditService.getAuditLogs().subscribe((res: any) => {
       if (res.status === Constant.SUCCESS){
-        console.log(res.data);
         this.logs = res.data;
       }
     });

@@ -13,11 +13,14 @@
           </div>
 
           <div class="col-md-5 col-12 mb-12">
-            <span class="has-search">
+            <form>
+              <span class="has-search">
                 <mat-icon class="icon ml-1 search-icon">search</mat-icon>
-              <input type="text" name="search" placeholder="Search by date, role, user, e.t.c" class="search form-control" />
+              <input type="text" id="search" [(ngModel)]="term" name="search" placeholder="Search by name" class="search form-control" />
             </span>
-          </div>
+          </form>
+        </div>
+
         </div>
       <!-- </div> -->
 
@@ -31,7 +34,7 @@
           </tr>
         </thead>
         <tbody class="text-muted">
-          <tr *ngFor="let log of logs | paginate: {itemsPerPage: 10, currentPage: p}">
+          <tr *ngFor="let log of logs | innerLastName : term | paginate: {itemsPerPage: 10, currentPage: p}">
             <td><a routerLink="{{log.id}}">{{!log.user.first_name ? 'N/A' : log.user.first_name | uppercase}} {{!log.user.last_name ? 'N/A' : log.user.last_name | uppercase}}</a></td>
             <td>{{!log.description ? 'N/A' : log.description | titlecase}}</td>
             <th scope="row">{{log.created_on | date : 'mediumDate'}}</th>

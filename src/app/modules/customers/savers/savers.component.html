@@ -19,11 +19,15 @@
             </div>
   
             <div class="col-md-5 col-12 mb-12">
-              <span class="has-search">
+              <form>
+                <span class="has-search">
                   <mat-icon class="icon ml-1 search-icon">search</mat-icon>
-                <input type="text" name="search" placeholder="Search by ID, name, e.t.c" class="search form-control" />
+                <input type="text" id="search" [(ngModel)]="term" name="search" placeholder="Search by name" class="search form-control" />
               </span>
-            </div>
+            </form>
+          </div>
+
+
           </div>
 
           <table class="table">
@@ -37,7 +41,7 @@
               </tr>
             </thead>
             <tbody class="text-muted">
-                <tr *ngFor="let saver of savers | paginate: {itemsPerPage: 10, currentPage: p}">
+                <tr *ngFor="let saver of savers | lastName : term | paginate: {itemsPerPage: 10, currentPage: p}">
                   <td><a routerLink="{{saver.user_id}}/general">{{!saver.last_name ? 'N/A' : saver.last_name | uppercase}} {{!saver.first_name ? 'N/A' : saver.first_name | uppercase}}</a></td>
                   <td><a routerLink="{{saver.user_id}}/general">{{!saver.user_id ? 'N/A' : saver.user_id}}</a></td>
                     <td>{{saver.created_on | date}}</td>

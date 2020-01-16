@@ -125,12 +125,12 @@
               </tr>
             </thead>
             <tbody class="text-muted">
-              <tr *ngFor="let country of [1,2,3,4,5]">
-                <td><a routerLink="LSQ1234876">Vacation Savings</a></td>
-                <td><a routerLink="LSQ1234876">LSQ1234876</a></td>
-                <td><a routerLink="LSQ1234876">23%</a></td>
-                <td>500 - 500,000</td>
-                <td>23</td>
+              <tr *ngFor="let eachProduct of savingsProduct | paginate: {itemsPerPage: 10, currentPage: p}">
+                <td><a routerLink="{{eachProduct.id}}">{{!eachProduct.name ? 'N/A' : eachProduct.name}}</a></td>
+                <td><a routerLink="{{eachProduct.id}}">{{!eachProduct.id ? 'N/A' : eachProduct.id}}</a></td>
+                <td><a routerLink="{{eachProduct.id}}">{{!eachProduct.interest_rate ? 'N/A' : eachProduct.interest_rate}}%</a></td>
+                <td>{{!eachProduct.min_amount ? 'N/A' : eachProduct.min_amount}} - {{!eachProduct.max_amount ? 'N/A' : eachProduct.max_amount}}</td>
+                <td>-----</td>
                 <td>
                   <span [matMenuTriggerFor]="action" class="action">
                     &#8226;&#8226;&#8226;
@@ -139,6 +139,11 @@
                 </tr>
             </tbody>
           </table>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+          </div>
         </div>
       </div>
   </ng-template>

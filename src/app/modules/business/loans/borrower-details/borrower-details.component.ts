@@ -4,11 +4,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Constant } from 'src/app/utils/constant';
 import { AuthService } from 'src/app/service/auth/auth.service';
+import { TypePipe } from 'src/app/filterPipes/byType/type.pipe';
 
 @Component({
   selector: 'app-borrower-details',
   templateUrl: './borrower-details.component.html',
-  styleUrls: ['./borrower-details.component.scss']
+  styleUrls: ['./borrower-details.component.scss'],
+  providers: [TypePipe]
 })
 export class BorrowerDetailsComponent implements OnInit {
 
@@ -21,7 +23,8 @@ export class BorrowerDetailsComponent implements OnInit {
   moreProfile: any;
   loan_schedule: any;
   Details: any;
-  
+  config: any;
+
   constructor(private loansService: LoansService,
     private route: ActivatedRoute,
     private authService: AuthService,
@@ -33,6 +36,10 @@ export class BorrowerDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.loanDetails(this.loan_id);
+  }
+
+  pageChanged(event){
+    this.config.currentPage = event;
   }
 
   loanDetails(id) {

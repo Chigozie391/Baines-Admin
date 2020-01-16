@@ -3,8 +3,9 @@
 <app-headers title="Loan Products"></app-headers>
 
 
+<div *ngIf="details">
 
-<div class="row">
+  <div class="row">
     <div class="col-md-12 col-12 col-mb-12">
               <ngb-tabset type="pills" justify="justified">
                 <br>
@@ -97,11 +98,15 @@
                           </div>
                 
                           <div class="col-md-5 col-12 mb-12">
-                            <span class="has-search">
+                            <form>
+                              <span class="has-search">
                                 <mat-icon class="icon ml-1 search-icon">search</mat-icon>
-                              <input type="text" name="search" placeholder="Search by Name, amount, e.t.c" class="search form-control" />
+                              <input type="text" id="search" [(ngModel)]="term" name="search" placeholder="Search by name" class="search form-control" />
                             </span>
-                          </div>
+                          </form>
+                        </div>
+
+
                         </div>
                         
                           <table class="table">
@@ -127,168 +132,18 @@
               </ngb-tabset>
 
 
-
-
-
-              <!-- <mat-tab-group>
-                    <mat-tab label="Details">
-                        <div class="container-fluid">
-                                <div class="col-md-12 col-12 mb-12">
-                                        <div class="row">
-                                            <div class="col-md-12 col-12 col-mb-12">
-                                                <div class="user-data">
-                                                    <h3>Loan Product 001</h3>
-                                                    <small class="text-muted">LSQ38389290</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                
-                                        <div class="row">
-                                          <div class="col-md-6 text-left">
-                                              <div class="col-md-12">
-                                                <small class="text-muted">
-                                                    Amount
-                 
-                 
-                                                </small>
-                                                <h6>5,000.00 - 25,000.00</h6>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6 text-left">
-                                              <div class="col-md-12 green">
-                                                <small class="text-muted">
-                                                    Status
-                                                </small>
-                                                <h6>Active</h6>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6 text-left">
-                                              <div class="col-md-12">
-                                                <small class="text-muted">
-                                                    Tenor
-                                                </small>
-                                                <h6>15 Days</h6>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6 text-left">
-                                              <div class="col-md-12 red">
-                                                <small class="text-muted">
-                                                    Repayment Method
-                                                </small>
-                                                <h6>Card & Wallet</h6>
-                                              </div>
-                                          </div>
-                            
-                                          <div class="col-md-6 text-left">
-                                            <div class="col-md-12">
-                                              <small class="text-muted">
-                                                  Interest
-                                              </small>
-                                              <h6>25%</h6>
-                                            </div>
-                                        </div>
-                                        </div>
-                                  </div>
-                        </div>
-                    </mat-tab>
-                  <mat-tab label="Borrowers">
-                      <div class="container-fluid">
-                        <div class="table-responsive">
-                            <table class="table">
-                              <thead>
-                                <tr>
-                                  <th scope="col">Name</th>
-                                  <th scope="col">Number Of Loans Applied For</th>
-                                  <th scope="col">Total Loan Product Amount</th>
-                                </tr>
-                              </thead>
-                              <tbody class="text-muted">
-                                <tr *ngFor="let country of [1,2,3]">
-                                  <td>Olabode Samuel</td>
-                                  <td>3</td>
-                                  <td>₦120,510</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                      </div>
-                  </mat-tab>
-              </mat-tab-group> -->
-
-
-
-
-
-
-
-            <!-- </div> -->
-        <!-- </div> -->
     </div>
   </div>
 
+</div>
 
 
- 
-
-
-<!-- <div class="row">
-
-    <div class="col-md-12 col-12 mb-12">
-        <div class="card">
-          <div class="card-body">
-            <div class="row">
-                <div class="col-md-12 col-12 col-mb-12">
-                    <div class="user-data">
-                        <h3>Loan Product 001</h3>
-                        <small class="text-muted">LSQ38389290</small>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="row">
-              <div class="col-md-6 text-left">
-                  <div class="col-md-12">
-                    <small class="text-muted">
-                        Amount
-                    </small>
-                    <h6>5,000.00 - 25,000.00</h6>
-                  </div>
-              </div>
-              <div class="col-md-6 text-left">
-                  <div class="col-md-12 green">
-                    <small class="text-muted">
-                        Status
-                    </small>
-                    <h6>Active</h6>
-                  </div>
-              </div>
-              <div class="col-md-6 text-left">
-                  <div class="col-md-12">
-                    <small class="text-muted">
-                        Tenor
-                    </small>
-                    <h6>15 Days</h6>
-                  </div>
-              </div>
-              <div class="col-md-6 text-left">
-                  <div class="col-md-12 red">
-                    <small class="text-muted">
-                        Repayment Method
-                    </small>
-                    <h6>Card & Wallet</h6>
-                  </div>
-              </div>
-
-              <div class="col-md-6 text-left">
-                <div class="col-md-12 red">
-                  <small class="text-muted">
-                      Interest
-                  </small>
-                  <h6>25%</h6>
-                </div>
-            </div>
-            </div>
-          </div>
-        </div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card" *ngIf="!details">
+      <div class="card-body">
+        <h3 class="text-center text-muted">Fetching details...</h3>
       </div>
-  </div> -->
+    </div>
+  </div>
+</div>

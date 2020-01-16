@@ -19,9 +19,9 @@ import { BorrowersBankDetailsComponent } from './borrowers-details/bank-details/
 import { LoanDetailsComponent } from './borrowers-details/loan-details/loan-details.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
-import { UsersPipe } from './users/users.pipe';
 import { FirstNamePipe } from 'src/app/filterPipes/byFirstname/first-name.pipe';
 import { LastNamePipe } from 'src/app/filterPipes/byLastname/last-name.pipe';
+import { LoanPurposePipe } from 'src/app/filterPipes/byLoanPurpose/loan-purpose-pipe.pipe';
 
 
 @NgModule({
@@ -42,9 +42,9 @@ import { LastNamePipe } from 'src/app/filterPipes/byLastname/last-name.pipe';
     LoanDetailsComponent, 
     UsersComponent, 
     UserDetailsComponent, 
-    UsersPipe,
     FirstNamePipe,
-    LastNamePipe
+    LastNamePipe,
+    LoanPurposePipe
   ],
   imports: [
     CommonModule,

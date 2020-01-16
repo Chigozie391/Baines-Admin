@@ -15,6 +15,8 @@ export class LoansComponent implements OnInit {
   loanDetail: any;
   loan_id: any;
   stat: any;
+  config: any;
+
 
   constructor(private loansService: LoansService,
     private authService: AuthService) { }
@@ -42,6 +44,10 @@ export class LoansComponent implements OnInit {
         this.stat = res.data;
       }
     });
+  }
+
+  pageChanged(event){
+    this.config.currentPage = event;
   }
 
 

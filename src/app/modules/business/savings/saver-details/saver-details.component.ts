@@ -14,6 +14,7 @@ export class SaverDetailsComponent implements OnInit {
   saver: any;
   tenor_type: any;
   schedules: any;
+  config: any;
 
   constructor(private savingsService: SavingsService,
     private route: ActivatedRoute) { 
@@ -23,6 +24,10 @@ export class SaverDetailsComponent implements OnInit {
     }
   ngOnInit() {
     this.savingsDetails(this.savings_id);
+  }
+
+  pageChanged(event){
+    this.config.currentPage = event;
   }
 
   savingsDetails(id) {

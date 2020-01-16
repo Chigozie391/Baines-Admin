@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { SaversService } from 'src/app/service/savers/savers.service';
 import { Constant } from 'src/app/utils/constant';
 import { UsersService } from 'src/app/service/users/users.service';
+import { LastNamePipe } from 'src/app/filterPipes/byLastname/last-name.pipe';
 
 @Component({
   selector: 'app-savers',
   templateUrl: './savers.component.html',
-  styleUrls: ['./savers.component.scss']
+  styleUrls: ['./savers.component.scss'],
+  providers: [LastNamePipe]
 })
 export class SaversComponent implements OnInit {
 
