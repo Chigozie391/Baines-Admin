@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { TeamService } from '../service/team/team.service';
+import { TeamService } from '../../service/team/team.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { VerifyModel } from './verify.model';
-import { Constant } from '../utils/constant';
-import { Path } from '../utils/path';
+import { Constant } from '../../utils/constant';
+import { Path } from '../../utils/path';
+import { VerifyUserModel } from '../verify-user.model';
 
 @Component({
-  selector: 'app-verify',
-  templateUrl: './verify.component.html',
-  styleUrls: ['./verify.component.scss']
+  selector: 'app-verify-user',
+  templateUrl: './verify-user.component.html',
+  styleUrls: ['./verify-user.component.scss']
 })
-export class VerifyComponent implements OnInit {
+export class VerifyUserComponent implements OnInit {
 
   orderObj: any;
   email: string;
-  verificationDetails = new VerifyModel;
+  verificationDetails = new VerifyUserModel;
   token: string;
   msg: string;
 
@@ -34,23 +34,23 @@ export class VerifyComponent implements OnInit {
     };
     // console.table(this.token, data);
 
-    this.teamService.updateProfile(this.token, data).subscribe((res: any)=> {
-      console.log(res);
-    });
-
-    // this.teamService.updateProfile(this.token, data).subscribe((res: any) => {
+    // this.teamService.updateProfile(this.token, data).subscribe((res: any)=> {
     //   console.log(res);
-    //   if (res.status === Constant.SUCCESS) {
-    //     this.msg = res.message;
-    //     this.router.navigate([Path.DASHBOARD]);
-    //   }
-    // }, (err) => {
-    //   if(err.status !== 200){
-    //     this.msg = err.error.message;
-    //     console.log(err);
-    //   }
-    //   console.log(err);
     // });
+
+    this.teamService.updateProfile(this.token, data).subscribe((res: any) => {
+      console.log(res);
+      if (res.status === Constant.SUCCESS) {
+        this.msg = res.message;
+        this.router.navigate([Path.DASHBOARD]);
+      }
+    }, (err) => {
+      if(err.status !== 200){
+        this.msg = err.error.message;
+        console.log(err);
+      }
+      console.log(err);
+    });
 
 
   }

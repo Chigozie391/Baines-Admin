@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { VerifyComponent } from './verify/verify.component';
+import { VerifyUserComponent } from './verify-user/verify-user/verify-user.component';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {path: '', redirectTo: '/auth', pathMatch:'full'},
 
-  { path: 'team/verify', component: VerifyComponent}
+  { path: 'team/verify', component: VerifyUserComponent}
 ];
 
 @NgModule({
