@@ -28,6 +28,7 @@ export class SavingsDetailsComponent implements OnInit {
     this.saversService.getSavingsDetails(savings_id).subscribe((res: any) => {
       this.savings_details = res.data;
       this.saving_transactions = res.data.saving_transactions;
+      console.log(res.data);
     });
   }
 

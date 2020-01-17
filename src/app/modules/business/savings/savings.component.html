@@ -9,28 +9,28 @@
           <div class="card">
               <div class="card-body">
                 <div class="row">
-                  <div class="col-md-3 col-4 col-mb-4">
+                  <div class="col-6 col-sm-3 col-md-4 col-lg-4 col-xl-4">
                     <div class="user-data">
                         <h3>{{!stat?.total ? 'N/A' : stat?.total}}</h3>
                         <p class="text-muted">Total</p>
                     </div>
                 </div>
     
-                <div class="col-md-3 col-4 col-mb-4 green">
+                <div class="col-6 col-sm-3 col-md-4 col-lg-4 col-xl-4 green">
                   <div class="user-data">
                       <h3>{{!stat?.active ? 'N/A' : stat?.active}}</h3>
                       <p class="text-muted">Active</p>
                   </div>
               </div>
     
-              <div class="col-md-3 col-4 col-mb-4 red">
+              <div class="col-6 col-sm-3 col-md-4 col-lg-4 col-xl-4 red">
                 <div class="user-data">
                     <h3>{{!stat?.inactive ? 'N/A' : stat?.inactive}}</h3>
                     <p class="text-muted">Inactive</p>
                 </div>
             </div>
     
-            <div class="col-md-3 col-4 col-mb-4">
+            <div class="col-6 col-sm-3 col-md-4 col-lg-4 col-xl-4">
               <div class="user-data">
                   <h3>{{!stat?.savers ? 'N/A' : stat?.savers}}</h3>
                   <p class="text-muted">Savers</p>
@@ -59,7 +59,7 @@
       <ng-template ngbTabContent>
   <hr>
         <div class="row">
-          <div class="col-md-4 col-12 col-mb-6" *ngFor="let eachSaving of savings">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4" *ngFor="let eachSaving of savings">
             <div class="card-white">
               <div class="card-body">
                 <div class="col-md-12">

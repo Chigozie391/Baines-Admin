@@ -93,16 +93,17 @@ export class AccountComponent implements OnInit {
     reader.addEventListener('load', (event: any) => {
 
       this.selectedFile = new ImageSnippet(event.target.result, file);
-
       this.selectedFile.pending = true;
       this.authService.uploadImage(this.selectedFile.file).subscribe(
         (res) => {
+          
           this.onSuccess();
         },
         (err) => {
           this.onError();
         })
     });
+
 
     reader.readAsDataURL(file);
   }

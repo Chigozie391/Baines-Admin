@@ -10,7 +10,7 @@
           <div class="card-body">
     
             <div class="row">
-              <div class="col-md-6 text-left">
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 text-left">
                   <div class="col-md-12">
                     <small class="text-muted">
                         User
@@ -18,7 +18,7 @@
                     <h5>{{!audit_details?.user.last_name ? 'N/A' : audit_details?.user.last_name | titlecase}} {{!audit_details?.user.first_name ? 'N/A' : audit_details?.user.first_name | titlecase}}</h5>
                   </div>
               </div>
-              <div class="col-md-6 text-left">
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 text-left">
                   <div class="col-md-12">
                     <small class="text-muted">
                         Activity
@@ -26,7 +26,7 @@
                     <h5>{{!audit_details?.action ? 'N/A' : audit_details?.action}}</h5>
                   </div>
               </div>
-              <div class="col-md-6 text-left">
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 text-left">
                   <div class="col-md-12">
                     <small class="text-muted">
                         Date and Time
@@ -34,7 +34,7 @@
                     <h5>{{!audit_details?.created_on ? 'N/A' : audit_details?.created_on | date: 'medium'}}</h5>
                   </div>
               </div>
-              <div class="col-md-6 text-left">
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 text-left">
                 <!-- <div class="row"> -->
                     <div class="col-md-12">
                         <small class="text-muted">
@@ -45,7 +45,7 @@
                 <!-- </div> -->
             </div>
             
-            <div class="col-md-6 text-left">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 text-left">
                 <!-- <div class="row"> -->
                     <div class="col-md-12">
                         <small class="text-muted">
@@ -55,7 +55,7 @@
                       </div>
                 <!-- </div> -->
             </div>
-            <div class="col-md-6 text-left">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 text-left">
               <div class="col-md-12">
                 <small class="text-muted">
                     City
@@ -63,7 +63,7 @@
                 <h5>{{!audit_details?.location.city ? 'N/A' : audit_details?.location.city}}</h5>
               </div>
           </div>
-          <div class="col-md-6 text-left">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 text-left">
             <div class="col-md-12">
               <small class="text-muted">
                   Region
@@ -71,7 +71,7 @@
               <h5>{{!audit_details?.location.region ? 'N/A' : audit_details?.location.region}}</h5>
             </div>
         </div>
-        <div class="col-md-6 text-left">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 text-left">
           <div class="col-md-12">
             <small class="text-muted">
                 Country

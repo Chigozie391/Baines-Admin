@@ -19,21 +19,21 @@
               <div class="row">
                 <div class="col-md-4 col-4 col-mb-4">
                   <div class="user-data">
-                      <h3>{{Stats?.total}}</h3>
+                      <h3>{{!Stats?.total ? 'N/A' : Stats?.total}}</h3>
                       <p class="text-muted">Total</p>
                   </div>
               </div>
   
               <div class="col-md-4 col-4 col-mb-4 green">
                 <div class="user-data">
-                    <h3>{{Stats?.active}}</h3>
+                    <h3>{{!Stats?.active ? 'N/A' : Stats?.active}}</h3>
                     <p class="text-muted">Active</p>
                 </div>
             </div>
   
             <div class="col-md-4 col-4 col-mb-4 red">
               <div class="user-data">
-                  <h3>{{Stats?.inactive}}</h3>
+                  <h3>{{!Stats?.inactive ? 'N/A' : Stats?.inactive}}</h3>
                   <p class="text-muted">Inactive</p>
               </div>
           </div>
@@ -64,7 +64,7 @@
         <hr>
   
             <div class="row">
-              <div class="col-md-4 col-12 col-mb-6" *ngFor="let eachProduct of loanProduct">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4" *ngFor="let eachProduct of loanProduct">
                 <div class="card-white">
                   <div class="card-body">
                     <div class="col-md-12">
@@ -95,7 +95,7 @@
                         <span class="cosmos-4"></span>
                         <span class="cosmos-5"></span>
                       </div>
-                      <p class="text-right text-muted">20 Borrowers</p>
+                      <p class="text-right text-muted">-- Borrowers</p>
                     </div>
                   </div>
                 </div>

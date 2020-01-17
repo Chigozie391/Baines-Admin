@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Constant } from '../../utils/constant';
 import { Path } from '../../utils/path';
 import { VerifyUserModel } from '../verify-user.model';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
   selector: 'app-verify-user',
@@ -20,7 +21,8 @@ export class VerifyUserComponent implements OnInit {
 
   constructor(private teamService: TeamService,
               private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private authService: AuthService) { }
 
   ngOnInit() {
     this.getCredentials();
@@ -42,6 +44,9 @@ export class VerifyUserComponent implements OnInit {
       console.log(res);
       if (res.status === Constant.SUCCESS) {
         this.msg = res.message;
+        this.authService.token = this.token;
+        this.authService.user = undefined;
+        this.authService.profile_token = undefined;
         this.router.navigate([Path.DASHBOARD]);
       }
     }, (err) => {

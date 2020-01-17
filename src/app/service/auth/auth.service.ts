@@ -54,6 +54,7 @@ export class AuthService {
   }
 
   uploadImage(image){
+    console.log(image);
     return this.http.post(Endpoint.UPLOAD_IMAGE, image);
   }
 

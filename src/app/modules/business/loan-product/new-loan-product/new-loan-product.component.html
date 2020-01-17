@@ -111,7 +111,7 @@
                                 <small class="text-muted">Enter loan details here</small>
                             </div>
                         </div>
-                        <div class="col-md-6 col-12 mb-12">
+                        <div class="col-md-6 col-sm-12 col-12 col-lg-6 col-xl-6">
                             <mat-form-field class="col-md-12">
                                 <input matInput placeholder="Loan Product Name" [(ngModel)]="loanProduct.name" id="productName" name="productName" required>
                               </mat-form-field>
@@ -145,14 +145,14 @@
 
 
                     <div class="row" style="padding: 2rem 2rem;">
-                        <div class="col-md-6 col-12 col-mb-12">
+                        <div class="col-md-6 col-12 col-mb-12" style="margin-bottom: 2rem;">
                             <div class="user-data centered">
                                 <h4>Repayment Details</h4>
                                 <small class="text-muted">Enter loan repayment details here</small>
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-12 mb-12">
+                        <div class="col-md-6 col-12">
                                 <mat-select id="method" [(ngModel)]="loanProduct.repayment_method_id" name="method" style="margin-bottom: 2rem;" class="col-md-12" placeholder="Repayment Method" >
                                     <mat-option  *ngFor="let each of method" value="{{each.id}}">{{each.name | titlecase}}</mat-option>
                                 </mat-select>

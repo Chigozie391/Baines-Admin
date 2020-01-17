@@ -16,7 +16,7 @@
                       <h6>{{!Details?.loan_profile.loan_id ? 'N/A' : Details?.loan_profile.loan_id}}</h6>
                   </div>
               </div>
-              <div class="col-sm-6 col-md-3 col-12 col-mb-12">
+              <div class="col-sm-6 col-md-3 col-12">
                   <div class="user-data">
                       <h6>Loan Amount</h6>
                       <h4>₦{{!Details?.loan_amount ? 'N/A' : Details?.loan_amount}}</h4>
@@ -25,7 +25,7 @@
           </div>
   
           <div class="row">
-            <div class="col-md-3 text-left">
+            <div class="col-sm-6 col-md-3 col-6 text-left">
                 <div class="col-md-12">
                   <small class="text-muted">
                       Tenor
@@ -33,7 +33,7 @@
                   <h6>{{!Details?.tenor_type.value ? 'N/A' : Details?.tenor_type.value}} days</h6>
                 </div>
             </div>
-            <div class="col-md-3 text-left">
+            <div class="col-sm-6 col-md-3 col-6 text-left">
                 <div class="col-md-12">
                   <small class="text-muted">
                       Application Date
@@ -41,7 +41,7 @@
                   <h6>{{!Details?.created_on ? 'N/A' : Details?.created_on | date}}.</h6>
                 </div>
             </div>
-            <div class="col-md-3 text-left">
+            <div class="col-sm-6 col-md-3 col-6 text-left">
                 <div class="col-md-12">
                   <small class="text-muted">
                       Repayment Date
@@ -49,7 +49,7 @@
                   <h6>{{!Details?.schedule.repayment_day ? 'N/A' : Details?.schedule.repayment_day | date}}.</h6>
                 </div>
             </div>
-            <div class="col-md-3 text-left">
+            <div class="col-sm-6 col-md-3 col-6 text-left">
                 <div class="col-md-12 red">
                   <small class="text-muted">
                       Status
@@ -76,7 +76,7 @@
             <h3>Personal Information</h3>
           </div>
             <div class="row">
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
                     <div class="col-md-12">
                         <small class="text-muted">
                             Full name
@@ -84,7 +84,7 @@
                         <h6><strong>{{!Details?.user.first_name ? 'N/A' : Details?.user.first_name}} {{!Details?.user.last_name ? 'N/A' : Details?.user.last_name}}</strong></h6>
                       </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
                     <div class="col-md-12">
                         <small class="text-muted">
                             Mobile Number
@@ -92,7 +92,7 @@
                         <h6><strong>{{!Details?.user.phone_number ? 'N/A' : Details?.user.phone_number}}</strong></h6>
                       </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
                     <div class="col-md-12 ">
                         <small class="text-muted">
                             BVN
@@ -100,7 +100,7 @@
                         <h6><strong>{{!Details?.user.bvn ? 'N/A' : Details?.user.bvn}}</strong></h6>
                       </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                   <div class="col-md-12">
                     <small class="text-muted">
                         Gender
@@ -109,7 +109,7 @@
                   </div>
               </div>
   
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                   <div class="col-md-12">
                     <small class="text-muted">
                         Email Address
@@ -118,7 +118,7 @@
                   </div>
               </div>
   
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                   <div class="col-md-12">
                     <small class="text-muted">
                         Marital Status
@@ -127,7 +127,7 @@
                   </div>
               </div>
   
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                   <div class="col-md-12">
                     <small class="text-muted">
                         No. of Dependants
@@ -136,7 +136,7 @@
                   </div>
               </div>
   
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                   <div class="col-md-12">
                     <small class="text-muted">
                         Type of Residence
@@ -153,7 +153,7 @@
             </div>
 
             <div class="row">
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                     <div class="col-md-12">
                         <small class="text-muted">
                             Level Of Education
@@ -161,7 +161,7 @@
                         <h6><strong>{{!Details?.loan_profile.educational_attainment ? 'N/A' : Details?.loan_profile.educational_attainment}}</strong></h6>
                       </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                     <div class="col-md-12">
                         <small class="text-muted">
                             Employment Status
@@ -169,7 +169,7 @@
                         <h6><strong>{{!Details?.loan_profile.employment_status ? 'N/A' : Details?.loan_profile.employment_status}}</strong></h6>
                       </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                     <div class="col-md-12 ">
                         <small class="text-muted">
                             Sector Of Employment
@@ -177,7 +177,7 @@
                         <h6><strong>{{!Details?.loan_profile.sector_of_employment ? 'N/A' : Details?.loan_profile.sector_of_employment}}</strong></h6>
                       </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                   <div class="col-md-12">
                     <small class="text-muted">
                       Started work.
@@ -186,7 +186,7 @@
                   </div>
               </div>
   
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                   <div class="col-md-12">
                     <small class="text-muted">
                         Monthly Income
@@ -195,7 +195,7 @@
                   </div>
               </div>
   
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                   <div class="col-md-12">
                     <small class="text-muted">
                         Loan Repayment
@@ -204,7 +204,7 @@
                   </div>
               </div>
   
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                   <div class="col-md-12">
                     <small class="text-muted">
                         Official Email Address
