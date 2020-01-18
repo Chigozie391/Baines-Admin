@@ -16,6 +16,7 @@ import { LastNamePipe } from 'src/app/filterPipes/byLastname/last-name.pipe';
 export class BorrowersComponent implements OnInit {
   msg: any;
   list: any;
+  dataSet = [];
   config: any;
 
 
@@ -40,7 +41,16 @@ export class BorrowersComponent implements OnInit {
   allBorrowers() {
     this.borrowersService.getAllBorrowers().subscribe((res: any) => {
       if (res.status === Constant.SUCCESS) {
-        this.list = res.data;
+        // this.list = res.data;
+        for(let i = 0; i < res.data.length; i++){
+          const data = {
+            'user_id' : res.data[i].user_id,
+            'full_name' : `${res.data[i].first_name} ${res.data[i].last_name}`,
+            'activated' : res.data[i].activated,
+            'created_on' : res.data[i].created_on
+          }
+          this.list = this.dataSet.push(data);
+        }
       }
     }, (err) => {
       if (err.status === 401) {

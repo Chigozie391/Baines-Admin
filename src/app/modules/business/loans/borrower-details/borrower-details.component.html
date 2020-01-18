@@ -202,13 +202,13 @@
             <div class="card">
               <div class="card-body">
                 <div class="row">
-                  <div class="col-md-9 col-12 col-mb-12">
+                  <div class="col-md-9 col-12 col-sm-6 col-lg-9 col-xl-9">
                       <div class="user-data">
                           <h3>{{!Details?.loan_profile.purpose ? 'N/A' : Details?.loan_profile.purpose}}</h3>
                           <h6>{{!Details?.loan_profile.loan_id ? 'N/A' : Details?.loan_profile.loan_id}}</h6>
                       </div>
                   </div>
-                  <div class="col-md-3 col-12 col-mb-12">
+                  <div class="col-md-3 col-12 col-sm-6 col-lg-3 col-xl-3">
                       <div class="user-data">
                           <h6>Loan Amount</h6>
                           <h4>₦{{!Details?.loan_amount ? 'N/A' : Details?.loan_amount}}</h4>
@@ -217,7 +217,7 @@
               </div>
         
                 <div class="row">
-                  <div class="col-md-3 text-left">
+                  <div class="col-sm-6 col-12 col-md-3 col-lg-3 col-xl-3 text-left">
                     <div class="col-md-12">
                       <small class="text-muted">
                           Tenor
@@ -225,7 +225,7 @@
                       <h6>{{!Details?.tenor_type.value ? 'N/A' : Details?.tenor_type.value}} days</h6>
                     </div>
                   </div>
-                  <div class="col-md-3 text-left">
+                  <div class="col-sm-6 col-12 col-md-3 col-lg-3 col-xl-3 text-left">
                       <div class="col-md-12">
                         <small class="text-muted">
                             Application Date
@@ -233,7 +233,7 @@
                         <h6>{{!Details?.created_on ? 'N/A' : Details?.created_on | date}}.</h6>
                       </div>
                   </div>
-                  <div class="col-md-3 text-left">
+                  <div class="col-sm-6 col-12 col-md-3 col-lg-3 col-xl-3 text-left">
                       <div class="col-md-12">
                         <small class="text-muted">
                             Repayment Date
@@ -241,7 +241,7 @@
                         <h6>{{!Details?.schedule.repayment_day ? 'N/A' : Details?.schedule.repayment_day | date}}.</h6>
                       </div>
                   </div>
-                  <div class="col-md-3 text-left">
+                  <div class="col-sm-6 col-12 col-md-3 col-lg-3 col-xl-3 text-left">
                       <div class="col-md-12">
                         <small class="text-muted">
                             Status

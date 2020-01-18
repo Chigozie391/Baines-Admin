@@ -14,28 +14,28 @@
           <div class="card">
               <div class="card-body">
                 <div class="row" *ngFor="let each of stat">
-                  <div class="col-6 col-sm-3 col-md-4 col-lg-3 col-xl-3">
+                  <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3">
                     <div class="user-data">
                         <h3>{{!each.total ? 'N/A' : each.total}}</h3>
                         <p class="text-muted">Total</p>
                     </div>
                 </div>
     
-                <div class="col-md-3 col-4 col-mb-4 green">
+                <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 green">
                   <div class="user-data">
                       <h3>{{!each.settled ? 'N/A' : each.settled}}</h3>
                       <p class="text-muted">Settled</p>
                   </div>
               </div>
     
-              <div class="col-6 col-sm-3 col-md-4 col-lg-3 col-xl-3 red">
+              <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 red">
                 <div class="user-data">
                     <h3>{{!each.running ? 'N/A' : each.running}}</h3>
                     <p class="text-muted">Running</p>
                 </div>
             </div>
     
-            <div class="col-6 col-sm-3 col-md-4 col-lg-3 col-xl-3">
+            <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3">
               <div class="user-data">
                   <h3>{{!each.borrowers ? 'N/A' : each.borrowers}}</h3>
                   <p class="text-muted">Borrowers</p>
@@ -64,7 +64,7 @@
               <hr>
   
               <div class="row">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4" *ngFor="let eachLoan of loans">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4" *ngFor="let eachLoan of loans | paginate: {itemsPerPage: 12, currentPage: p}">
                   <div class="card-white">
                     <div class="card-body">
                       <div class="col-md-12">
@@ -82,7 +82,7 @@
                       </div>
                       <div class="col-md-12">
                         <div class="user-data-space">
-                          <h5>{{!eachLoan.interest_due ? 'N/A' : eachLoan.interest_due}} %</h5>
+                          <h5>{{!eachLoan.interest_due ? 'N/A' : eachLoan.interest_due}3 %</h5>
                           <small class="text-muted">Interest Rate</small>
                         </div>
                       </div>
@@ -92,7 +92,11 @@
                   </div>
               </div>     
           </div>
-  
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+          </div>  
               </ng-template>
               </ngb-tab>
   

@@ -22,6 +22,7 @@ export class UsersComponent implements OnInit {
   title:String;
   names:any;
   config: any;
+  dataSet = [];
 
   constructor(private userService: UsersService,
               private authService: AuthService) { 
@@ -40,7 +41,19 @@ export class UsersComponent implements OnInit {
   users() {
     this.userService.getAllUsers().subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
-        this.user = res.data;
+        // this.user = res.data;
+        for(let i = 0; i < res.data.length; i++){
+          const data = {
+            'id' : res.data[i].id,
+            'client_id' : res.data[i].client_id,
+            'full_name' : `${res.data[i].first_name} ${res.data[i].last_name}`,
+            'phone_number' : res.data[i].phone_number,
+            'email' : res.data[i].email,
+            'activated' : res.data[i].activated,
+            'created_on' : res.data[i].created_on
+          }
+          this.user = this.dataSet.push(data);
+        }
       }
     }, (err) => {
       if (err.status === 401) {

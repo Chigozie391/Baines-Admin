@@ -33,6 +33,7 @@ export class TransactionComponent implements OnInit {
   allTransactions() {
     this.transactionService.getAllTransactions().subscribe((res: any) => {
       this.transaction = res.data;
+      console.log(res.data);
     });
   }
 

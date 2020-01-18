@@ -56,9 +56,9 @@
 
 
 
-              <tr *ngFor="let each of list | lastName : term | paginate: {itemsPerPage: 10, currentPage: p}">
-                  <td><a routerLink="{{each.user_id}}/general">{{each.last_name | uppercase}} {{each.first_name | uppercase}}</a></td>
-                  <td><a routerLink="{{each.user_id}}/general">{{each.user_id}}</a></td>
+              <tr *ngFor="let each of dataSet | fullName : term | paginate: {itemsPerPage: 10, currentPage: p}">
+                  <td><a routerLink="{{each.user_id}}/general">{{!each.full_name ? 'N/A' : each.full_name | uppercase}}</a></td>
+                  <td><a routerLink="{{each.user_id}}/general">{{!each.user_id ? 'N/A' : each.user_id}}</a></td>
                   <td>{{each.created_on | date}}</td>
                   <td *ngIf="each.activated === 1"><span class="badge badge-success">Active</span></td>
                   <td *ngIf="each.activated !== 1"><span class="badge badge-danger">Inactive</span></td>

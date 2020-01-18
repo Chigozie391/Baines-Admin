@@ -64,7 +64,7 @@
         <hr>
   
             <div class="row">
-              <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4" *ngFor="let eachProduct of loanProduct">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4" *ngFor="let eachProduct of loanProduct | paginate: {itemsPerPage: 12, currentPage: p}">
                 <div class="card-white">
                   <div class="card-body">
                     <div class="col-md-12">
@@ -101,6 +101,12 @@
                 </div>
             </div>
   
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
   </div>
   
   </ng-template>

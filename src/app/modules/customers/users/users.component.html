@@ -8,7 +8,7 @@
   <div class="row">
 
 
-    <div class="col-md-4 col-sm-12 col-12 col-mb-6">
+    <div class="col-md-4 col-sm-12 col-12 col-mb-6" style="margin-bottom: 1rem;">
       <div class="card">
         <div class="card-body">
             <div class="col-md-12 text-left">
@@ -35,7 +35,7 @@
       </div>
     </div>
   
-    <div class="col-md-4 col-sm-12 col-12 col-mb-6">
+    <div class="col-md-4 col-sm-12 col-12 col-mb-6" style="margin-bottom: 1rem;">
       <div class="card">
         <div class="card-body">
             <div class="col-md-12 text-left">
@@ -62,7 +62,7 @@
       </div>
     </div>
   
-    <div class="col-md-4 col-sm-12 col-12 col-mb-6">
+    <div class="col-md-4 col-sm-12 col-12 col-mb-6" style="margin-bottom: 1rem;">
       <div class="card">
         <div class="card-body">
             <div class="col-md-12 text-left">
@@ -119,7 +119,7 @@
 
         </div>
   
-        <table class="table" *ngIf="user">
+        <table class="table" *ngIf="dataSet">
           <thead>
             <tr>
               <th scope="col">Full Name</th>
@@ -135,11 +135,11 @@
   
   
   
-            <tr *ngFor="let each of user | lastName: term | paginate: {itemsPerPage: 10, currentPage: p}">
-                <td><a routerLink="{{each.id}}">{{!each.last_name ? "N/A" : each.last_name | uppercase}} {{!each.first_name ? 'N/A' : each.first_name | uppercase}}</a></td>
+            <tr *ngFor="let each of dataSet | fullName: term | paginate: {itemsPerPage: 10, currentPage: p}">
+                <td><a routerLink="{{each.id}}">{{!each.full_name ? "N/A" : each.full_name | uppercase}}</a></td>
                 <td><a routerLink="{{each.id}}">{{!each.client_id ? 'N/A' : each.client_id}}</a></td>
               <td>{{!each.email ? 'N/A' : each.email}}</td>
-              <td>Saver</td>
+              <td>-----</td>
               <td>{{!each.created_on ? 'N/A' : each.created_on | date}}</td>
                     <td *ngIf="each.activated === 1"><span class="badge badge-success">Active</span></td>
                     <td *ngIf="each.activated !== 1"><span class="badge badge-danger">Inactive</span></td>

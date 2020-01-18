@@ -68,7 +68,7 @@
                   <form>
                     <span class="has-search">
                       <mat-icon class="icon ml-1 search-icon">search</mat-icon>
-                    <input type="text" id="search" [(ngModel)]="term" name="search" placeholder="Search by name" class="search form-control" />
+                    <input type="text" id="search" [(ngModel)]="term" name="search" placeholder="Search by Transaction ID" class="search form-control" />
                   </span>
                 </form>
               </div>
@@ -89,7 +89,7 @@
                 </tr>
               </thead>
               <tbody class="text-muted">
-                <tr *ngFor="let eachTransaction of transaction | paginate: {itemsPerPage: 10, currentPage: p}">
+                <tr *ngFor="let eachTransaction of transaction | byId : term | paginate: {itemsPerPage: 10, currentPage: p}">
                   <td *ngIf="eachTransaction.status === 'success'"> <span class="badge badge-success">{{!eachTransaction.status ? 'N/A' : eachTransaction.status}}</span></td>
                   <td *ngIf="eachTransaction.status === 'pending'"> <span class="badge badge-warning">{{!eachTransaction.status ? 'N/A' : eachTransaction.status}}</span></td>
                   <td *ngIf="eachTransaction.status === 'failed'"> <span class="badge badge-danger">{{!eachTransaction.status ? 'N/A' : eachTransaction.status}}</span></td>

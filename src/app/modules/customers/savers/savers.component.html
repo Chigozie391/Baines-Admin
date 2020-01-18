@@ -41,8 +41,8 @@
               </tr>
             </thead>
             <tbody class="text-muted">
-                <tr *ngFor="let saver of savers | lastName : term | paginate: {itemsPerPage: 10, currentPage: p}">
-                  <td><a routerLink="{{saver.user_id}}/general">{{!saver.last_name ? 'N/A' : saver.last_name | uppercase}} {{!saver.first_name ? 'N/A' : saver.first_name | uppercase}}</a></td>
+                <tr *ngFor="let saver of dataSet | fullName : term | paginate: {itemsPerPage: 10, currentPage: p}">
+                  <td><a routerLink="{{saver.user_id}}/general">{{!saver.full_name ? 'N/A' : saver.full_name | uppercase}}</a></td>
                   <td><a routerLink="{{saver.user_id}}/general">{{!saver.user_id ? 'N/A' : saver.user_id}}</a></td>
                     <td>{{saver.created_on | date}}</td>
                     <td *ngIf="saver.activated === 1"><span class="badge badge-success">Active</span></td>

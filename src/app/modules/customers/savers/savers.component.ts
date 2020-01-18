@@ -16,6 +16,7 @@ export class SaversComponent implements OnInit {
   savers: any;
   msg: any;
   config: any;
+  dataSet = [];
 
   constructor(private saversService: SaversService,
               private userService: UsersService) { }
@@ -29,10 +30,17 @@ export class SaversComponent implements OnInit {
     this.saversService.getAllSavers().subscribe((res: any) => {
       this.loading = false;
       if (res.status === Constant.SUCCESS) {
-        this.savers = res.data;
-      }
-      else{
-
+        // this.savers = res.data;
+        // console.log(res.data);
+        for(let i = 0; i < res.data.length; i++){
+          const data = {
+            'user_id' : res.data[i].user_id,
+            'full_name' : `${res.data[i].first_name} ${res.data[i].last_name}`,
+            'activated' : res.data[i].activated,
+            'created_on' : res.data[i].created_on
+          }
+          this.savers = this.dataSet.push(data);
+        }
       }
     }, (err) => {
       this.loading = false;

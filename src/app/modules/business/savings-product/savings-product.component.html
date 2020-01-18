@@ -62,7 +62,7 @@
               <hr>
     
               <div class="row">
-                <div class="col-md-4 col-12 col-sm-6 col-mb-6" *ngFor="let eachProduct of savingsProduct">
+                <div class="col-md-4 col-12 col-sm-6 col-mb-6" *ngFor="let eachProduct of savingsProduct | paginate: {itemsPerPage: 12, currentPage: p}">
                   <div class="card-white">
                     <div class="card-body">
                       <div class="col-md-12">
@@ -97,10 +97,14 @@
                       </div>
                     </div>
                   </div>
-              </div> 
-  
+              </div>
+ 
     </div>
-  
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>  
   </ng-template>
   </ngb-tab>
   <ngb-tab id="test2">
@@ -139,11 +143,12 @@
                 </tr>
             </tbody>
           </table>
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <pagination-controls (pageChange)="p = $event"></pagination-controls>
-            </div>
-          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </div>
       </div>
   </ng-template>
