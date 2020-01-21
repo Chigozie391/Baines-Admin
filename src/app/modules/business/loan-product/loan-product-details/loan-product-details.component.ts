@@ -14,6 +14,7 @@ export class LoanProductDetailsComponent implements OnInit {
   details: any;
   borrowers: any;
   id: any;
+  dataSet = [];
 
   constructor(private route: ActivatedRoute,
     private authService: AuthService,
@@ -27,7 +28,16 @@ export class LoanProductDetailsComponent implements OnInit {
     this.loanProductService.getProductDetails(this.id).subscribe((res: any) => {
       if (res.status === Constant.SUCCESS) {
         this.details = res.data;
-        console.log(res.data);
+        this.borrowers = res.data.report;
+        for(let i = 0; i < res.data.report.length; i++){
+          const data = {
+            'user_id' : res.data.report[i].user_id,
+            'full_name' : `${res.data.report[i].first_name} ${res.data.report[i].last_name}`,
+            'loan_count' : res.data.report[i].loan_count,
+            'total' : res.data.report[i].total
+          }
+          this.borrowers = this.dataSet.push(data);
+        }
       }
     }, (err) => {
       if(err.status === 401){

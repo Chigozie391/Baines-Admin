@@ -41,7 +41,6 @@ export class UsersComponent implements OnInit {
   users() {
     this.userService.getAllUsers().subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
-        // this.user = res.data;
         for(let i = 0; i < res.data.length; i++){
           const data = {
             'id' : res.data[i].id,
@@ -75,12 +74,10 @@ export class UsersComponent implements OnInit {
         this.msg = res.message;
         this.users();
         this.usersStats();
-        console.log(this.msg);
       }
     }, (err) => {
-      if (err.status === 409) {
+      if (err.status !== 401) {
         this.msg = err.error.message;
-        console.log(this.msg);
       }
     });
   }
@@ -92,12 +89,10 @@ export class UsersComponent implements OnInit {
         this.msg = res.message;
         this.users();
         this.usersStats();
-        console.log(this.msg);
       }
     }, (err) => {
-      if (err.status === 409) {
+      if (err.status !== 401) {
         this.msg = err.error.message;
-        console.log(this.msg);
       }
     });
   }

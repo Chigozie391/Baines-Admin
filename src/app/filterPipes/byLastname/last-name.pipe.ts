@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'lastName'
+  name: 'fullName'
 })
 export class LastNamePipe implements PipeTransform {
 
@@ -12,7 +12,7 @@ export class LastNamePipe implements PipeTransform {
     } else {
     // check if search term exists
     return user.filter(function(each: any) {
-      return each.last_name.toLowerCase().includes(term.toLowerCase());
+      return each.full_name.toLowerCase().includes(term.toLowerCase());
     });
     }
   }

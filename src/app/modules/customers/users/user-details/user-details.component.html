@@ -1,5 +1,9 @@
-<div class="row">
+<!-- <div class="row">
   <a routerLink="/app/customers/users/" class="return">&larr; Back to Users</a>
+</div> -->
+
+<div class="row">
+  <a (click)="back()" class="return">&larr; Back</a>
 </div>
 
 <app-headers title="User Details" [crumbs]="borrowersName"></app-headers>

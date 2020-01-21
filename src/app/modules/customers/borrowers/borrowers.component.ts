@@ -68,7 +68,7 @@ export class BorrowersComponent implements OnInit {
         this.allBorrowers();
       }
     }, (err) => {
-      if (err.status === 409) {
+      if (err.status !== 401) {
         this.msg = err.error.message;
       }
     });
@@ -83,7 +83,7 @@ export class BorrowersComponent implements OnInit {
         this.allBorrowers();
       }
     }, (err) => {
-      if (err.status === 409) {
+      if (err.status !== 401) {
         this.msg = err.error.message;
       }
     });

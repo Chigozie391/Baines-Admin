@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TransactionsService } from 'src/app/service/transactions/transactions.service';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
   selector: 'app-transaction-details',
@@ -13,7 +14,8 @@ export class TransactionDetailsComponent implements OnInit {
   trans_details: any;
 
   constructor(private route: ActivatedRoute,
-    private transactionService: TransactionsService) { 
+    private transactionService: TransactionsService,
+    private authService: AuthService) { 
       this.route.paramMap.subscribe(params => {
         this.trans_id = params.get("id");
       });
@@ -26,6 +28,11 @@ export class TransactionDetailsComponent implements OnInit {
     transDetails(id) {
       this.transactionService.getTransDetails(id).subscribe((res: any) => {
         this.trans_details = res.data;
+      }, (err) => {
+        if(err.status === 401){
+          // this.msg = `${err.error.message} - Please logout to begin a new session`;
+          this.authService.logout();
+        }
       });
     }
 

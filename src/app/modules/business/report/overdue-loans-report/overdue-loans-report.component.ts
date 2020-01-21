@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Chart} from 'chart.js';
 import { ReportService } from 'src/app/service/reports/report.service';
 import { Constant } from 'src/app/utils/constant';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
   selector: 'app-overdue-loans-report',
@@ -12,7 +13,9 @@ export class OverdueLoansReportComponent implements OnInit {
   chart: any;
   all: any;
 
-  constructor(private reportService: ReportService) { }
+  constructor(
+    private reportService: ReportService,
+    private authService: AuthService) { }
 
   ngOnInit() {
     this.allOverDueLoans();
@@ -22,6 +25,11 @@ export class OverdueLoansReportComponent implements OnInit {
     this.reportService.overDueSavings().subscribe((res: any) => {
       if(res.status === Constant.SUCCESS){
         this.all = res.data;
+      }
+    }, (err) => {
+      if(err.status === 401){
+        // this.msg = `${err.error.message} - Please logout to begin a new session`;
+        this.authService.logout();
       }
     });
   }

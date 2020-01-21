@@ -7,6 +7,7 @@ import { Constant } from 'src/app/utils/constant';
 import { BankService } from 'src/app/service/bank/bank.service';
 import { UsersService } from 'src/app/service/users/users.service';
 import { BorrowersService } from 'src/app/service/borrowers/borrowers.service';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
   selector: 'app-borrowers-view',
@@ -35,6 +36,7 @@ export class BorrowersViewComponent implements OnInit {
     private bankService: BankService,
     private userService: UsersService,
     private borrowersService: BorrowersService,
+    private authService: AuthService,
     private route: ActivatedRoute) { 
 
   }
@@ -52,6 +54,11 @@ export class BorrowersViewComponent implements OnInit {
       if(res.status === Constant.SUCCESS) {
         this.borrower = res.data.user;
         this.moreProfile = res.data.loan_profile;
+      }
+    }, (err) => {
+      if(err.status === 401){
+        // this.msg = `${err.error.message} - Please logout to begin a new session`;
+        this.authService.logout();
       }
     }); 
     

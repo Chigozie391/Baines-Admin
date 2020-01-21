@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TransactionsService } from 'src/app/service/transactions/transactions.service';
 import { InnerLastNamePipe } from 'src/app/filterPipes/byLastname/inner-last-name.pipe';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
   selector: 'app-transaction',
@@ -17,7 +18,9 @@ export class TransactionComponent implements OnInit {
 
   config: any;
 
-  constructor(private transactionService: TransactionsService) { 
+  constructor(
+    private transactionService: TransactionsService,
+    private authService: AuthService) { 
 
   }
 
@@ -33,7 +36,11 @@ export class TransactionComponent implements OnInit {
   allTransactions() {
     this.transactionService.getAllTransactions().subscribe((res: any) => {
       this.transaction = res.data;
-      console.log(res.data);
+    }, (err) => {
+      if(err.status === 401){
+        // this.msg = `${err.error.message} - Please logout to begin a new session`;
+        this.authService.logout();
+      }
     });
   }
 

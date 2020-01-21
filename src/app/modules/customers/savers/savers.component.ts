@@ -3,6 +3,7 @@ import { SaversService } from 'src/app/service/savers/savers.service';
 import { Constant } from 'src/app/utils/constant';
 import { UsersService } from 'src/app/service/users/users.service';
 import { LastNamePipe } from 'src/app/filterPipes/byLastname/last-name.pipe';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
   selector: 'app-savers',
@@ -19,7 +20,8 @@ export class SaversComponent implements OnInit {
   dataSet = [];
 
   constructor(private saversService: SaversService,
-              private userService: UsersService) { }
+              private userService: UsersService,
+              private authService: AuthService) { }
 
   ngOnInit() {
     this.allSavers();
@@ -43,9 +45,11 @@ export class SaversComponent implements OnInit {
         }
       }
     }, (err) => {
-      this.loading = false;
-      console.log(err);
-    })
+      if(err.status === 401){
+        // this.msg = `${err.error.message} - Please logout to begin a new session`;
+        this.authService.logout();
+      }
+    });
   }
 
   pageChanged(event){

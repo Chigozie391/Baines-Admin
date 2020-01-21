@@ -6,6 +6,7 @@ import { BorrowersService } from 'src/app/service/borrowers/borrowers.service';
 import { SaversService } from 'src/app/service/savers/savers.service';
 import {Location} from '@angular/common';
 import { LoanPurposePipe } from 'src/app/filterPipes/byLoanPurpose/loan-purpose-pipe.pipe';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
   selector: 'app-user-details',
@@ -33,7 +34,9 @@ export class UserDetailsComponent implements OnInit {
   constructor(private userService: UsersService,
     private borrowersService: BorrowersService,
     private saverService: SaversService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private authService: AuthService,
+    private location: Location
     ) { }
 
   ngOnInit() {
@@ -46,6 +49,11 @@ export class UserDetailsComponent implements OnInit {
       if (res.status === Constant.SUCCESS) {
         this.userDetails = res.data.user;
         this.moreProfile = res.data.loan_profile;
+      }
+    }, (err) => {
+      if(err.status === 401){
+        // this.msg = `${err.error.message} - Please logout to begin a new session`;
+        this.authService.logout();
       }
     });
 
@@ -82,6 +90,8 @@ export class UserDetailsComponent implements OnInit {
     this.config.currentPage = event;
   }
 
-  
+  back(){
+    this.location.back();
+  }  
 
 }

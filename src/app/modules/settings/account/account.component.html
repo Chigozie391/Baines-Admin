@@ -41,14 +41,12 @@
                 </span>   -->
 
 
-                <!-- <label class="image-upload-container btn btn-bwm"> -->
                     <input #imageInput
                            type="file"
                            style="display: none;"
                            accept="image/*"
                            (change)="processFile(imageInput)">
                            <button (click)="imageInput.click()" class="btn btn-primary col-md-12">Add Image</button>
-                  <!-- </label> -->
                   
                   
                   <div *ngIf="selectedFile" style="margin-top: 5%;">
@@ -60,10 +58,9 @@
                     <div *ngIf="selectedFile.pending" class="alert alert-info">
                       Uploading image...
                     </div>
-                    <!-- <div class="row"> -->
+
                         <div *ngIf="selectedFile.status === 'ok'" class="alert alert-success"> Image Uploaded Succesfuly!</div>
                         <div *ngIf="selectedFile.status === 'fail'" class="alert alert-danger"> Image Upload Failed!</div>
-                    <!-- </div> -->
                   </div>
 
 

@@ -2,324 +2,163 @@
 
 <app-headers title="Savings Products"></app-headers>
 
+<div *ngIf="details">
 
-<!-- <div class="row"> -->
+  <!-- <div class="row"> -->
     <div class="col-md-12 col-12 col-mb-12">
-        <!-- <div class="card"> -->
-            <!-- <div class="card-body-menu"> -->
+      <!-- <div class="card"> -->
+          <!-- <div class="card-body-menu"> -->
 
 
-              <ngb-tabset type="pills" justify="justified">
-                <br>
-                <ngb-tab title="Loan Details">
+            <ngb-tabset type="pills" justify="justified">
+              <br>
+              <ngb-tab title="Loan Details">
+                  
+                  <ng-template ngbTabContent>
+                    <br>
+
+
                     
-                    <ng-template ngbTabContent>
-                      <br>
 
-
-                      
-
-
-                        <div class="card">
-                          <div class="card-body">
-                            <!-- <div class="row"> -->
-                              <div class="col-md-12 col-12 col-mb-12">
-                                  <div class="user-data">
-                                    <h3>{{!details?.name ? 'N/A' : details?.name | titlecase}}</h3>
-                                    <small class="text-muted">{{!details?.id ? 'N/A' : details?.id}}</small>
-                                  </div>
-                              </div>
-                          <!-- </div> -->
-                            </div>
-                        </div>
-                        <br>
 
                       <div class="card">
                         <div class="card-body">
-            
-                                <div class="row">
-                                  <div class="col-md-6 text-left">
-                                      <div class="col-md-12">
-                                        <small class="text-muted">
-                                            Amount
-                                        </small>
-                                        <h6>{{!details?.min_amount ? 'N/A' : details?.min_amount}} - {{!details?.max_amount ? 'N/A' : details?.max_amount}}</h6>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-6 text-left">
-                                      <div class="col-md-12 green">
-                                        <small class="text-muted">
-                                            Status
-                                        </small>
-                                        <h6 *ngIf="details?.status === 1" class="green">Active</h6>
-                                        <h6 *ngIf="details?.status === 0" class="red">Inactive</h6>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-6 text-left">
-                                      <div class="col-md-12">
-                                        <small class="text-muted">
-                                            Tenor
-                                        </small>
-                                        <h6>3 - 5 Months</h6>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-6 text-left">
-                                      <div class="col-md-12">
-                                        <small class="text-muted">
-                                            Description
-                                        </small>
-                                        <h6>{{!details?.description ? 'N/A' : details?.description}}</h6>
-                                      </div>
-                                  </div>
-                    
-                                  <div class="col-md-6 text-left">
-                                    <div class="col-md-12 green">
-                                      <small class="text-muted">
-                                          Interest
-                                      </small>
-                                      <h6>{{!details?.interest_rate ? 'N/A' : details?.interest_rate}}%</h6>
-                                    </div>
+                          <!-- <div class="row"> -->
+                            <div class="col-md-12 col-12 col-mb-12">
+                                <div class="user-data">
+                                  <h3>{{!details?.name ? 'N/A' : details?.name | titlecase}}</h3>
+                                  <small class="text-muted">{{!details?.id ? 'N/A' : details?.id}}</small>
                                 </div>
+                            </div>
+                        <!-- </div> -->
+                          </div>
+                      </div>
+                      <br>
 
-
+                    <div class="card">
+                      <div class="card-body">
+          
+                              <div class="row">
                                 <div class="col-md-6 text-left">
                                     <div class="col-md-12">
                                       <small class="text-muted">
-                                          Payment Method
+                                          Amount
                                       </small>
-                                      <h6>{{!details?.repayment_method.name ? 'N/A' : details?.repayment_method.name}}</h6>
+                                      <h6>{{!details?.min_amount ? 'N/A' : details?.min_amount}} - {{!details?.max_amount ? 'N/A' : details?.max_amount}}</h6>
                                     </div>
                                 </div>
+                                <div class="col-md-6 text-left">
+                                    <div class="col-md-12 green">
+                                      <small class="text-muted">
+                                          Status
+                                      </small>
+                                      <h6 *ngIf="details?.status === 1" class="green">Active</h6>
+                                      <h6 *ngIf="details?.status === 0" class="red">Inactive</h6>
+                                    </div>
                                 </div>
-                          </div>
-                </div>
-                      </ng-template>
-
-                      </ngb-tab>
-                      
-                      <ngb-tab title="Savers">
-                          <ng-template ngbTabContent>
-                            <br>
-                                <div class="table-responsive">
-
-                                  <div class="row justify-content-between align-items-center">
-                                    <div class="col">
-                                      <!-- <h6 class="m-0 p-0 text-dark-blue">Team members</h6> -->
+                                <div class="col-md-6 text-left">
+                                    <div class="col-md-12">
+                                      <small class="text-muted">
+                                          Tenor
+                                      </small>
+                                      <h5>
+                                        <div *ngFor="let item of details?.tenor_types" style="display: inline;">
+                                          {{!item.value ? 'N/A' : item.value}} days,
+                                        </div>
+                                      </h5>
+                                     </div>
+                                </div>
+                                <div class="col-md-6 text-left">
+                                    <div class="col-md-12">
+                                      <small class="text-muted">
+                                          Description
+                                      </small>
+                                      <h6>{{!details?.description ? 'N/A' : details?.description}}</h6>
                                     </div>
-                          
-                                    <div class="col-md-5 col-12 mb-12">
-                                      <span class="has-search">
-                                          <mat-icon class="icon ml-1 search-icon">search</mat-icon>
-                                        <input type="text" name="search" placeholder="Search by name, amount saved, e.t.c" class="search form-control" />
-                                      </span>
-                                    </div>
+                                </div>
+                  
+                                <div class="col-md-6 text-left">
+                                  <div class="col-md-12 green">
+                                    <small class="text-muted">
+                                        Interest
+                                    </small>
+                                    <h6>{{!details?.interest_rate ? 'N/A' : details?.interest_rate}}%</h6>
                                   </div>
-
-                                  <br>
-                                  <table class="table">
-                                    <thead>
-                                      <tr>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Number Of Savings Plan</th>
-                                        <th scope="col">Total Amount Saved</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody class="text-muted">
-                                      <tr *ngFor="let country of [1,2,3]">
-                                        <td>Olabode Samuel</td>
-                                        <td>3</td>
-                                        <td>₦120,510</td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </div>
-                          </ng-template>
-                      </ngb-tab>
-
-                      </ngb-tabset>
+                              </div>
 
 
-                    
-
-
-
-              <!-- <mat-tab-group>
-                    <mat-tab label="Details">
-                        <div class="container-fluid">
-                                <div class="col-md-12 col-12 mb-12">
-                                        <div class="row">
-                                            <div class="col-md-12 col-12 col-mb-12">
-                                                <div class="user-data">
-                                                    <h3>Student Savings</h3>
-                                                    <small class="text-muted">LSQ38389290</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                
-                                        <div class="row">
-                                          <div class="col-md-6 text-left">
-                                              <div class="col-md-12">
-                                                <small class="text-muted">
-                                                    Amount
-                 
-                 
-                                                </small>
-                                                <h6>5,000.00 - 35,000.00</h6>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6 text-left">
-                                              <div class="col-md-12 green">
-                                                <small class="text-muted">
-                                                    Status
-                                                </small>
-                                                <h6>Active</h6>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6 text-left">
-                                              <div class="col-md-12">
-                                                <small class="text-muted">
-                                                    Tenor
-                                                </small>
-                                                <h6>3 - 5 Months</h6>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6 text-left">
-                                              <div class="col-md-12">
-                                                <small class="text-muted">
-                                                    Description
-                                                </small>
-                                                <h6>Save money for educational needs</h6>
-                                              </div>
-                                          </div>
-                            
-                                          <div class="col-md-6 text-left">
-                                            <div class="col-md-12 green">
-                                              <small class="text-muted">
-                                                  Interest
-                                              </small>
-                                              <h6>9% - 11%</h6>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 text-left">
-                                            <div class="col-md-12">
-                                              <small class="text-muted">
-                                                  Frequency
-                                              </small>
-                                              <h6>Debited every week, monthly, daily</h6>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 text-left">
-                                            <div class="col-md-12">
-                                              <small class="text-muted">
-                                                  Payment Method
-                                              </small>
-                                              <h6>Card, Wallet</h6>
-                                            </div>
-                                        </div>
-                                        </div>
+                              <div class="col-md-6 text-left">
+                                  <div class="col-md-12">
+                                    <small class="text-muted">
+                                        Payment Method
+                                    </small>
+                                    <h6>{{!details?.repayment_method.name ? 'N/A' : details?.repayment_method.name}}</h6>
                                   </div>
+                              </div>
+                              </div>
                         </div>
-                    </mat-tab>
-                  <mat-tab label="Savers">
-                      <div class="container-fluid">
-                        <div class="table-responsive">
-                            <table class="table">
-                              <thead>
-                                <tr>
-                                  <th scope="col">Name</th>
-                                  <th scope="col">Number Of Savings Plan</th>
-                                  <th scope="col">Total Amount Saved</th>
-                                </tr>
-                              </thead>
-                              <tbody class="text-muted">
-                                <tr *ngFor="let country of [1,2,3]">
-                                  <td>Olabode Samuel</td>
-                                  <td>3</td>
-                                  <td>₦120,510</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                      </div>
-                  </mat-tab>
-              </mat-tab-group> -->
-
-
-
-
-
-
-
-            <!-- </div> -->
-        <!-- </div> -->
-    </div>
-  <!-- </div> -->
-
-
-
- 
-
-
-<!-- <div class="row">
-
-    <div class="col-md-12 col-12 mb-12">
-        <div class="card">
-          <div class="card-body">
-            <div class="row">
-                <div class="col-md-12 col-12 col-mb-12">
-                    <div class="user-data">
-                        <h3>Loan Product 001</h3>
-                        <small class="text-muted">LSQ38389290</small>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="row">
-              <div class="col-md-6 text-left">
-                  <div class="col-md-12">
-                    <small class="text-muted">
-                        Amount
-                    </small>
-                    <h6>5,000.00 - 25,000.00</h6>
-                  </div>
               </div>
-              <div class="col-md-6 text-left">
-                  <div class="col-md-12 green">
-                    <small class="text-muted">
-                        Status
-                    </small>
-                    <h6>Active</h6>
-                  </div>
-              </div>
-              <div class="col-md-6 text-left">
-                  <div class="col-md-12">
-                    <small class="text-muted">
-                        Tenor
-                    </small>
-                    <h6>15 Days</h6>
-                  </div>
-              </div>
-              <div class="col-md-6 text-left">
-                  <div class="col-md-12 red">
-                    <small class="text-muted">
-                        Repayment Method
-                    </small>
-                    <h6>Card & Wallet</h6>
-                  </div>
-              </div>
+                    </ng-template>
 
-              <div class="col-md-6 text-left">
-                <div class="col-md-12 red">
-                  <small class="text-muted">
-                      Interest
-                  </small>
-                  <h6>25%</h6>
-                </div>
-            </div>
-            </div>
-          </div>
-        </div>
+                    </ngb-tab>
+                    
+                    <ngb-tab title="Savers">
+                        <ng-template ngbTabContent>
+                          <br>
+                              <div class="table-responsive">
+
+                                <div class="row justify-content-between align-items-center">
+                                  <div class="col">
+                                    <!-- <h6 class="m-0 p-0 text-dark-blue">Team members</h6> -->
+                                  </div>
+                        
+                                  <div class="col-md-5 col-12 mb-12">
+                                    <span class="has-search">
+                                        <mat-icon class="icon ml-1 search-icon">search</mat-icon>
+                                        <input type="text" id="search" [(ngModel)]="term" name="search" placeholder="Search by name" class="search form-control" />
+                                      </span>
+                                  </div>
+                                </div>
+
+                                <br>
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">Name</th>
+                                      <th scope="col">Number Of Savings Plan</th>
+                                      <th scope="col">Total Amount Saved</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody class="text-muted">
+                                    <tr *ngFor="let each of dataSet | fullName: term | paginate: {itemsPerPage: 10, currentPage: p}">
+                                      <td> <a routerLink="/app/customers/users/{{each.user_id}}">{{!each.full_name ? 'N/A' : each.full_name | uppercase}}</a></td>
+                                      <td>{{!each.savings_count ? 'N/A' : each.savings_count}}</td>
+                                      <td>₦{{!each.total ? 'N/A' : each.total}}</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <div class="row">
+                                  <div class="col-md-12 text-center">
+                                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                                  </div>
+                                </div>
+                              </div>
+                        </ng-template>
+                    </ngb-tab>
+
+                    </ngb-tabset>
+
+  </div>
+
+
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card" *ngIf="!user">
+      <div class="card-body">
+        <h3 class="text-center text-muted">Fetching details...</h3>
       </div>
-  </div> -->
+    </div>
+  </div>
+</div>

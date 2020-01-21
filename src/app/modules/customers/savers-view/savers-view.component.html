@@ -180,12 +180,13 @@
           </thead>
           <tbody class="text-muted">
             <tr *ngFor="let eachSavings of userSavings">
-              <td *ngIf="eachSavings.is_matured === 0"> <span class="badge badge-danger">Running</span></td>
-              <td *ngIf="eachSavings.is_matured !== 0"> <span class="badge badge-success">Active</span></td>
+              <td *ngIf="eachSavings.status === 0 && eachSavings.is_matured === 0"> <span class="badge badge-danger">Inactive</span></td>
+              <td *ngIf="eachSavings.status === 1 && eachSavings.is_matured === 0"> <span class="badge badge-warning">Active</span></td>
+              <td *ngIf=" eachSavings.is_matured === 1"> <span class="badge badge-success">Matured</span></td>
               <td><a routerLink="{{eachSavings.id}}">{{!eachSavings.id ? 'N/A' : eachSavings.id}}</a></td>
               <td><a routerLink="{{eachSavings.id}}">{{!eachSavings.name ? 'N/A' : eachSavings.name}}</a></td>
               <td>{{!eachSavings.product_id ? 'N/A' : eachSavings.product_id}}</td>
-              <td>{{'--------'}}</td>
+              <td>{{!eachSavings.next_saving_date ? 'N/A' : eachSavings.next_saving_date | date}}</td>
               <td>₦ {{!eachSavings.balance ? 'N/A' : eachSavings.balance}}</td>
             </tr>
           </tbody>

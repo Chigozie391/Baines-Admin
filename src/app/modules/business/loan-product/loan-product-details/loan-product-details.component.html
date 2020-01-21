@@ -55,7 +55,7 @@
                                       </small>
                                       <h5>
                                       <div *ngFor="let item of details?.tenor_types" style="display: inline;">
-                                        {{!item.value ? 'N/A' : item.value}}
+                                        {{!item.value ? 'N/A' : item.value}} days,
                                       </div>
                                     </h5>
                                     </div>
@@ -120,13 +120,18 @@
                               </tr>
                             </thead>
                             <tbody class="text-muted">
-                              <tr *ngFor="let country of [1,2,3]">
-                                <td>Olabode Samuel</td>
-                                <td>3</td>
-                                <td>₦120,510</td>
+                              <tr *ngFor="let each of dataSet | fullName: term | paginate: {itemsPerPage: 10, currentPage: p}">
+                                <td><a routerLink="/app/customers/users/{{each.user_id}}">{{!each.full_name ? 'N/A' : each.full_name | uppercase}}</a></td>
+                                <td>{{!each.loan_count ? 'N/A' : each.loan_count}}</td>
+                                <td>₦ {{!each.total ? 'N/A' : each.total}}</td>
                               </tr>
                             </tbody>
                           </table>
+                          <div class="row">
+                            <div class="col-md-12 text-center">
+                              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                            </div>
+                          </div>
                         </div>
                     </div>
                   </ng-template>

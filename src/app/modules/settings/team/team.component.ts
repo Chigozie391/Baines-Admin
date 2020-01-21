@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from 'src/app/service/team/team.service';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
   selector: 'app-team',
@@ -10,7 +11,8 @@ export class TeamComponent implements OnInit {
 
   members: any;
 
-  constructor(private teamService: TeamService) { }
+  constructor(private teamService: TeamService,
+    private authService: AuthService) { }
 
   ngOnInit() {
     this.teamMembers();
@@ -19,7 +21,11 @@ export class TeamComponent implements OnInit {
   teamMembers(){
     this.teamService.getTeamMembers().subscribe((res: any) => {
       this.members = res.data;
-    })
+    }, (err) => {
+      if (err.status === 401) {
+        this.authService.logout();
+      }
+    });
   }
 
 }

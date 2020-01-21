@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Constant } from 'src/app/utils/constant';
 import { SavingsProductService } from 'src/app/service/savings-product/savings-product.service';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
   selector: 'app-savings-product',
@@ -14,7 +15,9 @@ export class SavingsProductComponent implements OnInit {
   Stats: any;
   msg: any;
 
-  constructor(private savingsProductService: SavingsProductService) { }
+  constructor(
+    private savingsProductService: SavingsProductService,
+    private authService: AuthService) { }
 
   ngOnInit() {
     this.getSavingsProduct();
@@ -25,13 +28,12 @@ export class SavingsProductComponent implements OnInit {
     this.savingsProductService.getSavingsProduct().subscribe((res: any) => {
       if (res.status === Constant.SUCCESS) {
         this.savingsProduct = res.data;
-        console.log(res.data);
       }
     }, (err) => {
       if(err.status === 401){
-        this.msg = `${err.error.message} - Please logout to begin a new session`;
+        // this.msg = `${err.error.message} - Please logout to begin a new session`;
+        this.authService.logout();
       }
-      console.log(err);
     });
   }
 

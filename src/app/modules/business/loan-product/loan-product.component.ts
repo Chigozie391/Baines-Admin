@@ -33,6 +33,10 @@ export class LoanProductComponent implements OnInit {
     this.loanProductService.getLoanProducts().subscribe((res:any)=> {
       if (res.status === Constant.SUCCESS) {
         this.loanProduct = res.data;
+        console.log(this.loanProduct);
+        // this.loanProductService.getProductDetails(res.data.id).subscribe((count: any) => {
+        //   console.log(count);
+        // })
       }
     }, (err) => {
       if(err.status === 401){

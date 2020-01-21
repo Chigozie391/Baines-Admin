@@ -4,7 +4,6 @@ import { AuthService } from 'src/app/service/auth/auth.service';
 import { AccountModel } from './account.model';
 import { Constant } from 'src/app/utils/constant';
 import { HttpClient } from '@angular/common/http';
-import { Endpoint } from 'src/app/utils/endpoint';
 
 
 class ImageSnippet {
@@ -63,16 +62,6 @@ export class AccountComponent implements OnInit {
     });
   }
 
-  // onFileChanged(event){
-  //   this.selectedFile = event.target.files[0];
-  // }
-
-  // onUpload(){
-  //   this.authService.uploadImage(this.selectedFile).subscribe((res: any) => {
-  //     console.log(res);
-  //   });
-  // }
-
 
 
   private onSuccess() {
@@ -94,7 +83,10 @@ export class AccountComponent implements OnInit {
 
       this.selectedFile = new ImageSnippet(event.target.result, file);
       this.selectedFile.pending = true;
-      this.authService.uploadImage(this.selectedFile.file).subscribe(
+      const uploadData = new FormData();
+      uploadData.append('file', file, file.name);
+
+      this.authService.uploadImage(uploadData).subscribe(
         (res) => {
           
           this.onSuccess();
@@ -108,4 +100,5 @@ export class AccountComponent implements OnInit {
     reader.readAsDataURL(file);
   }
 
-}
+
+  }

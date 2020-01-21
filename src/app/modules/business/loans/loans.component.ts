@@ -41,7 +41,7 @@ export class LoansComponent implements OnInit {
   loansStat(){
     this.loansService.getLoanStats().subscribe((res: any) => {
       if(res.status === Constant.SUCCESS){
-        this.stat = res.data;
+        this.stat = res.data.loan_performance;
       }
     });
   }

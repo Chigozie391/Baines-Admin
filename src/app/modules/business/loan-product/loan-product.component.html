@@ -82,8 +82,8 @@
                     </div>
                     <div class="col-md-12">
                       <div class="user-data-space">
-                        <h6>{{!eachProduct.interest_rate ? 'N/A' : eachProduct.interest_rate}}%</h6>
-                        <small class="text-muted">Interest Rate</small>
+                        <h6>{{!eachProduct.interest_rate ? 'N/A' : eachProduct.interest_rate}}</h6>
+                        <small class="text-muted">Interest</small>
                       </div>
                     </div>
                     <hr>
@@ -136,7 +136,7 @@
               <tr *ngFor="let eachProduct of loanProduct | paginate: {itemsPerPage: 10, currentPage: p}">
                 <td><a routerLink="{{eachProduct.id}}">{{!eachProduct.name ? 'N/A' : eachProduct.name}}</a></td>
                 <td><a routerLink="{{eachProduct.id}}">{{!eachProduct.id ? 'N/A' : eachProduct.id}}</a></td>
-                <td><a routerLink="{{eachProduct.id}}">{{!eachProduct.interest_rate ? 'N/A' : eachProduct.interest_rate}}%</a></td>
+                <td><a routerLink="{{eachProduct.id}}">{{!eachProduct.interest_rate ? 'N/A' : eachProduct.interest_rate}}</a></td>
                 <td>{{!eachProduct.min_amount ? 'N/A' : eachProduct.min_amount}} - {{!eachProduct.max_amount ? 'N/A' : eachProduct.max_amount}}</td>
                 <td>-----</td>
                 <td>

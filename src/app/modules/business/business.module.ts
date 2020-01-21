@@ -35,6 +35,7 @@ import { SavingsReportDetailsComponent } from './report/savings-product-report/d
 import { UsersReportDetailsComponent } from './report/users-report/details/details.component';
 import { TypePipe } from 'src/app/filterPipes/byType/type.pipe';
 import { ByIdPipe } from 'src/app/filterPipes/byId/by-id.pipe';
+import { FirstNamePipe } from 'src/app/filterPipes/byFirstname/first-name.pipe';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { ByIdPipe } from 'src/app/filterPipes/byId/by-id.pipe';
      LoanReportDetailsComponent, MatureReportDetailsComponent,
      SavingsReportDetailsComponent, UsersReportDetailsComponent,
      TypePipe,
-     ByIdPipe
+     ByIdPipe,
+     FirstNamePipe
     ],
   imports: [
     CommonModule,

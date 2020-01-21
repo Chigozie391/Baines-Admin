@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SaversService } from 'src/app/service/savers/savers.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
   selector: 'app-savings-details',
@@ -14,7 +15,8 @@ export class SavingsDetailsComponent implements OnInit {
   saving_transactions: any;
 
   constructor(private saversService: SaversService,
-    private route: ActivatedRoute) { 
+    private route: ActivatedRoute,
+    private authService: AuthService) { 
     this.route.paramMap.subscribe(params => {
       this.savings_id = params.get("id");
     });
@@ -28,7 +30,11 @@ export class SavingsDetailsComponent implements OnInit {
     this.saversService.getSavingsDetails(savings_id).subscribe((res: any) => {
       this.savings_details = res.data;
       this.saving_transactions = res.data.saving_transactions;
-      console.log(res.data);
+    }, (err) => {
+      if(err.status === 401){
+        // this.msg = `${err.error.message} - Please logout to begin a new session`;
+        this.authService.logout();
+      }
     });
   }
 
