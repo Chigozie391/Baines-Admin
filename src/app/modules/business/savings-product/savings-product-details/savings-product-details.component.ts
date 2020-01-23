@@ -3,6 +3,7 @@ import { SavingsProductService } from 'src/app/service/savings-product/savings-p
 import { Constant } from 'src/app/utils/constant';
 import { ActivatedRoute } from '@angular/router';
 import { FirstNamePipe } from 'src/app/filterPipes/byFirstname/first-name.pipe';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
   selector: 'app-savings-product-details',
@@ -19,7 +20,9 @@ export class SavingsProductDetailsComponent implements OnInit {
   term: any;
   config: any;
 
-  constructor(private route: ActivatedRoute, private savingsProductService: SavingsProductService) { 
+  constructor(private route: ActivatedRoute, 
+    private savingsProductService: SavingsProductService,
+    private authService: AuthService) { 
     this.route.paramMap.subscribe(params => {
       this.id = params.get("id");
     });
@@ -44,6 +47,11 @@ export class SavingsProductDetailsComponent implements OnInit {
           }
           this.savers = this.dataSet.push(data);
         }
+      }
+    }, (err) => {
+      if(err.status === 401){
+        // this.msg = `${err.error.message} - Please logout to begin a new session`;
+        this.authService.logout();
       }
     });
   }

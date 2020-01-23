@@ -41,7 +41,6 @@ export class LoanProductDetailsComponent implements OnInit {
       }
     }, (err) => {
       if(err.status === 401){
-        // this.msg = `${err.error.message} - Please logout to begin a new session`;
         this.authService.logout();
       }
     });

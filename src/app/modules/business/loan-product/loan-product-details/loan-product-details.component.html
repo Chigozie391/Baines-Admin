@@ -16,12 +16,22 @@
                         
                         <div class="card">
                           <div class="card-body">
-                              <div class="col-md-12 col-12 col-mb-12">
-                                  <div class="user-data">
-                                      <h3>{{!details?.name ? 'N/A' : details?.name}}</h3>
-                                      <small class="text-muted">{{!details?.id ? 'N/A' : details?.id}}</small>
-                                  </div>
+                            <div class="row">
+                              <div class="col-12 col-sm-12 col-md-9">
+                                <div class="user-data">
+                                    <h3>{{!details?.name ? 'N/A' : details?.name}}</h3>
+                                    <small class="text-muted">{{!details?.id ? 'N/A' : details?.id}}</small>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-12 col-md-3">
+                              <div class="user-data" style="line-height: 1rem;">
+                                <small class="text-muted">Borrowers</small>
+                                <h3>{{!borrowers ? 'N/A' : borrowers}}</h3>
                               </div>
+                          </div>
+                            </div>
+
                   
                           </div>
                         </div>
@@ -77,6 +87,8 @@
                                     <h5>{{!details?.interest_rate ? 'N/A' : details?.interest_rate}}%</h5>
                                   </div>
                               </div>
+
+
                               </div>
 
                           </div>

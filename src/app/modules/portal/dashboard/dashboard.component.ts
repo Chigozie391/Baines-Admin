@@ -1,5 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import {Chart} from 'chart.js';
+import { LoansService } from 'src/app/service/loans/loans.service';
+import { Constant } from 'src/app/utils/constant';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,10 +11,26 @@ import {Chart} from 'chart.js';
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
   chart: any;
+  stat: any;
 
-  constructor() { }
+  constructor(private loansService: LoansService, private authService: AuthService) { }
 
   ngOnInit() {
+    this.loansStat();
+  }
+
+  loansStat(){
+    this.loansService.getLoanStats().subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS){
+        this.stat = res.data;
+        console.log(this.stat);
+      }
+    }, (err) => {
+      if(err.status === 401){
+        // this.msg = `${err.error.message} - Please logout to begin a new session`;
+        this.authService.logout();
+      }
+    });
   }
 
   ngAfterViewInit() {

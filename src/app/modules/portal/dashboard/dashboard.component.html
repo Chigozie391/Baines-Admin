@@ -35,104 +35,9 @@
   
   <div class="row">
   
-    <!-- <div class="col-md-1 col-1 mb-1"></div>
-    <div class="col-md-9 col-12 mb-9">
+    <div class="col-md-4" *ngIf="stat">
       <div class="card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-3">
-                <div class="col-md-12 text-center">
-                  <small class="text-muted">
-                    <span class="dark-blue-square"></span> 
-                      Total Loan Amount
-                  </small>
-                  <h6>₦500,000,000.00</h6>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="col-md-12 text-center">
-                  <small class="text-muted">
-                    <span class="dark-blue-square"></span> 
-                      Pending Loan Amount
-                  </small>
-                  <h6>₦100,000,000.00</h6>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="col-md-12 red text-center">
-                  <small class="text-muted">
-                    <span class="dark-blue-square"></span> 
-                      Total Failed Loan Amount
-                  </small>
-                  <h6>₦20,000,000.00</h6>
-                </div>
-            </div>
-          </div>
-  
-          <div class="row">
-            <div class="col-md-3">
-              <div class="row">
-                <div class="col-md-12 text-center">
-                  <small class="text-muted">
-                    <span class="dark-blue-square"></span> 
-                      Total Loan Count
-                  </small>
-                  <h6>500</h6>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="row">
-                <div class="col-md-12 text-center">
-                  <small class="text-muted">
-                    <span class="dark-blue-square"></span> 
-                      Loans Due
-                  </small>
-                  <h6>₦100,000,000.00</h6>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="row">
-                <div class="col-md-12 red text-center">
-                  <small class="text-muted">
-                    <span class="dark-blue-square"></span> 
-                      Failed Loans
-                  </small>
-                  <h6>10</h6>
-                </div>
-              </div>
-            </div>
-          </div>
-  
-  
-          <div class="row mb-6">
-            <div class="col">
-              <small class="text-muted">Overviews</small>
-              <h6 class="font-weight-bold">Lenders</h6>
-            </div>
-            <div class="col-auto">
-              <div class="row">
-                <div class="col-auto text-right">
-                  <small class="text-muted"><span class="dark-blue-square"></span> Total</small>
-                  <h6>₦500,000.00</h6>
-                </div>
-                <div class="col-auto text-right">
-                  <small class="text-muted"><span class="red-square"></span> Active</small>
-                  <h6>₦20,000.00</h6>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-2 col-2 mb-2"></div>
-   -->
-  
-    <div class="col-md-4">
-      <div class="card">
-        <div class="card-body">
+        <div class="card-body" *ngFor="let item of stat.loan_disbursed">
             <div class="col-md-12 text-left">
               <h5>Loans Disbursed</h5>
             </div>
@@ -143,7 +48,7 @@
                     <small class="text-muted">
                         Amount
                     </small>
-                    <h6>₦45,000,000</h6>
+                    <h6>₦ {{item.total_amount}}</h6>
                   </div>
               </div>
    
@@ -153,7 +58,7 @@
                     <small class="text-muted">
                         Count
                     </small>
-                    <h6>504</h6>
+                    <h6>{{item.count}}</h6>
                   </div>
               </div>
             </div>
@@ -161,9 +66,9 @@
       </div>
     </div>
   
-    <div class="col-md-4">
+    <div class="col-md-4" *ngIf="stat">
       <div class="card">
-        <div class="card-body">
+        <div class="card-body" *ngFor="let item of stat.loan_due_today">
             <div class="col-md-12 text-left">
               <h5>Loans Due Today</h5>
             </div>
@@ -174,7 +79,7 @@
                     <small class="text-muted">
                         Amount
                     </small>
-                    <h6>₦3,998,000</h6>
+                    <h6>₦ {{item.total_due_today}}</h6>
                   <!-- </div> -->
               </div>
    
@@ -184,7 +89,7 @@
                     <small class="text-muted">
                         Count
                     </small>
-                    <h6>54</h6>
+                    <h6>{{item.count}}</h6>
                   <!-- </div> -->
               </div>
             </div>
@@ -192,9 +97,9 @@
       </div>
     </div>
   
-    <div class="col-md-4">
+    <div class="col-md-4" *ngIf="stat">
       <div class="card">
-        <div class="card-body">
+        <div class="card-body" *ngFor="let item of stat.loan_default">
             <div class="col-md-12 text-left">
               <h5>Loans Defaults</h5>
             </div>
@@ -205,7 +110,7 @@
                     <small class="text-muted">
                         Amount
                     </small>
-                    <h6>₦3,998,000</h6>
+                    <h6>₦ {{item.total_default}}</h6>
                   <!-- </div> -->
               </div>
    
@@ -215,7 +120,7 @@
                     <small class="text-muted">
                         Count
                     </small>
-                    <h6>54</h6>
+                    <h6>{{item.count}}</h6>
                   <!-- </div> -->
               </div>
             </div>
