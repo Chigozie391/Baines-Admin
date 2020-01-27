@@ -117,12 +117,12 @@ export class NavigationComponent implements OnInit {
         url: '/app/settings/account',
         sub: []
       },
-      {
-        icon: 'bank',
-        route: 'Bank Information',
-        url: '/app/settings/bank-information',
-        sub: []
-      },
+      // {
+      //   icon: 'bank',
+      //   route: 'Bank Information',
+      //   url: '/app/settings/bank-information',
+      //   sub: []
+      // },
       {
         icon: 'team',
         route: 'Team',

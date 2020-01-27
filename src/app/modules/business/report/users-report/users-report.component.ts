@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Chart} from 'chart.js';
+import { UsersService } from 'src/app/service/users/users.service';
 
 @Component({
   selector: 'app-users-report',
@@ -8,10 +9,18 @@ import {Chart} from 'chart.js';
 })
 export class UsersReportComponent implements OnInit {
   chart: any;
+  stats: any;
 
-  constructor() { }
+  constructor(private userService: UsersService) { }
 
   ngOnInit() {
+    this.usersStats();
+  }
+
+  usersStats() {
+    this.userService.getUsersStats().subscribe((res: any) => {
+      this.stats = res.data;
+    });
   }
 
   ngAfterViewInit() {

@@ -27,6 +27,7 @@ export class AccountComponent implements OnInit {
   pwd = new AccountModel();
   msg: any;
   selectedFile: ImageSnippet;
+  img_url: string;
 
   constructor(config: NgbModalConfig,
      private modalService: NgbModal,
@@ -42,11 +43,13 @@ export class AccountComponent implements OnInit {
   
   ngOnInit() {
     this.userProfile();
+    console.log(this.authService.user);
   }
 
   userProfile(){
     this.account_name = this.authService.user.full_name;
     this.email = this.authService.user.email;
+    this.img_url = this.authService.user.image_url;
   }
 
   changePwd(){

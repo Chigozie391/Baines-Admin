@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <div class="col-12 col-sm-12 col-md-5">
+  <div class="col-12 col-sm-12 col-md-5" *ngIf="stats">
 
     <div class="card" style="margin-bottom: .7rem;">
         <div class="card-body">
@@ -26,7 +26,7 @@
                 <small class="text-muted">
                     Total Accounts
                 </small>
-                <h5 class="font-weight-bold">3,998,000</h5>
+                <h5 class="font-weight-bold">{{!stats?.userCount.total_user ? 'N/A' : stats?.userCount.total_user}}</h5>
                 <small>5% (10 days) </small> 
                 <mat-icon style="position: absolute;">arrow_drop_down</mat-icon>
             </div>
@@ -37,7 +37,7 @@
                     <small class="text-muted">
                         Active Accounts
                     </small>
-                    <h5 class="font-weight-bold" style="color: orange;">3,998,000</h5>
+                    <h5 class="font-weight-bold green">{{!stats?.userCount.active ? 'N/A' : stats?.userCount.active}}</h5>
                   <!-- </div> -->
               </div>
    
@@ -47,7 +47,7 @@
                     <small class="text-muted">
                         Inactive Accounts
                     </small>
-                    <h5 class="font-weight-bold">54</h5>
+                    <h5 class="font-weight-bold">{{!stats?.userCount.inactive ? 'N/A' : stats?.userCount.inactive}}</h5>
                   <!-- </div> -->
               </div>
 
@@ -56,7 +56,7 @@
                   <small class="text-muted">
                     Pending Accounts
                   </small>
-                  <h5 class="font-weight-bold">54</h5>
+                  <h5 class="font-weight-bold" style="color: orange;">{{!stats?.userCount.pending ? 'N/A' : stats?.userCount.pending}}</h5>
                 <!-- </div> -->
             </div>
 
@@ -71,7 +71,7 @@
                     <small class="text-muted">
                         Savers
                     </small>
-                    <h5 class="font-weight-bold">3,998,000</h5>
+                    <h5 class="font-weight-bold green">{{!stats?.category.saverCount ? 'N/A' : stats?.category.saverCount}}</h5>
                     <small>5% (10 days)</small>
                     <mat-icon style="position: absolute;">arrow_drop_down</mat-icon>
                 </div>
@@ -81,7 +81,7 @@
                     <small class="text-muted">
                         Borrowers
                     </small>
-                    <h5 class="font-weight-bold">54</h5>
+                    <h5 class="font-weight-bold red">{{!stats?.category.loanCount ? 'N/A' : stats?.category.loanCount}}</h5>
                     <small>5% (10 days)</small>
                     <mat-icon style="position: absolute;">arrow_drop_down</mat-icon>
                 </div>
@@ -141,18 +141,22 @@
                 <tr>
                   <th scope="col">Date Joined</th>
                   <th scope="col">user Id</th>
-                  <th scope="col">Activation status</th>
-                  <th scope="col">Savings status</th>
-                  <th scope="col">Loan status</th>
+                  <th scope="col">Mobile No.</th>
+                  <th scope="col">Onboarding Stage</th>
+                  <!-- <th scope="col">Activation status</th> -->
+                  <!-- <th scope="col">Savings status</th> -->
+                  <!-- <th scope="col">Loan status</th> -->
                 </tr>
               </thead>
               <tbody class="text-muted">
                 <tr *ngFor="let eachProduct of [1,2,3,4,5]">
                   <td><a routerLink="LS229844">14 Sep 2019, 07:45:21</a></td>
                   <td><a routerLink="LS229844">LS229844</a></td>
-                  <td><a routerLink="LS229844">Active</a></td>
-                  <td>Active</td>
-                  <td>Pending</td>
+                  <td><a routerLink="LS229844">08128038453</a></td>
+                  <td><a routerLink="LS229844">------</a></td>
+                  <!-- <td><a routerLink="LS229844">Active</a></td> -->
+                  <!-- <td>Active</td> -->
+                  <!-- <td>Pending</td> -->
                   </tr>
               </tbody>
             </table>

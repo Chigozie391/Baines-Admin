@@ -3,6 +3,7 @@ import {Chart} from 'chart.js';
 import { LoansService } from 'src/app/service/loans/loans.service';
 import { Constant } from 'src/app/utils/constant';
 import { AuthService } from 'src/app/service/auth/auth.service';
+import { Container } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,23 +13,32 @@ import { AuthService } from 'src/app/service/auth/auth.service';
 export class DashboardComponent implements OnInit, AfterViewInit {
   chart: any;
   stat: any;
+  wallet: string;
 
   constructor(private loansService: LoansService, private authService: AuthService) { }
 
   ngOnInit() {
     this.loansStat();
+    this.walletBalance();
   }
 
   loansStat(){
     this.loansService.getLoanStats().subscribe((res: any) => {
       if(res.status === Constant.SUCCESS){
         this.stat = res.data;
-        console.log(this.stat);
       }
     }, (err) => {
       if(err.status === 401){
         // this.msg = `${err.error.message} - Please logout to begin a new session`;
         this.authService.logout();
+      }
+    });
+  }
+
+  walletBalance(){
+    this.loansService.getWalletBalance().subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS){
+        this.wallet = res.data.Data;
       }
     });
   }

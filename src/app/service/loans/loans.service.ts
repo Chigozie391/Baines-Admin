@@ -22,4 +22,8 @@ export class LoansService {
   getLoanStats(){
     return this.http.get(Endpoint.LOANS_STATS);
   }
+
+  getWalletBalance(){
+    return this.http.get(`${Endpoint.REPORTS}/wallet-balance`);
+  }
 }
