@@ -181,7 +181,7 @@
                       <small class="text-muted">
                           Loan Repayment
                       </small>
-                      <h6><strong>40,000</strong></h6>
+                      <h6><strong>-------</strong></h6>
                     </div>
                 </div>
     
@@ -234,7 +234,7 @@
                   <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 text-right">
                     <div class="user-data">
                       <p>Total Loans Received</p>
-                        <h3>{{!borrowerLoans?.total_loan_amount ? 'N/A' : borrowerLoans?.total_loan_amount}}</h3>
+                        <h3>{{!borrowerLoans?.total_loan_amount ? 'N/A' : borrowerLoans?.total_loan_amount | currency : '₦'}}</h3>
                     </div>
                 </div>
                   </div>
@@ -287,7 +287,7 @@
                         <td>{{!loan.tenor_type.value ? 'N/A' : loan.tenor_type.value}} days</td>
                         <!-- <td>{{loan.created_on | date}}</td> -->
                         <td>{{!loan.schedule.repayment_day ? 'N/A' : loan.schedule.repayment_day | date}}</td>
-                        <td>₦{{!loan.loan_amount ? 'N/A' : loan.loan_amount}}</td>
+                        <td>{{!loan.loan_amount ? 'N/A' : loan.loan_amount | currency : '₦'}}</td>
                       </tr>
                     </tbody>
                   </table>

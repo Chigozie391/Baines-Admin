@@ -128,7 +128,6 @@
                 <th scope="col">ID</th>
                 <th scope="col">Interest</th>
                 <th scope="col">Amount</th>
-                <th scope="col">Borrowers</th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
@@ -138,7 +137,6 @@
                 <td><a routerLink="{{eachProduct.id}}">{{!eachProduct.id ? 'N/A' : eachProduct.id}}</a></td>
                 <td><a routerLink="{{eachProduct.id}}">{{!eachProduct.interest_rate ? 'N/A' : eachProduct.interest_rate}}</a></td>
                 <td>{{!eachProduct.min_amount ? 'N/A' : eachProduct.min_amount}} - {{!eachProduct.max_amount ? 'N/A' : eachProduct.max_amount}}</td>
-                <td>-----</td>
                 <td>
                   <span [matMenuTriggerFor]="action" class="action">
                     &#8226;&#8226;&#8226;

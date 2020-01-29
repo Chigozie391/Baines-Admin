@@ -143,7 +143,7 @@
                                     <tr *ngFor="let each of dataSet | fullName: term | paginate: {itemsPerPage: 10, currentPage: p}">
                                       <td> <a routerLink="/app/customers/users/{{each.user_id}}">{{!each.full_name ? 'N/A' : each.full_name | uppercase}}</a></td>
                                       <td>{{!each.savings_count ? 'N/A' : each.savings_count}}</td>
-                                      <td>₦{{!each.total ? 'N/A' : each.total}}</td>
+                                      <td>{{!each.total ? 'N/A' : each.total | currency : '₦'}}</td>
                                     </tr>
                                   </tbody>
                                 </table>

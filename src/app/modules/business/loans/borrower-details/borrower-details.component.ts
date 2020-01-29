@@ -51,6 +51,7 @@ export class BorrowerDetailsComponent implements OnInit {
         this.loan_schedule = res.data.schedule;
         this.moreProfile = res.data.loan_profile;      
       }
+      console.log(res.data);
     }, (err) => {
       if (err.status === 401) {
         this.authService.logout();

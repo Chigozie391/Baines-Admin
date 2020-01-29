@@ -110,7 +110,7 @@
                             <div class="col-md-3 col-12 col-mb-12">
                                 <div class="user-data">
                                     <h6>Plan Balance</h6>
-                                    <h4>₦{{!Details?.balance ? 'N/A' : Details?.balance}}</h4>
+                                    <h4>{{!Details?.balance ? 'N/A' : Details?.balance | currency : '₦'}}</h4>
                                   </div>
                             </div>
                         </div>
@@ -129,7 +129,7 @@
                                 <small class="text-muted">
                                     Periodic Amount
                                 </small>
-                                <h6>₦ {{!Details?.periodic_amount ? 'N/A' : Details?.periodic_amount}}</h6>
+                                <h6>{{!Details?.periodic_amount ? 'N/A' : Details?.periodic_amount | currency : '₦'}}</h6>
                               </div>
                           </div>
                           <div class="col-md-3 text-left">
@@ -209,7 +209,7 @@
                       <td>{{!each.transaction_entry ? 'N/A' : each.transaction_entry.name}}</td>
                       <td>{{!each.type ? "N/A" : each.type}}</td>
                       <td>{{!each.created_on ? "N/A" : each.created_on | date:'medium'}}</td>
-                      <td>₦ {{!each.amount ? 'NA' : each.amount}}</td>
+                      <td>{{!each.amount ? 'NA' : each.amount | currency : '₦'}}</td>
                     </tr>
                   </tbody>
                 </table>

@@ -22,7 +22,7 @@
                     <small class="text-muted">
                         Amount Charged
                     </small>
-                    <h6>{{!trans_details?.amount_charged ? 'N/A' : trans_details?.amount_charged}}</h6>
+                    <h6>{{!trans_details?.amount_charged ? 'N/A' : trans_details?.amount_charged | currency : '₦'}}</h6>
                   </div>
               </div>
               <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-3 text-left">

@@ -16,7 +16,7 @@
                     <small class="text-muted">
                         Wallet Balance
                     </small>
-                    <h6>₦{{!wallet ? 'N/A' : wallet.WalletBalance}}</h6>
+                    <h6>{{!wallet ? 'N/A' : wallet.WalletBalance | currency : '₦'}}</h6>
                   <!-- </div> -->
               </div>
   
@@ -43,23 +43,23 @@
             </div>
   
             <div class="row">
-              <div class="col-md-12 col-lg-12 col-xl-6 col-sm-9 text-left">
-                  <div class="col-md-12">
+              <div class="col-md-12 col-lg-12 col-xl-9 col-sm-9 text-left">
+                  <!-- <div class="col-md-12"> -->
                     <small class="text-muted">
                         Amount
                     </small>
-                    <h6>₦ {{item.total_amount}}</h6>
-                  </div>
+                    <h6>{{!item.total_amount ? 'N/A' : item.total_amount | currency : '₦'}}</h6>
+                  <!-- </div> -->
               </div>
    
   
-              <div class="col-md-12 col-lg-12 col-xl-6 col-sm-3 text-left">
-                  <div class="col-md-12">
+              <div class="col-md-12 col-lg-12 col-xl-3 col-sm-3 text-left">
+                  <!-- <div class="col-md-12"> -->
                     <small class="text-muted">
                         Count
                     </small>
-                    <h6>{{item.count}}</h6>
-                  </div>
+                    <h6>{{!item.count ? 'N/A' : item.count}}</h6>
+                  <!-- </div> -->
               </div>
             </div>
         </div>
@@ -74,22 +74,22 @@
             </div>
   
             <div class="row">
-              <div class="col-md-12 col-lg-12 col-xl-6 col-sm-9 text-left green">
+              <div class="col-md-12 col-lg-12 col-xl-9 col-sm-9 text-left green">
                   <!-- <div class="col-md-12 "> -->
                     <small class="text-muted">
                         Amount
                     </small>
-                    <h6>₦ {{item.total_due_today}}</h6>
+                    <h6>{{!item.total_due_today ? 'N/A' : item.total_due_today | currency : '₦'}}</h6>
                   <!-- </div> -->
               </div>
    
   
-              <div class="col-md-12 col-lg-12 col-xl-6 col-sm-3 text-left green">
+              <div class="col-md-12 col-lg-12 col-xl-3 col-sm-3 text-left green">
                   <!-- <div class="col-md-12 "> -->
                     <small class="text-muted">
                         Count
                     </small>
-                    <h6>{{item.count}}</h6>
+                    <h6>{{!item.count ? 'N/A' : item.count}}</h6>
                   <!-- </div> -->
               </div>
             </div>
@@ -105,22 +105,22 @@
             </div>
   
             <div class="row">
-              <div class="col-md-12 col-lg-12 col-xl-6 col-sm-9 text-left red">
+              <div class="col-md-12 col-lg-12 col-xl-9 col-sm-9 text-left red">
                   <!-- <div class="col-md-12 "> -->
                     <small class="text-muted">
                         Amount
                     </small>
-                    <h6>₦ {{item.total_default}}</h6>
+                    <h6>{{!item.total_default ? 'N/A' : item.total_default | currency : '₦'}}</h6>
                   <!-- </div> -->
               </div>
    
   
-              <div class="col-md-12 col-lg-12 col-xl-6 col-sm-3 text-left">
+              <div class="col-md-12 col-lg-12 col-xl-3 col-sm-3 text-left">
                   <!-- <div class="col-md-12"> -->
                     <small class="text-muted">
                         Count
                     </small>
-                    <h6>{{item.count}}</h6>
+                    <h6>{{!item.count ? 'N/A' : item.count}}</h6>
                   <!-- </div> -->
               </div>
             </div>

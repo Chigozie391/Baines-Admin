@@ -211,7 +211,7 @@
                   <div class="col-md-3 col-12 col-sm-6 col-lg-3 col-xl-3">
                       <div class="user-data">
                           <h6>Loan Amount</h6>
-                          <h4>₦{{!Details?.loan_amount ? 'N/A' : Details?.loan_amount}}</h4>
+                          <h4>{{!Details?.loan_amount ? 'N/A' : Details?.loan_amount | currency : '₦'}}</h4>
                       </div>
                   </div>
               </div>
@@ -257,7 +257,7 @@
     
       <div class="row">
         <div class="col-md-3 col-3 mb-3">
-            <h6>{{borrower?.first_name | titlecase}}'s Loan History</h6>
+            <h6>Transaction History</h6>
         </div>
         <div class="col-md-9 col-9 mb-9">
             <hr>
@@ -299,11 +299,10 @@
             </thead>
             <tbody class="text-muted">
               <tr *ngFor="let each of Details.loan_transactions | type : term | paginate: {itemsPerPage: 10, currentPage: p}">
-                <td> <span class="badge badge-success">Successful</span></td>
-                <td>{{each.transaction_id}}</td>
-                <td>{{each.type}}</td>
-                <td>{{each.created_on | date:'medium'}}</td>
-                <td>₦ {{each.amount}}</td>
+                <td><span class="badge badge-success">{{'Successfull'}}</span></td>
+                <td>{{!each.type ? 'N/A' : each.type}}</td>
+                <td>{{!each.created_on ? 'N/A' : each.created_on | date:'medium'}}</td>
+                <td>{{!each.amount ? 'N/A' : each.amount | currency : '₦'}}</td>
                 <td>₦ {{'-----'}}</td>
               </tr>
             </tbody>

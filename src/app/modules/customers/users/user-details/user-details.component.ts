@@ -50,9 +50,9 @@ export class UserDetailsComponent implements OnInit {
         this.userDetails = res.data.user;
         this.moreProfile = res.data.loan_profile;
       }
+      console.log(res.data);
     }, (err) => {
       if(err.status === 401){
-        // this.msg = `${err.error.message} - Please logout to begin a new session`;
         this.authService.logout();
       }
     });
@@ -65,7 +65,7 @@ export class UserDetailsComponent implements OnInit {
         this.tenor_type = res.data.loans.tenor_type;
         this.loan_profile = res.data.loans.loan_profile;
       }
-
+      console.log(res.data);
     });
 
     this.saverService.getUserSavings(this.id).subscribe((res: any) => {
@@ -73,6 +73,7 @@ export class UserDetailsComponent implements OnInit {
         this.userSavings = res.data.plans;
         this.totalSavings = res.data.total_balance;
       }
+      console.log(res.data);
     });
 
 
@@ -82,6 +83,7 @@ export class UserDetailsComponent implements OnInit {
         this.cards = res.data.cards;
       }
     });
+
 
 
   }

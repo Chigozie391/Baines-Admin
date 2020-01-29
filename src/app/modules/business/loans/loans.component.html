@@ -123,7 +123,7 @@
                     <tr *ngFor="let eachLoan of loans | paginate: {itemsPerPage: 10, currentPage: p}">
                       <td><a routerLink="{{!eachLoan.id ? 'N/A' : eachLoan.id}}">{{!eachLoan.loan_profile ? 'N/A' : eachLoan.loan_profile.purpose}}</a></td>
                       <td><a routerLink="{{!eachLoan.id ? 'N/A' : eachLoan.id}}">{{!eachLoan.id ? 'N/A' : eachLoan.id}}</a></td>
-                      <td><a routerLink="{{!eachLoan.id ? 'N/A' : eachLoan.id}}">{{!eachLoan.interest_due ? 'N/A' : eachLoan.interest_due}} %</a></td>
+                      <td><a routerLink="{{!eachLoan.id ? 'N/A' : eachLoan.id}}">{{!eachLoan.interest_due ? 'N/A' : eachLoan.interest_due}}</a></td>
                       <td>{{!eachLoan.loan_amount ? 'N/A' : eachLoan.loan_amount}}</td>
                       <td>
                         <span [matMenuTriggerFor]="action" class="action">

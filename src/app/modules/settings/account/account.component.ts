@@ -44,6 +44,7 @@ export class AccountComponent implements OnInit {
   ngOnInit() {
     this.userProfile();
     console.log(this.authService.user);
+    console.log(this.img_url);
   }
 
   userProfile(){
@@ -57,6 +58,7 @@ export class AccountComponent implements OnInit {
     this.authService.changePassword(this.pwd).subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
         this.msg = res.message;
+        this.authService.logout();
       }
     }, (err) => {
       if(err.status !== 200){
@@ -102,6 +104,7 @@ export class AccountComponent implements OnInit {
 
     reader.readAsDataURL(file);
   }
+
 
 
   }

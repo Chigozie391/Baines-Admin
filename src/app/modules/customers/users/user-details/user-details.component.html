@@ -2,7 +2,7 @@
   <a routerLink="/app/customers/users/" class="return">&larr; Back to Users</a>
 </div> -->
 
-<div class="row">
+<div class="row" style="cursor: pointer;">
   <a (click)="back()" class="return">&larr; Back</a>
 </div>
 
@@ -252,7 +252,7 @@
                   <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 text-right">
                     <div class="user-data">
                       <p>Total Loans Received</p>
-                        <h3>{{!borrowerLoans?.total_loan_amount ? 'N/A' : borrowerLoans?.total_loan_amount}}</h3>
+                        <h3>{{!borrowerLoans?.total_loan_amount ? 'N/A' : borrowerLoans?.total_loan_amount | currency : '₦'}}</h3>
                     </div>
                 </div>
                   </div>
@@ -307,7 +307,7 @@
                         <td><a routerLink="/app/business/loans/{{loan.id}}">{{!loan.loan_profile ? 'Not available' : loan.loan_profile.purpose}}</a></td>
                         <td>{{!loan.tenor_type.value ? 'N/A' :loan.tenor_type.value}} days</td>
                         <td>{{!loan.schedule.repayment_day ? 'N/A' : loan.schedule.repayment_day | date}}</td>
-                        <td>₦{{!loan.loan_amount ? 'N/A' : loan.loan_amount}}</td>
+                        <td>{{!loan.loan_amount ? 'N/A' : loan.loan_amount | currency : '₦'}}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -389,8 +389,8 @@
                   <td>{{!eachSavings.name ? "N/A" : eachSavings.name}}</td>
                   <td>{{!eachSavings.start_date ? 'N/A' : eachSavings.start_date | date}}</td>
                   <td>{{!eachSavings.end_date ? 'N/A' : eachSavings.end_date | date}}</td>
-                  <td>{{!eachSavings.periodic_amount ? 'N/A' : eachSavings.periodic_amount}}</td>
-                  <td>{{!eachSavings.target ? 'N/A' : eachSavings.target}}</td>
+                  <td>{{!eachSavings.periodic_amount ? 'N/A' : eachSavings.periodic_amount | currency : '₦'}}</td>
+                  <td>{{!eachSavings.target ? 'N/A' : eachSavings.target | currency : '₦'}}</td>
                   <td>{{!eachSavings.tenor ? 'N/A' : eachSavings.tenor}}</td>
                 </tr>
               </tbody>
@@ -457,7 +457,7 @@
             <h4>Bank</h4>
           </div>
           
-          <div class="col-md-12 col-lg-5 col-xl-5" *ngFor="let each of banks">
+          <div class="col-md-12" *ngFor="let each of banks">
             <div class="card " style="position: relative; top: 0; left: -1rem; margin-bottom: 1rem;">
               <div class="card-body" style="padding-left: 0;
               padding-right: 0;

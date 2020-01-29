@@ -125,7 +125,6 @@
               <th scope="col">Full Name</th>
               <th scope="col">ID</th>
               <th scope="col">Email</th>
-              <th scope="col">type</th>
               <th scope="col">date joined</th>
               <th scope="col">status</th>
               <th scope="col">Actions</th>
@@ -137,9 +136,8 @@
   
             <tr *ngFor="let each of dataSet | fullName: term | paginate: {itemsPerPage: 10, currentPage: p}">
                 <td><a routerLink="{{each.id}}">{{!each.full_name ? "N/A" : each.full_name | uppercase}}</a></td>
-                <td><a routerLink="{{each.id}}">{{!each.client_id ? 'N/A' : each.client_id}}</a></td>
+                <td><a routerLink="{{each.id}}">{{!each.id ? 'N/A' : each.id}}</a></td>
               <td>{{!each.email ? 'N/A' : each.email}}</td>
-              <td>-----</td>
               <td>{{!each.created_on ? 'N/A' : each.created_on | date}}</td>
                     <td *ngIf="each.activated === 1"><span class="badge badge-success">Active</span></td>
                     <td *ngIf="each.activated !== 1"><span class="badge badge-danger">Inactive</span></td>

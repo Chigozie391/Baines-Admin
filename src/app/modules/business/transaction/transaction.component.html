@@ -97,7 +97,7 @@
                   <td><a routerLink="{{eachTransaction.id}}">{{!eachTransaction.user.first_name ? 'N/A' : eachTransaction.user.first_name | uppercase}} {{!eachTransaction.user.last_name ? 'N/A' : eachTransaction.user.last_name | uppercase}}</a></td>
                   <td>{{!eachTransaction.transaction_type.name ? 'N/A' : eachTransaction.transaction_type.name}}</td>
                   <td>{{!eachTransaction.created_on ? 'N/A' : eachTransaction.created_on | date:'medium'}}</td>
-                  <td>₦ {{!eachTransaction.amount_charged ? 'N/A' : eachTransaction.amount_charged}}</td>
+                  <td>{{!eachTransaction.amount_charged ? 'N/A' : eachTransaction.amount_charged | currency : '₦'}}</td>
                 </tr>
               </tbody>
             </table>
