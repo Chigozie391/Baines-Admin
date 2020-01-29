@@ -37,6 +37,7 @@ export class LoginComponent {
       if (res.status === Constant.SUCCESS) {
         this.authService.token = res.data.token;
         this.authService.user = JSON.stringify(res.data);
+        this.authService.image = JSON.stringify(res.data.image_url);
         this.authService.profile_token = res.data.profile_token;
         this.router.navigate([Path.DASHBOARD]);
       }

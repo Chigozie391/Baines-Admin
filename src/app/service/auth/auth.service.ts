@@ -41,6 +41,14 @@ export class AuthService {
     localStorage.setItem(Constant.CURRENT_USERS, item);
   }
 
+  set image(item) {
+    localStorage.setItem(Constant.IMAGE_URL, item);
+  }
+
+  get image() {
+    return JSON.parse(localStorage.getItem(Constant.IMAGE_URL));
+  }
+
   login(credential: LoginModel) {
     return this.http.post(Endpoint.ADMIN_LOGIN, credential);
   }
@@ -55,6 +63,10 @@ export class AuthService {
 
   uploadImage(image){
     return this.http.post(Endpoint.UPLOAD_IMAGE, image);
+  }
+
+  updateAdminProfile(data){
+    return this.http.put(Endpoint.TEAM, data);
   }
 
   // logout() {

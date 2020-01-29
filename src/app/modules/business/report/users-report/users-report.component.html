@@ -143,20 +143,14 @@
                   <th scope="col">user Id</th>
                   <th scope="col">Mobile No.</th>
                   <th scope="col">Onboarding Stage</th>
-                  <!-- <th scope="col">Activation status</th> -->
-                  <!-- <th scope="col">Savings status</th> -->
-                  <!-- <th scope="col">Loan status</th> -->
                 </tr>
               </thead>
               <tbody class="text-muted">
-                <tr *ngFor="let eachProduct of [1,2,3,4,5]">
-                  <td><a routerLink="LS229844">14 Sep 2019, 07:45:21</a></td>
-                  <td><a routerLink="LS229844">LS229844</a></td>
-                  <td><a routerLink="LS229844">08128038453</a></td>
-                  <td><a routerLink="LS229844">------</a></td>
-                  <!-- <td><a routerLink="LS229844">Active</a></td> -->
-                  <!-- <td>Active</td> -->
-                  <!-- <td>Pending</td> -->
+                <tr *ngFor="let eachUser of users">
+                  <td><a routerLink="LS229844">{{!eachUser.created_on ? 'N/A' : eachUser.created_on | date}}</a></td>
+                  <td><a routerLink="LS229844">{{!eachUser.id ? 'N/A' : eachUser.id}}</a></td>
+                  <td><a routerLink="LS229844">{{!eachUser.phone_number ? 'N/A' : eachUser.phone_number}}</a></td>
+                  <td><a routerLink="LS229844">{{!eachUser.onboardStage.name ? 'N/A' : eachUser.onboardStage.name | uppercase}}</a></td>
                   </tr>
               </tbody>
             </table>

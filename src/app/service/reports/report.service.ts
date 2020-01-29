@@ -21,6 +21,10 @@ export class ReportService {
     return this.http.get(`${Endpoint.REPORTS}/loan-due`);
   }
 
+  userOnboarding(){
+    return this.http.get(`${Endpoint.REPORTS}/user-onboarding`);
+  }
+
   reportDescription(){
     return this.http.get(Endpoint.REPORTS);
   }

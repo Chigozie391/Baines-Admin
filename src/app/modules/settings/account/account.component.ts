@@ -28,6 +28,7 @@ export class AccountComponent implements OnInit {
   msg: any;
   selectedFile: ImageSnippet;
   img_url: string;
+  phone_number: string;
 
   constructor(config: NgbModalConfig,
      private modalService: NgbModal,
@@ -43,14 +44,13 @@ export class AccountComponent implements OnInit {
   
   ngOnInit() {
     this.userProfile();
-    console.log(this.authService.user);
-    console.log(this.img_url);
   }
 
   userProfile(){
     this.account_name = this.authService.user.full_name;
     this.email = this.authService.user.email;
-    this.img_url = this.authService.user.image_url;
+    this.phone_number = this.authService.user.phone_number;
+    this.img_url = this.authService.image;
   }
 
   changePwd(){
@@ -92,8 +92,18 @@ export class AccountComponent implements OnInit {
       uploadData.append('file', file, file.name);
 
       this.authService.uploadImage(uploadData).subscribe(
-        (res) => {
-          
+        (res: any) => {
+          const dataUpdate = {
+            'email' : this.authService.user.email,
+            'full_name' : this.authService.user.full_name,
+            'phone_number' : this.authService.user.phone_number,
+            'image_url' : res.data.url
+          }
+          this.authService.updateAdminProfile(dataUpdate).subscribe((res: any) => {
+            this.authService.image = JSON.stringify(res.data.image_url);
+            this.userProfile();
+          });
+
           this.onSuccess();
         },
         (err) => {
@@ -104,6 +114,7 @@ export class AccountComponent implements OnInit {
 
     reader.readAsDataURL(file);
   }
+
 
 
 
