@@ -37,4 +37,9 @@ export class SavingsProductService {
     return this.http.get(`${Endpoint.GET_PRODUCT}/stats?type=saving`);
   }
 
+  updateProductStatus(data){
+    console.log(data);
+    return this.http.post(`${Endpoint.GET_PRODUCT}/status/${data.savings_id}`, data.status);
+  }
+
 }

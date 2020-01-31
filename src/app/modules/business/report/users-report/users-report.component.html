@@ -2,9 +2,11 @@
 
 <app-headers title="Reports/Users Onboarding"></app-headers>
 
+
+<!-- <div *ngIf="loading"> -->
+
+
 <div class="row">
-
-
 
   <div class="col-md-7 col-12 mb-6" style="margin-bottom: 1rem;">
     <div class="card">
@@ -13,7 +15,7 @@
             <!-- <small class="text-muted">Overview</small> -->
             <!-- <h5 class="font-weight-bold">Loans</h5> -->
           </div>
-        <canvas id="loanFailed"></canvas>
+        <canvas id="users"></canvas>
       </div>
     </div>
   </div>
@@ -157,3 +159,15 @@
           </div>
     </div>
   </div>
+
+<!-- </div> -->
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card" *ngIf="!loading">
+      <div class="card-body">
+        <h3 class="text-center text-muted">Loading...</h3>
+      </div>
+    </div>
+  </div>
+</div>

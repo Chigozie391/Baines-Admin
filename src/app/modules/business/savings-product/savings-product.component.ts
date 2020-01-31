@@ -29,9 +29,9 @@ export class SavingsProductComponent implements OnInit {
       if (res.status === Constant.SUCCESS) {
         this.savingsProduct = res.data;
       }
+      console.log(res);
     }, (err) => {
       if(err.status === 401){
-        // this.msg = `${err.error.message} - Please logout to begin a new session`;
         this.authService.logout();
       }
     });
@@ -41,6 +41,50 @@ export class SavingsProductComponent implements OnInit {
     this.savingsProductService.getSavingsStats().subscribe((res: any) => {
       if (res.status === Constant.SUCCESS){
         this.Stats = res.data[0];
+      }
+    });
+  }
+
+  activate(id){
+    const data = {
+      'savings_id' : id,
+      'status' : "1"
+    }
+    this.msg = 'Activating...'
+    console.log(this.msg);
+    this.savingsProductService.updateProductStatus(data).subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS) {
+        this.msg = res.message;
+        // this.allBorrowers();
+        this.getSavingsProduct();
+
+      }
+      console.log(res);
+    }, (err) => {
+      if (err.status !== 401) {
+        this.msg = err.error.message;
+      }
+    });
+  }
+
+  deactivate(id){
+    const data = {
+      'savings_id' : id,
+      'status' : "0"
+    }
+    this.msg = 'Deactivating...'
+    console.log(this.msg);
+    this.savingsProductService.updateProductStatus(data).subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS) {
+        this.msg = res.message;
+        // this.allBorrowers();
+        this.getSavingsProduct();
+
+      }
+      console.log(res);
+    }, (err) => {
+      if (err.status !== 401) {
+        this.msg = err.error.message;
       }
     });
   }

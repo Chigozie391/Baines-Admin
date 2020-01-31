@@ -107,6 +107,9 @@ export class AccountComponent implements OnInit {
           this.onSuccess();
         },
         (err) => {
+          if(err.status === 401){
+            this.authService.logout();
+          }
           this.onError();
         })
     });

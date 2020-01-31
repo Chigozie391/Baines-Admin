@@ -29,4 +29,16 @@ export class ReportService {
     return this.http.get(Endpoint.REPORTS);
   }
 
+  userGraph(){
+    return this.http.get(`${Endpoint.REPORTS}/user-by-month`);
+  }
+
+  loansGraph(){
+    return this.http.get(`${Endpoint.REPORTS}/loan-by-month`);
+  }
+
+  savingsGraph(){
+    return this.http.get(`${Endpoint.REPORTS}/saving-by-month`);
+  }
+
 }

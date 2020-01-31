@@ -66,7 +66,7 @@
                   <div class="card-white">
                     <div class="card-body">
                       <div class="col-md-12">
-                        <div [matMenuTriggerFor]="action" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
+                        <div [matMenuTriggerFor]="action1" class="text-right action loan-action">&#8226;&#8226;&#8226;</div>
                         <div class="user-data-space">
                           <a routerLink="{{eachProduct.id}}"><h5>{{!eachProduct.name ? 'N/A' : eachProduct.name}}</h5></a>
                           <small class="text-muted">{{!eachProduct.id ? 'N/A' : eachProduct.id}}</small>
@@ -97,6 +97,29 @@
                       </div> -->
                     </div>
                   </div>
+
+                  <mat-menu #action1="matMenu" class="mt-3">
+                    <ng-container>
+                      <button mat-menu-item routerLink="/">
+                        <mat-icon svgIcon="edit"></mat-icon>
+                        <span>Edit</span>
+                      </button>
+                      <!-- <button mat-menu-item routerLink="/">
+                        <mat-icon svgIcon="delete"></mat-icon>
+                        <span>Delete</span>
+                      </button> -->
+                      <button [disabled]="eachProduct.status === 1" (click)="activate(eachProduct.id)" mat-menu-item >
+                        <mat-icon svgIcon="activate"></mat-icon>
+                        <span>Activate</span>
+                      </button>
+                      <button [disabled]="eachProduct.status === 0" (click)="deactivate(eachProduct.id)" mat-menu-item >
+                        <mat-icon svgIcon="deactivate"></mat-icon>
+                        <span>Dectivate</span>
+                      </button>
+                    </ng-container>
+                  
+                  </mat-menu>
+
               </div>
  
     </div>
@@ -107,6 +130,7 @@
     </div>  
   </ng-template>
   </ngb-tab>
+
   <ngb-tab id="test2">
   
     <ng-template ngbTabTitle>
@@ -134,10 +158,33 @@
                 <td><a routerLink="{{eachProduct.id}}">{{!eachProduct.interest_rate ? 'N/A' : eachProduct.interest_rate}}%</a></td>
                 <td>{{!eachProduct.min_amount ? 'N/A' : eachProduct.min_amount}} - {{!eachProduct.max_amount ? 'N/A' : eachProduct.max_amount}}</td>
                 <td>
-                  <span [matMenuTriggerFor]="action" class="action">
+                  <span [matMenuTriggerFor]="action2" class="action">
                     &#8226;&#8226;&#8226;
                     </span>
                 </td>
+
+                <mat-menu #action2="matMenu" class="mt-3">
+                  <ng-container>
+                    <button mat-menu-item routerLink="/">
+                      <mat-icon svgIcon="edit"></mat-icon>
+                      <span>Edit</span>
+                    </button>
+                    <!-- <button mat-menu-item routerLink="/">
+                      <mat-icon svgIcon="delete"></mat-icon>
+                      <span>Delete</span>
+                    </button> -->
+                    <button [disabled]="eachProduct.status === 1" mat-menu-item routerLink="/">
+                      <mat-icon svgIcon="activate"></mat-icon>
+                      <span>Activate</span>
+                    </button>
+                    <button [disabled]="eachProduct.status === 0" mat-menu-item routerLink="/">
+                      <mat-icon svgIcon="deactivate"></mat-icon>
+                      <span>Dectivate</span>
+                    </button>
+                  </ng-container>
+                
+                </mat-menu>
+
                 </tr>
             </tbody>
           </table>
@@ -156,27 +203,7 @@
 
   
     
-    <mat-menu #action="matMenu" class="mt-3">
-      <ng-container>
-        <button mat-menu-item routerLink="/">
-          <mat-icon svgIcon="edit"></mat-icon>
-          <span>Edit</span>
-        </button>
-        <button mat-menu-item routerLink="/">
-          <mat-icon svgIcon="delete"></mat-icon>
-          <span>Delete</span>
-        </button>
-        <button mat-menu-item routerLink="/">
-          <mat-icon svgIcon="activate"></mat-icon>
-          <span>Activate</span>
-        </button>
-        <button mat-menu-item routerLink="/">
-          <mat-icon svgIcon="deactivate"></mat-icon>
-          <span>Dectivate</span>
-        </button>
-      </ng-container>
-    
-    </mat-menu>
+ 
     
   </div>
   </div>
