@@ -20,12 +20,14 @@ import { Path } from 'src/app/utils/path';
 export class NavigationComponent implements OnInit {
 
   token: string;
+  img_url: string;
 
   ngOnInit() {
     this.token = localStorage.getItem(Constant.ACCESS_TOKEN);
     if (this.token === null) {
       this.router.navigate([Path.LOGIN]);
     }
+    this.img_url = this.authService.image;
   }
 
   logout(){

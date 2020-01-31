@@ -47,8 +47,11 @@ export class Endpoint {
 
   public static REPORTS = `${environment.baseUrl}/admin/report`;
 
+  public static PREFERENCE = `${environment.baseUrl}/preference`;
+
   public static UPLOAD_IMAGE = 'https://v2-test.lendsqr.com/api/v1/util/upload/photo';
   
+
 
   public static GET_ALL_LENDERS = `${environment.baseUrl}/profiles/lenders`;
   public static PROFILES = `${environment.baseUrl}/profiles`;

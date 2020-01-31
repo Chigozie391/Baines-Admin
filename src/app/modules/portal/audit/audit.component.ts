@@ -30,11 +30,10 @@ export class AuditComponent implements OnInit {
   auditLogs(){
     this.auditService.getAuditLogs().subscribe((res: any) => {
       if (res.status === Constant.SUCCESS){
-        this.logs = res.data;
+        this.logs = res.data.logs;
       }
     }, (err) => {
       if(err.status === 401){
-        // this.msg = `${err.error.message} - Please logout to begin a new session`;
         this.authService.logout();
       }
     });

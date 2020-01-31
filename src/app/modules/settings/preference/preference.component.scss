@@ -58,3 +58,15 @@
   .slider.round:before {
     border-radius: 50%;
   }
+
+  .whatsapp:focus{
+    outline: none;
+}
+
+.whatsapp {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  background-color: #eee;
+  }
