@@ -33,14 +33,12 @@ export class LoanProductComponent implements OnInit {
     this.loanProductService.getLoanProducts().subscribe((res:any)=> {
       if (res.status === Constant.SUCCESS) {
         this.loanProduct = res.data;
-        console.log(this.loanProduct);
         // this.loanProductService.getProductDetails(res.data.id).subscribe((count: any) => {
         //   console.log(count);
         // })
       }
     }, (err) => {
       if(err.status === 401){
-        // this.msg = `${err.error.message} - Please logout to begin a new session`;
         this.authService.logout();
       }
     });
@@ -55,4 +53,42 @@ export class LoanProductComponent implements OnInit {
   }
 
 
+  activate(id){
+    const data = {
+      'status' : "1"
+    }
+    this.msg = 'Activating...'
+    this.loanProductService.updateProductStatus(id, data).subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS) {
+        this.msg = res.message;
+        this.getLoanProduct();
+
+      }
+    }, (err) => {
+      if (err.status !== 401) {
+        this.msg = err.error.message;
+      }
+    });
+  }
+
+  deactivate(id){
+    const data = {
+      'status' : "0"
+    }
+    this.msg = 'Deactivating...'
+    this.loanProductService.updateProductStatus(id, data).subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS) {
+        this.msg = res.message;
+        this.getLoanProduct();
+      }
+    }, (err) => {
+      if (err.status !== 401) {
+        this.msg = err.error.message;
+      }
+    });
+  }
+
+  onClosed() {
+    this.msg = '';
+  }
 }

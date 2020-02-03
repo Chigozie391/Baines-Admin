@@ -26,9 +26,9 @@ export class SavingsComponent implements OnInit {
   allSavings() {
     this.savingsService.getAllSavings().subscribe((res: any) => {
       this.savings = res.data;
+      console.log(this.savings);
     }, (err) => {
       if(err.status === 401){
-        // this.msg = `${err.error.message} - Please logout to begin a new session`;
         this.authService.logout();
       }
     });

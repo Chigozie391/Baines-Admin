@@ -53,6 +53,10 @@ export class LoanProductService {
   getLoanStats(){
     return this.http.get(`${Endpoint.GET_PRODUCT}/stats?type=loan`);
   }
+
+  updateProductStatus(id, data){
+    return this.http.post(`${Endpoint.GET_PRODUCT}/status/${id}`, data);
+  }
 }
 
   

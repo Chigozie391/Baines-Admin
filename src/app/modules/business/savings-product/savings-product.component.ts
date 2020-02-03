@@ -29,7 +29,6 @@ export class SavingsProductComponent implements OnInit {
       if (res.status === Constant.SUCCESS) {
         this.savingsProduct = res.data;
       }
-      console.log(res);
     }, (err) => {
       if(err.status === 401){
         this.authService.logout();
@@ -47,19 +46,14 @@ export class SavingsProductComponent implements OnInit {
 
   activate(id){
     const data = {
-      'savings_id' : id,
       'status' : "1"
     }
     this.msg = 'Activating...'
-    console.log(this.msg);
-    this.savingsProductService.updateProductStatus(data).subscribe((res: any) => {
+    this.savingsProductService.updateProductStatus(id,data).subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
         this.msg = res.message;
-        // this.allBorrowers();
         this.getSavingsProduct();
-
       }
-      console.log(res);
     }, (err) => {
       if (err.status !== 401) {
         this.msg = err.error.message;
@@ -69,24 +63,22 @@ export class SavingsProductComponent implements OnInit {
 
   deactivate(id){
     const data = {
-      'savings_id' : id,
       'status' : "0"
     }
     this.msg = 'Deactivating...'
-    console.log(this.msg);
-    this.savingsProductService.updateProductStatus(data).subscribe((res: any) => {
+    this.savingsProductService.updateProductStatus(id, data).subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
         this.msg = res.message;
-        // this.allBorrowers();
         this.getSavingsProduct();
-
       }
-      console.log(res);
     }, (err) => {
       if (err.status !== 401) {
         this.msg = err.error.message;
       }
     });
   }
-
+  
+  onClosed() {
+    this.msg = '';
+  }
 }

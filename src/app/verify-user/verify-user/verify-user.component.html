@@ -14,10 +14,14 @@
     <div class="card">
         <div class="card-body">
             <!-- <div class="row"> -->
-                <div *ngIf="msg" class="alert alert-info text-center">{{msg}}</div>
                 <div class="row">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6">
+                    <div class="col-md-3 col-lg-4 col-xl-4"></div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                            <div class="col-md-12">
+                              <div *ngIf="msg" class="alert alert-info text-center" style="padding: 0px 0px;">
+                                <alert [type]="showAlert" dismissible="true" (onClosed)="onClosed()">{{msg}}</alert>
+                              </div>
+                            </div>
                         <form #updateForm="ngForm" (submit)="verify()">
                             <div class="row">
                                 <div class="form-group col-md-12">
@@ -57,7 +61,7 @@
                             </form>
                     </div>
                 
-                    <div class="col-md-3"></div>
+                    <div class="col-md-3 col-lg-4 col-xl-4"></div>
                     <!-- <div class="col-md-3">
                         <div class="row">
                             <div class="col-md-12">

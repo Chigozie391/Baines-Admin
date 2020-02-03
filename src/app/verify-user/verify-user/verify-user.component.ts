@@ -34,14 +34,8 @@ export class VerifyUserComponent implements OnInit {
       "phone_number": this.verificationDetails.mobile,
       "password": this.verificationDetails.password
     };
-    // console.table(this.token, data);
-
-    // this.teamService.updateProfile(this.token, data).subscribe((res: any)=> {
-    //   console.log(res);
-    // });
-
+    this.msg = 'Updating Account';
     this.teamService.updateProfile(this.token, data).subscribe((res: any) => {
-      console.log(res);
       if (res.status === Constant.SUCCESS) {
         this.msg = res.message;
         this.authService.token = this.token;
@@ -52,22 +46,20 @@ export class VerifyUserComponent implements OnInit {
     }, (err) => {
       if(err.status !== 200){
         this.msg = err.error.message;
-        console.log(err);
       }
-      console.log(err);
     });
-
 
   }
 
   getCredentials(){
     this.route.queryParamMap.subscribe(params => {
       this.orderObj = {...params.keys, ...params};
-      console.log(this.orderObj);
       this.token = this.orderObj.params.token;
       this.email = this.orderObj.params.email;
     });
   }
 
-
+  onClosed() {
+    this.msg = '';
+  }
 }

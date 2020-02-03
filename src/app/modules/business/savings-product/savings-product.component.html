@@ -43,6 +43,13 @@
       </div>
     </div>
     
+    <div class="row">
+      <div class="col-md-12">
+        <div *ngIf="msg" class="alert alert-info text-center" style="padding: 0px 0px;">
+          <alert [type]="showAlert" dismissible="true" (onClosed)="onClosed()">{{msg}}</alert>
+        </div>
+      </div>
+    </div>
     
     <div class="row">
       <div class="col-md-12 col-12 col-mb-12">
@@ -173,11 +180,11 @@
                       <mat-icon svgIcon="delete"></mat-icon>
                       <span>Delete</span>
                     </button> -->
-                    <button [disabled]="eachProduct.status === 1" mat-menu-item routerLink="/">
+                    <button [disabled]="eachProduct.status === 1" (click)="activate(eachProduct.id)" mat-menu-item >
                       <mat-icon svgIcon="activate"></mat-icon>
                       <span>Activate</span>
                     </button>
-                    <button [disabled]="eachProduct.status === 0" mat-menu-item routerLink="/">
+                    <button [disabled]="eachProduct.status === 0" (click)="deactivate(eachProduct.id)" mat-menu-item >
                       <mat-icon svgIcon="deactivate"></mat-icon>
                       <span>Dectivate</span>
                     </button>
