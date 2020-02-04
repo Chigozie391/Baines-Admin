@@ -42,6 +42,10 @@ export class LoanProductService {
     return this.http.post(Endpoint.GET_PRODUCT, data);
   }
 
+  editLoanProduct(id, data){
+    return this.http.put(`${Endpoint.GET_PRODUCT}/${id}`, data);
+  }
+
   getLoanProducts(){
     return this.http.get(`${Endpoint.GET_PRODUCT}?type=loan`)
   }

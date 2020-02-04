@@ -34,7 +34,7 @@
           </tr>
         </thead>
         <tbody class="text-muted">
-          <tr *ngFor="let log of logs | innerLastName : term | paginate: {itemsPerPage: 10, currentPage: p}">
+          <tr *ngFor="let log of logs | innerLastName : term">
             <td><a routerLink="{{log.id}}">{{!log.user.first_name ? 'N/A' : log.user.first_name | uppercase}} {{!log.user.last_name ? 'N/A' : log.user.last_name | uppercase}}</a></td>
             <td>{{!log.description ? 'N/A' : log.description | titlecase}}</td>
             <th scope="row">{{log.created_on | date : 'mediumDate'}}</th>
@@ -44,7 +44,7 @@
       </table>
       <div class="row">
         <div class="col-md-12 text-center">
-          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          <a style="margin: 1rem 1rem;" (click)="auditLogs(eachPage)" [routerLink]="['./']" *ngFor="let eachPage of pages">{{eachPage}}</a>
         </div>
       </div>
     </div>

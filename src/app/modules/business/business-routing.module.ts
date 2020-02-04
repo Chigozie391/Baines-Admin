@@ -30,6 +30,8 @@ import { MatureReportDetailsComponent } from './report/mature-savings-report/det
 import { OverDueReportDetailsComponent } from './report/overdue-loans-report/details/details.component';
 import { SavingsReportDetailsComponent } from './report/savings-product-report/details/details.component';
 import { UsersReportDetailsComponent } from './report/users-report/details/details.component';
+import { EditLoanProductComponent } from './loan-product/edit-loan-product/edit-loan-product.component';
+import { EditSavingsProductComponent } from './savings-product/edit-savings-product/edit-savings-product.component';
 
 const routes: Routes = [
   {
@@ -39,10 +41,12 @@ const routes: Routes = [
       { path: 'collections', component: CollectionComponent },
       { path: 'loan-product', component: LoanProductComponent },
       { path: 'loan-product/:id', component: LoanProductDetailsComponent},
+      { path: 'loan-product/:id/edit', component: EditLoanProductComponent},
       { path: 'general', component: LoanProductDetailsComponent},
       { path: 'save', component: LoanProductDetailsComponent},
       { path: 'savings-product', component: SavingsProductComponent },
       { path: 'savings-product/:id', component: SavingsProductDetailsComponent},
+      { path: 'savings-product/:id/edit', component: EditSavingsProductComponent},
       { path: 'loans', component: LoansComponent },
       { path: 'loans/:id', component: BorrowerDetailsComponent},
       { path: 'loans/:id/loan-details', component: LoanDetailsComponent },

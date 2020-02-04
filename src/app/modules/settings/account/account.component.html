@@ -8,27 +8,32 @@
             <div class="row">
                 <div class="form-group col-md-12">
                     <label for="account_name">Account Name</label>
-                    <input type="text" disabled value="{{account_name}}" id="account_name" class="form-control ">
+                    <input type="text" value="{{account_name}}" id="account_name" class="form-control ">
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12">
                     <label for="email">Email Address</label>
-                    <input type="email" disabled value="{{email}}" id="email" class="form-control ">
+                    <input type="email" value="{{email}}" id="email" class="form-control ">
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12">
                     <label for="mobile_no">Mobile Number</label>
-                    <input type="text" disabled value="{{phone_number}}" id="mobile_no" class="form-control ">
+                    <input type="text" value="{{phone_number}}" id="mobile_no" class="form-control ">
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-3"></div>
+                <div class="form-group col-md-6">
+                    <button type="submit" class="btn btn-success col-md-12">Save</button>
+                </div>
+            </div>
+            <!-- <div class="row">
                 <div class="form-group col-md-6">
                     <button type="submit" (click)="open(content)" class="btn btn-primary col-md-12">Change Password</button>
                 </div>
-            
-            </div>
+            </div> -->
             </form>
     </div>
 
@@ -60,20 +65,13 @@
                       Uploading image...
                     </div>
 
-                        <div *ngIf="selectedFile.status === 'ok'" class="alert alert-success"> Image Uploaded Succesfuly!</div>
-                        <div *ngIf="selectedFile.status === 'fail'" class="alert alert-danger"> Image Upload Failed!</div>
+                        <div *ngIf="selectedFile.status === 'ok'" class="alert alert-success"> {{msg}}!</div>
+                        <div *ngIf="selectedFile.status === 'fail'" class="alert alert-danger"> {{msg}}!</div>
                   </div>
 
-
-
-                <!-- <div class="form-group col-md-12">
-                    <input style="display: none;" type="file" accept="image/*" (change)="onFileChanged($event)" #fileInput>
-                    <button (click)="fileInput.click()" class="btn btn-primary col-md-12">Add Image</button>
-                </div>
-
-                <div class="form-group col-md-12">
-                    <button (click)="onUpload" class="btn btn-success col-md-12">Upload!</button>
-                </div> -->
+                  <div class="text-center">
+                    <a routerLink="./" (click)="open(content)">change password?</a>
+                  </div>
             </div>
         </div>
 

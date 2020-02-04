@@ -109,7 +109,7 @@
 
                 <mat-menu #action1="matMenu" class="mt-3">
                   <ng-container>
-                    <button mat-menu-item routerLink="/">
+                    <button mat-menu-item routerLink="{{eachProduct.id}}/edit">
                       <mat-icon svgIcon="edit"></mat-icon>
                       <span>Edit</span>
                     </button>
@@ -178,7 +178,7 @@
 
                 <mat-menu #action2="matMenu" class="mt-3">
                   <ng-container>
-                    <button mat-menu-item routerLink="/">
+                    <button mat-menu-item routerLink="{{eachProduct.id}}/edit">
                       <mat-icon svgIcon="edit"></mat-icon>
                       <span>Edit</span>
                     </button>

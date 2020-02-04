@@ -93,6 +93,8 @@ export class AccountComponent implements OnInit {
 
       this.authService.uploadImage(uploadData).subscribe(
         (res: any) => {
+          console.log(res);
+          this.msg = res.message;
           const dataUpdate = {
             'email' : this.authService.user.email,
             'full_name' : this.authService.user.full_name,
@@ -107,6 +109,8 @@ export class AccountComponent implements OnInit {
           this.onSuccess();
         },
         (err) => {
+          console.log(err);
+          this.msg = err.error.message;
           if(err.status === 401){
             this.authService.logout();
           }

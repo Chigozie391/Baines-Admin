@@ -27,7 +27,6 @@ export class NavigationComponent implements OnInit {
     if (this.token === null) {
       this.router.navigate([Path.LOGIN]);
     }
-    this.img_url = this.authService.image;
   }
 
   logout(){
@@ -149,7 +148,7 @@ export class NavigationComponent implements OnInit {
       {
         icon: 'settings',
         route: 'Settings',
-        url: 'Path.SETTINGS',
+        url: '/app/settings/account',
         sub: []
       },
       {
@@ -166,6 +165,7 @@ export class NavigationComponent implements OnInit {
     private domSanitizer: DomSanitizer,
     private router: Router,
     private authService: AuthService) {
+      this.img_url = this.authService.image;
       this.matIconRegistry.addSvgIcon('dashboard', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/dashboard.svg'));
       this.matIconRegistry.addSvgIcon('group', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/group.svg'));
       this.matIconRegistry.addSvgIcon('Borrowers', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/img/nav/Borrowers.svg'));
