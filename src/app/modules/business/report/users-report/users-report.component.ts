@@ -32,7 +32,13 @@ export class UsersReportComponent implements OnInit {
 
   usersStats() {
     this.userService.getUsersStats().subscribe((res: any) => {
-      this.stats = res.data;
+      if(res.status === Constant.SUCCESS){
+        this.stats = res.data;
+      }
+    }, (err) => {
+      if(err.status === 401){
+        this.authService.logout();
+      }
     });
   }
 

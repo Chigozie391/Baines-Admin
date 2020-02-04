@@ -88,15 +88,15 @@ export class EditLoanProductComponent implements OnInit {
       "product_type_id": "2"
     };
     console.log(data);
-    // this.loanProductService.editLoanProduct(this.id, data).subscribe((res :any) => {
-    //   if(res.status === Constant.SUCCESS) {
-    //     this.msg = res.message;
-    //   }
-    //   console.log(res);
-    // }, (err) => {
-    //   if(err.status !== 200){
-    //     this.msg = err.error.message;
-    //   }
-    // });
+    this.loanProductService.editLoanProduct(this.id, data).subscribe((res :any) => {
+      if(res.status === Constant.SUCCESS) {
+        this.msg = res.message;
+      }
+      console.log(res);
+    }, (err) => {
+      if(err.status !== 200){
+        this.msg = err.error.message;
+      }
+    });
   }
 }

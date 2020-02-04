@@ -25,6 +25,12 @@ export class DashboardComponent implements OnInit {
   savingsMonth = [];
   savingsTotal = [];
   savingsActive = [];
+  savingsByMonthMonth = [];
+  savingsByMonthRunning = [];
+  savingsByMonthMatured = [];
+  loansByMonthMonth = [];
+  loansByMonthRunning = [];
+  loansByMonthSettled = [];
         
 
   constructor(private loansService: LoansService,
@@ -40,8 +46,8 @@ export class DashboardComponent implements OnInit {
   allGraphs(){
     this.loanGraphStat();
     this.savingsGraphStat();
-    this.borrowersGraphStat();
-    this.saversGraphStat();
+    this.loansByMonthGraphStat();
+    this.savingsByMonthGraphStat();
   }
 
   loansStat(){
@@ -77,8 +83,21 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  loansByMonthGraphStat(){
+    this.reportService.loansByMonthGraph().subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS){
+        for(let i = 0; i < res.data.length; i++){
+          this.loansByMonthMonth.push(res.data[i].month);
+          this.loansByMonthRunning.push(res.data[i].running ? res.data[i].running : 0);
+          this.loansByMonthSettled.push(res.data[i].settled ? res.data[i].settled : 0);
+        }
+        this.loanByMonthGraph();
+      }
+    });
+  }
+
   savingsGraphStat(){
-    this.reportService.savingsGraph().subscribe((res: any) => {
+    this.reportService.savingsByMonthGraph().subscribe((res: any) => {
       if(res.status === Constant.SUCCESS){
         for(let i = 0; i < res.data.length; i++){
           this.savingsMonth.push(res.data[i].month);
@@ -90,13 +109,19 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  borrowersGraphStat(){
-    this.borrowersGraph();
+  savingsByMonthGraphStat(){
+    this.reportService.savingsByMonthGraph().subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS){
+        for(let i = 0; i < res.data.length; i++){
+          this.savingsByMonthMonth.push(res.data[i].month);
+          this.savingsByMonthRunning.push(res.data[i].running ? res.data[i].running : 0);
+          this.savingsByMonthMatured.push(res.data[i].matured ? res.data[i].matured : 0);
+        }
+        this.savingsByMonthGraph();
+      }
+    });
   }
 
-  saversGraphStat(){
-    this.saversGraph();
-  }
 
   // ngAfterViewInit() {
     loanGraph(){
@@ -173,19 +198,19 @@ export class DashboardComponent implements OnInit {
       });
     }
 
-    borrowersGraph(){
-      this.borrowersChart = new Chart('borrowers', {
+    loanByMonthGraph(){
+      this.borrowersChart = new Chart('loan-by-month', {
         type: 'bar',
         data: {
-          labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+          labels: this.loansByMonthMonth,
           datasets:  [{
-            data: [200,180,600,500,800,677,900,500,1200,800,1400,1300],
+            data: this.loansByMonthRunning,
             backgroundColor: '#213F7D',
-            label: 'Total'
+            label: 'Running'
           },{
-            data: [400,300,400,600,900,700,1000,900,1200,700,1300,1200],
+            data: this.loansByMonthSettled,
             backgroundColor: '#EA3869',
-            label: 'Active'
+            label: 'Settled'
           }]
         },
         options: {
@@ -210,19 +235,19 @@ export class DashboardComponent implements OnInit {
     }
 
 
-    saversGraph(){
-      this.saversChart = new Chart('savers', {
+    savingsByMonthGraph(){
+      this.saversChart = new Chart('savings-by-month', {
         type: 'bar',
         data: {
-          labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+          labels: this.savingsByMonthMonth,
           datasets:  [{
-            data: [200,180,600,500,800,677,900,500,1200,800,1400,1300],
+            data: this.savingsByMonthRunning,
             backgroundColor: '#39CDCC',
-            label: 'Total'
+            label: 'Running'
           },{
-            data: [400,300,400,600,900,700,1000,900,1200,700,1300,1200],
+            data: this.savingsByMonthMatured,
             backgroundColor: '#EA3869',
-            label: 'Active'
+            label: 'Matured'
           }]
         },
         options: {

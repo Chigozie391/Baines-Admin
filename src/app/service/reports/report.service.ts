@@ -37,8 +37,16 @@ export class ReportService {
     return this.http.get(`${Endpoint.REPORTS}/loan-by-month`);
   }
 
+  loansByMonthGraph(){
+    return this.http.get(`${Endpoint.REPORTS}/running-vs-settled-loan-by-month`);
+  }
+
   savingsGraph(){
     return this.http.get(`${Endpoint.REPORTS}/saving-by-month`);
+  }
+
+  savingsByMonthGraph(){
+    return this.http.get(`${Endpoint.REPORTS}/running-vs-matured-saving-by-month`);
   }
 
 }
