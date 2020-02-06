@@ -34,7 +34,7 @@
           </tr>
         </thead>
         <tbody class="text-muted">
-          <tr *ngFor="let log of logs | innerLastName : term">
+          <tr *ngFor="let log of logs.logs | innerLastName : term">
             <td><a routerLink="{{log.id}}">{{!log.user.first_name ? 'N/A' : log.user.first_name | uppercase}} {{!log.user.last_name ? 'N/A' : log.user.last_name | uppercase}}</a></td>
             <td>{{!log.description ? 'N/A' : log.description | titlecase}}</td>
             <th scope="row">{{log.created_on | date : 'mediumDate'}}</th>
@@ -42,11 +42,29 @@
           </tr>
         </tbody>
       </table>
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <a style="margin: 1rem 1rem;" (click)="auditLogs(eachPage)" [routerLink]="['./']" *ngFor="let eachPage of pages">{{eachPage}}</a>
+      <!-- <div class="row"> -->
+        <div class="col-md-12 text-center" style="max-width: fit-content;">
+          <nav aria-label="Page navigation example">
+          <ul *ngIf="pages" class="pagination">
+            <li [ngClass]="{disabled:currentPage === 0}" class="page-item">
+              <a [routerLink]="['./']" [queryParams]="{ page: 0 }" class="page-link">First</a>
+            </li>
+            <li [ngClass]="{disabled:currentPage === 0}" class="page-item previous-item">
+              <a [routerLink]="['./']" [queryParams]="{ page:currentPage - 1 }" class="page-link">Previous</a>
+            </li>
+            <li *ngFor="let eachPage of p" [ngClass]="{active:currentPage === eachPage}" class="page-item">
+              <a [queryParams]="{ page: eachPage }" class="page-link" [routerLink]="['./']" >{{eachPage}}</a>
+              </li>
+              <li [ngClass]="{disabled:currentPage === totalPages}" class="page-item">
+                <a [routerLink]="['./']" [queryParams]="{ page:currentPage + 1 }" class="page-link">Next</a>
+              </li>
+              <li [ngClass]="{disabled:currentPage === totalPages}" class="page-item">
+                <a [routerLink]="['./']" [queryParams]="{ page:totalPages}" class="page-link">Last</a>
+              </li>
+          </ul>
+          </nav>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
   </div>
 </div>

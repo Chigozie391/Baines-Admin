@@ -39,7 +39,6 @@ export class EditLoanProductComponent implements OnInit {
 
   details(id){
     this.loanProductService.getProductDetails(id).subscribe((res:any) => {
-      console.log(res.data);
       if (res.status === Constant.SUCCESS){
         this.loanProduct.name = res.data.name;
         this.loanProduct.max_amount = res.data.max_amount;
@@ -87,12 +86,10 @@ export class EditLoanProductComponent implements OnInit {
       "interest_rate": this.loanProduct.interest_rate,
       "product_type_id": "2"
     };
-    console.log(data);
     this.loanProductService.editLoanProduct(this.id, data).subscribe((res :any) => {
       if(res.status === Constant.SUCCESS) {
         this.msg = res.message;
       }
-      console.log(res);
     }, (err) => {
       if(err.status !== 200){
         this.msg = err.error.message;

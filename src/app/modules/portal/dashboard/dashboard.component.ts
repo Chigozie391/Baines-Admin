@@ -54,6 +54,7 @@ export class DashboardComponent implements OnInit {
     this.loansService.getLoanStats().subscribe((res: any) => {
       if(res.status === Constant.SUCCESS){
         this.stat = res.data;
+        console.log(res);
       }
     }, (err) => {
       if(err.status === 401){

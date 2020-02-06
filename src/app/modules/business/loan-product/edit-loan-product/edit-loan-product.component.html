@@ -38,7 +38,7 @@
                               </mat-form-field>
 
                                 <mat-select id="tenor" [(ngModel)]="loanProduct.tenor_type" name="tenor" class="col-md-6" placeholder="Tenor" >
-                                    <mat-option  *ngFor="let each of tenor" value="{{each.value}}">{{each.value}} days</mat-option>
+                                    <mat-option  *ngFor="let each of tenor" value="{{each.id}}">{{each.value}} days</mat-option>
                                 </mat-select>
 
                               <div class="row">

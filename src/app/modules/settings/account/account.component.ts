@@ -4,6 +4,8 @@ import { AuthService } from 'src/app/service/auth/auth.service';
 import { AccountModel } from './account.model';
 import { Constant } from 'src/app/utils/constant';
 import { HttpClient } from '@angular/common/http';
+import { PasswordModel } from 'src/app/model/password.model';
+import { UpdateAdminModel } from './updateAdmin.model';
 
 
 class ImageSnippet {
@@ -25,10 +27,13 @@ export class AccountComponent implements OnInit {
   email: string;
   account_name: string;
   pwd = new AccountModel();
+  update = new UpdateAdminModel;
   msg: any;
   selectedFile: ImageSnippet;
   img_url: string;
   phone_number: string;
+  showSub = [];
+  updateMsg: string;
 
   constructor(config: NgbModalConfig,
      private modalService: NgbModal,
@@ -47,9 +52,9 @@ export class AccountComponent implements OnInit {
   }
 
   userProfile(){
-    this.account_name = this.authService.user.full_name;
-    this.email = this.authService.user.email;
-    this.phone_number = this.authService.user.phone_number;
+    this.update.full_name = this.authService.user.full_name;
+    this.update.email = this.authService.user.email;
+    this.update.phone_number = this.authService.user.phone_number;
     this.img_url = this.authService.image;
   }
 
@@ -63,6 +68,26 @@ export class AccountComponent implements OnInit {
     }, (err) => {
       if(err.status !== 200){
         this.msg = err.error.message;
+      }
+    });
+  }
+
+  updateAdmin(){
+    this.updateMsg = 'Saving Changes...'
+    const dataUpdate = {
+      'email' : this.update.email,
+      'full_name' : this.update.full_name,
+      'phone_number' : this.update.phone_number,
+      'image_url' : this.authService.user.image_url
+    }
+    this.authService.updateAdminProfile(dataUpdate).subscribe((res: any) => {
+      if(res.status === Constant.SUCCESS) {
+        this.updateMsg = res.message;
+        this.userProfile();
+      }
+    }, (err) => {
+      if(err.status !== 200){
+        this.updateMsg = err.error.message;
       }
     });
   }
@@ -122,7 +147,9 @@ export class AccountComponent implements OnInit {
     reader.readAsDataURL(file);
   }
 
-
+  onClosed(){
+    this.updateMsg = '';
+  }
 
 
   }
