@@ -154,7 +154,7 @@ export class NavigationComponent implements OnInit {
       {
         icon: 'logout',
         route: 'Logout',
-        url: 'Path.LOGOUT',
+        url: Path.LOGOUT,
         sub: []
       }
     ];

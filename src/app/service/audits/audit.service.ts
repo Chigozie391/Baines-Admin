@@ -9,8 +9,9 @@ export class AuditService {
 
   constructor(private http: HttpClient) { }
 
-  getAuditLogs(page_id) {
-    return this.http.get(`${Endpoint.AUDIT_LOGS}?page=${page_id}`);
+  getAuditLogs(data) {
+    let page = data.page ? `page=${data.page}` : '';
+    return this.http.get(`${Endpoint.AUDIT_LOGS}?${page}`);
   }
 
   getAuditDetails(id){

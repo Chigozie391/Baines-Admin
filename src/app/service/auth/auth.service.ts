@@ -69,19 +69,9 @@ export class AuthService {
     return this.http.put(Endpoint.TEAM, data);
   }
 
-  // logout() {
-  //   return this.http.post('delete', `${Endpoint.ADMIN_LOGOUT}`)
-  //     .pipe(
-  //      map((res: any)=> {
-  //         if(res.status === Constant.SUCCESS){
-  //           localStorage.clear();
-  //           this.router.navigate([Path.LOGIN])
-  //           return;
-  //         }
-  //        }
-  //      )
-  //     );
-  // }
+  logoutRoute() {
+    return this.http.post(`${Endpoint.ADMIN_LOGOUT}`, {});
+  }
 
   logout(){
     localStorage.clear();

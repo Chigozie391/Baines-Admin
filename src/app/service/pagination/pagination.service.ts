@@ -8,6 +8,7 @@ export class PaginationService {
   constructor() { }
 
   getPager(total, currentPage, itemPerPage) {
+    
     const totalPage = Math.ceil(total / itemPerPage);
     if (currentPage < 0) {
       currentPage = 0;
@@ -39,12 +40,12 @@ export class PaginationService {
 
     const pages = Array.from(Array((endPage + 1) - startPage).keys()).map(i => startPage + i);
 
-    console.log(pages);
+    // console.log(pages);
     pages.pop();
 
     return {
         totalItems: total,
-        currentPage,
+        currentPage: Number(currentPage),
         itemPerPage,
         totalPages: totalPage,
         startPage,
@@ -54,4 +55,19 @@ export class PaginationService {
         pages
     };
   }
+
+  setPage = (total, currentPage, itemPerPage) => {
+    return this.getPager(total, currentPage, itemPerPage);
+  }
+
+  setNewCurrentPage = (changeToNewCurrentPage, currentPage ,callback) =>{
+    if (Number(changeToNewCurrentPage) === currentPage) {
+      return;
+    }
+    currentPage = changeToNewCurrentPage;
+    callback(currentPage);
+  }
 }
+
+
+

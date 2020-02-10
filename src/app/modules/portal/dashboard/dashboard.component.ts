@@ -54,7 +54,6 @@ export class DashboardComponent implements OnInit {
     this.loansService.getLoanStats().subscribe((res: any) => {
       if(res.status === Constant.SUCCESS){
         this.stat = res.data;
-        console.log(res);
       }
     }, (err) => {
       if(err.status === 401){
@@ -102,8 +101,8 @@ export class DashboardComponent implements OnInit {
       if(res.status === Constant.SUCCESS){
         for(let i = 0; i < res.data.length; i++){
           this.savingsMonth.push(res.data[i].month);
-          this.savingsTotal.push(res.data[i].total ? res.data[i].total : 0);
-          this.savingsActive.push(res.data[i].active ? res.data[i].active : 0);
+          this.savingsTotal.push(res.data[i].running ? res.data[i].running : 0);
+          this.savingsActive.push(res.data[i].matured ? res.data[i].matured : 0);
         }
         this.savingsGraph();
       }
