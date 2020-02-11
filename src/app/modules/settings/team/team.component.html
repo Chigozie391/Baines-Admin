@@ -63,11 +63,11 @@
                                       <mat-icon svgIcon="edit"></mat-icon>
                                       <span>Manage Permissions</span>
                                     </button>
-                                    <button mat-menu-item *ngIf="member.activated !== 1" >
+                                    <button mat-menu-item *ngIf="member.deleted_flag !== 0" >
                                       <mat-icon svgIcon="activate"></mat-icon>
                                       <span>Activate team member</span>
                                     </button>
-                                    <button mat-menu-item *ngIf="member.activated === 1" (click)="deactivate(member.id)">
+                                    <button mat-menu-item *ngIf="member.deleted_flag === 0" (click)="deactivate(member.id)">
                                       <mat-icon svgIcon="deactivate"></mat-icon>
                                       <span>Deactivate team member</span>
                                     </button>
