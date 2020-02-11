@@ -25,4 +25,13 @@ export class TeamService {
   updateProfile(token, data){
     return this.http.post(`${Endpoint.ADMIN_ACTIVATE}?token=${token}`, (data));
   }
+
+  activateAdmin(id) {
+    return this.http.put(`${Endpoint.TEAM}/enable/${id}`, JSON.stringify(id));
+  }
+
+  deactivateAdmin(id) {
+    return this.http.put(`${Endpoint.TEAM}/disable/${id}`, JSON.stringify(id));
+  }
+
 }
