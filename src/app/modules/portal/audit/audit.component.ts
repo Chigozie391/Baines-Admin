@@ -63,4 +63,8 @@ export class AuditComponent implements OnInit {
   setNewPage(page) {
     this.paginationService.setNewCurrentPage(page, this.currentPage, this.auditLogs);
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6fb8c4913af101394a36974eface9550f6c5d595

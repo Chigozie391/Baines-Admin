@@ -18,7 +18,7 @@ import { Path } from 'src/app/utils/path';
 })
 
 export class NavigationComponent implements OnInit {
-
+	showSub = [];
   token: string;
   img_url: string;
 
