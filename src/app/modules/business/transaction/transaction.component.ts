@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { TransactionsService } from 'src/app/service/transactions/transactions.service';
 import { InnerLastNamePipe } from 'src/app/filterPipes/byLastname/inner-last-name.pipe';
 import { AuthService } from 'src/app/service/auth/auth.service';
+import { PaginationModel } from 'src/app/model/pagination.model';
+import { Constant } from 'src/app/utils/constant';
+import { PaginationService } from 'src/app/service/pagination/pagination.service';
 
 @Component({
   selector: 'app-transaction',
@@ -10,6 +13,11 @@ import { AuthService } from 'src/app/service/auth/auth.service';
   providers: [InnerLastNamePipe]
 })
 export class TransactionComponent implements OnInit {
+
+  currentPage: any = 1;
+  paginationModel = new PaginationModel();
+  pageSettings: any;
+  pager: any = {};
 
   transaction: any;
   stat: any;
@@ -20,7 +28,8 @@ export class TransactionComponent implements OnInit {
 
   constructor(
     private transactionService: TransactionsService,
-    private authService: AuthService) { 
+    private authService: AuthService,
+    private paginationService: PaginationService) { 
 
   }
 
@@ -29,19 +38,33 @@ export class TransactionComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.allTransactions();
+    this.allTransactions(this.currentPage);
     this.transactionStats();
   }
 
-  allTransactions() {
-    this.transactionService.getAllTransactions().subscribe((res: any) => {
-      this.transaction = res.data;
+  allTransactions = (currentPage?) => {
+    if (currentPage) this.currentPage = currentPage;
+    this.paginationModel.page = this.currentPage;
+    this.transactionService.getAllTransactions(this.paginationModel).subscribe((res: any) => {
+      console.log(res);
+      if(res.status === Constant.SUCCESS){
+        this.transaction = res.data.transactions;
+        this.pageSettings = res.data.page_info;
+        this.pager = this.paginationService.setPage(
+          this.pageSettings.total_pages,
+          this.pageSettings.page,
+          this.pageSettings.limit
+        );
+      }
     }, (err) => {
       if(err.status === 401){
-        // this.msg = `${err.error.message} - Please logout to begin a new session`;
         this.authService.logout();
       }
     });
+  }
+
+  setNewPage(page) {
+    this.paginationService.setNewCurrentPage(page, this.currentPage, this.allTransactions);
   }
 
   transactionStats() {

@@ -42,6 +42,7 @@ export class BorrowersComponent implements OnInit {
     this.borrowersService.getAllBorrowers().subscribe((res: any) => {
       if (res.status === Constant.SUCCESS) {
         // this.list = res.data;
+        console.log(res);
         for(let i = 0; i < res.data.length; i++){
           const data = {
             'user_id' : res.data[i].user_id,

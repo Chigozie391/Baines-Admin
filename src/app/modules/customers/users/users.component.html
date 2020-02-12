@@ -134,7 +134,7 @@
   
   
   
-            <tr *ngFor="let each of dataSet | fullName: term | paginate: {itemsPerPage: 10, currentPage: p}">
+            <tr *ngFor="let each of dataSet | fullName: term ">
                 <td><a routerLink="{{each.id}}">{{!each.full_name ? "N/A" : each.full_name | uppercase}}</a></td>
                 <td><a routerLink="{{each.id}}">{{!each.id ? 'N/A' : each.id}}</a></td>
               <td>{{!each.email ? 'N/A' : each.email}}</td>
@@ -166,11 +166,31 @@
             </tr>
           </tbody>
         </table>
-        <div class="row">
+
+        <div class="row my-3 justify-content-end">
+          <div class="col-auto">
+            <div *ngIf="pager?.pages && pager?.pages.length" class="pagination">
+              <a (click)="setNewPage(1)" class="page-link" [ngClass]="{disabled:pager?.currentPage === 1}">&laquo;</a>
+              <a (click)="setNewPage(pager?.currentPage - 1)" class="page-link" [ngClass]="{disabled:pager?.currentPage === 1}">
+                &lsaquo;
+              </a>
+              <ng-container *ngFor="let page of pager.pages" class="page-item">
+                <a (click)="setNewPage(page + 1)" class="page-link" [ngClass]="{active:pager?.currentPage === page + 1}">{{page + 1}}</a>
+              </ng-container>
+              <a (click)="setNewPage(pager?.currentPage + 1)" class="page-link" [ngClass]="{disabled:pager?.currentPage === pager?.totalPages}">
+                &rsaquo;
+              </a>
+              <a (click)="setNewPage(pager?.totalPages)" class="page-link" [ngClass]="{disabled:pager?.currentPage === pager?.totalPages}">&raquo;</a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- <div class="row">
           <div class="col-md-12 text-center">
             <pagination-controls (pageChange)="p = $event"></pagination-controls>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

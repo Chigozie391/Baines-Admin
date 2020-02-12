@@ -11,8 +11,9 @@ export class TransactionsService {
   constructor(private http: HttpClient,
     private authService: AuthService) { }
 
-    getAllTransactions() {
-      return this.http.get(Endpoint.GET_ALL_TRANSACTIONS);
+    getAllTransactions(data) {
+      let page = data.page ? `page=${data.page}` : '';
+      return this.http.get(`${Endpoint.GET_ALL_TRANSACTIONS}?${page}`);
     }
 
     transactionStats() {

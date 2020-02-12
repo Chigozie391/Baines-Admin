@@ -4,6 +4,8 @@ import { Constant } from 'src/app/utils/constant';
 import { AuthService } from 'src/app/service/auth/auth.service';
 import { FirstNamePipe } from 'src/app/filterPipes/byFirstname/first-name.pipe';
 import { LastNamePipe } from 'src/app/filterPipes/byLastname/last-name.pipe';
+import { PaginationModel } from 'src/app/model/pagination.model';
+import { PaginationService } from 'src/app/service/pagination/pagination.service';
 
 @Component({
   selector: 'app-users',
@@ -12,6 +14,11 @@ import { LastNamePipe } from 'src/app/filterPipes/byLastname/last-name.pipe';
   providers: [FirstNamePipe, LastNamePipe]
 })
 export class UsersComponent implements OnInit {
+
+  currentPage: any = 1;
+  paginationModel = new PaginationModel();
+  pageSettings: any;
+  pager: any = {};
 
   user: any;
   stats: any;
@@ -25,12 +32,13 @@ export class UsersComponent implements OnInit {
   dataSet = [];
 
   constructor(private userService: UsersService,
-              private authService: AuthService) { 
+              private authService: AuthService,
+              private paginationService: PaginationService) { 
 
               }
 
   ngOnInit() {
-    this.users();
+    this.users(this.currentPage);
     this.usersStats();
   }
 
@@ -38,27 +46,42 @@ export class UsersComponent implements OnInit {
     this.config.currentPage = event;
   }
 
-  users() {
-    this.userService.getAllUsers().subscribe((res: any) => {
+  users = (currentPage?) => {
+    if (currentPage) this.currentPage = currentPage;
+    this.paginationModel.page = this.currentPage;
+    this.userService.getAllUsers(this.paginationModel).subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
-        for(let i = 0; i < res.data.length; i++){
+        this.dataSet = [];
+        for(let i = 0; i < res.data.users.length; i++){
           const data = {
-            'id' : res.data[i].id,
-            'client_id' : res.data[i].client_id,
-            'full_name' : `${res.data[i].first_name} ${res.data[i].last_name}`,
-            'phone_number' : res.data[i].phone_number,
-            'email' : res.data[i].email,
-            'activated' : res.data[i].activated,
-            'created_on' : res.data[i].created_on
+            'id' : res.data.users[i].id,
+            'client_id' : res.data.users[i].client_id,
+            'full_name' : `${res.data.users[i].first_name} ${res.data.users[i].last_name}`,
+            'phone_number' : res.data.users[i].phone_number,
+            'email' : res.data.users[i].email,
+            'activated' : res.data.users[i].activated,
+            'created_on' : res.data.users[i].created_on
           }
           this.user = this.dataSet.push(data);
         }
+
+        this.pageSettings = res.data.page_info;
+        this.pager = this.paginationService.setPage(
+          this.pageSettings.total_pages,
+          this.pageSettings.page,
+          this.pageSettings.limit
+        );
+
       }
     }, (err) => {
       if (err.status === 401) {
         this.authService.logout();
       }
     });
+  }
+
+  setNewPage(page) {
+    this.paginationService.setNewCurrentPage(page, this.currentPage, this.users);
   }
 
   usersStats() {

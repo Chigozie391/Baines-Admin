@@ -8,9 +8,10 @@ import { Endpoint } from 'src/app/utils/endpoint';
 export class UsersService {
 
   constructor(private http: HttpClient) { }
-  
-  getAllUsers() {
-    return this.http.get(Endpoint.GET_ALL_USERS);
+
+  getAllUsers(data) {
+    let page = data.page ? `page=${data.page}` : '';
+    return this.http.get(`${Endpoint.GET_ALL_USERS}?${page}`);
   }
 
   getUser(user_id) {

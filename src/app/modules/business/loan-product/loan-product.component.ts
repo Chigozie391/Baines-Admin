@@ -31,6 +31,7 @@ export class LoanProductComponent implements OnInit {
 
   getLoanProduct(){
     this.loanProductService.getLoanProducts().subscribe((res:any)=> {
+      console.log(res);
       if (res.status === Constant.SUCCESS) {
         this.loanProduct = res.data;
         // this.loanProductService.getProductDetails(res.data.id).subscribe((count: any) => {

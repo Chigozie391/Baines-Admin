@@ -23,7 +23,6 @@ export class TeamComponent implements OnInit {
   teamMembers(){
     this.teamService.getTeamMembers().subscribe((res: any) => {
       this.members = res.data;
-      console.log(this.members);
     }, (err) => {
       if (err.status === 401) {
         this.authService.logout();
@@ -32,8 +31,9 @@ export class TeamComponent implements OnInit {
   }
 
   activate(id){
+    const data = {"blacklist": '0'};
     this.msg = 'Activating...'
-    this.teamService.activateAdmin(id).subscribe((res: any) => {
+    this.teamService.updateAdminStatus(id, data).subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
         this.msg = res.message;
         this.teamMembers();
@@ -47,11 +47,11 @@ export class TeamComponent implements OnInit {
 
 
   deactivate(id) {
+    const data = {"blacklist": '1'};
     this.msg = 'Deactivating...'
-    this.teamService.deactivateAdmin(id).subscribe((res: any) => {
+    this.teamService.updateAdminStatus(id, data).subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
         this.msg = res.message;
-        console.log(res);
         this.teamMembers();
       }
     }, (err) => {

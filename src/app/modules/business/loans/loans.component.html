@@ -93,11 +93,30 @@
                   </div>
               </div>     
           </div>
-          <div class="row">
+
+          <div class="row my-3 justify-content-end">
+            <div class="col-auto">
+              <div *ngIf="pager?.pages && pager?.pages.length" class="pagination">
+                <a (click)="setNewPage(1)" class="page-link" [ngClass]="{disabled:pager?.currentPage === 1}">&laquo;</a>
+                <a (click)="setNewPage(pager?.currentPage - 1)" class="page-link" [ngClass]="{disabled:pager?.currentPage === 1}">
+                  &lsaquo;
+                </a>
+                <ng-container *ngFor="let page of pager.pages" class="page-item">
+                  <a (click)="setNewPage(page + 1)" class="page-link" [ngClass]="{active:pager?.currentPage === page + 1}">{{page + 1}}</a>
+                </ng-container>
+                <a (click)="setNewPage(pager?.currentPage + 1)" class="page-link" [ngClass]="{disabled:pager?.currentPage === pager?.totalPages}">
+                  &rsaquo;
+                </a>
+                <a (click)="setNewPage(pager?.totalPages)" class="page-link" [ngClass]="{disabled:pager?.currentPage === pager?.totalPages}">&raquo;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="row">
             <div class="col-md-12 text-center">
               <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </div>
-          </div>  
+          </div>   -->
               </ng-template>
               </ngb-tab>
   
@@ -135,11 +154,31 @@
                   </tbody>
                 </table>
 
-                <div class="row">
+
+                <div class="row my-3 justify-content-end">
+                  <div class="col-auto">
+                    <div *ngIf="pager?.pages && pager?.pages.length" class="pagination">
+                      <a (click)="setNewPage(1)" class="page-link" [ngClass]="{disabled:pager?.currentPage === 1}">&laquo;</a>
+                      <a (click)="setNewPage(pager?.currentPage - 1)" class="page-link" [ngClass]="{disabled:pager?.currentPage === 1}">
+                        &lsaquo;
+                      </a>
+                      <ng-container *ngFor="let page of pager.pages" class="page-item">
+                        <a (click)="setNewPage(page + 1)" class="page-link" [ngClass]="{active:pager?.currentPage === page + 1}">{{page + 1}}</a>
+                      </ng-container>
+                      <a (click)="setNewPage(pager?.currentPage + 1)" class="page-link" [ngClass]="{disabled:pager?.currentPage === pager?.totalPages}">
+                        &rsaquo;
+                      </a>
+                      <a (click)="setNewPage(pager?.totalPages)" class="page-link" [ngClass]="{disabled:pager?.currentPage === pager?.totalPages}">&raquo;</a>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- <div class="row">
                   <div class="col-md-12 text-center">
                     <pagination-controls (pageChange)="p = $event"></pagination-controls>
                   </div>
-                </div>
+                </div> -->
 
               </div>
             </div>

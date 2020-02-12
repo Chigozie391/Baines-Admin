@@ -9,8 +9,9 @@ export class SavingsService {
 
   constructor(private http: HttpClient) { }
 
-  getAllSavings() {
-    return this.http.get(Endpoint.SAVINGS);
+  getAllSavings(data) {
+    let page = data.page ? `page=${data.page}` : '';
+    return this.http.get(`${Endpoint.SAVINGS}?${page}`);
   }
 
   getSavingsDetails(id) {

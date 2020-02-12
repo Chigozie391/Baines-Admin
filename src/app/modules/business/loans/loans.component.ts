@@ -3,6 +3,8 @@ import { LoansService } from 'src/app/service/loans/loans.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Constant } from 'src/app/utils/constant';
 import { AuthService } from 'src/app/service/auth/auth.service';
+import { PaginationModel } from 'src/app/model/pagination.model';
+import { PaginationService } from 'src/app/service/pagination/pagination.service';
 
 @Component({
   selector: 'app-loans',
@@ -10,6 +12,11 @@ import { AuthService } from 'src/app/service/auth/auth.service';
   styleUrls: ['./loans.component.scss']
 })
 export class LoansComponent implements OnInit {
+
+  currentPage: any = 1;
+  paginationModel = new PaginationModel();
+  pageSettings: any;
+  pager: any = {};
 
   loans: any;
   loanDetail: any;
@@ -19,23 +26,34 @@ export class LoansComponent implements OnInit {
 
 
   constructor(private loansService: LoansService,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private paginationService: PaginationService) { }
 
   ngOnInit() {
     this.allLoans();
     this.loansStat();
   }
 
-  allLoans() {
+  allLoans = () => {
     this.loansService.getAllLoans().subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
-        this.loans = res.data;
+        this.loans = res.data.loans;
+        this.pageSettings = res.data.page_info;
+        this.pager = this.paginationService.setPage(
+          this.pageSettings.total_pages,
+          this.pageSettings.page,
+          this.pageSettings.limit
+        );
       }
     }, (err) => {
       if (err.status === 401) {
         this.authService.logout();
       }
     });
+  }
+
+  setNewPage(page) {
+    this.paginationService.setNewCurrentPage(page, this.currentPage, this.allLoans);
   }
 
   loansStat(){

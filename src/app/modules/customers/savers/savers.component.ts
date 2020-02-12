@@ -33,7 +33,7 @@ export class SaversComponent implements OnInit {
       this.loading = false;
       if (res.status === Constant.SUCCESS) {
         // this.savers = res.data;
-        // console.log(res.data);
+        console.log(res);
         for(let i = 0; i < res.data.length; i++){
           const data = {
             'user_id' : res.data[i].user_id,
