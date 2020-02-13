@@ -11,8 +11,9 @@ export class LoansService {
   constructor(private http: HttpClient,
     private authService: AuthService) { }
 
-  getAllLoans() {
-    return this.http.get(Endpoint.LOANS);
+  getAllLoans(data) {
+    let page = data.page ? `page=${data.page}` : '';
+    return this.http.get(`${Endpoint.LOANS}?${page}`);
   }
 
   getLoanDetails(id) {

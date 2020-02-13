@@ -15,7 +15,7 @@ import { PaginationService } from 'src/app/service/pagination/pagination.service
 })
 export class UsersComponent implements OnInit {
 
-  currentPage: any = 1;
+  currentPage: any = 0;
   paginationModel = new PaginationModel();
   pageSettings: any;
   pager: any = {};
@@ -48,7 +48,7 @@ export class UsersComponent implements OnInit {
 
   users = (currentPage?) => {
     if (currentPage) this.currentPage = currentPage;
-    this.paginationModel.page = this.currentPage;
+    this.paginationModel.page = currentPage;
     this.userService.getAllUsers(this.paginationModel).subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
         this.dataSet = [];

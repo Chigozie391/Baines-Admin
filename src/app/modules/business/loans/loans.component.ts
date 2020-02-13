@@ -13,7 +13,7 @@ import { PaginationService } from 'src/app/service/pagination/pagination.service
 })
 export class LoansComponent implements OnInit {
 
-  currentPage: any = 1;
+  currentPage: any = 0;
   paginationModel = new PaginationModel();
   pageSettings: any;
   pager: any = {};
@@ -30,12 +30,16 @@ export class LoansComponent implements OnInit {
     private paginationService: PaginationService) { }
 
   ngOnInit() {
-    this.allLoans();
+    this.allLoans(this.currentPage);
     this.loansStat();
   }
 
-  allLoans = () => {
-    this.loansService.getAllLoans().subscribe((res: any) => {
+  allLoans = (currentPage) => {
+    if (currentPage) this.currentPage = currentPage;
+    console.log(currentPage);
+    this.paginationModel.page = currentPage;
+    console.log(this.paginationModel);
+    this.loansService.getAllLoans(this.paginationModel).subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
         this.loans = res.data.loans;
         this.pageSettings = res.data.page_info;
@@ -44,6 +48,7 @@ export class LoansComponent implements OnInit {
           this.pageSettings.page,
           this.pageSettings.limit
         );
+
       }
     }, (err) => {
       if (err.status === 401) {
@@ -53,6 +58,7 @@ export class LoansComponent implements OnInit {
   }
 
   setNewPage(page) {
+    console.log(page);
     this.paginationService.setNewCurrentPage(page, this.currentPage, this.allLoans);
   }
 

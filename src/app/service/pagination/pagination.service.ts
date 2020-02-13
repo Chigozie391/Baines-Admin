@@ -57,7 +57,8 @@ export class PaginationService {
   }
 
   setPage = (total, currentPage, itemPerPage) => {
-    return this.getPager(total, currentPage, itemPerPage);
+    const t = total * itemPerPage
+    return this.getPager(t, currentPage, itemPerPage);
   }
 
   setNewCurrentPage = (changeToNewCurrentPage, currentPage ,callback) =>{

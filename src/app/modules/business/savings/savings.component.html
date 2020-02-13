@@ -154,17 +154,19 @@
             <div class="row my-3 justify-content-end">
               <div class="col-auto">
                 <div *ngIf="pager?.pages && pager?.pages.length" class="pagination">
-                  <a (click)="setNewPage(1)" class="page-link" [ngClass]="{disabled:pager?.currentPage === 1}">&laquo;</a>
-                  <a (click)="setNewPage(pager?.currentPage - 1)" class="page-link" [ngClass]="{disabled:pager?.currentPage === 1}">
+                  <div *ngIf="currentPage !== 0">
+                    <a (click)="setNewPage(0)" class="page-link" [ngClass]="{'disabled' : pager?.currentPage === 0}">&laquo;</a>
+                  </div>
+                  <a *ngIf="currentPage !== 0" (click)="setNewPage(pager?.currentPage - 1)" class="page-link" [ngClass]="{'disabled' : pager?.currentPage === 0}">
                     &lsaquo;
                   </a>
                   <ng-container *ngFor="let page of pager.pages" class="page-item">
-                    <a (click)="setNewPage(page + 1)" class="page-link" [ngClass]="{active:pager?.currentPage === page + 1}">{{page + 1}}</a>
+                    <a (click)="setNewPage(page + 1)" class="page-link" [ngClass]="{'active' : pager?.currentPage === page + 1}">{{page + 1}}</a>
                   </ng-container>
-                  <a (click)="setNewPage(pager?.currentPage + 1)" class="page-link" [ngClass]="{disabled:pager?.currentPage === pager?.totalPages}">
+                  <a (click)="setNewPage(pager?.currentPage + 1)" class="page-link" [ngClass]="{'disabled' : pager?.currentPage === pager?.totalPages}">
                     &rsaquo;
                   </a>
-                  <a (click)="setNewPage(pager?.totalPages)" class="page-link" [ngClass]="{disabled:pager?.currentPage === pager?.totalPages}">&raquo;</a>
+                  <a (click)="setNewPage(pager?.totalPages)" class="page-link" [ngClass]="{'disabled' : pager?.currentPage === pager?.totalPages}">&raquo;</a>
                 </div>
               </div>
             </div>

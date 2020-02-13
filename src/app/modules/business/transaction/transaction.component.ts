@@ -14,7 +14,7 @@ import { PaginationService } from 'src/app/service/pagination/pagination.service
 })
 export class TransactionComponent implements OnInit {
 
-  currentPage: any = 1;
+  currentPage: any = 0;
   paginationModel = new PaginationModel();
   pageSettings: any;
   pager: any = {};
@@ -44,9 +44,8 @@ export class TransactionComponent implements OnInit {
 
   allTransactions = (currentPage?) => {
     if (currentPage) this.currentPage = currentPage;
-    this.paginationModel.page = this.currentPage;
+    this.paginationModel.page = currentPage;
     this.transactionService.getAllTransactions(this.paginationModel).subscribe((res: any) => {
-      console.log(res);
       if(res.status === Constant.SUCCESS){
         this.transaction = res.data.transactions;
         this.pageSettings = res.data.page_info;
@@ -55,6 +54,7 @@ export class TransactionComponent implements OnInit {
           this.pageSettings.page,
           this.pageSettings.limit
         );
+
       }
     }, (err) => {
       if(err.status === 401){

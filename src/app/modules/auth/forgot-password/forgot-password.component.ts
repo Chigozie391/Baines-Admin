@@ -40,4 +40,8 @@ export class ForgotPasswordComponent implements OnInit {
     })
   }
 
+  onClosed() {
+    this.msg = '';
+  }
+
 }

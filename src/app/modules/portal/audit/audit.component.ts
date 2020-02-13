@@ -13,7 +13,7 @@ import { PaginationService } from 'src/app/service/pagination/pagination.service
   providers: [InnerLastNamePipe]
 })
 export class AuditComponent implements OnInit {
-  currentPage: any = 1;
+  currentPage: any = 0;
   paginationModel = new PaginationModel();
   pageSettings: any;
 
@@ -38,7 +38,7 @@ export class AuditComponent implements OnInit {
 
   auditLogs = (currentPage?) => {
     if (currentPage) this.currentPage = currentPage;
-    this.paginationModel.page = this.currentPage;
+    this.paginationModel.page = currentPage;
     this.auditService.getAuditLogs(this.paginationModel).subscribe(
       (res: any) => {
         if (res.status === Constant.SUCCESS) {

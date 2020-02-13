@@ -8,13 +8,24 @@ import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Path } from 'src/app/utils/path';
 import { AccountModel } from 'src/app/modules/settings/account/account.model';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
+
+  imgUpdate = new BehaviorSubject<any>({});
+  telecast = this.imgUpdate.asObservable();
+
+
   constructor(private http: HttpClient, private router: Router) { 
     
+  }
+
+  editPicture(newImage) {
+    this.imgUpdate.next(newImage);
   }
 
   get token() {

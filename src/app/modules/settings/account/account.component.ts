@@ -55,7 +55,10 @@ export class AccountComponent implements OnInit {
     this.update.full_name = this.authService.user.full_name;
     this.update.email = this.authService.user.email;
     this.update.phone_number = this.authService.user.phone_number;
-    this.img_url = this.authService.image;
+    // this.img_url = this.authService.image;
+    this.authService.editPicture(this.authService.image);
+    this.authService.telecast.subscribe(resp => this.img_url = resp);
+
   }
 
   changePwd(){
@@ -83,6 +86,7 @@ export class AccountComponent implements OnInit {
     this.authService.updateAdminProfile(dataUpdate).subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
         this.updateMsg = res.message;
+        this.authService.editPicture(dataUpdate.image_url);
         this.userProfile();
       }
     }, (err) => {
