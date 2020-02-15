@@ -20,7 +20,8 @@ export class BorrowersService {
 
   }
 
-  getLoans(borrower_id) {
-    return this.http.get(`${Endpoint.USER}/${borrower_id}/loans`);
+  getLoans(borrower_id, data) {
+    let page = data.page ? `page=${data.page}` : '';
+    return this.http.get(`${Endpoint.USER}/${borrower_id}/loans?${page}`);
   }
 }

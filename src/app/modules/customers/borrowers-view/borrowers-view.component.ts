@@ -8,6 +8,8 @@ import { BankService } from 'src/app/service/bank/bank.service';
 import { UsersService } from 'src/app/service/users/users.service';
 import { BorrowersService } from 'src/app/service/borrowers/borrowers.service';
 import { AuthService } from 'src/app/service/auth/auth.service';
+import { PaginationModel } from 'src/app/model/pagination.model';
+import { PaginationService } from 'src/app/service/pagination/pagination.service';
 
 @Component({
   selector: 'app-borrowers-view',
@@ -15,6 +17,11 @@ import { AuthService } from 'src/app/service/auth/auth.service';
   styleUrls: ['./borrowers-view.component.scss']
 })
 export class BorrowersViewComponent implements OnInit {
+  currentPage: any = 0;
+  paginationModel = new PaginationModel();
+  pageSettings: any;
+  pager: any = {};
+
   borrowers: any;
   borrowersName: any;
   collection: CollectionsModel = new CollectionsModel();
@@ -37,15 +44,17 @@ export class BorrowersViewComponent implements OnInit {
     private userService: UsersService,
     private borrowersService: BorrowersService,
     private authService: AuthService,
-    private route: ActivatedRoute) { 
+    private route: ActivatedRoute,
+    private paginationService: PaginationService
+    ) { 
 
   }
 
   ngOnInit() {
-    this.borrowerDetails();
+    this.borrowerDetails(this.currentPage);
   }
 
-  borrowerDetails() {
+  borrowerDetails = (currentPage?) => {
     this.route.paramMap.subscribe(params => {
       this.id = params.get("id");
     });
@@ -62,12 +71,19 @@ export class BorrowersViewComponent implements OnInit {
       }
     }); 
     
-    this.borrowersService.getLoans(this.id).subscribe((res: any) => {
+    this.borrowersService.getLoans(this.id, this.paginationModel).subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
         this.borrowerLoans = res.data;
         this.loan_details = res.data.loans;
         this.tenor_type = res.data.loans.tenor_type;
         this.loan_profile = res.data.loans.loan_profile;
+
+        this.pageSettings = res.data.page_info;
+        this.pager = this.paginationService.setPage(
+          this.pageSettings.total_pages,
+          this.pageSettings.page,
+          this.pageSettings.limit
+        );
       }
     });
 
@@ -89,6 +105,9 @@ export class BorrowersViewComponent implements OnInit {
   }
 
 
+  setNewPage(page) {
+    this.paginationService.setNewCurrentPage(page, this.currentPage, this.borrowerDetails);
+  }
 
 
   getBorrowersState() {

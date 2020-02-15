@@ -532,6 +532,10 @@ tr:first-child {
 
   img {
     flex: none;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    width: inherit;
+    height: inherit;
   }
 }
 

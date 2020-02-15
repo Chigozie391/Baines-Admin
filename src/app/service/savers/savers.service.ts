@@ -14,8 +14,9 @@ export class SaversService {
     return this.http.get(Endpoint.GET_ALL_SAVERS);
   }
 
-  getUserSavings(user_id) {
-    return this.http.get(`${Endpoint.USER}/${user_id}/saving-plans`);
+  getUserSavings(user_id, data) {
+    let page = data.page ? `page=${data.page}` : '';
+    return this.http.get(`${Endpoint.USER}/${user_id}/saving-plans?${page}`);
   }
 
   getSavingsDetails(savings_id) {

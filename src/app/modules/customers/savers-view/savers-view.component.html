@@ -120,9 +120,13 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col-md-8 col-12 col-mb-12">
-                      <span class="pic small round ml-12">
-                          <img src="../../../../assets/img/placeholder-user.png" alt="" class="img-fluid">
-                      </span>
+                      <span *ngIf="!saver?.photo_url" class="pic small round ml-12">
+                        <img src="../../../../assets/img/placeholder-user.png" alt="" class="img-fluid">
+                    </span>
+
+                    <span *ngIf="saver?.photo_url" class="pic small round ml-12">
+                      <img src="{{saver?.photo_url}}" alt="" class="img-fluid">
+                    </span>
                       <div class="user-data">
                         <h3>{{!saver?.last_name ? 'N/A' : saver?.last_name | uppercase}} {{!saver?.first_name ? 'N/A' : saver?.first_name | uppercase}}</h3>
                         <small>{{!id ? 'N/A' : id}}</small>

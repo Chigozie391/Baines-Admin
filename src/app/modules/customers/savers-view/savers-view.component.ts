@@ -5,6 +5,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { SaversService } from 'src/app/service/savers/savers.service';
 import { BankService } from 'src/app/service/bank/bank.service';
 import { AuthService } from 'src/app/service/auth/auth.service';
+import { PaginationModel } from 'src/app/model/pagination.model';
+import { PaginationService } from 'src/app/service/pagination/pagination.service';
 
 @Component({
   selector: 'app-savers-view',
@@ -12,6 +14,11 @@ import { AuthService } from 'src/app/service/auth/auth.service';
   styleUrls: ['./savers-view.component.scss']
 })
 export class SaversViewComponent implements OnInit {
+  
+  currentPage: any = 0;
+  paginationModel = new PaginationModel();
+  pageSettings: any;
+  pager: any = {};
 
   id: any;
   saver: any;
@@ -24,10 +31,11 @@ export class SaversViewComponent implements OnInit {
       private route: ActivatedRoute,
       private saverService: SaversService,
       private bankService: BankService,
-      private authService: AuthService
+      private authService: AuthService,
+      private paginationService: PaginationService
       ) { }
 
-  getAllInfo(){
+  getAllInfo = (currentPage?) => {
 
     this.route.paramMap.subscribe(params => {
       this.id = params.get("id");
@@ -44,7 +52,9 @@ export class SaversViewComponent implements OnInit {
       }
     });
 
-    this.saverService.getUserSavings(this.id).subscribe((res: any) => {
+    this.saverService.getUserSavings(this.id, this.paginationModel).subscribe((res: any) => {
+      if (currentPage) this.currentPage = currentPage;
+      this.paginationModel.page = currentPage;
       if(res.status === Constant.SUCCESS) {
         this.userSavings = res.data.plans;
         this.totalSavings = res.data.total_balance;
@@ -64,7 +74,11 @@ export class SaversViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getAllInfo();
+    this.getAllInfo(this.currentPage);
+  }
+
+  setNewPage(page) {
+    this.paginationService.setNewCurrentPage(page, this.currentPage, this.getAllInfo);
   }
 
 }
