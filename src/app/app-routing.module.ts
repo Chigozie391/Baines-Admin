@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { VerifyUserComponent } from './verify-user/verify-user/verify-user.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes: Routes = [
   {
@@ -11,7 +12,9 @@ const routes: Routes = [
   },
   {path: '', redirectTo: '/auth', pathMatch:'full'},
 
-  { path: 'team/verify', component: VerifyUserComponent}
+  { path: 'team/verify', component: VerifyUserComponent},
+
+  { path: 'team/reset', component: ResetPasswordComponent}
 ];
 
 @NgModule({

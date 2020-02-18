@@ -42,6 +42,7 @@ export class LoansComponent implements OnInit {
     this.loansService.getAllLoans(this.paginationModel).subscribe((res: any) => {
       if(res.status === Constant.SUCCESS) {
         this.loans = res.data.loans;
+        console.log(res);
         this.pageSettings = res.data.page_info;
         this.pager = this.paginationService.setPage(
           this.pageSettings.total_pages,

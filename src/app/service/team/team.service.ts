@@ -26,6 +26,10 @@ export class TeamService {
     return this.http.post(`${Endpoint.ADMIN_ACTIVATE}?token=${token}`, (data));
   }
 
+  resetPassword(token, data){
+    return this.http.post(`${Endpoint.RESET_PASSWORD}?token=${token}`, (data));
+  }
+
 
   updateAdminStatus(id, data) {
     return this.http.put(`${Endpoint.TEAM}/status/${id}`, data);

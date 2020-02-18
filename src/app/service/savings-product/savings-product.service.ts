@@ -13,6 +13,10 @@ export class SavingsProductService {
     return this.http.get(`${Endpoint.GET_PRODUCT}?type=saving`)
   }
 
+  editSavingsProduct(id, data){
+    return this.http.put(`${Endpoint.GET_PRODUCT}/${id}`, data);
+  }
+
   getProductDetails(id){
     return this.http.get(`${Endpoint.GET_PRODUCT}/${id}`)
   }

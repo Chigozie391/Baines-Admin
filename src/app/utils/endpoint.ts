@@ -6,6 +6,7 @@ export class Endpoint {
   public static ADMIN_LOGIN = `${environment.baseUrl}/auth/admin/login`;
   public static ADMIN_LOGOUT = `${environment.baseUrl}/auth/logout`;
   public static FORGOT_PASSWORD = `${environment.baseUrl}/auth/reset/admin/password/send-reset-email`;
+  public static RESET_PASSWORD = `${environment.baseUrl}/auth/reset/admin/password`;
   public static CHANGE_PASSWORD = `${environment.baseUrl}/admin/account/password`;
 
   public static LOANS = `${environment.baseUrl}/admin/loan`;

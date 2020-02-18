@@ -1,1 +1,124 @@
-<p>edit-savings-product works!</p>
+<a routerLink="/app/business/savings-product" class="return">&larr; Back</a>
+
+<app-headers title="Edit Savings Products"></app-headers>
+
+
+
+<br>
+<div class="col-md-12">
+    <div class="card">
+    <div class="card-body">
+        <div *ngIf="msg" class="alert alert-info text-center">{{msg}}</div>
+        <form #firstFormGroup="ngForm" (submit)="editProduct()">
+            <mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper" style="background-color: transparent;">
+                <mat-step [stepControl]="firstFormGroup">
+ 
+
+                    <div class="row" style="padding: 2rem 2rem;">
+                        <div class="col-md-6 col-12 col-mb-12">
+                            <div class="user-data centered">
+                                <h4>Savings Details</h4>
+                                <small class="text-muted">Enter savings details here</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-12 col-lg-6 col-xl-6 mb-12">
+                            <mat-form-field class="col-md-12">
+                                <input matInput placeholder="Loan Savings Name" [(ngModel)]="savingsProduct.name" name="name" required>
+                              </mat-form-field>
+                              <mat-form-field class="col-md-12">
+                                <input matInput placeholder="Loan Savings Description" [(ngModel)]="savingsProduct.description" name="description" required>
+                              </mat-form-field>
+                              <mat-form-field class="col-md-6">
+                                <input type="number" matInput placeholder="Amount Range (Max)" [(ngModel)]="savingsProduct.max_amount" name="max_amount" required>
+                              </mat-form-field>
+                              <mat-form-field class="col-md-6">
+                                <input type="number" matInput placeholder="Amount Range (min)" [(ngModel)]="savingsProduct.min_amount" name="min_amount" required>
+                              </mat-form-field>
+                              <mat-form-field class="col-md-6">
+                                <input type="number" matInput placeholder="Interest Rate (%)" [(ngModel)]="savingsProduct.interest_rate" name="interest_rate" required>
+                              </mat-form-field>
+                              <mat-form-field class="col-md-6">
+                                <input type="number" matInput placeholder="Penal Charge (%)" [(ngModel)]="savingsProduct.penal_charge" name="penal_charge" required>
+                              </mat-form-field>
+                              <mat-form-field class="col-md-6">
+                                <input type="number" matInput placeholder="Witholding Tax (%)" [(ngModel)]="savingsProduct.withholding_tax" name="withholding_tax" required>
+                              </mat-form-field>
+                              <mat-form-field class="col-md-6">
+                                <!-- <input matInput placeholder="Tenor" formControlName="firstCtrl" required> -->
+                                <mat-select placeholder="Tenor Range" name="tenor" [(ngModel)]="savingsProduct.tenor_type">
+                                    <mat-option  *ngFor="let each of tenor" value="{{each.id}}">{{each.value}} days</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+
+                              <div *ngIf="savingsProduct.fixed === 0" class="row col-md-12">
+                                <mat-checkbox color="primary" [(ngModel)]="savingsProduct.fixed" name="fixed">Fixed Deposit?</mat-checkbox>
+                              </div>
+
+                              <div *ngIf="savingsProduct.fixed === 1" class="row col-md-12">
+                                <mat-checkbox color="primary" checked [(ngModel)]="savingsProduct.fixed" name="fixed">Fixed Deposit?</mat-checkbox>
+                              </div>
+
+                              <div class="row">
+                                <!-- <div class="form-group col-md-3"></div> -->
+                                <div class="form-group col-md-6">
+                                    <button type="submit" class="btn btn-success col-md-12">Save for later</button>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <button type="button" matStepperNext class="btn btn-primary col-md-12">Next</button>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </mat-step>
+                <mat-step>
+
+
+                    <div class="row" style="padding: 2rem 2rem;">
+                        <div class="col-md-6 col-12 col-mb-12">
+                            <div class="user-data centered">
+                                <h4>Repayment Details</h4>
+                                <small class="text-muted">Enter loan repayment details here</small>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-12 mb-12">
+                            <mat-select id="method" [(ngModel)]="savingsProduct.repayment_method_id" name="method" style="margin-bottom: 2rem;" class="col-md-12" placeholder="Repayment Method" >
+                                <mat-option  *ngFor="let each of method" value="{{each.id}}">{{each.name | titlecase}}</mat-option>
+                            </mat-select>
+
+                            <mat-select class="col-md-12" placeholder="Repayment Model" id="model" [(ngModel)]="savingsProduct.repayment_model_id" name="model">
+                                <mat-option *ngFor="let each of model" value="{{each.id}}">{{each.name | titlecase}}</mat-option>
+                            </mat-select>
+
+                              <div class="row">
+                                <div class="form-group col-md-6">
+                                    <button matStepperPrevious class="btn btn-success col-md-12">Back</button>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <button type="submit" class="btn btn-primary col-md-12">Save</button>
+                                </div>
+                            
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    
+
+                </mat-step>
+
+              </mat-horizontal-stepper>
+            </form>
+        </div>   
+    </div>
+</div>
+
+
+
+
+
+
+
+
